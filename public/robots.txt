@@ -1,0 +1,6 @@
+User-agent: *
+302 from http://drewharper.com to https://drewharper.com/Modern/Projects
+302 from http://drewharper.com/Modern to https://drewharper.com/Modern/Projects
+301 from http://drewharper.com to http://drewharper.com/Modern/Projects
+301 from http://drewharper.com/Modern to http://drewharper.com/Modern/Projects
+Disallow:

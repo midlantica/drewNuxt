@@ -41,7 +41,7 @@
   }
 
   #svgSvg {
-     transform: translate(28px, 7px);
+     /* transform: translate(28px, 7px); */
 
     .svgOrange {
       fill: #ff9900;

@@ -29,19 +29,19 @@
 <script setup>
   import { ref, shallowRef } from 'vue'
 
-  import IconUiux from '../../components/Carousel/icons/iconUiux.vue'
-  import IconMobile from '../../components/Carousel/icons/iconMobile.vue'
-  import IconKiosk from '../../components/Carousel/icons/iconKiosk.vue'
-  import IconGraphics from '../../components/Carousel/icons/iconGraphics.vue'
-  import IconPrint from '../../components/Carousel/icons/iconPrint.vue'
-  import IconMisc from '../../components/Carousel/icons/iconMisc.vue'
+  import IconUiux from './icons/iconUiux.vue'
+  import IconMobile from './icons/iconMobile.vue'
+  import IconKiosk from './icons/iconKiosk.vue'
+  import IconGraphics from './icons/iconGraphics.vue'
+  import IconPrint from './icons/iconPrint.vue'
+  import IconMisc from './icons/iconMisc.vue'
 
-  import uiux01 from '../../components/Carousel/uiux01.vue'
-  import mobile02 from '../../components/Carousel/mobile02.vue'
-  import kiosk03 from '../../components/Carousel/kiosk03.vue'
-  import graphics04 from '../../components/Carousel/graphics04.vue'
-  import print05 from '../../components/Carousel/print05.vue'
-  import misc06 from '../../components/Carousel/misc06.vue'
+  import uiux01 from './uiux01.vue'
+  import mobile02 from './mobile02.vue'
+  import kiosk03 from './kiosk03.vue'
+  import graphics04 from './graphics04.vue'
+  import print05 from './print05.vue'
+  import misc06 from './misc06.vue'
 
   const backButtonView = ref(false)
   const selectedView = shallowRef('Carousel')
