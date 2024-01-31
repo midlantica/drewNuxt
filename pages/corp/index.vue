@@ -4,7 +4,7 @@
 </script>
 
 <template>
-  <div class="bg-red-600 dark:bg-slate-800 ">
+  <div class="">
     <h1>Home Corp</h1>
   </div>
 </template>

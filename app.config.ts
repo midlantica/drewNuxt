@@ -1,9 +1,9 @@
 export default defineAppConfig({
-  title: 'Hello Drewber',
+  title: 'DrewHarper.com | UX Designer Visual Designer',
   theme: {
-    dark: true,
-    colors: {
-      primary: '#ff0000'
-    }
-  }
+     dark: true,
+    // colors: {
+       primary: '#ff0000'
+    // },
+  },
 })

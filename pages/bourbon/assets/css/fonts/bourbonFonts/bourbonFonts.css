@@ -1,0 +1,55 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 4561420, 2022-03-22T14:59:12-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: AmericanTypewriterStd-Med by ITC
+ * URL: https://www.myfonts.com/fonts/itc/american-typewriter/std-medium/
+ * Copyright: Copyright &amp;#x00A9; 1985, 1987, 1990, 1991, 2002 Adobe Systems Incorporated.  All Rights Reserved.
+ *
+ * Webfont: AmericanTypewriterStd-Bold by ITC
+ * URL: https://www.myfonts.com/fonts/itc/american-typewriter/std-bold/
+ * Copyright: Copyright &amp;#x00A9; 1985, 1987, 1990, 1991, 2002 Adobe Systems Incorporated.  All Rights Reserved.
+ *
+ * Webfont: Veneer-Regular by Yellow Design Studio
+ * URL: https://www.myfonts.com/fonts/yellow-design/veneer/regular/
+ * Copyright: Copyright (c) 2015 by Yellow Design Studio. All rights reserved.
+ *
+ * Webfont: VeneerTwo by Yellow Design Studio
+ * URL: https://www.myfonts.com/fonts/yellow-design/veneer/two/
+ * Copyright: Copyright (c) 2012 by Yellow Design Studio. All rights reserved.
+ *
+ *
+ *
+ * © 2022 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/459a0c");
+
+@font-face {
+  font-family: "AmericanTypewriterStd-Med";
+  src: url('./AmericanTypewriterStdMed/font.woff2') format('woff2'),
+       url('./AmericanTypewriterStdMed/font.woff') format('woff');
+}
+@font-face {
+  font-family: "AmericanTypewriterStd-Bold";
+  src: url('./AmericanTypewriterStdBold/font.woff2') format('woff2'),
+       url('./AmericanTypewriterStdBold/font.woff') format('woff');
+}
+@font-face {
+  font-family: "Veneer";
+  src: url('./VeneerRegular/font.woff2') format('woff2'),
+       url('./VeneerRegular/font.woff') format('woff');
+}
+@font-face {
+  font-family: "VeneerTwo";
+  src: url('./VeneerTwo/font.woff2') format('woff2'),
+       url('./VeneerTwo/font.woff') format('woff');
+}
