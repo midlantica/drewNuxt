@@ -14,7 +14,7 @@
         <a class="no-underline text-base-ivory hover:text-[orange]" :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
       </p>
       <p class="resume">
-        <a class="no-underline text-base-ivory hover:text-[orange]" :href="`${copy.portfolio}`" target="_blank">PDF Resume</a>
+        <a class="no-underline text-base-ivory hover:text-[orange]" :href="`${copy.portfolio}`" target="_blank">PDF Resume </a>
       </p>
     </section>
   </nav>
