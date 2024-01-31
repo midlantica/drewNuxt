@@ -13,7 +13,7 @@
     "@nuxtjs/color-mode": "^3.3.2",
     "@nuxtjs/tailwindcss": "^6.11.2",
     "autoprefixer": "^10.4.17",
-    "nuxt": "^3.9.3",
+    "nuxt": "^3.10.0",
     "postcss": "^8.4.33",
     "postcss-import": "^16.0.0",
     "postcss-nested": "^6.0.1",
@@ -25,7 +25,9 @@
     "vue-router": "^4.2.5"
   },
   "dependencies": {
+    "@pinia/nuxt": "^0.5.1",
     "@vueuse/core": "^10.7.2",
+    "pinia": "^2.1.7",
     "tailwind-column-rule": "^1.0.2",
     "vueperslides": "^3.5.1"
   }

@@ -1,4 +1,7 @@
 <template>
+  <div>
+    <h1>{{ copy.vizDesigner }}</h1>
+  </div>
   <transition name="fade" appear>
     <div class="relative">
       <transition name="topDown" appear>
@@ -43,6 +46,9 @@
 </template>
 
 <script setup>
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
+
   import Navvy from './components/Navvy.vue'
   import HeadAndCopy from './components/HeadAndCopy.vue'
   // import About from '../../components/About.vue'

@@ -1,34 +1,28 @@
 <template>
   <nav class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
     <h1>
-      <nuxt-link class="no-underline text-base-ivory hover:text-[orange]" :to="{ name: 'Bourbon' }">
+      <nuxt-link class="no-underline text-base-ivory hover:text-[orange]" to="/bourbon">
         DREW HARPER
       </nuxt-link>
     </h1>
     <section class="jobDesc">
-      <h2>
-        {{ store.copy.uiuxDesigner }}
-      </h2>
-      <h2>
-        {{ store.copy.vizDesigner }}
-      </h2>
+      <h2>{{ copy.uiuxDesigner }}</h2>
+      <h2>{{ copy.vizDesigner }}</h2>
     </section>
     <section class="contact">
       <p class="email">
-        <a class="no-underline text-base-ivory hover:text-[orange]" :href="`mailto:` + `${store.copy.druEmail}`">{{ store.copy.druEmail }}</a>
+        <a class="no-underline text-base-ivory hover:text-[orange]" :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
       </p>
       <p class="resume">
-        <a class="no-underline text-base-ivory hover:text-[orange]" :href="`${store.copy.portfolio}`" target="_blank">PDF Resume</a>
+        <a class="no-underline text-base-ivory hover:text-[orange]" :href="`${copy.portfolio}`" target="_blank">PDF Resume</a>
       </p>
     </section>
   </nav>
 </template>
 
 <script setup>
-  import { inject } from 'vue'
-  import { RouterLink } from 'vue-router'
-
-  const store = inject('store')
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
 </script>
 
 <style scoped>

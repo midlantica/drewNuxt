@@ -7,7 +7,10 @@ export default defineNuxtConfig({
     },
   },
   css: ['~/assets/css/main.css'],
-  modules: ['@nuxtjs/tailwindcss'],
+  modules: [
+    '@nuxtjs/tailwindcss',
+    '@pinia/nuxt',
+  ],
   postcss: {
     plugins: {
       'postcss-import': {},
@@ -43,7 +46,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  build: {
-    quiet: false,
-  },
+  // build: {
+  //   quiet: false,
+  // },
 })

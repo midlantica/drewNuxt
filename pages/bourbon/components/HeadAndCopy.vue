@@ -1,19 +1,18 @@
 <template>
   <div class="w-full pl-5 pr-2 mt-2 breakSm:px-2 breakLg:px-4">
     <div class="flex items-center justify-start gap-2 justify-items-start auto-rows-auto">
-      <nuxt-link :to="{ name: 'ExtrasBourbon' }" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center jelloHorizontal" />
-      <h1>{{ store.copy.druHead }}</h1>
+      <nuxt-link to="/bourbon" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center jelloHorizontal" />
+      <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />
     </div>
-    <p v-html="store.copy.druCopy" />
+    <p v-html="copy.druCopy" />
   </div>
 </template>
 
 <script setup>
-  import { inject } from 'vue'
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
   import AuthenticStamp from '../../components/AuthenticStamp.vue'
-
-  const store = inject('store')
 </script>
 
 <style scoped>

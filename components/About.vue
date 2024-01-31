@@ -8,7 +8,7 @@
         &nbsp;
       </div>
     </div>
-    <p>{{ store.copy.aboutCopy }}</p>
+    <p>{{ copy.aboutCopy }}</p>
   </div>
 </template>
 
@@ -16,7 +16,8 @@
   import { inject, ref, computed } from 'vue'
   import { useMouseInElement } from '@vueuse/core'
 
-  const store = inject('store')
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
 
   const target = ref(null)
   const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target)
