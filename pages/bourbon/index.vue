@@ -46,6 +46,12 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
+  useHead({
+    bodyAttrs: {
+      class: `bourbon`
+    }
+  })
+
   import Navvy from './components/Navvy.vue'
   import HeadAndCopy from './components/HeadAndCopy.vue'
   // import About from '../../components/About.vue'

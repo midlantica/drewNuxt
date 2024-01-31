@@ -1,6 +1,12 @@
 <script setup>
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
+
+  useHead({
+    bodyAttrs: {
+      class: ``
+    }
+  })
 </script>
 
 <template>
