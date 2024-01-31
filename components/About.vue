@@ -30,10 +30,8 @@
     return isOutside.value ? '' : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`
   })
 
-  // SOUND!!! ###################################
-  // SOUND!!! ###################################
-  const yeehaw = new Audio('/yeehaw.mp3')
-  const jollyGood = new Audio('/jollyGood.mp3')
+  // const yeehaw = new Audio('/yeehaw.mp3')
+  // const jollyGood = new Audio('/jollyGood.mp3')
 
   let isActive = false
 
