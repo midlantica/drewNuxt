@@ -144,7 +144,7 @@
     }
 
     .flag {
-      @apply block bg-no-repeat content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url("/assets/img/brit_amer_flag.svg")] bg-contain mr-0 bg-center;
+      @apply block bg-no-repeat content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url("/img/brit_amer_flag.svg")] bg-contain mr-0 bg-center;
     }
 
     p {
