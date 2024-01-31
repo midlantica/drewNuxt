@@ -46,7 +46,7 @@ export default defineNuxtConfig({
       ]
     }
   },
-  // build: {
-  //   quiet: false,
-  // },
+  build: {
+    quiet: false,
+  },
 })

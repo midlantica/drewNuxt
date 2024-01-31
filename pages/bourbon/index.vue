@@ -2,7 +2,7 @@
   <transition name="fade" appear>
     <div class="relative">
       <transition name="topDown" appear>
-        <header class="bg-[url(/assets/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+        <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
           <Navvy />
         </header>
       </transition>
@@ -35,7 +35,7 @@
         </main>
       </transition>
 
-      <footer class="bg-[url(/assets/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+      <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
         <nav class="h-3" />
       </footer>
     </div>

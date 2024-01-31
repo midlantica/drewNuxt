@@ -73,7 +73,7 @@
   }
 
   .flag {
-    @apply block bg-no-repeat mr-4 content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url('/assets/img/brit_amer_flag.svg')] bg-center bg-contain;
+    @apply block bg-no-repeat mr-4 content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url('/img/brit_amer_flag.svg')] bg-center bg-contain;
   }
 
   p {
