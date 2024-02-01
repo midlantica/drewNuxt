@@ -10,10 +10,10 @@
 
   import Navvy from './components/Navvy'
   import HeadAndCopy from './components/HeadAndCopy'
-  // import Skills from '../../components/Skills'
-  // import About from '../../components/About'
-  // import Quotes from '../../components/Quote'
-  // import Carousel from '../../components/Carousel/Carousel'
+  import Skills from '../../components/Skills'
+  import About from '../../components/About'
+  import Quotes from '../../components/Quote'
+  import Carousel from '../../components/Carousel/Carousel'
 </script>
 
 <template>
@@ -57,7 +57,7 @@
 </template>
 
 <style scoped>
-  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+  /* @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap'); */
   .mainGrid {
     @apply grid-cols-2 grid gap-y-2 gap-x-0 ml-4 mb-4 mr-6;
 
@@ -66,11 +66,11 @@
     }
 
     @media (max-width: theme("screens.breakLg")) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      //
+      /* // */
     }
   }
 
@@ -111,15 +111,15 @@
     @apply col-start-1 col-end-2 row-start-2 row-end-2;
 
     @media (max-width: theme("screens.breakXlg")) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakLg")) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      //
+      /* // */
     }
   }
 

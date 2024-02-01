@@ -2,11 +2,11 @@
   <section>
     <div class="flex items-center w-full gap-2 mb-2">
       <h1>
-        {{ store.copy.druHead }}
+        {{ copy.druHead }}
       </h1>
       <AuthenticStamp class="authenticStamp" />
     </div>
-    <p v-html="store.copy.druCopy" />
+    <p v-html="copy.druCopy" />
   </section>
 </template>
 
@@ -16,10 +16,9 @@
 
   import AuthenticStamp from '../../components/AuthenticStamp.vue'
 
-
 </script>
 
-<style lang='scss' scoped>
+<style scoped>
   :root {
     --breakXsm: 530px;
   }
@@ -32,11 +31,11 @@
     @apply mt-4 mr-9 mb-0 ml-9;
 
     @media (max-width: theme("screens.breakXlg")) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakLg")) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakSm")) {
@@ -44,7 +43,7 @@
     }
 
     @media (max-width: theme("screens.breakXsm")) {
-      //
+      /* // */
     }
   }
 
@@ -52,7 +51,7 @@
     @apply font-groovyHead text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-redDk normal-case;
 
     @media (min-width: theme("screens.breakXlg")) {
-      // @apply max-w-[26ch];
+      /* // @apply max-w-[26ch]; */
     }
 
     @media (max-width: theme("screens.breakXlg")) {
@@ -91,7 +90,7 @@
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      //
+      /* // */
     }
 
   }

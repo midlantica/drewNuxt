@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-  import { inject, ref, computed } from 'vue'
+  import { ref, computed } from 'vue'
   import { useMouseInElement } from '@vueuse/core'
 
   import { useCopy } from "~/store/copy";

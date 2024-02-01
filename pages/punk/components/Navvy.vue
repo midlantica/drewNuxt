@@ -4,19 +4,19 @@
       &nbsp;
     </div>
     <p class="email">
-      <a :href="`mailto:` + `${store.copy.druEmail}`">{{ store.copy.druEmail }}</a>
+      <a :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
     </p>
 
     <div class="mastMain">
-      <router-link :to="{ name: 'Punk' }">
+      <nuxt-link :to="{ name: 'Punk' }">
         <mastDrew class="svgArt mastDrew" />
-      </router-link>
-      <router-link :to="{ name: 'Punk' }">
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'Punk' }">
         <mastHarper class="svgArt mastHarper" />
-      </router-link>
-      <router-link :to="{ name: 'ExtrasPunk' }" class="DrewHead jelloHorizontal">
+      </nuxt-link>
+      <nuxt-link :to="{ name: 'ExtrasPunk' }" class="DrewHead jelloHorizontal">
         &nbsp;
-      </router-link>
+      </nuxt-link>
     </div>
   </nav>
 </template>
@@ -27,7 +27,6 @@
 
   import mastDrew from './masthead/mastDrew.vue'
   import mastHarper from './masthead/mastHarper.vue'
-
 
 </script>
 
@@ -56,12 +55,12 @@
       }
     }
 
-    // ###############################
+    /* // ############################### */
     .mastMain {
       @apply flex flex-row flex-nowrap justify-center items-center content-center mt-[-1.5em] z-[2] w-full rotate-[.75rem];
 
       @media (max-width: theme("screens.breakXlg")) {
-        //
+        /* // */
       }
 
       @media (max-width: theme("screens.breakLg")) {
@@ -69,15 +68,15 @@
       }
 
       @media (max-width: theme("screens.breakSm")) {
-        //
+        /* // */
       }
 
       @media (max-width: theme("screens.breakXsm")) {
-        //
+        /* // */
       }
 
       a {
-        //
+        /* // */
 
         &:nth-child(1) {
           @apply w-[60vw];
@@ -120,7 +119,7 @@
         }
 
         &:nth-child(3) {
-          //
+          /* // */
 
           @media (max-width: theme("screens.breakXlg")) {
             @apply order-3;
@@ -146,7 +145,7 @@
       }
 
       a.svg.svgArt.mastHarper {
-        //
+        /* // */
       }
 
       a.DrewHead {

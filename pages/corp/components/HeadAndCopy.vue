@@ -1,9 +1,9 @@
 <template>
   <section class="flex flex-col mx-4 mt-4 ml-6 mr-8 flex-nowrap breakXlg:mt-0">
     <h1 class="flex items-center w-full gap-2 mb-3">
-      {{ store.copy.druHead }} <AuthenticStamp class="authenticStamp" />
+      {{ copy.druHead }} <AuthenticStamp class="authenticStamp" />
     </h1>
-    <p v-html="store.copy.druCopy" />
+    <p v-html="copy.druCopy" />
   </section>
 </template>
 
@@ -26,19 +26,19 @@
     @apply font-corpHead text-corp-blueDark normal-case p-0 leading-[2rem] transition duration-[.25s] ease-in tracking-[0.01rem] w-full font-semibold text-[1.3rem] mt-0 mx-0;
 
     @media (min-width: theme("screens.breakXlg")) {
-      // @apply max-w-[28ch];
+      /* // @apply max-w-[28ch]; */
     }
 
     @media (max-width: theme("screens.breakXlg")) {
-      // @apply max-w-none;
+      /* // @apply max-w-none; */
     }
 
     @media (max-width: theme("screens.breakLg")) {
-      // @apply max-w-none;
+      /* // @apply max-w-none; */
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      // @apply max-w-[28ch];
+      /* // @apply max-w-[28ch]; */
     }
 
     @media (max-width: theme("screens.breakXsm")) {
@@ -63,7 +63,7 @@
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      //
+      /* // */
     }
   }
 </style>

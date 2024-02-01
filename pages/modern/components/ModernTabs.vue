@@ -1,18 +1,18 @@
 <template>
   <div class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
-    <router-link :to="{ name: 'ModernProjects' }" class="btn projectsTab">
+    <nuxt-link :to="{ name: 'ModernProjects' }" class="btn projectsTab">
       Projects
-    </router-link>
-    <router-link :to="{ name: 'ModernSkills' }" class="btn skillsTab">
+    </nuxt-link>
+    <nuxt-link :to="{ name: 'ModernSkills' }" class="btn skillsTab">
       Skills
-    </router-link>
-    <router-link :to="{ name: 'ModernAbout' }" class="btn aboutTab">
+    </nuxt-link>
+    <nuxt-link :to="{ name: 'ModernAbout' }" class="btn aboutTab">
       About
-    </router-link>
+    </nuxt-link>
   </div>
 </template>
 
-<!-- <router-link :to="{ name: 'Bourbon' }" -->
+<!-- <nuxt-link :to="{ name: 'Bourbon' }" -->
 
 <script setup></script>
 

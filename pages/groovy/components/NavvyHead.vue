@@ -2,28 +2,28 @@
   <div class="relative my-[-25px] flex flex-row items-center">
     <div class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]">
       <div class="block float-left clear-left groovyCircle">
-        <router-link :to="{ name: 'ExtrasGroovy' }" class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300" />
+        <nuxt-link :to="{ name: 'ExtrasGroovy' }" class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300" />
       </div>
     </div>
 
     <div to="/Groovy" class="float-left relative min-[375px]:left-[-1.95rem] sm:left-[-1.55rem]">
       <div class="flex flex-row flex-wrap justify-center w-auto gap-4 m-auto">
-        <router-link to="/Groovy" class="flex gap-4">
+        <nuxt-link to="/Groovy" class="flex gap-4">
           <mastDrew class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300" />
           <mastHarper class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300" />
-        </router-link>
+        </nuxt-link>
       </div>
       <h2 class="text-base-ivory min-[375px]:text-[.8rem] sm:text-[1.45rem] text-[1rem] text-center font-normal lowercase leading-normal tracking-[.025em] my-1 w-full mx-auto ease-out duration-300">
-        {{ store.copy.uiuxDesigner }} + {{ store.copy.vizDesigner }}
+        {{ copy.uiuxDesigner }} + {{ copy.vizDesigner }}
       </h2>
 
       <div class="shrink">
         <div class="flex flex-row flex-wrap items-center justify-center w-full mx-auto lg:flex-row gap-x-4 gap-y-2">
           <div class="duration-300 ease-out groovyOvalBtn">
-            <a class="email" :href="`mailto:` + `${store.copy.druEmail}`">{{ store.copy.druEmail }}</a>
+            <a class="email" :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
           </div>
           <div class="duration-300 ease-out groovyOvalBtn">
-            <a :href="`${store.copy.portfolio}`" target="_blank" class="resume">PDF Resume</a>
+            <a :href="`${copy.portfolio}`" target="_blank" class="resume">PDF Resume</a>
           </div>
         </div>
       </div>
@@ -37,12 +37,9 @@
 
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
-
-
-
 </script>
 
-<style lang='scss' scoped>
+<style scoped>
   .groovyCircle {
     @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] shadow-[8px_6px_0px_0px_hsl(0,_0%,_0%,_25%)] duration-1000 ease-out clip-path-polygon-[21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%];
     background-image: radial-gradient(

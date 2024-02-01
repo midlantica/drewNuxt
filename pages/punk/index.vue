@@ -60,11 +60,11 @@
     }
 
     @media (max-width: theme("screens.breakLg")) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      //
+      /* // */
     }
   }
 

@@ -19,11 +19,7 @@
 </template>
 
 <style scoped>
-  // @import '~/assets/css/_colors.scss';
-
   svg {
-    // width: 1036px;
-    // height: 192px;
 
   }
 </style>

@@ -27,5 +27,5 @@
 </script>
 
 <style scoped>
-@import "/src/template-bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css";
+  @import "./assets/css/fonts/bourbonFonts/bourbonFonts.css";
 </style>

@@ -5,20 +5,20 @@
     </div>
     <div class="flexbox">
       <div class="jobTitles">
-        <p>{{ store.copy.uiuxDesigner }}</p>
-        <p>{{ store.copy.vizDesigner }}</p>
+        <p>{{ copy.uiuxDesigner }}</p>
+        <p>{{ copy.vizDesigner }}</p>
       </div>
 
       <div class="resumeLinks">
-        <a class="resume rOne" :href="`${store.copy.portfolio}`" target="_BLANK">PDF
+        <a class="resume rOne" :href="`${copy.portfolio}`" target="_BLANK">PDF
           Resume</a>
       </div>
     </div>
 
     <div class="copyGrid">
       <div class="mainBody">
-        <h1>{{ store.copy.druHead }}</h1>
-        <p v-html="store.copy.druCopy" />
+        <h1>{{ copy.druHead }}</h1>
+        <p v-html="copy.druCopy" />
       </div>
     </div>
   </div>
@@ -30,7 +30,6 @@
   const copy = useCopy()
 
   import AuthenticStamp from '../../components/AuthenticStamp.vue'
-
 
 </script>
 
@@ -67,11 +66,11 @@
         @apply font-punkCopy text-base-black bg-white text-[0.9em] font-medium not-italic tracking-[.02em] -hue-rotate-[1.25deg] lowercase py-1 px-2;
 
         @media (max-width: theme("screens.breakSm")) {
-          //
+          /* // */
         }
 
         @media (max-width: theme("screens.breakXsm")) {
-          //
+          /* // */
         }
 
         &:nth-of-type(1) {
@@ -148,7 +147,7 @@
       @apply font-normal text-[1em] leading-9 relative inline italic font-punkCopy text-base-grey tracking-[.045em] top-0 bg-punk-peach mt-4 mx-4 mb-0 py-[.4rem] px-[.1rem];
 
       @media (min-width: theme("screens.breakLg")) {
-        //
+        /* // */
       }
     }
 

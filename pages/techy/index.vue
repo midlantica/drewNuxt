@@ -68,12 +68,12 @@
       @apply grid-cols-1 mt-0 mx-4 mb-2;
     }
 
-    // IPAD LANDSCAPE
+    /* // IPAD LANDSCAPE */
     @media (min-device-width: theme("screens.breakMd")) and (max-device-width: theme("screens.breakXlg")) and (orientation: landscape) {
       @apply grid-cols-1 mt-0 mx-6 mb-2;
     }
 
-    // IPAD PRO LANDSCAPE
+    /* // IPAD PRO LANDSCAPE */
     @media (min-width: theme("screens.breakXlg")) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
       @apply grid-cols-[7fr_6fr] mt-0 mx-6 mb-2;
     }
@@ -82,12 +82,12 @@
   .copyArea {
     @apply col-start-1 col-end-2 row-start-1 row-end-3;
 
-    // IPAD LANDSCAPE
+    /* // IPAD LANDSCAPE */
     @media (min-device-width: theme("screens.breakMd")) and (max-device-width: theme("screens.breakXlg")) and (orientation: landscape) {
       @apply col-start-1 col-end-2 row-start-1 row-end-3;
     }
 
-    // IPAD PRO LANDSCAPE
+    /* // IPAD PRO LANDSCAPE */
     @media (min-width: theme("screens.breakXlg")) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
       @apply col-start-1 col-end-2 row-start-1 row-end-3;
     }
@@ -108,12 +108,12 @@
   .slides {
     @apply col-start-2 col-end-3 row-start-1 row-end-2 z-10 -mt-20;
 
-    // IPAD LANDSCAPE
+    /* // IPAD LANDSCAPE */
     @media (min-device-width: theme("screens.breakMd")) and (max-device-width: theme("screens.breakXlg")) and (orientation: landscape) {
       @apply col-start-2 col-end-3 row-start-1 row-end-2 z-10 mt-[-5.5em];
     }
 
-    // IPAD PRO LANDSCAPE
+    /* // IPAD PRO LANDSCAPE */
     @media (min-width: theme("screens.breakXlg")) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
       @apply col-start-2 col-end-3 row-start-1 row-end-2 z-10 mt-[-5rem];
     }
@@ -134,12 +134,12 @@
   .about {
     @apply col-start-2 col-end-3 row-start-2 row-end-2;
 
-    // IPAD LANDSCAPE
+    /* // IPAD LANDSCAPE */
     @media (min-device-width: theme("screens.breakMd")) and (max-device-width: theme("screens.breakXlg")) and (orientation: landscape) {
       @apply col-start-1 col-end-3 row-start-2 row-end-2;
     }
 
-    // IPAD PRO LANDSCAPE
+    /* // IPAD PRO LANDSCAPE */
     @media (min-width: theme("screens.breakXlg")) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
       @apply col-start-2 col-end-3 row-start-2 row-end-2;
     }
@@ -160,12 +160,12 @@
   .skillsGrid {
     @apply col-span-full row-start-3 row-end-4;
 
-    // IPAD LANDSCAPE
+    /* // IPAD LANDSCAPE */
     @media (min-device-width: theme("screens.breakMd")) and (max-device-width: theme("screens.breakXlg")) and (orientation: landscape) {
       @apply col-span-full row-start-3 row-end-4;
     }
 
-    // IPAD PRO LANDSCAPE
+    /* // IPAD PRO LANDSCAPE */
     @media (min-width: theme("screens.breakXlg")) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
       @apply col-span-full row-start-3 row-end-4;
     }

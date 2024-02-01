@@ -28,7 +28,7 @@
     @apply bg-[linear-gradient(180deg,_#6cebe4_0%,_#6cebe4_25%,_#fece00_0,_#fece00_50%,_#e68f00_50%,_#e68f00_75%,_#e60008_0,_#e60008_100%)];
 
     @media (max-width: theme("screens.breakXlg")) {
-      //
+      /* // */
     }
 
   }

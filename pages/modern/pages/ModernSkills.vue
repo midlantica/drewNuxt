@@ -10,14 +10,14 @@
 </template>
 
 <script setup>
-  import Skills from '../../components/Skills.vue'
-  import Quotes from '../../components/Quote.vue'
+  // import Skills from '../../components/Skills.vue'
+  // import Quotes from '../../components/Quote.vue'
 </script>
 
-<style lang='scss' scoped>
-  // @import '../assets/css/modern-main.scss';
+<style scoped>
+  /* // @import '../assets/css/modern-main.scss'; */
 
-  // >>>>>>>>>>>>>>>>>>>>>>.....
+  /* // >>>>>>>>>>>>>>>>>>>>>>..... */
   .skillsGrid {
     @apply grid-cols-[repeat(6,_minmax(88px,_1fr))] col-start-1 col-end-2 row-start-2 row-end-4 justify-center justify-items-center w-[35vw];
 

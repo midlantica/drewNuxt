@@ -3,28 +3,28 @@
     <div class="w-full mastMain bg-techy-mango">
       <div class="mx-auto my-0 text-center masty">
         <div class="DHmast">
-          <router-link :to="{ name: 'ExtrasTechy' }" class="drewHeadPic jelloHorizontal" />
-          <router-link to="/Techy" class="svgArt mastDrew">
+          <nuxt-link :to="{ name: 'ExtrasTechy' }" class="drewHeadPic jelloHorizontal" />
+          <nuxt-link to="/Techy" class="svgArt mastDrew">
             <mastDrew />
-          </router-link>
-          <router-link :to="{ name: 'Techy' }" class="svgArt mastHarper">
+          </nuxt-link>
+          <nuxt-link :to="{ name: 'Techy' }" class="svgArt mastHarper">
             <mastHarper />
-          </router-link>
+          </nuxt-link>
         </div>
 
         <div class="block jobDesc">
-          <h2>{{ store.copy.uiuxDesigner }} + </h2>
-          <h2>{{ store.copy.vizDesigner }}</h2>
+          <h2>{{ copy.uiuxDesigner }} + </h2>
+          <h2>{{ copy.vizDesigner }}</h2>
         </div>
       </div>
 
       <div class="bar">
         <div class="contact">
           <p class="email">
-            <a :href="`mailto:` + `${store.copy.druEmail}`">{{ store.copy.druEmail }}</a>
+            <a :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
           </p>
           <p class="resume">
-            <a :href="`${store.copy.portfolio}`" target="_blank">PDF Resume</a>
+            <a :href="`${copy.portfolio}`" target="_blank">PDF Resume</a>
           </p>
         </div>
       </div>
@@ -41,15 +41,15 @@
 
 
 
-  // const resumeUrl = '/resume/drew_harper_resume_portfolio.pdf'
+  const resumeUrl = '/resume/drew_harper_resume_portfolio.pdf'
 </script>
 
-<style lang='scss' scoped>
+<style scoped>
   nav .mastMain {
-    //
+    /* // */
 
     .masty {
-      //
+      /* // */
 
       .DHmast {
         @apply grid grid-cols-[2fr_4fr_7fr] items-center my-0 mx-auto pt-4 gap-8;
@@ -59,15 +59,15 @@
         }
 
         @media (max-width: theme("screens.breakLg")) {
-          //
+          /* // */
         }
 
         @media (max-width: theme("screens.breakSm")) {
-          //
+          /* // */
         }
 
         @media (max-width: theme("screens.breakXsm")) {
-          //
+          /* // */
         }
 
         @media only screen and (max-device-width: 667px) and (-webkit-device-pixel-ratio: 2) {
@@ -122,11 +122,11 @@
           }
 
           @media (max-width: theme("screens.breakLg")) {
-            //
+            /* // */
           }
 
           @media (max-width: theme("screens.breakSm")) {
-            //
+            /* // */
           }
 
           @media (max-width: theme("screens.breakXsm")) {
@@ -142,7 +142,7 @@
           }
 
           @media (max-width: theme("screens.breakLg")) {
-            //
+            /* // */
           }
 
           @media (max-width: theme("screens.breakSm")) {
@@ -169,7 +169,7 @@
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      //
+      /* // */
     }
 
     h2 {

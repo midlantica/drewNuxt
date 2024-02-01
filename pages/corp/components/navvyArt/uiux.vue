@@ -19,11 +19,7 @@
 </template>
 
 <style scoped>
-  // @import '~/assets/css/_colors.scss';
-
   svg {
-    // width: 88px;
-    // @apply h-[60px];
 
   }
 </style>

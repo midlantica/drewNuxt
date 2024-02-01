@@ -159,11 +159,7 @@
 </template>
 
 <style scoped>
-  // @import '~/assets/css/_colors.scss';
-
   svg {
-    // width: 791px;
-    // height: 337px;
 
   }
 </style>

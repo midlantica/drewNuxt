@@ -1,10 +1,10 @@
 <template>
   <section>
     <h1 class="flex items-center w-full gap-2">
-      {{ store.copy.druHead }}
+      {{ copy.druHead }}
       <AuthenticStamp class="authenticStamp" />
     </h1>
-    <p v-html="store.copy.druCopy" />
+    <p v-html="copy.druCopy" />
   </section>
 </template>
 
@@ -47,7 +47,7 @@
     @apply font-techyHead text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-4 normal-case text-techy-blueTech;
 
     @media (min-width: theme("screens.breakXlg")) {
-      // @apply max-w-[26ch];
+      /* // @apply max-w-[26ch]; */
     }
 
     @media (max-width: theme("screens.breakXlg")) {
@@ -59,7 +59,7 @@
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      // max-width: 26ch;
+      /* // max-width: 26ch; */
     }
 
     @media (max-width: theme("screens.breakXsm")) {
@@ -71,7 +71,7 @@
     @apply font-techyCopy text-[1.25rem] leading-[3rem] tracking-[.06em] text-techy-blueTech;
 
     @media (min-width: theme("screens.breakXlg")) and (-webkit-min-device-pixel-ratio: 2) {
-      //
+      /* // */
     }
 
     @media (max-width: theme("screens.breakXlg")) {
@@ -99,7 +99,7 @@
     }
 
     @media only screen and (min-device-width : 375px) and (max-device-width : 667px) {
-      //
+      /* // */
     }
 
   }

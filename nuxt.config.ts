@@ -52,5 +52,6 @@ export default defineNuxtConfig({
   },
   build: {
     quiet: false,
+    appManifest: false,
   },
 })
