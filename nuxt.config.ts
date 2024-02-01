@@ -20,9 +20,10 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { redirect: '/bourbon' },
+    '/': { redirect: '/bourbon/' },
   },
   app: {
+    baseURL: '/',
     head: {
       "meta": [
         {
@@ -44,7 +45,10 @@ export default defineNuxtConfig({
         // <noscript>JavaScript is required</noscript>
         { children: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>` }
       ]
-    }
+    },
+  },
+  experimental: {
+    viewTransition: true
   },
   build: {
     quiet: false,

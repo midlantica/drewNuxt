@@ -1,6 +1,12 @@
 <script setup>
-  const appConfig = useAppConfig()
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
 
+  useHead({
+    bodyAttrs: {
+      class: `modern`
+    }
+  })
 </script>
 
 <template>
