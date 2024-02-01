@@ -274,7 +274,6 @@
 
   body.bourbon .skillsGrid {
 
-
     @media (min-width: 1026px) {
       @apply grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] mt-[-1.3rem];
     }
@@ -294,11 +293,9 @@
     svg {
       @apply w-[88px] drop-shadow-tightBlackLt;
     }
-
   }
 
   body.techy .skillsGrid {
-
 
     @media (min-width: 1026px) {
       @apply grid-cols-[repeat(12,_minmax(84px,_1fr))];
@@ -319,7 +316,6 @@
     svg {
       @apply w-[88px] drop-shadow-tightBlackLt;
     }
-
   }
 
   body.groovy .skillsGrid {
@@ -353,7 +349,6 @@
 
   body.corp .skillsGrid {
 
-
     @media (min-width: 1026px) {
       @apply grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] mt-[-2.8rem];
     }
@@ -378,7 +373,6 @@
         @apply animate-[shimmy_.25s];
       }
     }
-
   }
 
   body.punk .skillsGrid {
@@ -403,7 +397,6 @@
     svg {
       @apply w-[88px] drop-shadow-tightBlackMd;
     }
-
   }
 
   .modern #modal .content:has(h4, p) {

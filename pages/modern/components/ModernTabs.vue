@@ -1,20 +1,20 @@
 <template>
   <div class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
-    <nuxt-link :to="{ name: 'ModernProjects' }" class="btn projectsTab">
+    <NuxtLink to="/ModernProjects" class="btn projectsTab">
       Projects
-    </nuxt-link>
-    <nuxt-link :to="{ name: 'ModernSkills' }" class="btn skillsTab">
+    </NuxtLink>
+    <NuxtLink to="/ModernSkills" class="btn skillsTab">
       Skills
-    </nuxt-link>
-    <nuxt-link :to="{ name: 'ModernAbout' }" class="btn aboutTab">
+    </NuxtLink>
+    <NuxtLink to="/ModernAbout" class="btn aboutTab">
       About
-    </nuxt-link>
+    </NuxtLink>
   </div>
 </template>
 
-<!-- <nuxt-link :to="{ name: 'Bourbon' }" -->
+<script setup>
 
-<script setup></script>
+</script>
 
 <style scoped>
 

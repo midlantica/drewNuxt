@@ -31,11 +31,11 @@
     @apply mt-4 mr-9 mb-0 ml-9;
 
     @media (max-width: theme("screens.breakXlg")) {
-      /* // */
+
     }
 
     @media (max-width: theme("screens.breakLg")) {
-      /* // */
+
     }
 
     @media (max-width: theme("screens.breakSm")) {
@@ -43,7 +43,7 @@
     }
 
     @media (max-width: theme("screens.breakXsm")) {
-      /* // */
+
     }
   }
 
@@ -51,7 +51,7 @@
     @apply font-groovyHead text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-redDk normal-case;
 
     @media (min-width: theme("screens.breakXlg")) {
-      /* // @apply max-w-[26ch]; */
+
     }
 
     @media (max-width: theme("screens.breakXlg")) {
@@ -90,7 +90,7 @@
     }
 
     @media (max-width: theme("screens.breakSm")) {
-      /* // */
+
     }
 
   }

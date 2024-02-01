@@ -24,7 +24,7 @@
     },
     asRouterLink: {
       type: String,
-      default: 'nuxt-link',
+      default: 'NuxtLink',
       required: true
     },
     intent: {

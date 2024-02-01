@@ -13,6 +13,15 @@
 </template>
 
 <script setup>
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
+
+  useHead({
+    bodyAttrs: {
+      class: `techy`
+    }
+  })
+
   import Navvy from './components/Navvy'
   // import ExtrasC from '../../components/ExtrasC'
 </script>

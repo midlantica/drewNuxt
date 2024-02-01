@@ -1,23 +1,23 @@
 <template>
   <div class="tabs">
-    <nuxt-link to="/modern" class="modern">
+    <NuxtLink to="/modern" class="modern">
       modern
-    </nuxt-link>
-    <nuxt-link to="/bourbon" class="bourbon">
+    </NuxtLink>
+    <NuxtLink to="/bourbon" class="bourbon">
       bourbon
-    </nuxt-link>
-    <nuxt-link to="/groovy" class="groovy">
+    </NuxtLink>
+    <NuxtLink to="/groovy" class="groovy">
       groovy
-    </nuxt-link>
-    <nuxt-link to="/techy" class="techy">
+    </NuxtLink>
+    <NuxtLink to="/techy" class="techy">
       techy
-    </nuxt-link>
-    <nuxt-link to="/corp" class="corp">
+    </NuxtLink>
+    <NuxtLink to="/corp" class="corp">
       corp
-    </nuxt-link>
-    <nuxt-link to="/punk" class="punk">
+    </NuxtLink>
+    <NuxtLink to="/punk" class="punk">
       punk
-    </nuxt-link>
+    </NuxtLink>
   </div>
 </template>
 

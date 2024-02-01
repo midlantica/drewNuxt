@@ -3,13 +3,13 @@
     <div class="w-full mastMain bg-techy-mango">
       <div class="mx-auto my-0 text-center masty">
         <div class="DHmast">
-          <nuxt-link :to="{ name: 'ExtrasTechy' }" class="drewHeadPic jelloHorizontal" />
-          <nuxt-link to="/Techy" class="svgArt mastDrew">
+          <NuxtLink to="/ExtrasTechy" class="drewHeadPic jelloHorizontal" />
+          <NuxtLink to="/techy" class="svgArt mastDrew">
             <mastDrew />
-          </nuxt-link>
-          <nuxt-link :to="{ name: 'Techy' }" class="svgArt mastHarper">
+          </NuxtLink>
+          <NuxtLink to="/techy" class="svgArt mastHarper">
             <mastHarper />
-          </nuxt-link>
+          </NuxtLink>
         </div>
 
         <div class="block jobDesc">
@@ -38,8 +38,6 @@
 
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
-
-
 
   const resumeUrl = '/resume/drew_harper_resume_portfolio.pdf'
 </script>

@@ -25,11 +25,10 @@
 </template>
 
 <script setup>
-  // import { defineComponent } from 'vue'
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  import AuthenticStamp from '../../components/AuthenticStamp.vue'
+  // import AuthenticStamp from '../../components/AuthenticStamp.vue'
 
 </script>
 

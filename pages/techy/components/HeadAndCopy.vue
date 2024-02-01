@@ -12,13 +12,10 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  import AuthenticStamp from '../../components/AuthenticStamp.vue'
-
-
+  // import AuthenticStamp from '../../components/AuthenticStamp.vue'
 </script>
 
 <style scoped>
-
   .authenticStamp {
     @apply fill-techy-blueTech w-[120px] max-w-[90px] min-w-[90px];
   }

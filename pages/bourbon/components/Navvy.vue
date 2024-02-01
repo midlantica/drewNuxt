@@ -1,9 +1,9 @@
 <template>
   <nav class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
     <h1>
-      <nuxt-link class="no-underline text-base-ivory hover:text-[orange]" to="/bourbon">
+      <NuxtLink class="no-underline text-base-ivory hover:text-[orange]" to="/bourbon">
         DREW HARPER
-      </nuxt-link>
+      </NuxtLink>
     </h1>
     <section class="jobDesc">
       <h2>{{ copy.uiuxDesigner }}</h2>

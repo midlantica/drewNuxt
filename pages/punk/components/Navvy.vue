@@ -8,15 +8,15 @@
     </p>
 
     <div class="mastMain">
-      <nuxt-link :to="{ name: 'Punk' }">
+      <NuxtLink to="/punk">
         <mastDrew class="svgArt mastDrew" />
-      </nuxt-link>
-      <nuxt-link :to="{ name: 'Punk' }">
+      </NuxtLink>
+      <NuxtLink to="/punk">
         <mastHarper class="svgArt mastHarper" />
-      </nuxt-link>
-      <nuxt-link :to="{ name: 'ExtrasPunk' }" class="DrewHead jelloHorizontal">
+      </NuxtLink>
+      <NuxtLink to="/ExtrasPunk" class="DrewHead jelloHorizontal">
         &nbsp;
-      </nuxt-link>
+      </NuxtLink>
     </div>
   </nav>
 </template>

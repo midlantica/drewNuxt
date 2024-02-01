@@ -1,5 +1,5 @@
 <script setup>
- import { useCopy } from "~/store/copy";
+  import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
   useHead({

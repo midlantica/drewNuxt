@@ -2,8 +2,8 @@
   <nav class="flex flex-row flex-wrap items-center pt-[2em] px-[2em] pb-0 justify-center mb-4">
     <section class="flex flex-row flex-wrap w-full max-[830px]:content-center justify-center gap-x-4">
       <div class="flex flex-wrap content-center text-center max-[830px]:m-auto gap-2 grow">
-        <nuxt-link :to="{ name: 'Corp' }" class="flex flex-row flex-wrap content-center justify-center w-full gap-6 breakXsm:w-full">
-          <nuxt-link :to="{ name: 'ExtrasCorp' }" class="content-center m-0 bg-[url('/img/drew_mug_red.png')] inline-block w-[80px] h-[80px] bg-[length:151%] bg-[-39px_-59px] bg-no-repeat bg-corp-accentRed rounded-[1px] shadow-[0px_0px_1px_1px_#00000026] hue-rotate-[210deg] grayscale-[50%] jelloHorizontal" />
+        <NuxtLink to="/corp" class="flex flex-row flex-wrap content-center justify-center w-full gap-6 breakXsm:w-full">
+          <NuxtLink to="/ExtrasCorp" class="content-center m-0 bg-[url('/img/drew_mug_red.png')] inline-block w-[80px] h-[80px] bg-[length:151%] bg-[-39px_-59px] bg-no-repeat bg-corp-accentRed rounded-[1px] shadow-[0px_0px_1px_1px_#00000026] hue-rotate-[210deg] grayscale-[50%] jelloHorizontal" />
           <div class="flex flex-col flex-wrap">
             <drewHarper class="mt-2 breakMd:h-[83px] breakSm:h-auto" />
             <div class="flex flex-row flex-wrap justify-center ">
@@ -15,7 +15,7 @@
               </h3>
             </div>
           </div>
-        </nuxt-link>
+        </NuxtLink>
       </div>
       <section class="contact">
         <p class="leading-normal font-corpCopy text-[1.3em] tracking-[.01em] items-center text-center grow font-semibold lowercase">

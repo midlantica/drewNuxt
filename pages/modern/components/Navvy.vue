@@ -1,9 +1,9 @@
 <template>
   <nav class="flex flex-col items-center justify-center p-0 mt-14 flex-nowrap gap-y-4">
     <h1 class="flex items-center w-full justify-center gap-2 font-modernSubhead breakXsm:text-[2.25rem] breakSm:text-[2.75rem] breakLg:text-[3.25rem] text-[2.25rem] font-light tracking-[-0.05em] leading-10 transition ease-in duration-200 text-center antialiased grow drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] text-modern-accentRed hover:text-modern-accent lowercase">
-      <nuxt-link class="text-modern-accentRed" :to="{ name: 'ModernProjects' }">
+      <NuxtLink class="text-modern-accentRed" to="/modern">
         drew harper
-      </nuxt-link>
+      </NuxtLink>
       <AuthenticStamp class="authenticStamp" />
     </h1>
 
@@ -27,8 +27,7 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  import AuthenticStamp from '../../components/AuthenticStamp.vue'
-
+  // import AuthenticStamp from '../../components/AuthenticStamp.vue'
 
 </script>
 
