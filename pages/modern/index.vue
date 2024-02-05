@@ -34,18 +34,15 @@
   let currentView = shallowRef(ModernProjects);
 
   const switchView = (view) => {
-    switch (view) {
-      case 'ModernSkills':
-        currentView.value = ModernSkills
-        break
-      case 'ModernAbout':
-        currentView.value = ModernAbout
-        break
-      default:
-        currentView.value = ModernProjects
+    if (view === 'ModernSkills') {
+      currentView.value = ModernSkills
+    } else if (view === 'ModernProjects') {
+      currentView.value = ModernProjects
+    } else if (view === 'ModernAbout') {
+      currentView.value = ModernAbout
     }
-    console.log(`Receive this ${view} man!`)
-  }
+    // console.log(`Receive this ${view} man!`)
+  };
 
 </script>
 
