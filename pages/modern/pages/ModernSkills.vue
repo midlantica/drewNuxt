@@ -4,14 +4,13 @@
       <Skills />
     </transition>
     <transition name="bounce4" appear>
-      <Quotes />
+      <Quote />
     </transition>
   </div>
 </template>
 
 <script setup>
-  // import Skills from '../../components/Skills.vue'
-  // import Quotes from '../../components/Quote.vue'
+
 </script>
 
 <style scoped>

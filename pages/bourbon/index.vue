@@ -1,45 +1,47 @@
 <template>
-  <transition name="fade" appear>
-    <div class="relative">
-      <transition name="topDown" appear>
-        <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
-          <Navvy />
-        </header>
-      </transition>
+  <div>
+    <transition name="fade" appear>
+      <div class="relative">
+        <transition name="topDown" appear>
+          <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+            <BourbonNavvy />
+          </header>
+        </transition>
 
-      <transition name="bounce2" appear>
-        <main class="mainGrid">
-          <transition name="bounce3" appear>
-            <div class="copyArea">
-              <HeadAndCopy />
-            </div>
-          </transition>
-
-          <transition name="bounce6" appear>
-            <Skills />
-          </transition>
-
-          <div class="slides">
-            <transition name="bounce4" appear>
-              <Carousel />
+        <transition name="bounce2" appear>
+          <main class="mainGrid">
+            <transition name="bounce3" appear>
+              <div class="copyArea">
+                <BourbonHeadAndCopy />
+              </div>
             </transition>
-          </div>
 
-          <transition name="bounce7" appear>
-            <About />
-          </transition>
+            <transition name="bounce6" appear>
+              <Skills />
+            </transition>
 
-          <transition name="bounce8" appear>
-            <Quote />
-          </transition>
-        </main>
-      </transition>
+            <div class="slides">
+              <transition name="bounce4" appear>
+                <Carousel />
+              </transition>
+            </div>
 
-      <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
-        <nav class="h-3" />
-      </footer>
-    </div>
-  </transition>
+            <transition name="bounce7" appear>
+              <About />
+            </transition>
+
+            <transition name="bounce8" appear>
+              <Quote />
+            </transition>
+          </main>
+        </transition>
+
+        <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+          <nav class="h-3" />
+        </footer>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <script setup>
@@ -52,12 +54,6 @@
     }
   })
 
-  import Navvy from './components/Navvy.vue'
-  import HeadAndCopy from './components/HeadAndCopy.vue'
-  // import About from '../../components/About.vue'
-  // import Skills from '../../components/Skills.vue'
-  // import Quotes from '../../components/Quote.vue'
-  // import Carousel from '../../components/Carousel/Carousel.vue'
 </script>
 
 <style scoped>

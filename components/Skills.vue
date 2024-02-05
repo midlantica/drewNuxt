@@ -9,7 +9,7 @@
       />
     </div>
 
-    <Teleport to="#modal">
+    <Teleport to="body">
       <transition name="modal-fade">
         <div class="modalBg" v-if="isModalOpen">
           <div class="modal" ref="modal">

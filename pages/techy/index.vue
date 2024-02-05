@@ -1,6 +1,6 @@
 <script setup>
-  import { useCopy } from "~/store/copy";
-  const copy = useCopy()
+  // import { useCopy } from "~/store/copy";
+  // const copy = useCopy()
 
   useHead({
     bodyAttrs: {
@@ -8,52 +8,48 @@
     }
   })
 
-  import Navvy from './components/Navvy'
-  import HeadAndCopy from './components/HeadAndCopy'
-  // import Skills from '../../components/Skills'
-  // import About from '../../components/About'
-  // import Quote from '../../components/Quote.vue'
-  // import Carousel from '../../components/Carousel/Carousel'
 </script>
 
 <template>
-  <transition name="fade" appear>
-    <div>
-      <transition name="topDown" appear>
-        <header class="shadow-none text-base-ivory bg-techy-mango">
-          <Navvy />
-        </header>
-      </transition>
+  <div>
+    <transition name="fade" appear>
+      <div>
+        <transition name="topDown" appear>
+          <header class="shadow-none text-base-ivory bg-techy-mango">
+            <TechyNavvy />
+          </header>
+        </transition>
 
-      <transition name="bounce2" appear>
-        <main class="mainGrid">
-          <transition name="bounce3" appear>
-            <div class="copyArea">
-              <HeadAndCopy />
-            </div>
-          </transition>
+        <transition name="bounce2" appear>
+          <main class="mainGrid">
+            <transition name="bounce3" appear>
+              <div class="copyArea">
+                <TechyHeadAndCopy />
+              </div>
+            </transition>
 
-          <transition name="bounce4" appear>
-            <div class="slides">
-              <Carousel />
-            </div>
-          </transition>
+            <transition name="bounce4" appear>
+              <div class="slides">
+                <Carousel />
+              </div>
+            </transition>
 
-          <transition name="bounce8" appear>
-            <About />
-          </transition>
+            <transition name="bounce8" appear>
+              <About />
+            </transition>
 
-          <transition name="bounce10" appear>
-            <Skills />
-          </transition>
-        </main>
-      </transition>
+            <transition name="bounce10" appear>
+              <Skills />
+            </transition>
+          </main>
+        </transition>
 
-      <footer class="shadow-none text-base-ivory bg-techy-mango">
-        <Quote />
-      </footer>
-    </div>
-  </transition>
+        <footer class="shadow-none text-base-ivory bg-techy-mango">
+          <Quote />
+        </footer>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <style scoped>

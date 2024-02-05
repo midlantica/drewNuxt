@@ -1,7 +1,7 @@
 <template>
   <div class="w-full pl-5 pr-2 mt-2 breakSm:px-2 breakLg:px-4">
     <div class="flex items-center justify-start gap-2 justify-items-start auto-rows-auto">
-      <NuxtLink to="/bourbon" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center jelloHorizontal" />
+      <NuxtLink to="/bourbon/ExtrasBourbon" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center jelloHorizontal" />
       <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />
     </div>

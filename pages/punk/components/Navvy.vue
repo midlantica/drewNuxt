@@ -14,7 +14,7 @@
       <NuxtLink to="/punk">
         <mastHarper class="svgArt mastHarper" />
       </NuxtLink>
-      <NuxtLink to="/ExtrasPunk" class="DrewHead jelloHorizontal">
+      <NuxtLink to="/punk/ExtrasPunk" class="DrewHead jelloHorizontal">
         &nbsp;
       </NuxtLink>
     </div>

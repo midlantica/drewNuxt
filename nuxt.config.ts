@@ -1,5 +1,9 @@
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
+  // rootDir: __dirname,
+  // srcDir: "client",
+  // serverDir: "server",
+  devServer: {},
   devtools: {
     enabled: true,
     timeline: {
@@ -20,8 +24,21 @@ export default defineNuxtConfig({
     },
   },
   routeRules: {
-    '/': { redirect: '/bourbon/' },
+    '/': {
+      redirect: '/bourbon/',
+      prerender: true,
+    },
   },
+  components: [
+    { path: '~/pages/bourbon/components', prefix: 'Bourbon' },
+    { path: '~/pages/corp/components', prefix: 'Corp' },
+    { path: '~/pages/groovy/components', prefix: 'Groovy' },
+    { path: '~/pages/modern/components', prefix: 'Modern' },
+    { path: '~/pages/punk/components', prefix: 'Punk' },
+    { path: '~/pages/techy/components', prefix: 'Techy' },
+
+    '~/components' // this must be last line
+  ],
   app: {
     baseURL: '/',
     head: {
@@ -54,4 +71,5 @@ export default defineNuxtConfig({
     quiet: false,
     appManifest: false,
   },
+  appManifest: false,
 })

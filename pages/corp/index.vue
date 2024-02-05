@@ -8,52 +8,48 @@
     }
   })
 
-  import Navvy from './components/Navvy'
-  import HeadAndCopy from './components/HeadAndCopy'
-  import Skills from '../../components/Skills'
-  import About from '../../components/About'
-  import Quotes from '../../components/Quote'
-  import Carousel from '../../components/Carousel/Carousel'
 </script>
 
 <template>
-  <transition name="fade" appear>
-    <div>
-      <transition name="topDown" appear>
-        <header class="shadow-none">
-          <Navvy />
-        </header>
-      </transition>
+  <div>
+    <transition name="fade" appear>
+      <div>
+        <transition name="topDown" appear>
+          <header class="shadow-none">
+            <CorpNavvy />
+          </header>
+        </transition>
 
-      <transition name="bounce2" appear>
-        <main class="mainGrid">
-          <transition name="bounce3" appear>
-            <div class="copyArea">
-              <HeadAndCopy />
-            </div>
-          </transition>
+        <transition name="bounce2" appear>
+          <main class="mainGrid">
+            <transition name="bounce3" appear>
+              <div class="copyArea">
+                <CorpHeadAndCopy />
+              </div>
+            </transition>
 
-          <transition name="bounce4" appear>
-            <div class="slides">
-              <Carousel />
-            </div>
-          </transition>
+            <transition name="bounce4" appear>
+              <div class="slides">
+                <Carousel />
+              </div>
+            </transition>
 
-          <transition name="bounce9" appear>
-            <About />
-          </transition>
+            <transition name="bounce9" appear>
+              <About />
+            </transition>
 
-          <transition name="bounce7" appear>
-            <Skills />
-          </transition>
-        </main>
-      </transition>
+            <transition name="bounce7" appear>
+              <Skills />
+            </transition>
+          </main>
+        </transition>
 
-      <footer class="shadow-none">
-        <Quotes />
-      </footer>
-    </div>
-  </transition>
+        <footer class="shadow-none">
+          <Quote />
+        </footer>
+      </div>
+    </transition>
+  </div>
 </template>
 
 <style scoped>

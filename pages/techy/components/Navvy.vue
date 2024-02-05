@@ -3,7 +3,7 @@
     <div class="w-full mastMain bg-techy-mango">
       <div class="mx-auto my-0 text-center masty">
         <div class="DHmast">
-          <NuxtLink to="/ExtrasTechy" class="drewHeadPic jelloHorizontal" />
+          <NuxtLink to="/techy/ExtrasTechy" class="drewHeadPic jelloHorizontal" />
           <NuxtLink to="/techy" class="svgArt mastDrew">
             <mastDrew />
           </NuxtLink>

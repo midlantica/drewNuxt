@@ -13,9 +13,6 @@
 <script setup>
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
-
-  import AuthenticStamp from '../../components/AuthenticStamp.vue'
-
 </script>
 
 <style scoped>

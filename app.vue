@@ -5,8 +5,8 @@
 <template>
   <NuxtLayout>
     <NuxtPage />
+    <teleport to="body" />
   </NuxtLayout>
-  <!-- <teleport to="#modal" /> -->
 </template>
 
 <style>

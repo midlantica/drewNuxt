@@ -1,6 +1,6 @@
 <template>
   <header>
-    <Navvy />
+    <BourbonNavvy />
   </header>
 
   <transition name="bounce2" appear>
@@ -13,10 +13,9 @@
 </template>
 
 <script setup>
-  import Navvy from './components/Navvy'
-  // import ExtrasC from '../../components/ExtrasC'
+
 </script>
 
 <style scoped>
-@import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap');
+  @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap');
 </style>

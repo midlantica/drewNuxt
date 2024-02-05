@@ -1,29 +1,22 @@
 <template>
-  <div class="tabs">
-    <NuxtLink to="/modern" class="modern">
-      modern
-    </NuxtLink>
-    <NuxtLink to="/bourbon" class="bourbon">
-      bourbon
-    </NuxtLink>
-    <NuxtLink to="/groovy" class="groovy">
-      groovy
-    </NuxtLink>
-    <NuxtLink to="/techy" class="techy">
-      techy
-    </NuxtLink>
-    <NuxtLink to="/corp" class="corp">
-      corp
-    </NuxtLink>
-    <NuxtLink to="/punk" class="punk">
-      punk
+  <div class="tabs"
+    v-for="(tab, index) in tabs" :key="index">
+    <NuxtLink :to="`/${tab}`" class="tab">
+      {{ tab }}
     </NuxtLink>
   </div>
 </template>
 
+<script setup>
+  import { ref } from "vue"
+
+  const tabs = ref([ 'modern', 'bourbon', 'groovy', 'techy', 'corp', 'punk' ])
+
+</script>
+
 <style scoped>
   .tabs {
-    @apply font-['Barlow_Semi_Condensed'] flex flex-row flex-nowrap justify-between items-start content-center text-center text-[0.85em] relative top-0 left-0 z-10 w-[100.1%] tracking-normal overflow-x-hidden bg-[#333];
+    @apply font-['Barlow_Semi_Condensed'] flex !flex-row flex-nowrap justify-between items-start content-center text-center text-[0.85em] relative top-0 left-0 z-10 w-[100.1%] tracking-normal overflow-x-hidden bg-[#333];
 
     a {
       @apply grow text-[#fffdf4bf] py-2 px-0 border-r border-[#fffdf440] no-underline uppercase tracking-[0.1em] text-[0.8em];
