@@ -1,6 +1,6 @@
 <template>
   <transition name="bounce3" appear>
-    <HeadAndCopy />
+    <ModernHeadAndCopy />
   </transition>
 
   <transition name="bounce2" appear>
@@ -9,8 +9,7 @@
 </template>
 
 <script setup>
-  import HeadAndCopy from '../components/HeadAndCopy.vue'
-  import ExtrasC from '../../components/ExtrasC.vue'
+
 </script>
 
 <style scoped>

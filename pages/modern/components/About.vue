@@ -1,7 +1,7 @@
 <template>
   <div class="aboutGrid">
     <transition name="bounce3" appear>
-      <HeadAndCopy />
+      <ModernHeadAndCopy />
     </transition>
     <transition name="bounce4" appear>
       <About />
@@ -10,8 +10,7 @@
 </template>
 
 <script setup>
-  import HeadAndCopy from '../components/HeadAndCopy.vue'
-  import About from '../../components/About.vue'
+
 </script>
 
 <style scoped>

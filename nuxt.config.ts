@@ -56,10 +56,9 @@ export default defineNuxtConfig({
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;600;900&display=swap' },
         { rel: 'stylesheet', href: 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap' },
       ],
-      "style": [],
-      "script": [],
+      // "style": [],
+      // "script": [],
       "noscript": [
-        // <noscript>JavaScript is required</noscript>
         { children: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>` }
       ]
     },

@@ -2,7 +2,6 @@
   <div class="wrapper">
     <Tabs />
     <slot />
-    <!-- <AppFooter /> -->
   </div>
 </template>
 

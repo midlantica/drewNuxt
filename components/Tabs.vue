@@ -1,7 +1,6 @@
 <template>
-  <div class="tabs"
-    v-for="(tab, index) in tabs" :key="index">
-    <NuxtLink :to="`/${tab}`" class="tab">
+  <div class="tabs">
+    <NuxtLink v-for="(tab, index) in tabs" :key="index" :to="`/${tab}`" class="tab">
       {{ tab }}
     </NuxtLink>
   </div>

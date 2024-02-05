@@ -5,7 +5,6 @@
 <template>
   <NuxtLayout>
     <NuxtPage />
-    <teleport to="body" />
   </NuxtLayout>
 </template>
 
