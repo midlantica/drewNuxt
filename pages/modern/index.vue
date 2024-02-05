@@ -8,7 +8,7 @@
     </transition>
 
     <transition name="bounce2" appear>
-      <ModernSubTabs />
+      <ModernSubTabs @switch-view="switchView"  />
     </transition>
 
     <main class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
@@ -19,13 +19,11 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue';
-  // import ModernProjects from './components/Projects.vue';
-  // import ModernSkills from './components/Skills.vue';
-  // import ModernAbout from './components/About.vue';
+  import { ref, shallowRef  } from 'vue';
+  import { ModernProjects, ModernSkills, ModernAbout } from '#components'
 
-  import { useCopy } from "~/store/copy";
-  const copy = useCopy()
+  // import { useCopy } from "~/store/copy";
+  // const copy = useCopy()
 
   useHead({
     bodyAttrs: {
@@ -33,11 +31,22 @@
     }
   })
 
-  const currentView = ref('ModernProjects.value'); // Set the default view
+  let currentView = shallowRef(ModernProjects);
 
   const switchView = (view) => {
-    currentView.value = ModernProjects;
-  };
+    switch (view) {
+      case 'ModernSkills':
+        currentView.value = ModernSkills
+        break
+      case 'ModernAbout':
+        currentView.value = ModernAbout
+        break
+      default:
+        currentView.value = ModernProjects
+    }
+    console.log(`Receive this ${view} man!`)
+  }
+
 </script>
 
 <style scoped>

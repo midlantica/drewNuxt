@@ -1,12 +1,12 @@
 <template>
   <div class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
-    <div @click="emitSwitchView('ModernProjects')" to="/modern/parent/ModernProjects" class="btn projectsTab">
+    <div @click="emitSwitchView('ModernProjects')" class="btn projectsTab">
       Projects
     </div>
-    <div @click="emitSwitchView('ModernSkills')" to="/modern/parent/ModernSkills" class="btn skillsTab">
+    <div @click="emitSwitchView('ModernSkills')" class="btn skillsTab">
       Skills
     </div>
-    <div @click="emitSwitchView('ModernAbout')" to="/modern/parent/ModernAbout" class="btn aboutTab">
+    <div @click="emitSwitchView('ModernAbout')" class="btn aboutTab">
       About
     </div>
   </div>
@@ -16,7 +16,9 @@
   const props = defineProps();
   const emits = defineEmits();
 
-  const emitSwitchView = (view) => {
+
+  let emitSwitchView = (view) => {
+    console.log(`Emit this ${view} man!`)
     emits('switch-view', view);
   };
 </script>
