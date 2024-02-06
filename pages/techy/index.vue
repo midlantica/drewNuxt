@@ -11,7 +11,7 @@
 </script>
 
 <template>
-  <div>
+
     <transition name="fade" appear>
       <div>
         <transition name="topDown" appear>
@@ -49,7 +49,7 @@
         </footer>
       </div>
     </transition>
-  </div>
+
 </template>
 
 <style scoped>

@@ -1,5 +1,5 @@
 <template>
-  <div>
+
     <transition name="fade" appear>
       <div class="relative">
         <transition name="topDown" appear>
@@ -41,7 +41,7 @@
         </footer>
       </div>
     </transition>
-  </div>
+
 </template>
 
 <script setup>

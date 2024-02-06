@@ -11,45 +11,43 @@
 </script>
 
 <template>
-  <div>
-    <transition name="fade" appear>
-      <div>
-        <transition name="topDown" appear>
-          <header class="shadow-none">
-            <CorpNavvy />
-          </header>
-        </transition>
+  <transition name="fade" appear>
+    <div>
+      <transition name="topDown" appear>
+        <header class="shadow-none">
+          <CorpNavvy />
+        </header>
+      </transition>
 
-        <transition name="bounce2" appear>
-          <main class="mainGrid">
-            <transition name="bounce3" appear>
-              <div class="copyArea">
-                <CorpHeadAndCopy />
-              </div>
-            </transition>
+      <transition name="bounce2" appear>
+        <main class="mainGrid">
+          <transition name="bounce3" appear>
+            <div class="copyArea">
+              <CorpHeadAndCopy />
+            </div>
+          </transition>
 
-            <transition name="bounce4" appear>
-              <div class="slides">
-                <Carousel />
-              </div>
-            </transition>
+          <transition name="bounce4" appear>
+            <div class="slides">
+              <Carousel />
+            </div>
+          </transition>
 
-            <transition name="bounce9" appear>
-              <About />
-            </transition>
+          <transition name="bounce9" appear>
+            <About />
+          </transition>
 
-            <transition name="bounce7" appear>
-              <Skills />
-            </transition>
-          </main>
-        </transition>
+          <transition name="bounce7" appear>
+            <Skills />
+          </transition>
+        </main>
+      </transition>
 
-        <footer class="shadow-none">
-          <Quote />
-        </footer>
-      </div>
-    </transition>
-  </div>
+      <footer class="shadow-none">
+        <Quote />
+      </footer>
+    </div>
+  </transition>
 </template>
 
 <style scoped>

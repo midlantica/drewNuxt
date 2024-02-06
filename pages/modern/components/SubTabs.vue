@@ -18,7 +18,7 @@
 
 
   let emitSwitchView = (view) => {
-    console.log(`Emit this ${view} man!`)
+    // console.log(`Emit this ${view} man!`)
     emits('switch-view', view);
   };
 </script>

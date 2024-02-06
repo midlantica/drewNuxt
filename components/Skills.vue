@@ -9,30 +9,32 @@
       />
     </div>
 
-    <Teleport to="body">
-      <transition name="modal-fade">
-        <div class="modalBg" v-if="isModalOpen">
-          <div class="modal" ref="modal">
-            <div class="closeBtn" @click="closeModal">
-              <xOut />
-            </div>
-            <div class="modalInner">
-              <div class="icon">
-                <component
-                  :is="modelItem[0]"
-                  class="icon {{modelItem[1]}} { active: hover }"
-                  @mouseleave="hover = false"
-                />
+    <ClientOnly>
+      <Teleport to="#modal">
+        <transition name="modal-fade">
+          <div class="modalBg" v-if="isModalOpen">
+            <div class="modal" ref="modal">
+              <div class="closeBtn" @click="closeModal">
+                <xOut />
               </div>
-              <div class="content">
-                <h4>{{ modelItem[2] }}</h4>
-                <p>{{ modelItem[3] }}</p>
+              <div class="modalInner">
+                <div class="icon">
+                  <component
+                    :is="modelItem[0]"
+                    class="icon {{modelItem[1]}} { active: hover }"
+                    @mouseleave="hover = false"
+                  />
+                </div>
+                <div class="content">
+                  <h4>{{ modelItem[2] }}</h4>
+                  <p>{{ modelItem[3] }}</p>
+                </div>
               </div>
             </div>
           </div>
-        </div>
-      </transition>
-    </Teleport>
+        </transition>
+      </Teleport>
+    </ClientOnly>
   </div>
 </template>
 

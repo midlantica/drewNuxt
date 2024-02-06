@@ -1,21 +1,21 @@
 <template>
-  <!-- <transition name="fade" appear> -->
-  <div class="flex flex-col items-center">
-    <transition name="topDown" appear>
-      <header class="w-full">
-        <ModernNavvy />
-      </header>
-    </transition>
+  <transition name="fade" appear>
+    <div class="flex flex-col items-center">
+      <transition name="topDown" appear>
+        <header class="w-full">
+          <ModernNavvy />
+        </header>
+      </transition>
 
-    <transition name="bounce2" appear>
-      <ModernSubTabs @switch-view="switchView"  />
-    </transition>
+      <transition name="bounce2" appear>
+        <ModernSubTabs @switch-view="switchView"  />
+      </transition>
 
-    <main class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
-      <component :is="currentView" />
-    </main>
-  </div>
-  <!-- </transition> -->
+      <main class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
+        <component :is="currentView" />
+      </main>
+    </div>
+  </transition>
 </template>
 
 <script setup>
