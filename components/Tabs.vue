@@ -32,7 +32,7 @@
 
   body .tabs {
 
-    >a.modern {
+    > a.modern {
       @apply drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-base-grey;
 
       &:hover {
@@ -40,7 +40,7 @@
       }
     }
 
-    >a.bourbon {
+    > a.bourbon {
       @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
 
       &:hover {
@@ -48,7 +48,7 @@
       }
     }
 
-    >a.groovy {
+    > a.groovy {
       @apply bg-[#333];
 
       &:hover {
@@ -56,7 +56,7 @@
       }
     }
 
-    >a.techy {
+    > a.techy {
       @apply bg-[rgb(51,51,51)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
 
       &:hover {
@@ -64,7 +64,7 @@
       }
     }
 
-    >a.corp {
+    > a.corp {
       @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
 
       &:hover {
@@ -72,7 +72,7 @@
       }
     }
 
-    >a.punk {
+    > a.punk {
       @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
 
       &:hover {
@@ -81,15 +81,15 @@
     }
   }
 
-  body.modern .tabs a.modern {
+  body.modern .tabs a.router-link-active.router-link-exact-active.tab {
     @apply drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] text-base-ivory bg-gradient-to-b from-[#D71D5B] to-[#871239];
   }
 
-  body.bourbon .tabs>a.bourbon {
+  body.bourbon .tabs > a.router-link-active.router-link-exact-active.tab {
     @apply text-base-ivory drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-gradient-to-b from-[#c8291c] to-[#851c12];
   }
 
-  body.groovy .tabs>a.groovy {
+  body.groovy .tabs > a.router-link-active.router-link-exact-active.tab {
     @apply text-base-black drop-shadow-[0px_0px_1px_rgba(0,0,0,0.25)] bg-[linear-gradient(180deg,_#6cebe4_0%,_#6cebe4_25%,_#fece00_0,_#fece00_50%,_#e68f00_50%,_#e68f00_75%,_#e60008_0,_#e60008_100%)];
 
     &:hover {
@@ -98,15 +98,15 @@
 
   }
 
-  body.techy .tabs>a.techy {
+  body.techy .tabs > a.router-link-active.router-link-exact-active.tab {
     @apply text-base-ivory/75  drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-gradient-to-b from-[#423ba0] to-[#2b2668];
   }
 
-  body.corp .tabs>a.corp {
+  body.corp .tabs > a.router-link-active.router-link-exact-active.tab {
     @apply text-base-ivory/75 drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-gradient-to-b from-[#025088] to-[#013255];
   }
 
-  body.punk .tabs>a.punk {
+  body.punk .tabs > a.router-link-active.router-link-exact-active.tab {
     @apply text-base-ivory/75 bg-gradient-to-b from-[#B200AA] to-[#660061];
   }
 
