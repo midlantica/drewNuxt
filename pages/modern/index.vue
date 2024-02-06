@@ -8,7 +8,7 @@
       </transition>
 
       <transition name="bounce2" appear>
-        <ModernSubTabs @switch-view="switchView"  />
+        <ModernSubTabs @switch-view="switchView" :selectedBtn = selectedBtn />
       </transition>
 
       <main class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
@@ -25,6 +25,7 @@
   // import { useCopy } from "~/store/copy";
   // const copy = useCopy()
 
+
   useHead({
     bodyAttrs: {
       class: `modern`
@@ -32,14 +33,18 @@
   })
 
   let currentView = shallowRef(ModernProjects);
+  let selectedBtn = ref(null)
 
   const switchView = (view) => {
-    if (view === 'ModernSkills') {
-      currentView.value = ModernSkills
-    } else if (view === 'ModernProjects') {
+    if (view === 'ModernProjects') {
       currentView.value = ModernProjects
+      // selectedBtn.value = true
+    } else if (view === 'ModernSkills') {
+      currentView.value = ModernSkills
+      // selectedBtn = true
     } else if (view === 'ModernAbout') {
       currentView.value = ModernAbout
+      // selectedBtn = true
     }
     // console.log(`Receive this ${view} man!`)
   };
