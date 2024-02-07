@@ -1,0 +1,34 @@
+/**
+ * @license
+ * MyFonts Webfont Build ID 3924114, 2020-07-09T19:03:58-0400
+ *
+ * The fonts listed in this notice are subject to the End User License
+ * Agreement(s) entered into by the website owner. All other parties are
+ * explicitly restricted from using the Licensed Webfonts(s).
+ *
+ * You may obtain a valid license at the URLs below.
+ *
+ * Webfont: AmericanTypewriterStd-Med by ITC
+ * URL: https://www.myfonts.com/fonts/itc/american-typewriter/std-medium/
+ *
+ * Webfont: AmericanTypewriterStd-Bold by ITC
+ * URL: https://www.myfonts.com/fonts/itc/american-typewriter/std-bold/
+ *
+ *
+ * Webfonts copyright: Copyright &amp;#x00A9; 1985, 1987, 1990, 1991, 2002 Adobe Systems Incorporated.  All Rights Reserved.
+ *
+ * © 2020 MyFonts Inc
+*/
+
+
+/* @import must be at top of file, otherwise CSS will not work */
+@import url("//hello.myfonts.net/count/3be092");
+
+@font-face {
+  font-family: 'AmericanTypewriterStd-Med';
+  src: url('AmericanTypewriterStd-Med/font.woff2') format('woff2'), url('AmericanTypewriterStd-Med/font.woff') format('woff');
+}
+@font-face {
+  font-family: 'AmericanTypewriterStd-Bold';
+  src: url('AmericanTypewriterStd-Bold/font.woff2') format('woff2'), url('AmericanTypewriterStd-Bold/font.woff') format('woff');
+}
