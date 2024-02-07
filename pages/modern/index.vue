@@ -25,6 +25,8 @@
   // import { useCopy } from "~/store/copy";
   // const copy = useCopy()
 
+  // const { progress, isLoading } = useLoadingIndicator();
+  // console.log(`Loaded ${progress.value}%`);
 
   useHead({
     bodyAttrs: {

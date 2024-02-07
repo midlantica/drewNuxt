@@ -25,7 +25,7 @@ export default defineNuxtConfig({
   },
   routeRules: {
     '/': {
-      redirect: '/bourbon/',
+      redirect: '/modern/',
       prerender: true,
     },
   },
