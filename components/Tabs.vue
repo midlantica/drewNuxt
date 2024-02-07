@@ -1,6 +1,6 @@
 <template>
   <div class="tabs">
-    <NuxtLink v-for="(tab, index) in tabs" :key="index" :to="`/${tab}`" class="tab">
+    <NuxtLink v-for="(tab, index) in tabs" :key="index" :to="`/${tab}`" class="tab" :class="tab">
       {{ tab }}
     </NuxtLink>
   </div>
@@ -15,7 +15,7 @@
 
 <style scoped>
   .tabs {
-    @apply font-['Barlow_Semi_Condensed'] flex !flex-row flex-nowrap justify-between items-start content-center text-center text-[0.85em] relative top-0 left-0 z-10 w-[100.1%] tracking-normal overflow-x-hidden bg-[#333];
+    @apply font-['Barlow_Semi_Condensed'] flex flex-row flex-nowrap justify-between items-start content-center text-center text-[0.85em] relative top-0 left-0 z-10 w-[100.1%] tracking-normal overflow-x-hidden bg-[#333];
 
     a {
       @apply grow text-[#fffdf4bf] py-2 px-0 border-r border-[#fffdf440] no-underline uppercase tracking-[0.1em] text-[0.8em];
@@ -28,9 +28,11 @@
         @apply text-[#fffdf4] duration-200 ease-in;
       }
     }
+
+
   }
 
-  body .tabs {
+  body.tabs {
 
     > a.modern {
       @apply drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-base-grey;

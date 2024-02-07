@@ -68,7 +68,7 @@
       }
     }
 
-    .about>p {
+    .about > p {
       @apply w-[99.8%] my-1 mx-auto font-bourbonCopy text-[.82em];
 
       @media (max-width: theme("screens.breakXlg")) {
@@ -88,10 +88,10 @@
       }
     }
 
-    &.extras .extrasWrapper {
+    .extrasWrapper {
 
       h1 {
-        @apply pt-4 font-bourbonHead text-bourbon-bourbon text-[1.75em] font-light antialiased;
+        @apply pt-4 font-bourbonHead text-bourbon-accentRed text-[1.75em] font-light antialiased;
       }
     }
 
@@ -133,7 +133,7 @@
       @apply w-1/2 my-0 mx-auto bg-gradient-to-b from-[#d71d5b] to-[#8b133b];
     }
 
-    &.extras {
+    .extras {
       @apply bg-[#2e001f];
 
       .flexxy a p {
@@ -141,13 +141,13 @@
       }
     }
 
-    &.extras .extrasWrapper {
+    .extrasWrapper {
 
-      h1 {
+      & h1 {
         @apply text-white font-modernCopy text-[1.2rem] leading-normal capitalize antialiased bg-transparent tracking-wider;
       }
 
-      a {
+      & a {
 
 
         &:hover {
@@ -205,14 +205,15 @@
       }
     }
 
-    .about>p {
+    .about > p {
       @apply text-[0.8em] tracking-wider font-groovyCopy;
     }
 
-    &.extras .extrasWrapper {
+    .extrasWrapper {
+      @apply !mt-6;
 
       h1 {
-        @apply pt-4 text-groovy-redDk text-[1.5em] font-semibold capitalize font-groovyHead bg-transparent mt-8 mb-0;
+        @apply pt-0 text-groovy-redDk text-[1.5em] font-semibold capitalize font-groovyHead bg-transparent mt-0 mb-0;
       }
 
       p {
@@ -260,7 +261,7 @@
       @apply flex gap-x-4 gap-y-4;
     }
 
-    &.extras .extrasWrapper {
+    .extrasWrapper {
       @apply bg-[#fffff1];
 
       h1 {
@@ -271,10 +272,10 @@
         @apply font-techyCopy text-[1em];
       }
     }
-
-    &.extras .contact {
+    .contact {
       @apply flex w-full m-auto gap-x-4 gap-y-4;
     }
+
   }
 
   body.corp {
@@ -304,7 +305,7 @@
       }
     }
 
-    &.extras .extrasWrapper {
+    .extrasWrapper {
 
       h1 {
         @apply font-corpHead text-corp-blueDark text-[1.5em] bg-transparent font-semibold capitalize mt-0;
@@ -339,7 +340,7 @@
       }
     }
 
-    .about>p {
+    .about > p {
       @apply font-punkCopy text-[.8em];
 
       @media (max-width: theme("screens.breakXlg")) {
@@ -359,7 +360,7 @@
       }
     }
 
-    &.extras .extrasWrapper {
+    .extrasWrapper {
 
       h1 {
         @apply mt-4 text-black text-[1.25rem] font-semibold leading-normal capitalize antialiased font-modernSubhead bg-white/70 px-2;

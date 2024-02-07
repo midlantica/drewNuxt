@@ -1,10 +1,10 @@
 <template>
-  <footer>
-    <!-- <transition name="topDown" appear> -->
+  <transition name="topDown" appear>
+    <footer>
       <div class="car" />
       <div class="starWars" />
-    <!-- </transition> -->
-  </footer>
+    </footer>
+  </transition>
 </template>
 
 <style scoped>

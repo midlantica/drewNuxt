@@ -1,20 +1,28 @@
 <template>
-  <header>
-    <NavvyHead />
-  </header>
+  <div>
+    <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px]">
+      <GroovyNavvyHead />
+    </header>
 
-  <transition name="bounce2" appear>
+  <!-- <transition name="bounce2" appear> -->
     <ExtrasC />
-  </transition>
+  <!-- </transition> -->
 
-  <footer>
-    <NavvyEmpty />
-  </footer>
+  <!-- <transition name="bounce10" appear> -->
+    <GroovyFooter />
+  <!-- </transition> -->
+</div>
 </template>
 
 <script setup>
-  import NavvyHead from './components/NavvyHead'
-  // import ExtrasC from '../../components/ExtrasC'
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
+
+  useHead({
+    bodyAttrs: {
+      class: `groovy`
+    }
+  })
 </script>
 
 <style scoped>

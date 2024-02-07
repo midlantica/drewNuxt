@@ -1,6 +1,6 @@
 <template>
   <header class="bg-[url('/img/bg/bg_bag_dk.jpg')] bg-repeat shadow-druShadow">
-    <Navvy />
+    <BourbonNavvy />
   </header>
 
   <transition name="bounce2" appear>
@@ -13,8 +13,8 @@
 </template>
 
 <script setup>
-  import { useCopy } from "~/store/copy";
-  const copy = useCopy()
+  // import { useCopy } from "~/store/copy";
+  // const copy = useCopy()
 
   useHead({
     bodyAttrs: {
@@ -22,8 +22,6 @@
     }
   })
 
-  import Navvy from './components/Navvy.vue'
-  // import ExtrasC from '../../components/ExtrasC.vue'
 </script>
 
 <style scoped>

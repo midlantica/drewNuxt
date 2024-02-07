@@ -51,7 +51,6 @@
 </template>
 
 <style scoped>
-  /* @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap'); */
   .mainGrid {
     @apply grid-cols-2 grid gap-y-2 gap-x-0 ml-4 mb-4 mr-6;
 

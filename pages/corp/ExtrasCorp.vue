@@ -1,21 +1,28 @@
 <template>
-  <header>
-    <BourbonNavvy />
+  <header class="shadow-none">
+    <CorpNavvy />
   </header>
 
   <transition name="bounce2" appear>
     <ExtrasC />
   </transition>
 
-  <footer>
-    <NavvyEmpty />
+  <footer class="shadow-none">
+    &nbsp;
   </footer>
 </template>
 
 <script setup>
+  import { useCopy } from "~/store/copy";
+  const copy = useCopy()
 
+  useHead({
+    bodyAttrs: {
+      class: `corp`
+    }
+  })
 </script>
 
 <style scoped>
-  /* @import url('https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap'); */
+
 </style>
