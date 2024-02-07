@@ -18,7 +18,7 @@
 
   useHead({
     bodyAttrs: {
-      class: `techy`
+      class: `techy extras`
     }
   })
 

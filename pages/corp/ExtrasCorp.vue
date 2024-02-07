@@ -18,7 +18,7 @@
 
   useHead({
     bodyAttrs: {
-      class: `corp`
+      class: `corp extras`
     }
   })
 </script>

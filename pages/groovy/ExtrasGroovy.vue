@@ -20,7 +20,7 @@
 
   useHead({
     bodyAttrs: {
-      class: `groovy`
+      class: `groovy extras`
     }
   })
 </script>

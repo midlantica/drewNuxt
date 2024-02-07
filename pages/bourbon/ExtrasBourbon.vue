@@ -18,7 +18,7 @@
 
   useHead({
     bodyAttrs: {
-      class: `bourbon`
+      class: `bourbon extras`
     }
   })
 

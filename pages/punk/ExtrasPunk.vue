@@ -18,7 +18,7 @@
 
   useHead({
     bodyAttrs: {
-      class: `punk`
+      class: `punk extras`
     }
   })
 

@@ -14,7 +14,7 @@
 <script setup>
   useHead({
     bodyAttrs: {
-      class: `modern`
+      class: `modern extras`
     }
   })
 </script>
