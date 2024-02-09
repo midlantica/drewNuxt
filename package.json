@@ -27,6 +27,7 @@
   "dependencies": {
     "@pinia/nuxt": "^0.5.1",
     "@vueuse/core": "^10.7.2",
+    "@vueuse/sound": "^2.0.1",
     "pinia": "^2.1.7",
     "tailwind-column-rule": "^1.0.2",
     "vueperslides": "^3.5.1"

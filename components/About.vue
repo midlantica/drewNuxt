@@ -1,7 +1,7 @@
 <template>
   <div
     class="about" ref="target" :style="{ transform: cardTransform, transition: 'transform 0.25 ease-out' }"
-    @click="play"
+    @click="playSound"
   >
     <div class="flagBox">
       <div class="flag">
@@ -15,8 +15,12 @@
 <script setup>
   import { ref, computed } from 'vue'
   import { useMouseInElement } from '@vueuse/core'
-
+  import { useSound } from '@vueuse/sound'
   import { useCopy } from "~/store/copy";
+
+  import yeehawSound from '/yeehaw.mp3'
+  import jollyGoodSound from '/jollyGood.mp3'
+
   const copy = useCopy()
 
   const target = ref(null)
@@ -30,21 +34,22 @@
     return isOutside.value ? '' : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`
   })
 
-  // const yeehaw = new Audio('/yeehaw.mp3')
-  // const jollyGood = new Audio('/jollyGood.mp3')
+  let isActive = ref(false)
 
-  let isActive = false
+  const { play: playYeehaw } = useSound(yeehawSound, { volume: 0.5 })
+  const { play: playJollyGood } = useSound(jollyGoodSound, { volume: 0.5 })
 
-  const play = () => {
+  const playSound = () => {
     if (isActive) {
-      yeehaw.play()
+      playYeehaw()
       console.log(isActive)
     } else {
-      jollyGood.play()
+      playJollyGood()
       console.log(isActive)
     }
     isActive = !isActive
   }
+
 </script>
 
 <style scoped>

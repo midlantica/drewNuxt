@@ -22,12 +22,6 @@
   import { ref, shallowRef  } from 'vue';
   import { ModernProjects, ModernSkills, ModernAbout } from '#components'
 
-  // import { useCopy } from "~/store/copy";
-  // const copy = useCopy()
-
-  // const { progress, isLoading } = useLoadingIndicator();
-  // console.log(`Loaded ${progress.value}%`);
-
   useHead({
     bodyAttrs: {
       class: `modern`
@@ -37,19 +31,15 @@
   let currentView = shallowRef(ModernProjects);
   let selectedBtn = ref(null)
 
-  const switchView = (view) => {
+  function switchView(view) {
     if (view === 'ModernProjects') {
       currentView.value = ModernProjects
-      // selectedBtn.value = true
     } else if (view === 'ModernSkills') {
       currentView.value = ModernSkills
-      // selectedBtn = true
     } else if (view === 'ModernAbout') {
       currentView.value = ModernAbout
-      // selectedBtn = true
     }
-    // console.log(`Receive this ${view} man!`)
-  };
+  }
 
 </script>
 

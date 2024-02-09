@@ -14,6 +14,7 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
+    '@vueuse/sound/nuxt'
   ],
   postcss: {
     plugins: {
