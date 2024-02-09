@@ -1,6 +1,5 @@
 export const useCopy = defineStore({
   id: 'copy',
-
   state: () => ({
     drewHarper: `Drew Harper`,
     uiuxDesigner: `UI/UX Designer`,
