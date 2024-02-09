@@ -273,7 +273,11 @@
       }
     }
     .contact {
-      @apply flex w-full m-auto gap-x-4 gap-y-4;
+      @apply flex w-full m-0 gap-x-4 gap-y-1;
+
+      @media (max-width: theme("screens.breakXlg")) {
+        @apply m-0;
+      }
     }
 
   }

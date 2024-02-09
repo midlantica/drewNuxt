@@ -20,18 +20,23 @@
   let selectedBtn = ref(null)
 
   let emitSwitchView = (view) => {
-    selectedBtn.value = view;
-    emits('switch-view', view);
+    selectedBtn.value = view
+    emits('switch-view', view)
   };
+
+  onMounted(() => {
+    selectedBtn.value = 'ModernProjects'
+  })
 
 </script>
 
 <style scoped>
 
   .btn {
-    @apply text-black pt-[.55rem] px-5 pb-[.4rem] rounded-[2rem] no-underline uppercase text-[.6rem] font-semibold tracking-[0.075ch] bg-modern-ruby bg-gradient-to-b from-[#D71D5B] to-[#871239] hover:bg-modern-ruby hover:text-white hover:bg-gradient-to-b hover:from-[#D71D5B] hover:to-[#871239] cursor-pointer;
+    @apply text-black pt-[.55rem] px-5 pb-[.4rem] rounded-[2rem] no-underline uppercase text-[.6rem] font-semibold tracking-[0.075ch] bg-modern-ruby bg-gradient-to-b from-[#D71D5B] to-[#871239] hover:bg-modern-ruby hover:text-white focus:text-white hover:bg-gradient-to-b hover:from-[#D71D5B] hover:to-[#871239] cursor-pointer;
   }
   body.modern .btn.projectsTab .router-link-active .router-link-exact-active,
+  /* body.modern .btn.projectsTab :focus, */
   body.modern .btn.skillsTab .router-link-active .router-link-exact-active,
   body.modern .btn.aboutTab .router-link-active .router-link-exact-active {
     @apply text-white;

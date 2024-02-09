@@ -11,43 +11,45 @@
 </script>
 
 <template>
-  <transition name="fade" appear>
-    <div>
-      <transition name="topDown" appear>
-        <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px]">
-          <GroovyNavvyHead />
-        </header>
-      </transition>
 
-      <transition name="bounce2" appear>
-        <main class="mainGrid">
-          <transition name="bounce3" appear>
-            <div class="copyArea">
-              <GroovyHeadAndCopy />
-            </div>
-          </transition>
+    <transition name="fade" appear>
+      <div>
+        <transition name="topDown" appear>
+          <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px]">
+            <GroovyNavvyHead />
+          </header>
+        </transition>
 
-          <transition name="bounce4" appear>
-            <div class="slides">
-              <Carousel />
-            </div>
-          </transition>
+        <transition name="bounce2" appear>
+          <main class="mainGrid">
+            <transition name="bounce3" appear>
+              <div class="copyArea">
+                <GroovyHeadAndCopy />
+              </div>
+            </transition>
 
-          <transition name="bounce6" appear>
-            <About />
-          </transition>
+            <transition name="bounce4" appear>
+              <div class="slides">
+                <Carousel />
+              </div>
+            </transition>
 
-          <transition name="bounce8" appear>
-            <Skills />
-          </transition>
-        </main>
-      </transition>
+            <transition name="bounce6" appear>
+              <About />
+            </transition>
 
-      <transition name="bounce10" appear>
-        <GroovyFooter />
-      </transition>
-    </div>
-  </transition>
+            <transition name="bounce8" appear>
+              <Skills />
+            </transition>
+          </main>
+        </transition>
+
+        <transition name="bounce10" appear>
+          <GroovyFooter />
+        </transition>
+      </div>
+    </transition>
+
 </template>
 
 <style scoped>

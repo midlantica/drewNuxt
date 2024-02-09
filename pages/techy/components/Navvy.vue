@@ -199,22 +199,22 @@
     @apply col-start-1 col-end-3 row-start-3 row-end-4 bg-techy-blueTech text-base-ivory py-[.5vh] px-4;
 
     .contact {
-      @apply font-normal text-base-ivory flex flex-row flex-wrap justify-center items-center content-center grow w-1/2;
+      @apply font-normal text-base-ivory flex flex-row flex-wrap justify-center w-1/2;
 
       @media (max-width: theme("screens.breakXlg")) {
-        @apply w-full;
+        @apply w-full ;
       }
 
       @media (max-width: theme("screens.breakLg")) {
-        @apply w-full;
+        @apply w-full ;
       }
 
       @media (max-width: theme("screens.breakSm")) {
-        @apply w-full;
+        @apply w-full ;
       }
 
       @media (max-width: theme("screens.breakXsm")) {
-        @apply w-full;
+        @apply w-full ;
       }
 
       p {

@@ -73,4 +73,9 @@ export default defineNuxtConfig({
     appManifest: false,
   },
   appManifest: false,
+  server: {
+    hmr: {
+      overlay: false,
+    },
+  },
 })
