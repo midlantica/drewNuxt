@@ -28,7 +28,7 @@ export const useCopy = defineStore({
   }),
 
   getters: {
-    getThemeByName: (state) => `Value is ${state.value}`
+    getThemeByName: (name, string) => state.characters.find((character) => character.name === name)
   },
 
   actions: {
