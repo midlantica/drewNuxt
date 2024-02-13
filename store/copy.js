@@ -32,7 +32,7 @@ export const useCopy = defineStore({
   },
 
   actions: {
-    addCharacter(name: string, line: string) {
+    addCharacter(name, line) {
       this.value.push({
         bourbon,
         punk
