@@ -2,7 +2,12 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
+  definePageMeta({
+    title: 'Groovy'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Groovy`,
     bodyAttrs: {
       class: `groovy`
     }

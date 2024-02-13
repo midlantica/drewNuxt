@@ -1,6 +1,5 @@
 <script setup>
-  // const { progress, isLoading } = useLoadingIndicator();
-  // console.log(`Loaded ${progress.value}%`);
+
 </script>
 
 <template>

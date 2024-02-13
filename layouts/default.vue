@@ -5,6 +5,10 @@
   </div>
 </template>
 
+<script setup>
+
+</script>
+
 <style>
   .wrapper {
     @apply relative max-w-screen-breakXlg my-0 mx-auto;

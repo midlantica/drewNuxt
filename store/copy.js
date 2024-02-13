@@ -15,15 +15,28 @@ export const useCopy = defineStore({
     techy: `Techy`,
     corp: `Corp`,
     punk: `Punk`,
+    characters: [
+      {
+        name: "Leto",
+        line: "Here on Dune we need Desert Power."
+      },
+      {
+        name: "Paul",
+        line: "I must not fear; fear is the mind-killer."
+      }
+    ]
   }),
 
   getters: {
-    valueWithName: (state) => `Value is ${state.value}`
+    getThemeByName: (state) => `Value is ${state.value}`
   },
 
-  // actions: {
-  //   setNewValue(newValue: number) {
-  //     this.value = newValue
-  //   }
-  // }
+  actions: {
+    addCharacter(name: string, line: string) {
+      this.value.push({
+        bourbon,
+        punk
+      })
+    }
+  }
 })

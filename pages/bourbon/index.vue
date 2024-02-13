@@ -1,7 +1,7 @@
 <template>
 
-    <transition name="fade" appear>
-      <div class="relative">
+    <transition name="fade" appear >
+      <div class="relative" key="header">
         <transition name="topDown" appear>
           <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
             <BourbonNavvy />
@@ -10,28 +10,29 @@
 
         <transition name="bounce2" appear>
           <main class="mainGrid">
+
             <transition name="bounce3" appear>
               <div class="copyArea">
-                <BourbonHeadAndCopy />
+                <BourbonHeadAndCopy key="copy" />
               </div>
             </transition>
 
-            <transition name="bounce6" appear>
-              <Skills />
+            <transition name="bounce6" appear >
+              <Skills key="skills" />
             </transition>
 
-            <div class="slides">
-              <transition name="bounce4" appear>
+            <div class="slides" key="slides">
+              <transition name="bounce4" appear >
                 <Carousel />
               </transition>
             </div>
 
-            <transition name="bounce7" appear>
-              <About />
+            <transition name="bounce7" appear >
+              <About key="about" />
             </transition>
 
-            <transition name="bounce8" appear>
-              <Quote />
+            <transition name="bounce8" appear >
+              <Quote key="quote" />
             </transition>
           </main>
         </transition>
@@ -48,7 +49,12 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
+  definePageMeta({
+    title: 'Bourbon'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Bourbon`,
     bodyAttrs: {
       class: `bourbon`
     }

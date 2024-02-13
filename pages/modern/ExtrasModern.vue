@@ -12,9 +12,14 @@
 </template>
 
 <script setup>
+  definePageMeta({
+    title: 'Modern Extras'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Modern Extras`,
     bodyAttrs: {
-      class: `modern extras`
+      class: `modern extras`,
     }
   })
 </script>

@@ -36,8 +36,8 @@
 
   let isActive = ref(false)
 
-  const { play: playYeehaw } = useSound(yeehawSound, { volume: 0.5 })
-  const { play: playJollyGood } = useSound(jollyGoodSound, { volume: 0.5 })
+  const { play: playYeehaw } = useSound(yeehawSound, { volume: .5 })
+  const { play: playJollyGood } = useSound(jollyGoodSound, { volume: .5 })
 
   const playSound = () => {
     if (isActive) {

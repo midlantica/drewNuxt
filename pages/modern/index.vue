@@ -22,10 +22,19 @@
   import { ref, shallowRef  } from 'vue';
   import { ModernProjects, ModernSkills, ModernAbout } from '#components'
 
+  definePageMeta({
+    title: 'Modern'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Modern`,
     bodyAttrs: {
       class: `modern`
     }
+  })
+
+  definePageMeta({
+    title: 'DrewHarper.com | UX Designer Visual Designer'
   })
 
   let currentView = shallowRef(ModernProjects);

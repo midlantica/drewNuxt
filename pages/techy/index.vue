@@ -3,9 +3,14 @@
   // const copy = useCopy()
 
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Techy`,
     bodyAttrs: {
-      class: `techy`
+      class: `techy`,
     }
+  })
+
+  definePageMeta({
+    title: 'Techy'
   })
 
 </script>

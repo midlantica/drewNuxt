@@ -3,6 +3,7 @@ export default defineNuxtConfig({
   // rootDir: __dirname,
   // srcDir: "client",
   // serverDir: "server",
+  // baseUrl: "/",
   devServer: {},
   devtools: {
     enabled: true,
@@ -14,8 +15,19 @@ export default defineNuxtConfig({
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
-    '@vueuse/sound/nuxt'
+    '@vueuse/sound/nuxt',
+    '@morev/vue-transitions/nuxt',
   ],
+  pinia: {
+    storesDirs: ['./stores/**'], // './custom-folder/stores/**'
+  },
+  // imports: {
+  //   dirs: ['stores']
+  // },
+  // vueTransitions: {
+  //   // The same options as in the plugin itself.
+  //   // You will get an autocomplete using Nuxt 3.
+  // },
   postcss: {
     plugins: {
       'postcss-import': {},
@@ -70,8 +82,8 @@ export default defineNuxtConfig({
     viewTransition: true
   },
   build: {
-    quiet: false,
-    appManifest: false,
+    // quiet: false,
+    // appManifest: false,
   },
   appManifest: false,
   server: {

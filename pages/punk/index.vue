@@ -1,46 +1,49 @@
 <template>
+  <transition name="fade" appear>
+    <div>
+      <transition name="topDown" appear>
+        <header class="-mb-4 shadow-none text-base-ivory">
+          <PunkNavvy />
+        </header>
+      </transition>
 
-    <transition name="fade" appear>
-      <div>
-        <transition name="topDown" appear>
-          <header class="-mb-4 shadow-none text-base-ivory">
-            <PunkNavvy />
-          </header>
-        </transition>
+      <transition name="bounce" appear>
+        <main class="mainGrid">
+          <transition name="bounce2" appear>
+            <div class="copyArea">
+              <PunkHeadAndCopy />
+            </div>
+          </transition>
 
-        <transition name="bounce" appear>
-          <main class="mainGrid">
-            <transition name="bounce2" appear>
-              <div class="copyArea">
-                <PunkHeadAndCopy />
-              </div>
-            </transition>
+          <transition name="bounce4" appear>
+            <div class="slides">
+              <Carousel />
+            </div>
+          </transition>
 
-            <transition name="bounce4" appear>
-              <div class="slides">
-                <Carousel />
-              </div>
-            </transition>
+          <transition name="bounce6" appear>
+            <About />
+          </transition>
 
-            <transition name="bounce6" appear>
-              <About />
-            </transition>
-
-            <transition name="bounce7" appear>
-              <Skills />
-            </transition>
-          </main>
-        </transition>
-      </div>
-    </transition>
-
+          <transition name="bounce7" appear>
+            <Skills />
+          </transition>
+        </main>
+      </transition>
+    </div>
+  </transition>
 </template>
 
 <script setup>
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
+  definePageMeta({
+    title: 'Punk'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Punk`,
     bodyAttrs: {
       class: `punk`
     }

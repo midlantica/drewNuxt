@@ -16,7 +16,12 @@
   // import { useCopy } from "~/store/copy";
   // const copy = useCopy()
 
+  definePageMeta({
+    title: 'Bourbon Extras'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Bourbon Extras`,
     bodyAttrs: {
       class: `bourbon extras`
     }

@@ -2,7 +2,12 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
+  definePageMeta({
+    title: 'Corp'
+  })
+
   useHead({
+    title: `DrewHarper.com | UX Designer Visual Designer - Corp`,
     bodyAttrs: {
       class: `corp`
     }
