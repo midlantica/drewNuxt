@@ -1,3 +1,5 @@
+import { defineStore } from 'pinia' // Add this import statement
+
 export const useCopy = defineStore({
   id: 'copy',
   state: () => ({
@@ -22,21 +24,23 @@ export const useCopy = defineStore({
       },
       {
         name: "Paul",
-        line: "I must not fear; fear is the mind-killer."
+        line: "I am the Quizats Hadderach!"
       }
     ]
   }),
 
-  getters: {
-    getThemeByName: (name, string) => state.characters.find((character) => character.name === name)
-  },
-
   actions: {
     addCharacter(name, line) {
-      this.value.push({
-        bourbon,
-        punk
+      this.characters.push({
+        name,
+        line
       })
     }
-  }
+  },
+
+  getters: {
+    getLineByName: (state) => {
+      return (name) => state.characters.find((character) => character.name === name)
+    }
+  },
 })

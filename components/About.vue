@@ -18,10 +18,11 @@
   import { useSound } from '@vueuse/sound'
   import { useCopy } from "~/store/copy";
 
+  const copy = useCopy()
+
   import yeehawSound from '/yeehaw.mp3'
   import jollyGoodSound from '/jollyGood.mp3'
 
-  const copy = useCopy()
 
   const target = ref(null)
   const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target)
