@@ -4,26 +4,25 @@ export default defineNuxtConfig({
   // srcDir: "client",
   // serverDir: "server",
   // baseUrl: "/",
+  css: ['~/assets/css/main.css'],
   devServer: {},
   devtools: {
     enabled: true,
-    timeline: {
-      enabled: true,
-    },
+    // timeline: {
+    //   enabled: true,
+    // },
   },
-  css: ['~/assets/css/main.css'],
   modules: [
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/sound/nuxt',
-    '@morev/vue-transitions/nuxt',
   ],
   pinia: {
     storesDirs: ['./stores/**'], // './custom-folder/stores/**'
   },
-  // imports: {
-  //   dirs: ['stores']
-  // },
+  imports: {
+    dirs: ['stores']
+  },
   // vueTransitions: {
   //   // The same options as in the plugin itself.
   //   // You will get an autocomplete using Nuxt 3.
@@ -82,13 +81,16 @@ export default defineNuxtConfig({
     viewTransition: true
   },
   build: {
-    // quiet: false,
-    // appManifest: false,
+    //
   },
-  appManifest: false,
-  server: {
-    hmr: {
-      overlay: false,
-    },
+  // quiet: false,
+  // appManifest: false,
+  // server: {
+  //   hmr: {
+  //     overlay: false,
+  //   },
+  // },
+  vue: {
+    propsDestructure: true
   },
 })

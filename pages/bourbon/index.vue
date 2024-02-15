@@ -1,6 +1,6 @@
 <template>
 
-    <transition name="fade" appear >
+    <transition name="fade" appear>
       <div class="relative" key="header">
         <transition name="topDown" appear>
           <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
