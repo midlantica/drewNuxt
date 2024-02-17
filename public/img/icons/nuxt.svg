@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="94" height="75" viewBox="0 0 94 75" fill="none" xmlns="http://www.w3.org/2000/svg">
+  <title>Nuxt.js</title>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M2.20634 73.1244C1.87249 73.7484 2.32458 74.503 3.03227 74.503H79.7309L41.4257 2.9083C41.0728 2.24854 40.1269 2.24855 39.7739 2.9083L2.20634 73.1244Z" fill="#56C096"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M27.1646 74.503H91.4262C92.1338 74.503 92.5859 73.7483 92.2521 73.1244L60.903 14.5311C60.55 13.8713 59.6042 13.8713 59.2512 14.5311L27.1646 74.503Z" fill="#469182"/>
+  <path fill-rule="evenodd" clip-rule="evenodd" d="M53.4478 25.3779L27.1646 74.5029H79.7311L53.4478 25.3779Z" fill="#35596F"/>
+</svg>

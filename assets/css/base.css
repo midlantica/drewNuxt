@@ -1,0 +1,60 @@
+* {
+  @apply box-border;
+}
+
+html,
+html a {
+
+}
+
+body {
+  @apply m-0 bg-gray-700;
+}
+
+img,
+video,
+audio {
+  @apply h-auto max-w-full;
+}
+
+::selection {
+  @apply text-black bg-[#fbd404];
+}
+
+::-webkit-scrollbar {
+  @apply w-3 h-3 overflow-x-hidden overflow-y-hidden;
+}
+
+::-webkit-scrollbar-thumb {
+  @apply rounded-md bg-gradient-to-b from-[hsla(0,0%,79%,0.226)] to-[hsla(0,0%,79%,0.514)];
+}
+
+::-webkit-scrollbar-track {
+  @apply rounded-none bg-[hsla(0,0%,100%,0)] ;
+}
+
+.smallCaps {
+  @apply text-[95%] tracking-wider uppercase;
+}
+
+.authenticStamp {
+  @apply self-center;
+  animation: rotator .5s ease-in 1;
+  animation-delay: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+}
+
+.authenticStampPunk {
+  @apply self-center;
+  animation: rotator2 .5s ease-in 1;
+  animation-delay: 1.5s;
+  opacity: 0;
+  animation-fill-mode: forwards;
+  border-radius: 100%;
+  background: rgba(255, 255, 255, 1);
+}
+
+p {
+  @apply text-wrap;
+}
