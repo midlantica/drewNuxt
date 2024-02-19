@@ -1,61 +1,36 @@
 <template>
-  <div>
-    <Transition name="fade" appear>
-      <div class="relative" key="header">
-        <transition name="topDown" appear>
-          <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
-            <BourbonNavvy @toggleExtras="toggleExtras" />
-          </header>
-        </transition>
+  <TransitionGroup>
 
-        <Transition name="bounce2">
-          <div>
-            <main class="mainGrid"
-              v-if="showExtras"
-              :class="[{ showExtras: '' }, 'grid-cols-2' ]"
-            >
-            <!-- <div :class="[{ showExtras: 'grid-cols-1' }, 'grid-cols-2' ]"></div> -->
+    <transition name="topDown" appear>
+      <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow relative">
+        <BourbonNavvy @toggleExtras="toggleExtras" />
+      </header>
+    </transition>
 
-              <transition name="bounce3" appear>
-                <div class="copyArea">
-                  <BourbonHeadAndCopy key="copy"
-                  @toggleExtras="toggleExtras" />
-                </div>
-              </transition>
+    <Transition name="bounce2" appear>
+      <div>
+        <main class="mainGrid" v-if="showExtras">
+          <BourbonHeadAndCopy key="copy" class="copyArea" @toggleExtras="toggleExtras" />
+          <Skills key="skills" />
+          <Carousel class="slides" key="slides" />
+          <About key="about" />
+          <Quote key="quote" />
+        </main>
 
-              <transition name="bounce6" appear >
-                <Skills key="skills" />
-              </transition>
+        <main v-if="!showExtras">
+          <component :is='ExtrasC' />
+        </main>
 
-              <div class="slides" key="slides">
-                <transition name="bounce4" appear>
-                  <Carousel />
-                </transition>
-              </div>
-
-              <transition name="bounce7" appear>
-                <About key="about" />
-              </transition>
-
-              <transition name="bounce8" appear>
-                <Quote key="quote" />
-              </transition>
-
-            </main>
-
-            <main class="mainGrid" v-if="!showExtras">
-              <component :is='ExtrasC' />
-            </main>
-
-          </div>
-        </Transition>
-
-        <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
-          <nav class="h-3" />
-        </footer>
       </div>
     </Transition>
-  </div>
+
+    <transition name="topDn" appear>
+      <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+        <nav class="h-3" />
+      </footer>
+    </transition>
+
+  </TransitionGroup>
 </template>
 
 <script setup>
@@ -86,7 +61,19 @@
 <style scoped>
   @import "./assets/css/fonts/bourbonFonts/bourbonFonts.css";
   .mainGrid {
-    @apply grid grid-cols-1 my-4 mr-6 ml-4 gap-x-0 gap-y-4;
+    @apply grid grid-cols-2 my-4 mr-6 ml-4 gap-x-0 gap-y-4;
+
+    @media (max-width: theme("screens.breakXlg")) {
+      /* @apply col-start-1 col-end-3 row-span-full; */
+    }
+
+    @media (max-width: theme("screens.breakLg")) {
+      /* @apply col-start-1 col-end-3 row-span-full; */
+    }
+
+    @media (max-width: theme("screens.breakSm")) {
+      /* @apply col-start-1 col-end-3 row-span-full; */
+    }
   }
 
   .copyArea {

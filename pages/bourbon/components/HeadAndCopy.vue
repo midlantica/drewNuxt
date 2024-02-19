@@ -1,7 +1,7 @@
 <template>
   <div class="w-full pl-5 pr-2 mt-2 breakSm:px-2 breakLg:px-4">
     <div class="flex items-center justify-start gap-2 justify-items-start auto-rows-auto">
-      <div href="#" @click="$emit('toggleExtras')" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center jelloHorizontal" />
+      <a href="#" @click="$emit('toggleExtras')" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center !hover:cursor-auto jelloHorizontal "></a>
       <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />
     </div>

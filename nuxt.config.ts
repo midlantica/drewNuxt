@@ -1,11 +1,15 @@
+const path = require('path');
+
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
   // rootDir: __dirname,
   // srcDir: "client",
   // serverDir: "server",
   // baseUrl: "/",
-  css: ['~/assets/css/main.css'],
   devServer: {},
+  buildDir: '.nuxt',
+  css: ['~/assets/css/main.css'],
+  ssr: true,
   devtools: {
     enabled: true,
     // timeline: {
@@ -94,6 +98,11 @@ export default defineNuxtConfig({
   //   },
   // },
   vue: {
-    propsDestructure: true
+    // propsDestructure: true
   },
+  // nitro: {
+  //   output: {
+  //     publicDir: path.join(__dirname, './.output')
+  //   }
+  // },
 })

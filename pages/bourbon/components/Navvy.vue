@@ -3,7 +3,7 @@
     <h1>
       <a href="#"
         @click="$emit('toggleExtras')"
-        class="no-underline text-base-ivory hover:text-[orange]">
+        class="no-underline text-base-ivory hover:text-[orange] hover:cursor-pointer">
         DREW HARPER
       </a>
     </h1>

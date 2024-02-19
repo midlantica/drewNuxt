@@ -2,154 +2,47 @@
   --timeBase: 1
 }
 
+.bounce-enter-active { animation: bounceIn (var(--timeBase) * .25 + s); }
+.bounce-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-@keyframes rotator {
-  0% {
-    opacity: 0;
-    transform: rotate(263deg) scale(150%);
-  }
-  100% {
-    transform: rotate(363deg) scale(100%);
-    opacity: 1;
-  }
-}
+.bounce2-enter-active { animation: bounceIn (var(--timeBase) * .75 + s); }
+.bounce2-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-@keyframes rotator2 {
-  0% {
-    opacity: 0;
-    transform: rotate(263deg) scale(150%);
-  }
-  100% {
-    transform: rotate(353deg) scale(100%);
-    opacity: 1;
-  }
-}
+.bounce3-enter-active { animation: bounceIn (var(--timeBase) * 1 + s); }
+.bounce3-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
+.bounce4-enter-active { animation: bounceIn (var(--timeBase) * 1.25 + s); }
+.bounce4-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-@keyframes bounceIn {
-  0% {
-    transform: scale(0);
-    opacity: 0;
-  }
+.bounce5-enter-active { animation: bounceIn (var(--timeBase) * 1.5 + s); }
+.bounce5-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-  50% {
-    transform: scale(0);
-    opacity: 0;
-  }
+.bounce6-enter-active { animation: bounceIn (var(--timeBase) * 1.75 + s); }
+.bounce6-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-  95% {
-    transform: scale(1.015);
-    opacity: 1;
-  }
+.bounce7-enter-active { animation: bounceIn (var(--timeBase) * 2 + s); }
+.bounce7-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-  100% {
-    transform: scale(1);
-    opacity: 1;
-  }
-}
+.bounce8-enter-active { animation: bounceIn (var(--timeBase) * 2.25 + s); }
+.bounce8-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-.bounce-enter-active {
-  animation: bounceIn (var(--timebase) * .25 + s);
-}
+.bounce9-enter-active { animation: bounceIn (var(--timeBase) * 2.5 + s); }
+.bounce9-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-.bounce-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
+.bounce10-enter-active { animation: bounceIn (var(--timeBase) * 2.75 + s); }
+.bounce10-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-.bounce2-enter-active {
-  animation: bounceIn (var(--timebase) * .75 + s);
-}
+.bounce11-enter-active { animation: bounceIn (var(--timeBase) * 3 + s); }
+.bounce11-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
-.bounce2-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce3-enter-active {
-  animation: bounceIn (var(--timebase) * 1 + s);
-}
-
-.bounce3-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce4-enter-active {
-  animation: bounceIn (var(--timebase) * 1.25 + s);
-}
-
-.bounce4-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce5-enter-active {
-  animation: bounceIn(var(--timebase) * 1.5 + s);
-}
-
-.bounce5-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce6-enter-active {
-  animation: bounceIn (var(--timebase) * 1.75 + s);
-}
-
-.bounce6-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce7-enter-active {
-  animation: bounceIn (var(--timebase) * 2 + s);
-}
-
-.bounce7-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce8-enter-active {
-  animation: bounceIn (var(--timebase) * 2.25 + s);
-}
-
-.bounce8-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce9-enter-active {
-  animation: bounceIn (var(--timebase) * 2.5 + s);
-}
-
-.bounce9-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce10-enter-active {
-  animation: bounceIn (var(--timebase) * 2.75 + s);
-}
-
-.bounce10-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce11-enter-active {
-  animation: bounceIn (var(--timebase) * 3 + s);
-}
-
-.bounce11-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
-
-.bounce12-enter-active {
-  animation: bounceIn (var(--timebase) * 3.5 + s);
-}
-
-.bounce12-leave-active {
-  animation: bounceIn (var(--timebase) * .25 + s) reverse;
-}
+.bounce12-enter-active { animation: bounceIn (var(--timeBase) * 3.5 + s); }
+.bounce12-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
 
 .topDown-enter-active {
   position: relative;
   transform: translateY(0px);
   animation: topDown .75s;
 }
-
 .topDown-leave-active {
   position: relative;
   transform: translateY(0px);
@@ -250,31 +143,17 @@
 }
 
 @keyframes fade {
-  0% {
-    opacity: 0;
-  }
-
-  100% {
-    opacity: 1;
-  }
+  0% { opacity: 0; }
+  100% { opacity: 1; }
 }
 
 @keyframes shimmy {
-  0% {
-    transform: scale(1.0);
-  }
-
-  50% {
-    transform: scale(0.90);
-  }
-
-  100% {
-    transform: scale(1.15);
-  }
+  0% { transform: scale(1.0); }
+  50% { transform: scale(0.90); }
+  100% { transform: scale(1.15); }
 }
 
 @keyframes flash {
-
   from,
   50%,
   to {
@@ -304,4 +183,49 @@
 .fadey-leave-to {
   opacity: 0;
   visibility: hidden;
+}
+
+@keyframes rotator {
+  0% {
+    opacity: 0;
+    transform: rotate(263deg) scale(150%);
+  }
+  100% {
+    transform: rotate(363deg) scale(100%);
+    opacity: 1;
+  }
+}
+
+@keyframes rotator2 {
+  0% {
+    opacity: 0;
+    transform: rotate(263deg) scale(150%);
+  }
+  100% {
+    transform: rotate(353deg) scale(100%);
+    opacity: 1;
+  }
+}
+
+
+@keyframes bounceIn {
+  0% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  50% {
+    transform: scale(0);
+    opacity: 0;
+  }
+
+  95% {
+    transform: scale(1.015);
+    opacity: 1;
+  }
+
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
 }

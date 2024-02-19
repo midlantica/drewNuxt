@@ -281,15 +281,15 @@
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(6,_minmax(88px,_1fr))] col-span-full;
     }
 
     @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(3,_minmax(110px,_1fr))];
+      @apply grid-cols-[repeat(3,_minmax(110px,_1fr))] col-span-full;
     }
 
     @media (max-width: 470px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))] col-span-full;
     }
 
     svg {
