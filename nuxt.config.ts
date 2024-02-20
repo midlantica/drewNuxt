@@ -80,18 +80,16 @@ export default defineNuxtConfig({
         { children: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>` }
       ]
     },
-    pageTransition: { name: 'fade', mode: 'in-out' }
+    // pageTransition: { name: 'fade', mode: 'in-out' }
   },
   experimental: {
-    viewTransition: true,
+    // viewTransition: true,
     appManifest: true,
-    // viewTransition: true
   },
   build: {
     //
   },
   // quiet: false,
-  // appManifest: false,
   // server: {
   //   hmr: {
   //     overlay: false,
@@ -100,9 +98,11 @@ export default defineNuxtConfig({
   vue: {
     // propsDestructure: true
   },
-  // nitro: {
-  //   output: {
-  //     publicDir: path.join(__dirname, './.output')
-  //   }
-  // },
+  nitro: {
+    output: {
+      dir: '.output',
+      serverDir: '.output/server',
+      publicDir: '.output/public'
+    }
+  },
 })

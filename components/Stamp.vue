@@ -1,7 +1,7 @@
 <template>
   <div class="skillsGrid">
     <Teleport to="#modal">
-      <transition name="modal-fade">
+      <transition name="modal-fade" appear>
         <div class="modalBg" v-if="isModalOpen">
           <div class="modal" ref="modal">
             <div class="closeBtn" @click="closeModal">

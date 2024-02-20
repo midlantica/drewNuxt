@@ -1,5 +1,5 @@
 <template>
-  <transition name="quoteFade">
+  <transition name="quoteFade" appear>
     <div class="quoteBlock" v-if="currentQuote">
       <div @click="previousQuote()" class="arrowBtn" />
       <div class="flex flex-row items-center justify-center w-full p-0 m-auto leading-4 select-none">

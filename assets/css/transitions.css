@@ -1,42 +1,42 @@
 :root {
-  --timeBase: 1
+  --timebase: 1s;
 }
 
-.bounce-enter-active { animation: bounceIn (var(--timeBase) * .25 + s); }
-.bounce-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce-enter-active { animation: bounceIn (var(--timebase) * .25); }
+.bounce-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce2-enter-active { animation: bounceIn (var(--timeBase) * .75 + s); }
-.bounce2-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce2-enter-active { animation: bounceIn (var(--timebase) * .75); }
+.bounce2-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce3-enter-active { animation: bounceIn (var(--timeBase) * 1 + s); }
-.bounce3-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce3-enter-active { animation: bounceIn (var(--timebase) * 1); }
+.bounce3-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce4-enter-active { animation: bounceIn (var(--timeBase) * 1.25 + s); }
-.bounce4-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce4-enter-active { animation: bounceIn (var(--timebase) * 1.25); }
+.bounce4-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce5-enter-active { animation: bounceIn (var(--timeBase) * 1.5 + s); }
-.bounce5-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce5-enter-active { animation: bounceIn (var(--timebase) * 1.5); }
+.bounce5-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce6-enter-active { animation: bounceIn (var(--timeBase) * 1.75 + s); }
-.bounce6-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce6-enter-active { animation: bounceIn (var(--timebase) * 1.75); }
+.bounce6-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce7-enter-active { animation: bounceIn (var(--timeBase) * 2 + s); }
-.bounce7-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce7-enter-active { animation: bounceIn (var(--timebase) * 2); }
+.bounce7-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce8-enter-active { animation: bounceIn (var(--timeBase) * 2.25 + s); }
-.bounce8-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce8-enter-active { animation: bounceIn (var(--timebase) * 2.25); }
+.bounce8-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce9-enter-active { animation: bounceIn (var(--timeBase) * 2.5 + s); }
-.bounce9-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce9-enter-active { animation: bounceIn (var(--timebase) * 2.5); }
+.bounce9-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce10-enter-active { animation: bounceIn (var(--timeBase) * 2.75 + s); }
-.bounce10-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce10-enter-active { animation: bounceIn (var(--timebase) * 2.75); }
+.bounce10-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce11-enter-active { animation: bounceIn (var(--timeBase) * 3 + s); }
-.bounce11-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce11-enter-active { animation: bounceIn (var(--timebase) * 3); }
+.bounce11-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
-.bounce12-enter-active { animation: bounceIn (var(--timeBase) * 3.5 + s); }
-.bounce12-leave-active { animation: bounceIn (var(--timeBase) * .25 + s) reverse; }
+.bounce12-enter-active { animation: bounceIn (var(--timebase) * 3.5); }
+.bounce12-leave-active { animation: bounceIn (var(--timebase) * .25) reverse; }
 
 .topDown-enter-active {
   position: relative;

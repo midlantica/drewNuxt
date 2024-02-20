@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade">
+  <transition name="fade" appear>
     <div>
       <div class="topDown">
         <header class="w-full">

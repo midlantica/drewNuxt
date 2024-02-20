@@ -1,41 +1,64 @@
 <template>
-  <TransitionGroup>
+  <div>
 
+    <!-- HEADER -->
     <transition name="topDown" appear>
       <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow relative">
         <BourbonNavvy @toggleExtras="toggleExtras" />
       </header>
     </transition>
 
-    <Transition name="bounce2" appear>
-      <div>
+    <!-- CONTENT -->
+    <transition name="nested" appear>
+      <div class="bounce2">
         <main class="mainGrid" v-if="showExtras">
-          <BourbonHeadAndCopy key="copy" class="copyArea" @toggleExtras="toggleExtras" />
-          <Skills key="skills" />
-          <Carousel class="slides" key="slides" />
-          <About key="about" />
-          <Quote key="quote" />
+
+          <!-- REGULAR CONTENT -->
+          <transition name="bounce3" appear>
+            <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
+          </transition>
+
+          <transition name="bounce4" appear>
+            <Skills />
+          </transition>
+
+          <transition name="bounce9" appear>
+            <Carousel class="slides" />
+          </transition>
+
+          <transition name="bounce7" appear>
+            <About />
+          </transition>
+
+          <transition name="bounce8" appear>
+            <Quote />
+          </transition>
+
         </main>
 
+        <!-- EXTRAS CONTENT -->
         <main v-if="!showExtras">
           <component :is='ExtrasC' />
         </main>
 
       </div>
-    </Transition>
+    </transition>
 
-    <transition name="topDn" appear>
+    <!-- FOOTER -->
+    <!-- <transition name="" appear> -->
       <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
         <nav class="h-3" />
       </footer>
-    </transition>
+    <!-- </transition> -->
 
-  </TransitionGroup>
+  </div>
 </template>
 
 <script setup>
+  import { onMounted, nextTick } from 'vue';
   import { useCopy } from "~/store/copy"
-  import { ExtrasC } from '#components'
+  import { ExtrasC, BourbonNavvy, BourbonHeadAndCopy, Carousel, About, Skills, Quote } from '#components'
+
   const copy = useCopy()
 
   definePageMeta({
@@ -51,7 +74,12 @@
 
   const showExtras = ref(true);
 
-  // Method to toggle the visibility of the Extras section
+  onMounted(async () => {
+    await nextTick();
+    showExtras.value = true;
+    // Your code that relies on the rendered template goes here
+  });
+
   function toggleExtras() {
     showExtras.value = !showExtras.value;
   }
@@ -150,5 +178,28 @@
     @media (max-width: theme("screens.breakXsm")) {
       @apply m-0;
     }
+  }
+
+  .nested-enter-active .bounce3,
+  .nested-leave-active .bounce3 {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nested-enter-from :has([class^="bounce"]),
+  .nested-leave-to :has([class^="bounce"]) {
+    transform: translateX(30px);
+    opacity: 0;
+  }
+
+
+  .nested-enter-active .inner,
+  .nested-leave-active .inner {
+    transition: all 0.3s ease-in-out;
+  }
+
+  .nested-enter-from .inner,
+  .nested-leave-to .inner {
+    transform: translateX(30px);
+    opacity: 0;
   }
 </style>
