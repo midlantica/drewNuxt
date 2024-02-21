@@ -9,38 +9,36 @@
     </transition>
 
     <!-- CONTENT -->
-    <!-- <transition name="bounce" appear> -->
+    <transition name="bounce" appear>
       <main class="mainGrid" v-if="showExtras">
 
-        <transition name="bounce2" appear>
-          <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" key="head" />
-        </transition>
+        <!-- <transition name="bounce2" appear> -->
+          <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
+        <!-- </transition> -->
 
-        <transition name="bounce4" appear>
-          <Skills  key="skills" />
-        </transition>
+        <!-- <transition name="bounce4" appear> -->
+          <Skills class="skills" />
+        <!-- </transition> -->
 
-        <transition name="bounce5" appear>
-          <Carousel class="slides"  key="slides" />
-        </transition>
+        <!-- <transition name="bounce5" appear> -->
+          <Carousel class="slides" />
+        <!-- </transition> -->
 
-        <transition name="bounce6" appear>
-          <About key="about" />
-        </transition>
+        <!-- <transition name="bounce6" appear> -->
+          <About class="about" />
+        <!-- </transition> -->
 
-        <transition name="bounce7" appear>
-          <Quote key="quotes" />
-        </transition>
+        <!-- <transition name="bounce7" appear> -->
+          <Quote class="quoteBlock" />
+        <!-- </transition> -->
 
       </main>
-    <!-- </transition> -->
+    </transition>
 
       <!-- EXTRAS CONTENT -->
-    <transition name="bounce2" appear>
+    <transition name="fade" appear>
       <main v-if="!showExtras">
-        <div class="outer">
-          <component :is='ExtrasC' />
-        </div>
+        <component :is="ExtrasC" class="extrasBlock" />
       </main>
     </transition>
 
@@ -79,11 +77,6 @@
     await nextTick();
     showExtras.value = true;
     // Your code that relies on the rendered template goes here
-
-    // setTimeout(() => {
-    //   showExtras.value = true;
-    // }, 100); // Adjust the delay as needed
-
   });
 
   function toggleExtras() {
@@ -186,5 +179,109 @@
     }
   }
 
+  :root {
+    --timebase: 1s;
+  }
+
+  .bounce-enter-from .copyArea,
+  .bounce-enter-from .skills,
+  .bounce-enter-from .slides,
+  .bounce-enter-from .about,
+  .bounce-enter-from .quoteBlock,
+  .bounce-enter-from .extrasBlock
+  {
+    /* animation: bounceIn calc(var(--timebase) * .25); */
+    /* animation-delay: 5s; */
+    /* background: red; */
+  }
+
+  .bounce-enter-active .copyArea,
+  .bounce-enter-active .skills,
+  .bounce-enter-active .slides,
+  .bounce-enter-active .about,
+  .bounce-enter-active .quoteBlock,
+  .bounce-enter-active .extrasBlock
+  {
+    /* animation: bounceIn calc(var(--timebase) * .25); */
+    /* background: purple; */
+  }
+
+  .bounce-enter-to .copyArea,
+  .bounce-enter-to .skills,
+  .bounce-enter-to .slides,
+  .bounce-enter-to .about,
+  .bounce-enter-to .quoteBlock,
+  .bounce-enter-to .extrasBlock
+  {
+    /* animation: bounceIn calc(var(--timebase) * .25); */
+    /* background: yellow; */
+  }
+
+  .bounce-leave-from .copyArea,
+  .bounce-leave-from .skills,
+  .bounce-leave-from .slides,
+  .bounce-leave-from .about,
+  .bounce-leave-from .quoteBlock,
+  .bounce-leave-from .extrasBlock
+  {
+    /* animation: bounceIn calc(var(--timebase) * .25); */
+    /* background: red; */
+  }
+
+  .bounce-leave-active .copyArea,
+  .bounce-leave-active .skills,
+  .bounce-leave-active .slides,
+  .bounce-leave-active .about,
+  .bounce-leave-active .quoteBlock,
+  .bounce-leave-active .extrasBlock
+  {
+    /* animation: bounceIn calc(var(--timebase) * .25); */
+    /* background: purple; */
+  }
+
+  .bounce-leave-to .copyArea,
+  .bounce-leave-to .skills,
+  .bounce-leave-to .slides,
+  .bounce-leave-to .about,
+  .bounce-leave-to .quoteBlock,
+  .bounce-leave-to .extrasBlock
+  {
+    animation: bounceOut .5s;
+    /* background: blue; */
+  }
+
+  @keyframes bounceIn {
+    0% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    50% {
+      transform: scale(0);
+      opacity: 0;
+    }
+
+    95% {
+      transform: scale(1.015);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 1;
+    }
+  }
+
+  @keyframes bounceOut {
+    0% {
+      transform: scale(1);
+      opacity: 1;
+    }
+
+    100% {
+      transform: scale(1);
+      opacity: 0;
+    }
+  }
 
 </style>
