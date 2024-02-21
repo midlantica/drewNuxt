@@ -3,38 +3,37 @@
 
     <!-- HEADER -->
     <transition name="topDown" appear>
-      <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow relative">
+      <header class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
         <BourbonNavvy @toggleExtras="toggleExtras" />
       </header>
     </transition>
 
     <!-- CONTENT -->
-    <transition name="bounce" appear>
-      <main class="mainGrid outer" v-if="showExtras" >
+    <!-- <transition name="bounce" appear> -->
+      <main class="mainGrid" v-if="showExtras">
 
-        <!-- REGULAR CONTENT -->
         <transition name="bounce2" appear>
-          <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
-        </transition>
-
-        <transition name="bounce3" appear>
-          <Skills />
+          <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" key="head" />
         </transition>
 
         <transition name="bounce4" appear>
-          <Carousel class="slides" />
+          <Skills  key="skills" />
         </transition>
 
         <transition name="bounce5" appear>
-          <About />
+          <Carousel class="slides"  key="slides" />
         </transition>
 
         <transition name="bounce6" appear>
-          <Quote />
+          <About key="about" />
+        </transition>
+
+        <transition name="bounce7" appear>
+          <Quote key="quotes" />
         </transition>
 
       </main>
-    </transition>
+    <!-- </transition> -->
 
       <!-- EXTRAS CONTENT -->
     <transition name="bounce2" appear>
@@ -46,11 +45,9 @@
     </transition>
 
     <!-- FOOTER -->
-    <!-- <transition name="" appear> -->
-      <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
-        <nav class="h-3" />
-      </footer>
-    <!-- </transition> -->
+    <footer class="bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+      <nav class="h-3" />
+    </footer>
 
   <!-- </div> -->
 </template>
@@ -61,6 +58,9 @@
   import { ExtrasC, BourbonNavvy, BourbonHeadAndCopy, Carousel, About, Skills, Quote } from '#components'
 
   const copy = useCopy()
+
+  const layoutCustomProps = useAttrs()
+  console.log(layoutCustomProps.title)
 
   definePageMeta({
     title: 'Bourbon'
@@ -79,6 +79,10 @@
     await nextTick();
     showExtras.value = true;
     // Your code that relies on the rendered template goes here
+
+    // setTimeout(() => {
+    //   showExtras.value = true;
+    // }, 100); // Adjust the delay as needed
 
   });
 

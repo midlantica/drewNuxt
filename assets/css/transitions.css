@@ -2,117 +2,147 @@
   --timebase: 1s;
 }
 
-/* [class^="bounce"] {
-  animation: bounceIn calc(var(--timebase) * .25);
-} */
-
-
 .bounce-enter-active,
 .bounce-enter-from,
-.bounce-enter-active .outer [class^="bounce"]
+.bounce-enter-active .outer .bounce-enter-active,
+.bounce-enter-from .outer .bounce-enter-from
  { animation: bounceIn calc(var(--timebase) * .25); }
+
 .bounce-leave-active,
 .bounce-leave-to,
-.bounce-leave-active .outer [class^="bounce"]
+.bounce-leave-active .outer .bounce-enter-active,
+.bounce-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce2-enter-active,
 .bounce2-enter-from,
-.bounce2-enter-active .outer [class^="bounce"]
+.bounce2-enter-active .outer .bounce-enter-active,
+.bounce2-enter-from .outer .bounce2-enter-from
  { animation: bounceIn calc(var(--timebase) * .75); }
 .bounce2-leave-active,
 .bounce2-leave-to,
-.bounce2-leave-active .outer [class^="bounce"]
+.bounce2-leave-active .outer .bounce-enter-active,
+.bounce2-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce3-enter-active,
 .bounce3-enter-from,
-.bounce3-enter-active .outer [class^="bounce"]
+.bounce3-enter-active .outer .bounce-enter-active,
+.bounce3-enter-from .outer .bounce3-enter-from
  { animation: bounceIn calc(var(--timebase) * 1); }
+
 .bounce3-leave-active,
 .bounce3-leave-to,
-.bounce3-leave-active .outer [class^="bounce"]
+.bounce3-leave-active .outer .bounce-enter-active,
+.bounce3-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce4-enter-active,
 .bounce4-enter-from,
-.bounce4-enter-active .outer [class^="bounce"]
+.bounce4-enter-active .outer .bounce-enter-active,
+.bounce4-enter-from .outer .bounce4-enter-from
  { animation: bounceIn calc(var(--timebase) * 1.25); }
+
 .bounce4-leave-active,
 .bounce4-leave-to,
-.bounce4-leave-active .outer [class^="bounce"]
+.bounce4-leave-active .outer .bounce-enter-active,
+.bounce4-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce5-enter-active,
 .bounce5-enter-from,
-.bounce5-enter-active .outer [class^="bounce"]
+.bounce5-enter-active .outer .bounce-enter-active,
+.bounce5-enter-from .outer .bounce5-enter-from
  { animation: bounceIn calc(var(--timebase) * 1.5); }
+
 .bounce5-leave-active,
 .bounce5-leave-to,
-.bounce5-leave-active .outer [class^="bounce"]
+.bounce5-leave-active .outer .bounce-enter-active,
+.bounce5-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce6-enter-active,
 .bounce6-enter-from,
-.bounce6-enter-active .outer [class^="bounce"]
+.bounce6-enter-active .outer .bounce-enter-active,
+.bounce6-enter-from .outer .bounce6-enter-from
  { animation: bounceIn calc(var(--timebase) * 1.75); }
+
 .bounce6-leave-active,
 .bounce6-leave-to,
-.bounce6-leave-active .outer [class^="bounce"]
+.bounce6-leave-active .outer .bounce-enter-active,
+.bounce6-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce7-enter-active,
 .bounce7-enter-from,
-.bounce7-enter-active .outer [class^="bounce"]
+.bounce7-enter-active .outer .bounce-enter-active,
+.bounce7-enter-from .outer
  { animation: bounceIn calc(var(--timebase) * 2); }
+
 .bounce7-leave-active,
 .bounce7-leave-to,
-.bounce7-leave-active .outer [class^="bounce"]
+.bounce7-leave-active .outer .bounce-enter-active,
+.bounce7-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce8-enter-active,
 .bounce8-enter-from,
-.bounce8-enter-active .outer [class^="bounce"]
+.bounce8-enter-active .outer .bounce-enter-active,
+.bounce8-enter-from .outer .bounce8-enter-from
  { animation: bounceIn calc(var(--timebase) * 2.25); }
+
 .bounce8-leave-active,
 .bounce8-leave-to,
-.bounce8-leave-active .outer [class^="bounce"]
+.bounce8-leave-active .outer .bounce-enter-active,
+.bounce8-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce9-enter-active,
 .bounce9-enter-from,
-.bounce9-enter-active .outer [class^="bounce"]
+.bounce9-enter-active .outer .bounce-enter-active,
+.bounce9-enter-from .outer .bounce9-enter-from
  { animation: bounceIn calc(var(--timebase) * 2.5); }
+
 .bounce9-leave-active,
 .bounce9-leave-to,
-.bounce9-leave-active .outer [class^="bounce"]
+.bounce9-leave-active .outer .bounce-enter-active
+.bounce9-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce10-enter-active,
 .bounce10-enter-from,
-.bounce10-enter-active .outer [class^="bounce"]
+.bounce10-enter-active .outer .bounce-enter-active,
+.bounce10-enter-from .outer .bounce10-enter-from
  { animation: bounceIn calc(var(--timebase) * 2.75); }
+
 .bounce10-leave-active,
 .bounce10-leave-to,
-.bounce10-leave-active .outer [class^="bounce"]
+.bounce10-leave-active .outer .bounce-enter-active,
+.bounce10-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce11-enter-active,
 .bounce11-enter-from,
-.bounce11-enter-active .outer [class^="bounce"]
+.bounce11-enter-active .outer .bounce-enter-active,
+.bounce11-enter-from .outer .bounce11-enter-from
  { animation: bounceIn calc(var(--timebase) * 3); }
+
 .bounce11-leave-active,
 .bounce11-leave-to,
-.bounce11-leave-active .outer [class^="bounce"]
+.bounce11-leave-active .outer .bounce-enter-active,
+.bounce11-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .bounce12-enter-active,
 .bounce12-enter-from,
-.bounce12-enter-active .outer [class^="bounce"]
+.bounce12-enter-active .outer .bounce-enter-active,
+.bounce12-enter-from .outer .bounce12-enter-from
  { animation: bounceIn calc(var(--timebase) * 3.5); }
+
 .bounce12-leave-active,
 .bounce12-leave-to,
-.bounce12-leave-active .outer [class^="bounce"]
+.bounce12-leave-active .outer .bounce-enter-active,
+.bounce12-leave-to .outer .bounce-leave-to
  { animation: bounceIn calc(var(--timebase) * .25) reverse; }
 
 .topDown-enter-active {
@@ -243,25 +273,9 @@
   }
 }
 
-.flash {
+/* .flash {
   animation-name: flash;
-}
-
-.fadey-enter-active,
-.fadey-enter-from,
-.fadey-leave-active {
-  transition: all 0.8s ease;
-  overflow: hidden;
-  visibility: visible;
-  opacity: 1;
-  position: absolute;
-}
-
-.fadey-enter,
-.fadey-leave-to {
-  opacity: 0;
-  visibility: hidden;
-}
+} */
 
 @keyframes rotator {
   0% {
