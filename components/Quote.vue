@@ -338,7 +338,7 @@
 
   .quoteFade-enter-active,
   .quoteFade-leave-active {
-    transition: opacity 1s;
+    transition: opacity;
   }
 
   .quoteFade-enter,
@@ -348,7 +348,7 @@
 
   .fadage {
     animation: fadage 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    animation: fadage 1s ease-in-out both;
+    /* animation: fadage 1s ease-in-out both; */
   }
 
   @keyframes fadage {

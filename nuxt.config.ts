@@ -80,11 +80,12 @@ export default defineNuxtConfig({
         { children: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>` }
       ]
     },
-    // pageTransition: { name: 'fade', mode: 'in-out' }
+    viewTransition: false,
+    pageTransition: false,
   },
   experimental: {
-    // viewTransition: true,
-    appManifest: true,
+    viewTransition: false,
+    appManifest: false,
   },
   build: {
     //

@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <!-- <div> -->
 
     <!-- HEADER -->
     <transition name="topDown" appear>
@@ -9,39 +9,40 @@
     </transition>
 
     <!-- CONTENT -->
-    <transition name="nested" appear>
-      <div class="bounce2">
-        <main class="mainGrid" v-if="showExtras">
+    <transition name="bounce" appear>
+      <main class="mainGrid outer" v-if="showExtras" >
 
-          <!-- REGULAR CONTENT -->
-          <transition name="bounce3" appear>
-            <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
-          </transition>
+        <!-- REGULAR CONTENT -->
+        <transition name="bounce2" appear>
+          <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
+        </transition>
 
-          <transition name="bounce4" appear>
-            <Skills />
-          </transition>
+        <transition name="bounce3" appear>
+          <Skills />
+        </transition>
 
-          <transition name="bounce9" appear>
-            <Carousel class="slides" />
-          </transition>
+        <transition name="bounce4" appear>
+          <Carousel class="slides" />
+        </transition>
 
-          <transition name="bounce7" appear>
-            <About />
-          </transition>
+        <transition name="bounce5" appear>
+          <About />
+        </transition>
 
-          <transition name="bounce8" appear>
-            <Quote />
-          </transition>
+        <transition name="bounce6" appear>
+          <Quote />
+        </transition>
 
-        </main>
+      </main>
+    </transition>
 
-        <!-- EXTRAS CONTENT -->
-        <main v-if="!showExtras">
+      <!-- EXTRAS CONTENT -->
+    <transition name="bounce2" appear>
+      <main v-if="!showExtras">
+        <div class="outer">
           <component :is='ExtrasC' />
-        </main>
-
-      </div>
+        </div>
+      </main>
     </transition>
 
     <!-- FOOTER -->
@@ -51,7 +52,7 @@
       </footer>
     <!-- </transition> -->
 
-  </div>
+  <!-- </div> -->
 </template>
 
 <script setup>
@@ -78,6 +79,7 @@
     await nextTick();
     showExtras.value = true;
     // Your code that relies on the rendered template goes here
+
   });
 
   function toggleExtras() {
@@ -180,26 +182,5 @@
     }
   }
 
-  .nested-enter-active .bounce3,
-  .nested-leave-active .bounce3 {
-    transition: all 0.3s ease-in-out;
-  }
 
-  .nested-enter-from :has([class^="bounce"]),
-  .nested-leave-to :has([class^="bounce"]) {
-    transform: translateX(30px);
-    opacity: 0;
-  }
-
-
-  .nested-enter-active .inner,
-  .nested-leave-active .inner {
-    transition: all 0.3s ease-in-out;
-  }
-
-  .nested-enter-from .inner,
-  .nested-leave-to .inner {
-    transform: translateX(30px);
-    opacity: 0;
-  }
 </style>
