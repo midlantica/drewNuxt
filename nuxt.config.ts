@@ -11,10 +11,10 @@ export default defineNuxtConfig({
   css: ['~/assets/css/main.css'],
   ssr: true,
   devtools: {
+    timeline: {
+      enabled: true,
+    },
     enabled: true,
-    // timeline: {
-    //   enabled: true,
-    // },
   },
   modules: [
     '@nuxtjs/tailwindcss',
@@ -80,8 +80,8 @@ export default defineNuxtConfig({
         { children: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>` }
       ]
     },
-    viewTransition: false,
     pageTransition: false,
+    layoutTransition: false,
   },
   experimental: {
     viewTransition: false,

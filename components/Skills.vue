@@ -207,7 +207,7 @@
     @apply h-[70px] m-auto flex items-center justify-center;
   }
   .skillsGrid {
-    @apply col-start-1 col-end-2 row-start-2 row-end-4 w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
+    @apply w-[98%] grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
 
     @media (max-width: theme("screens.breakXlg")) {
       @apply row-start-2 row-end-2;

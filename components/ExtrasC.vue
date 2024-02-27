@@ -1,8 +1,8 @@
 <template>
-  <transition name="fade" duration="100" appear>
+  <transition name="fade" duration="200" appear>
     <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper">
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
-        Portfolio Extras
+        <a @click="$router.go(-1)" class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </a> Portfolio Extras
       </h1>
 
       <div class="flex flex-row flex-wrap items-start w-full p-0 extrasWrap place-content-center gap-x-4">

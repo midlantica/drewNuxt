@@ -10,8 +10,8 @@
       </div>
 
       <div class="resumeLinks">
-        <nuxt-link :to="`${copy.portfolio}`" target="_BLANK" class="resume rOne">PDF
-          Resume</nuxt-link>
+        <a :href="`${copy.portfolio}`" target="_BLANK" class="resume rOne">PDF
+          Resume</a>
       </div>
     </div>
 

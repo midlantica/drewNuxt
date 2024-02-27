@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-  import { ref, computed } from 'vue'
+  import { ref, computed, onMounted } from 'vue'
   import { useMouseInElement } from '@vueuse/core'
   import { useSound } from '@vueuse/sound'
   import { useCopy } from "~/store/copy";
@@ -51,11 +51,19 @@
     isActive = !isActive
   }
 
+  const showIt = ref(false)
+
+  // onMounted(() => {
+  //   setTimeout(() => {
+  //     showIt.value = true;
+  // }, 10);
+  // })
+
 </script>
 
 <style scoped>
   .about {
-    @apply bg-[#fbf3bb] py-5 px-7 flex flex-row flex-nowrap justify-center items-center content-center self-center rounded-sm cursor-pointer shadow-[0px_1px_2px_0px_#00000080];
+    @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap justify-center items-center content-center self-center rounded-sm cursor-pointer shadow-[0px_1px_2px_0px_#00000080];
 
     @media (max-width: theme("screens.breakXlg")) {
       @apply mt-0 mx-0 mb-0;

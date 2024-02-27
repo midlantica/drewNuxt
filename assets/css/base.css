@@ -39,16 +39,16 @@ audio {
 
 .authenticStamp {
   @apply self-center;
-  animation: rotator .5s ease-in 1;
-  animation-delay: 1.5s;
+  animation: rotator .4s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
+  animation-delay: 1s;
   opacity: 0;
   animation-fill-mode: forwards;
 }
 
 .authenticStampPunk {
   @apply self-center;
-  animation: rotator2 .5s ease-in 1;
-  animation-delay: 1.5s;
+  animation: rotator2 .4s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
+  animation-delay: 1s;
   opacity: 0;
   animation-fill-mode: forwards;
   border-radius: 100%;

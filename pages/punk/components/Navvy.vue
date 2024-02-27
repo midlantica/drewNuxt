@@ -4,19 +4,19 @@
       &nbsp;
     </div>
     <p class="email">
-      <nuxt-link :to="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</nuxt-link>
+      <a :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
     </p>
 
     <div class="mastMain">
-      <NuxtLink to="/punk">
+      <a href="/punk">
         <mastDrew class="svgArt mastDrew" />
-      </NuxtLink>
-      <NuxtLink to="/punk">
+      </a>
+      <a href="/punk">
         <mastHarper class="svgArt mastHarper" />
-      </NuxtLink>
-      <NuxtLink to="/punk/ExtrasPunk" class="DrewHead jelloHorizontal">
+      </a>
+      <a href="/punk/ExtrasPunk" class="DrewHead jelloHorizontal">
         &nbsp;
-      </NuxtLink>
+      </a>
     </div>
   </nav>
 </template>

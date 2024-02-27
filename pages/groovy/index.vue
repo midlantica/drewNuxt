@@ -4,6 +4,9 @@
 
   definePageMeta({
     title: 'Groovy',
+    pageTransition: false,
+    layoutTransition: false,
+    viewTransition: false,
   })
 
   useHead({
@@ -16,25 +19,37 @@
 </script>
 
 <template>
-  <transition name="fade" appear>
-    <div>
+  <div>
+
+    <Transition name="topDown" appear>
       <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
         <GroovyNavvyHead />
       </header>
+    </Transition>
+
+    <Transition name="bounce" appear>
       <main class="mainGrid ">
-        <GroovyHeadAndCopy class="copyArea" />
-        <Carousel class="slides" />
-        <About />
-        <Skills />
+        <Transition name="bounce2" appear>
+          <GroovyHeadAndCopy class="copyArea" />
+        </Transition>
+        <Transition name="bounce4" appear>
+          <Carousel class="slides" />
+        </Transition>
+        <Transition name="bounce6" appear>
+          <About />
+        </Transition>
+        <Transition name="bounce8" appear>
+          <Skills />
+        </Transition>
       </main>
-      <GroovyFooter class="bounce10" />
-    </div>
-  </transition>
+    </Transition>
+
+    <GroovyFooter />
+
+  </div>
 </template>
 
 <style scoped>
-
-  @import url('../../assets/css/transitions.css');
   .mainGrid {
     @apply grid grid-cols-[7fr_6fr] gap-y-4 mt-0 mx-4 mb-2;
 
@@ -59,9 +74,9 @@
     }
   }
 
-   header {
-     @apply text-base-ivory bg-groovy-red after:clear-both h-[188px];
-   }
+  header {
+    @apply text-base-ivory bg-groovy-red after:clear-both h-[188px];
+  }
 
   .about {
     @apply bg-groovy-yellow rounded-xl font-groovyHead shadow-[0px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];

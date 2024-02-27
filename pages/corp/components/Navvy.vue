@@ -19,10 +19,10 @@
       </div>
       <section class="contact">
         <p class="leading-normal font-corpCopy text-[1.3em] tracking-[.01em] items-center text-center grow font-semibold lowercase">
-          <nuxt-link :to="`${copy.portfolio}`" target="_blank" class="text-corp-blueDark hover:border-b-2 hover:border-dotted hover:border-corp-blueMid">PDF Resume</nuxt-link>
+          <a :href="`${copy.portfolio}`" target="_blank" class="text-corp-blueDark hover:border-b-2 hover:border-dotted hover:border-corp-blueMid">PDF Resume</a>
         </p>
         <p class="leading-normal font-corpCopy text-[1.3em] tracking-[.01em] items-center text-center grow font-semibold lowercase">
-          <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="text-corp-blueDark hover:border-b-2 hover:border-dotted hover:border-corp-blueMid">{{ copy.druEmail }}</nuxt-link>
+          <a :href="`mailto:` + `${copy.druEmail}`" class="text-corp-blueDark hover:border-b-2 hover:border-dotted hover:border-corp-blueMid">{{ copy.druEmail }}</a>
         </p>
       </section>
     </section>

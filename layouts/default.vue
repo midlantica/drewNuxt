@@ -6,7 +6,10 @@
 </template>
 
 <script setup>
-
+  // definePageMeta({
+  //   pageTransition: false,
+  //   layoutTransition: false
+  // })
 </script>
 
 <style>

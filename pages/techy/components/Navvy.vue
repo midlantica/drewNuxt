@@ -38,8 +38,6 @@
 
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
-
-  const resumeUrl = '/resume/drew_harper_resume_portfolio.pdf'
 </script>
 
 <style scoped>

@@ -1,15 +1,13 @@
 <template>
-  <transition name="quoteFade" appear>
-    <div class="quoteBlock" v-if="currentQuote">
-      <div @click="previousQuote()" class="arrowBtn" />
-      <div class="flex flex-row items-center justify-center w-full p-0 m-auto leading-4 select-none">
-        <p class="inline not-italic leading-normal text-center" :class="{ fadage: quoteAni }">
-          &ldquo;{{ currentQuote.quote }}&rdquo; <cite class="inline not-italic leading-normal break-keep whitespace-nowrap">&ndash; {{ currentQuote.author }}</cite>
-        </p>
-      </div>
-      <div @click="nextQuote()" class="arrowBtn" />
+  <div class="quoteBlock" v-if="currentQuote">
+    <div @click="previousQuote()" class="arrowBtn" />
+    <div class="flex flex-row items-center justify-center w-full p-0 m-auto leading-4 select-none">
+      <p class="inline not-italic leading-normal text-center" :class="{ fadage: quoteAni }">
+        &ldquo;{{ currentQuote.quote }}&rdquo; <cite class="inline not-italic leading-normal break-keep whitespace-nowrap">&ndash; {{ currentQuote.author }}</cite>
+      </p>
     </div>
-  </transition>
+    <div @click="nextQuote()" class="arrowBtn" />
+  </div>
 </template>
 
 <script setup>
@@ -313,8 +311,7 @@
 
   .zoomQuote-enter-from,
   .zoomQuote-leave-to {
-    transform: scale(0.9);
-    transform: translateX(-20px);
+    transform: scale(0.9) translateX(-20px);
     @apply opacity-0 transition-all duration-1000 ease-out;
   }
 
