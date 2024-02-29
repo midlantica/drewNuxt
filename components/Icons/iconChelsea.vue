@@ -259,7 +259,7 @@
 
 <style scoped>
 
-  svg:hover {
+  svg :hover {
     @apply cursor-pointer;
   }
 
@@ -268,14 +268,17 @@
     transform-origin: 50% 50%;
   }
 
-  #svgChelsea:hover .groupChelsea {
+  #svgChelsea:hover > .groupChelsea {
     animation: chelseaRotate 2s ease-in-out 2;
     animation-delay: 1s;
   }
 
   @keyframes chelseaRotate {
+    0% {
+      transform: rotate(0deg);
+    }
     100% {
-      transform: rotate(360deg) scale(95%);
+      transform: rotate(360deg);
     }
   }
 
