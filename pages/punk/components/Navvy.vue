@@ -1,32 +1,36 @@
 <template>
-  <nav class="flex flex-col items-center content-center px-2 py-4 breakLg:justify-center breakLg:content-center breakLg:items-center">
-    <div class="block w-full max-w-screen-breakXlg z-0 absolute top-0 left-0 h-[5em] self-center bg-[rgba(0,128,0,0.25)] saturate-[2.5]">
-      &nbsp;
-    </div>
-    <p class="email">
-      <a :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
-    </p>
-
-    <div class="mastMain">
-      <a href="/punk">
-        <mastDrew class="svgArt mastDrew" />
-      </a>
-      <a href="/punk">
-        <mastHarper class="svgArt mastHarper" />
-      </a>
-      <a href="/punk/ExtrasPunk" class="DrewHead jelloHorizontal">
+  <header v-show="showContent" class="-mb-4 shadow-none text-base-ivory">
+    <nav class="flex flex-col items-center content-center px-2 py-4 breakLg:justify-center breakLg:content-center breakLg:items-center">
+      <div class="block w-full max-w-screen-breakXlg z-0 absolute top-0 left-0 h-[5em] self-center bg-[rgba(0,128,0,0.25)] saturate-[2.5]">
         &nbsp;
-      </a>
-    </div>
-  </nav>
+      </div>
+      <p class="email">
+        <a :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
+      </p>
+
+      <div class="cursor-pointer mastMain" @click="$emit('toggleExtras')">
+          <mastDrew class="svgArt mastDrew" />
+          <mastHarper class="svgArt mastHarper" />
+        <div class="DrewHead jelloHorizontal">
+          &nbsp;
+        </div>
+      </div>
+    </nav>
+  </header>
 </template>
 
 <script setup scoped>
   import { useCopy } from "~/store/copy";
-  const copy = useCopy()
-
   import mastDrew from './masthead/mastDrew.vue'
   import mastHarper from './masthead/mastHarper.vue'
+
+  const copy = useCopy()
+
+  const showContent = ref(false)
+
+  onMounted(() => {
+    showContent.value = true
+  })
 
 </script>
 
@@ -75,80 +79,76 @@
         /* // */
       }
 
-      a {
-        /* // */
 
-        &:nth-child(1) {
-          @apply w-[60vw];
+      :nth-child(1) {
+        @apply w-[60vw];
 
-          @media (max-width: theme("screens.breakXlg")) {
-            @apply order-1;
-          }
-
-          @media (max-width: theme("screens.breakLg")) {
-            @apply order-1 w-[47vw] mt-6;
-          }
-
-          @media (max-width: theme("screens.breakSm")) {
-            @apply order-1 w-[59vw];
-          }
-
-          @media (max-width: theme("screens.breakXsm")) {
-            @apply w-[63vw] order-1;
-          }
+        @media (max-width: theme("screens.breakXlg")) {
+          @apply order-1;
         }
 
-        &:nth-child(2) {
-          @apply w-[80vw];
-
-          @media (max-width: theme("screens.breakXlg")) {
-            @apply order-1;
-          }
-
-          @media (max-width: theme("screens.breakLg")) {
-            @apply w-[68vw] order-3;
-          }
-
-          @media (max-width: theme("screens.breakSm")) {
-            @apply w-[88vw] order-3;
-          }
-
-          @media (max-width: theme("screens.breakXsm")) {
-            @apply w-[92vw] order-3;
-          }
+        @media (max-width: theme("screens.breakLg")) {
+          @apply order-1 w-[47vw] mt-6;
         }
 
-        &:nth-child(3) {
-          /* // */
-
-          @media (max-width: theme("screens.breakXlg")) {
-            @apply order-3;
-          }
-
-          @media (max-width: theme("screens.breakLg")) {
-            @apply order-2;
-          }
-
-          @media (max-width: theme("screens.breakSm")) {
-            @apply order-2;
-          }
-
-          @media (max-width: theme("screens.breakXsm")) {
-            @apply order-2;
-          }
+        @media (max-width: theme("screens.breakSm")) {
+          @apply order-1 w-[59vw];
         }
 
+        @media (max-width: theme("screens.breakXsm")) {
+          @apply w-[63vw] order-1;
+        }
       }
 
-      a.svg.svgArt.mastDrew {
-        @apply w-[170px];
+      :nth-child(2) {
+        @apply w-[80vw];
+
+        @media (max-width: theme("screens.breakXlg")) {
+          @apply order-1;
+        }
+
+        @media (max-width: theme("screens.breakLg")) {
+          @apply w-[68vw] order-3;
+        }
+
+        @media (max-width: theme("screens.breakSm")) {
+          @apply w-[88vw] order-3;
+        }
+
+        @media (max-width: theme("screens.breakXsm")) {
+          @apply w-[92vw] order-3;
+        }
       }
 
-      a.svg.svgArt.mastHarper {
+      :nth-child(3) {
+        /*  */
+
+        @media (max-width: theme("screens.breakXlg")) {
+          @apply order-3;
+        }
+
+        @media (max-width: theme("screens.breakLg")) {
+          @apply order-2;
+        }
+
+        @media (max-width: theme("screens.breakSm")) {
+          @apply order-2;
+        }
+
+        @media (max-width: theme("screens.breakXsm")) {
+          @apply order-2;
+        }
+      }
+
+      svg.svgArt.mastDrew {
+        /* @apply w-[100px]; */
+      }
+
+      svg.svgArt.mastHarper {
         /* // */
       }
 
-      a.DrewHead {
+      div.DrewHead {
         @apply bg-[url('/img/drew_mug_punk.png')] bg-no-repeat bg-contain w-[18vw] h-[120px] no-underline;
 
         @media (max-width: theme("screens.breakLg")) {

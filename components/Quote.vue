@@ -151,7 +151,6 @@
 </script>
 
 <style scoped>
-
   .arrowBtn {
     @apply text-white select-none p-2 font-normal font-sans;
 
@@ -225,7 +224,7 @@
     .arrowBtn {
       @apply text-techy-blueTech pt-0 px-2 pb-[0.2rem] leading-[1.3] border border-solid border-techy-blueTech;
 
-      &:hover {
+      :hover {
         @apply bg-techy-blueTech text-techy-mango;
       }
     }
@@ -269,7 +268,7 @@
 
     .arrowBtn:nth-child(1)::after {
 
-      &:hover {
+      :hover {
         content: '<';
         @apply content-['<'];
       }
@@ -277,7 +276,7 @@
 
     .arrowBtn:nth-child(3)::after {
 
-      &:hover {
+      :hover {
         content: '>';
         @apply content-['>'];
       }

@@ -1,9 +1,12 @@
 <script setup>
-  import { useCopy } from "~/store/copy";
-  const copy = useCopy()
+  import { nextTick } from 'vue';
+  import { ExtrasC } from '#components'
 
   definePageMeta({
-    title: 'Corp'
+    title: 'Corp',
+    pageTransition: false,
+    layoutTransition: false,
+    viewTransition: false,
   })
 
   useHead({
@@ -13,46 +16,49 @@
     }
   })
 
+  const showExtras = ref(true);
+
+  onMounted(async () => {
+    await nextTick();
+    showExtras.value = true;
+  });
+
+  function toggleExtras() {
+    showExtras.value = !showExtras.value;
+  }
+
 </script>
 
 <template>
-  <transition name="fade" appear>
-    <div>
-      <transition name="topDown" appear>
-        <header class="shadow-none">
-          <CorpNavvy />
-        </header>
-      </transition>
-
-      <transition name="bounce2" appear>
-        <main class="mainGrid">
-          <transition name="bounce3" appear>
-            <div class="copyArea">
-              <CorpHeadAndCopy />
-            </div>
-          </transition>
-
-          <transition name="bounce4" appear>
-            <div class="slides">
-              <Carousel />
-            </div>
-          </transition>
-
-          <transition name="bounce9" appear>
-            <About />
-          </transition>
-
-          <transition name="bounce7" appear>
-            <Skills />
-          </transition>
-        </main>
-      </transition>
-
-      <footer class="shadow-none">
-        <Quote />
-      </footer>
-    </div>
+  <transition name="topDown" appear>
+    <CorpNavvy @toggleExtras="toggleExtras" />
   </transition>
+
+  <main class="mainGrid" v-if="showExtras">
+    <transition name="bounce2" appear>
+      <CorpHeadAndCopy @toggleExtras="toggleExtras" />
+    </transition>
+
+    <transition name="bounce4" appear>
+      <Carousel class="slides" />
+    </transition>
+
+    <transition name="bounce8" appear>
+      <About />
+    </transition>
+
+    <transition name="bounce10" appear>
+      <Skills />
+    </transition>
+  </main>
+
+  <main class="mainGrid" v-if="!showExtras">
+    <component :is="ExtrasC" class="col-span-2" />
+  </main>
+
+  <footer class="shadow-none">
+    <Quote />
+  </footer>
 </template>
 
 <style scoped>

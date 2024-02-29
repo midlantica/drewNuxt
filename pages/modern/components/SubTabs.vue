@@ -1,5 +1,5 @@
 <template>
-  <div class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
+  <div v-show="showContent" class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
     <div @click="emitSwitchView('ModernProjects')" class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }">
       Projects
     </div>
@@ -24,7 +24,10 @@
     emits('switch-view', view)
   };
 
+  const showContent = ref(false)
+
   onMounted(() => {
+    showContent.value = true
     selectedBtn.value = 'ModernProjects'
   })
 

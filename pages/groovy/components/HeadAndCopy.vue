@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-show="showContent">
     <div class="flex items-center w-full gap-2 mb-2">
       <h1>
         {{ copy.druHead }}
@@ -13,6 +13,12 @@
 <script setup>
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
+
+  const showContent = ref(false)
+
+  onMounted(() => {
+    showContent.value = true
+  })
 </script>
 
 <style scoped>

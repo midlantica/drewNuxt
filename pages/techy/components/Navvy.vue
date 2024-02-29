@@ -1,43 +1,46 @@
 <template>
-  <nav class="flex flex-col items-center content-center justify-center w-full flex-nowrap grow">
-    <div class="w-full mastMain bg-techy-mango">
-      <div class="mx-auto my-0 text-center masty">
-        <div class="DHmast">
-          <NuxtLink to="/techy/ExtrasTechy" class="drewHeadPic jelloHorizontal" />
-          <NuxtLink to="/techy" class="svgArt mastDrew">
-            <mastDrew />
-          </NuxtLink>
-          <NuxtLink to="/techy" class="svgArt mastHarper">
-            <mastHarper />
-          </NuxtLink>
+  <header v-show="showContent" class="shadow-none text-base-ivory bg-techy-mango">
+    <nav class="flex flex-col items-center content-center justify-center w-full flex-nowrap grow">
+      <div class="w-full mastMain bg-techy-mango">
+        <div class="mx-auto my-0 text-center masty">
+          <div class="cursor-pointer DHmast" @click="$emit('toggleExtras')" >
+            <div to="/techy/ExtrasTechy" class="drewHeadPic jelloHorizontal" />
+            <mastDrew class="svgArt mastDrew" />
+            <mastHarper class="svgArt mastHarper" />
+          </div>
+
+          <div class="block jobDesc">
+            <h2>{{ copy.uiuxDesigner }} + </h2>
+            <h2>{{ copy.vizDesigner }}</h2>
+          </div>
         </div>
 
-        <div class="block jobDesc">
-          <h2>{{ copy.uiuxDesigner }} + </h2>
-          <h2>{{ copy.vizDesigner }}</h2>
+        <div class="bar">
+          <div class="contact">
+            <p class="email">
+              <nuxt-link :to="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</nuxt-link>
+            </p>
+            <p class="resume">
+              <nuxt-link :to="`${copy.portfolio}`" target="_blank">PDF Resume</nuxt-link>
+            </p>
+          </div>
         </div>
       </div>
-
-      <div class="bar">
-        <div class="contact">
-          <p class="email">
-            <nuxt-link :to="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</nuxt-link>
-          </p>
-          <p class="resume">
-            <nuxt-link :to="`${copy.portfolio}`" target="_blank">PDF Resume</nuxt-link>
-          </p>
-        </div>
-      </div>
-    </div>
-  </nav>
+    </nav>
+  </header>
 </template>
 
 <script setup>
   import mastDrew from './masthead/mastDrew.vue'
   import mastHarper from './masthead/mastHarper.vue'
-
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
+
+  const showContent = ref(false)
+
+  onMounted(() => {
+    showContent.value = true
+  })
 </script>
 
 <style scoped>
@@ -70,7 +73,7 @@
           @apply pt-4;
         }
 
-        a.drewHeadPic {
+        .drewHeadPic {
           @apply col-start-1 col-end-2 row-start-1 row-end-3 w-[92px] h-[109px] pt-4 pr-4 pb-0 pl-4 bg-no-repeat bg-cover justify-self-end bg-[url('/img/drew_mug_dig.png')];
 
           @media (max-width: theme("screens.breakXlg")) {
@@ -90,7 +93,7 @@
           }
         }
 
-        a.svgArt {
+        .svgArt {
           @apply h-[5.9em];
 
           @media (max-width: theme("screens.breakXlg")) {
@@ -110,7 +113,7 @@
           }
         }
 
-        a.mastDrew {
+        .mastDrew {
           @apply col-start-2 col-end-3 row-start-1 row-end-3 w-[19em];
 
           @media (max-width: theme("screens.breakXlg")) {
@@ -130,7 +133,7 @@
           }
         }
 
-        a.mastHarper {
+        .mastHarper {
           @apply col-start-3 col-end-4 row-start-1 row-end-3 w-[25.3em];
 
           @media (max-width: theme("screens.breakXlg")) {

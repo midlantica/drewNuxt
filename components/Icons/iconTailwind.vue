@@ -18,27 +18,24 @@
   }
 
   #svgTailwind .groupTailwind {
-     transform: scale(95%);
+    transform: scale(95%);
     transform-origin: 50% 50%;
   }
 
   #svgTailwind:hover .groupTailwind {
     animation: tailwindRotate 2s reverse ease-in-out 2;
     animation-delay: 1s;
-
   }
 
   @keyframes tailwindRotate {
     100% {
       transform: rotate(360deg) scale(95%);
-
     }
   }
 
   @keyframes iconFlipXAni {
     to {
       transform: rotateY(360deg) scale(95%);
-
     }
   }
 </style>

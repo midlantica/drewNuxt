@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-show="showContent">
     <h1 class="flex items-center w-full gap-2">
       {{ copy.druHead }}
       <AuthenticStamp class="authenticStamp" />
@@ -12,7 +12,11 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  // import AuthenticStamp from '../../components/AuthenticStamp.vue'
+  const showContent = ref(false)
+
+  onMounted(() => {
+    showContent.value = true
+  })
 </script>
 
 <style scoped>

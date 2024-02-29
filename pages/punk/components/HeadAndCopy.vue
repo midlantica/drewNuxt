@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-show="showContent">
     <div class="flex justify-start">
       <AuthenticStamp class="authenticStampPunk" />
     </div>
@@ -29,7 +29,11 @@
   const copy = useCopy()
 
   // import AuthenticStamp from '../../components/AuthenticStamp.vue'
+  const showContent = ref(false)
 
+  onMounted(() => {
+    showContent.value = true
+  })
 </script>
 
 <style scoped>

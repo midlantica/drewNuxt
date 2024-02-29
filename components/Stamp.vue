@@ -330,7 +330,4 @@
     @apply font-punkCopy;
   }
 
-.modal-fade-enter-from,
-.modal-fade-leave-to {
-  @apply opacity-0;
-}</style>
+</style>

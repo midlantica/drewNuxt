@@ -1,5 +1,5 @@
 <template>
-  <div name="bounce" appear>
+  <div v-show="showContent">
     <transition name="bounce2" appear>
       <Skills />
     </transition>
@@ -10,7 +10,11 @@
 </template>
 
 <script setup>
+  const showContent = ref(false)
 
+  onMounted(() => {
+    showContent.value = true
+  })
 </script>
 
 <style scoped>

@@ -1,6 +1,6 @@
 <script setup>
-  import { useCopy } from "~/store/copy";
-  const copy = useCopy()
+  import { nextTick } from 'vue';
+  import { ExtrasC } from '#components'
 
   definePageMeta({
     title: 'Groovy',
@@ -16,37 +16,47 @@
     }
   })
 
+  const showExtras = ref(true);
+
+  onMounted(async () => {
+    await nextTick();
+    showExtras.value = true;
+  });
+
+  function toggleExtras() {
+    showExtras.value = !showExtras.value;
+  }
+
 </script>
 
 <template>
-  <div>
+  <Transition name="topDown" appear>
+    <GroovyNavvyHead @toggleExtras="toggleExtras" />
+  </Transition>
 
-    <Transition name="topDown" appear>
-      <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
-        <GroovyNavvyHead />
-      </header>
+  <main v-if="showExtras" class="mainGrid">
+    <Transition name="bounce2" appear>
+      <GroovyHeadAndCopy @toggleExtras="toggleExtras" class="copyArea" />
     </Transition>
 
-    <Transition name="bounce" appear>
-      <main class="mainGrid ">
-        <Transition name="bounce2" appear>
-          <GroovyHeadAndCopy class="copyArea" />
-        </Transition>
-        <Transition name="bounce4" appear>
-          <Carousel class="slides" />
-        </Transition>
-        <Transition name="bounce6" appear>
-          <About />
-        </Transition>
-        <Transition name="bounce8" appear>
-          <Skills />
-        </Transition>
-      </main>
+    <Transition name="bounce4" appear>
+      <Carousel class="slides" />
     </Transition>
 
-    <GroovyFooter />
+    <Transition name="bounce6" appear>
+      <About />
+    </Transition>
 
-  </div>
+    <Transition name="bounce8" appear>
+      <Skills />
+    </Transition>
+  </main>
+
+  <main class="mainGrid" v-if="!showExtras">
+    <component :is="ExtrasC" class="col-span-2" />
+  </main>
+
+  <GroovyFooter />
 </template>
 
 <style scoped>

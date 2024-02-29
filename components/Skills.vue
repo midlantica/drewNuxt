@@ -1,5 +1,5 @@
 <template>
-  <div class="skillsGrid">
+  <div class="skillsGrid" v-show="showContent">
     <div v-for="(item, index) in skills" :key="index">
       <component
         :is="item[0]"
@@ -58,10 +58,9 @@
   const iconChelsea = markRaw(defineAsyncComponent(() => import('./Icons/iconChelsea.vue')))
 
   const modal = ref(null)
-
   const hover = ref(false)
-
   const modelItem = ref([])
+  const showContent = ref(false)
 
   function showModal (item) {
     modelItem.value = item
@@ -151,6 +150,10 @@
     ]
   ])
 
+  onMounted(() => {
+    showContent.value = true
+  })
+
 </script>
 
 <style scoped>
@@ -207,7 +210,7 @@
     @apply h-[70px] m-auto flex items-center justify-center;
   }
   .skillsGrid {
-    @apply w-[98%] grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
+    @apply w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
 
     @media (max-width: theme("screens.breakXlg")) {
       @apply row-start-2 row-end-2;

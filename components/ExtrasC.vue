@@ -1,5 +1,5 @@
 <template>
-  <transition name="fade" duration="200" appear>
+  <transition name="fade" appear>
     <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper">
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
         <a @click="$router.go(-1)" class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </a> Portfolio Extras

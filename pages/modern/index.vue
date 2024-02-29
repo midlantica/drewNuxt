@@ -1,29 +1,34 @@
 <template>
-  <transition name="fade" appear>
-    <div class="flex flex-col items-center">
-      <transition name="topDown" appear>
-        <header class="w-full">
-          <ModernNavvy />
-        </header>
-      </transition>
+  <div class="flex flex-col items-center">
 
-      <transition name="bounce2" appear>
-        <ModernSubTabs @switch-view="switchView" :selectedBtn = selectedBtn />
-      </transition>
+    <transition name="topDown" appear>
+      <ModernNavvy @toggleExtras="toggleExtras" />
+    </transition>
 
-      <main class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
-        <component :is="currentView" />
-      </main>
-    </div>
-  </transition>
+    <transition name="bounce2" appear>
+      <ModernSubTabs @switch-view="switchView" :selectedBtn = selectedBtn />
+    </transition>
+
+    <main v-if="showExtras" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
+      <component :is="currentView" />
+    </main>
+
+    <main class="mainGrid" v-if="!showExtras">
+      <component :is="ExtrasC" class="col-span-2" />
+    </main>
+
+  </div>
 </template>
 
 <script setup>
-  import { ref, shallowRef  } from 'vue';
-  import { ModernProjects, ModernSkills, ModernAbout } from '#components'
+  import { ref, shallowRef, nextTick  } from 'vue';
+  import { ModernProjects, ModernSkills, ModernAbout, ExtrasC } from '#components'
 
   definePageMeta({
-    title: 'Modern'
+    title: 'Modern',
+    pageTransition: false,
+    layoutTransition: false,
+    viewTransition: false,
   })
 
   useHead({
@@ -33,9 +38,7 @@
     }
   })
 
-  definePageMeta({
-    title: 'DrewHarper.com | UX Designer Visual Designer'
-  })
+  const showExtras = ref(true);
 
   let currentView = shallowRef(ModernProjects);
   let selectedBtn = ref(null)
@@ -48,6 +51,15 @@
     } else if (view === 'ModernAbout') {
       currentView.value = ModernAbout
     }
+  }
+
+  onMounted(async () => {
+    await nextTick();
+    showExtras.value = true;
+  });
+
+  function toggleExtras() {
+    showExtras.value = !showExtras.value;
   }
 
 </script>

@@ -1,5 +1,5 @@
 <template>
-  <div
+  <div v-show="showAbout"
     class="about" ref="target" :style="{ transform: cardTransform, transition: 'transform 0.25 ease-out' }"
     @click="playSound"
   >
@@ -19,6 +19,7 @@
   import { useCopy } from "~/store/copy";
 
   const copy = useCopy()
+  const showAbout = ref(true)
 
   import yeehawSound from '/yeehaw.mp3'
   import jollyGoodSound from '/jollyGood.mp3'
@@ -51,13 +52,9 @@
     isActive = !isActive
   }
 
-  const showIt = ref(false)
-
-  // onMounted(() => {
-  //   setTimeout(() => {
-  //     showIt.value = true;
-  // }, 10);
-  // })
+  onMounted(() => {
+    showAbout.value = true
+  })
 
 </script>
 

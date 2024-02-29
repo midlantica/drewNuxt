@@ -264,7 +264,7 @@
   }
 
   #svgChelsea .groupChelsea {
-     transform: scale(95%);
+    transform: scale(95%);
     transform-origin: 50% 50%;
   }
 

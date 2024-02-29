@@ -1,5 +1,5 @@
 <template>
-  <div class="projectBox">
+  <div class="projectBox" v-show="showCarousel">
     <div class="projectBox__top">
       <transition name="bounce4" appear>
         <a class="carouselArrow flash" v-if="backButtonView" @click="viewCarousel()">﹤ back</a>
@@ -47,6 +47,8 @@
   const backButtonView = ref(false)
   const selectedView = shallowRef('Carousel')
   const selectedViewTxt = ref('Select one...')
+
+  const showCarousel = ref(false)
 
   const projects = shallowRef([
     [
@@ -98,6 +100,10 @@
     selectedViewTxt.value = 'Select one...'
     backButtonView.value = false
   }
+
+  onMounted(() => {
+    showCarousel.value = true
+  })
 
 </script>
 
