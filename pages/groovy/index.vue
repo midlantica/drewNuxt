@@ -16,27 +16,18 @@
     }
   })
 
-  const showExtras = ref(true);
-
-  onMounted(async () => {
-    await nextTick();
-    showExtras.value = true;
-  });
-
-  function toggleExtras() {
-    showExtras.value = !showExtras.value;
-  }
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
 </script>
 
 <template>
   <Transition name="topDown" appear>
-    <GroovyNavvyHead @toggleExtras="toggleExtras" />
+    <GroovyNavvyHead @toggleExtras="toggleExtras" :showContent="showContent" />
   </Transition>
 
   <main v-if="showExtras" class="mainGrid">
     <Transition name="bounce2" appear>
-      <GroovyHeadAndCopy @toggleExtras="toggleExtras" class="copyArea" />
+      <GroovyHeadAndCopy @toggleExtras="toggleExtras" :showContent="showContent" class="copyArea" />
     </Transition>
 
     <Transition name="bounce4" appear>
@@ -53,7 +44,7 @@
   </main>
 
   <main class="mainGrid" v-if="!showExtras">
-    <component :is="ExtrasC" class="col-span-2" />
+    <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
   </main>
 
   <GroovyFooter />

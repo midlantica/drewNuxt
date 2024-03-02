@@ -16,16 +16,7 @@
     }
   })
 
-  const showExtras = ref(true);
-
-  onMounted(async () => {
-    await nextTick();
-    showExtras.value = true;
-  });
-
-  function toggleExtras() {
-    showExtras.value = !showExtras.value;
-  }
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
 </script>
 
@@ -33,12 +24,12 @@
   <div class="grid grid-cols-2 gap-x-0 gap-y-3">
 
     <transition name="topDown" appear>
-      <BourbonNavvy @toggleExtras="toggleExtras" />
+      <BourbonNavvy @toggleExtras="toggleExtras" :showContent="showContent" />
     </transition>
 
     <main class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2" v-if="showExtras">
       <transition name="bounce2" appear>
-        <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
+        <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :showContent="showContent" />
       </transition>
       <transition name="bounce4" appear>
         <Carousel class="slides" />
@@ -55,7 +46,7 @@
     </main>
 
     <main class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2" v-if="!showExtras">
-      <component :is="ExtrasC" class="col-span-2" />
+      <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
     </main>
 
     <footer class="col-start-1 col-end-3 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow h-3" />

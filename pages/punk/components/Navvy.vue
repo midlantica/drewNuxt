@@ -23,10 +23,14 @@
   import { useCopy } from "~/store/copy";
   import mastDrew from './masthead/mastDrew.vue'
   import mastHarper from './masthead/mastHarper.vue'
-
   const copy = useCopy()
 
+  const props = defineProps(['showContent'])
   const showContent = ref(false)
+
+  function toggleExtras() {
+    emit('toggleExtras');
+  }
 
   onMounted(() => {
     showContent.value = true

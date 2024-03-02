@@ -34,17 +34,13 @@
 </template>
 
 <script setup>
-  import { ref, defineProps } from 'vue'
   import drewHarper from '../components/navvyArt/drewHarper.vue'
   import { useCopy } from "~/store/copy"
   const copy = useCopy()
 
-  // Define props
   const props = defineProps(['showContent'])
-
   const showContent = ref(false)
 
-  // Emit event to toggle extras
   function toggleExtras() {
     emit('toggleExtras');
   }

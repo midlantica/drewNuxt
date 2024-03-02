@@ -16,27 +16,18 @@
     }
   })
 
-  const showExtras = ref(true);
-
-  onMounted(async () => {
-    await nextTick();
-    showExtras.value = true;
-  });
-
-  function toggleExtras() {
-    showExtras.value = !showExtras.value;
-  }
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
 </script>
 
 <template>
   <transition name="topDown" appear>
-    <TechyNavvy @toggleExtras="toggleExtras" />
+    <TechyNavvy @toggleExtras="toggleExtras" :showContent="showContent" />
   </transition>
 
   <main class="mainGrid" v-if="showExtras">
     <transition name="bounce2" appear>
-      <TechyHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" />
+      <TechyHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :showContent="showContent" />
     </transition>
 
     <transition name="bounce4" appear>
@@ -55,7 +46,7 @@
   </main>
 
   <main class="mainGrid" v-if="!showExtras">
-    <component :is="ExtrasC" class="col-span-2" />
+    <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
   </main>
 
   <footer class="shadow-none text-base-ivory bg-techy-mango">
