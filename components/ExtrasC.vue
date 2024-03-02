@@ -2,7 +2,7 @@
   <transition name="fade" appear>
     <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper">
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
-        <a @click="$router.go(-1)" class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </a> Portfolio Extras
+        <span @click="onExtrasToggled" class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </span> Portfolio Extras
       </h1>
 
       <div class="flex flex-row flex-wrap items-start w-full p-0 extrasWrap place-content-center gap-x-4">
@@ -20,9 +20,23 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-
+  import { ref, defineProps, defineEmits } from 'vue'
   const imageRoot = ref("/img/portfolio/extras/")
+
+    // Define props and emits
+  const props = defineProps(['showContent'])
+  const emit = defineEmits()
+
+  function toggleContent() {
+    // Emit an event to notify the parent component
+    // that the content should be toggled
+    emit('extrasToggled');
+    console.log("I hit that")
+  }
+
+  const onExtrasToggled = () => {
+    toggleContent();
+  };
 
   const portfolioExtras = ref([
     {

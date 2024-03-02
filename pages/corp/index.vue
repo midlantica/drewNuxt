@@ -17,6 +17,7 @@
   })
 
   const showExtras = ref(true);
+  const showContent = ref(false);
 
   onMounted(async () => {
     await nextTick();
@@ -27,37 +28,42 @@
     showExtras.value = !showExtras.value;
   }
 
+  function onExtrasToggled() {
+    // Emit another event or perform any necessary actions
+    toggleExtras(); // Or any other action you want to perform
+  };
+
 </script>
 
 <template>
   <transition name="topDown" appear>
-    <CorpNavvy @toggleExtras="toggleExtras" />
+    <CorpNavvy @toggleExtras="toggleExtras" :showContent="showContent" />
   </transition>
 
-  <main class="mainGrid" v-if="showExtras">
+  <main class="mainGrid" v-if="showExtras" :showContent="showContent" >
     <transition name="bounce2" appear>
-      <CorpHeadAndCopy @toggleExtras="toggleExtras" />
+      <CorpHeadAndCopy />
     </transition>
 
     <transition name="bounce4" appear>
+      <Skills />
+    </transition>
+
+    <transition name="bounce6" appear>
       <Carousel class="slides" />
     </transition>
 
     <transition name="bounce8" appear>
       <About />
     </transition>
-
-    <transition name="bounce10" appear>
-      <Skills />
-    </transition>
   </main>
 
   <main class="mainGrid" v-if="!showExtras">
-    <component :is="ExtrasC" class="col-span-2" />
+    <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
   </main>
 
   <footer class="shadow-none">
-    <Quote />
+    <Quote @toggleExtras="toggleExtras" />
   </footer>
 </template>
 

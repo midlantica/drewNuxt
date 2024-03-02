@@ -15,11 +15,11 @@
     </transition>
 
     <transition name="bounce6" appear>
-      <About />
+      <Skills />
     </transition>
 
-    <transition name="bounce7" appear>
-      <Skills />
+    <transition name="bounce8" appear>
+      <About />
     </transition>
   </main>
 

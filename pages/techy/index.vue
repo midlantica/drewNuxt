@@ -43,13 +43,14 @@
       <Carousel class="slides" />
     </transition>
 
-    <transition name="bounce7" appear>
+    <transition name="bounce6" appear>
       <Skills />
     </transition>
 
-    <transition name="bounce10" appear>
+    <transition name="bounce8" appear>
       <About />
     </transition>
+
 
   </main>
 

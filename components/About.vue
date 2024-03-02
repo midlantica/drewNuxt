@@ -140,7 +140,7 @@
   }
 
   .modern .about {
-    @apply flex flex-col w-full gap-4 rounded-[3px] mt-auto shadow-[2px_2px_10px_0px_black];
+    @apply flex flex-col w-full gap-4 rounded-[3px] my-auto shadow-[2px_2px_10px_0px_black];
 
     @media (max-width: 850px) {
       @apply flex-row;
