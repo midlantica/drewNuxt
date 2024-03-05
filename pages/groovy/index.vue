@@ -22,7 +22,10 @@
 
 <template>
   <Transition name="topDown" appear>
-    <GroovyNavvyHead @toggleExtras="toggleExtras" :showContent="showContent" />
+    <GroovyNavvyHead
+      @toggleExtras="toggleExtras"
+      :showContent="showContent"
+    />
   </Transition>
 
   <main v-if="showExtras" class="mainGrid">

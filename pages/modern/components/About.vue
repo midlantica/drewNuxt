@@ -1,7 +1,9 @@
 <template>
   <div class="aboutGrid">
     <transition name="bounce3" appear>
-      <ModernHeadAndCopy />
+      <ModernHeadAndCopy
+      :showContent="showContent" @onExtrasToggled="onExtrasToggled"
+      />
     </transition>
     <transition name="bounce4" appear>
       <About />
@@ -10,6 +12,11 @@
 </template>
 
 <script setup>
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+
+  onMounted(() => {
+    showContent.value = true
+  })
 
 </script>
 

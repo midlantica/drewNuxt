@@ -149,6 +149,7 @@
     }
 
     .extrasWrapper {
+      @apply mt-3;
 
       & h1 {
         @apply !text-white font-modernCopy !text-[1.5rem] leading-normal capitalize antialiased bg-transparent tracking-wider ;

@@ -2,7 +2,7 @@
 import { ref, onMounted, nextTick } from 'vue'
 
 export const useToggleExtras = () => {
-  const showExtras = ref(true)
+  const showExtras = ref(false)
   const showContent = ref(false)
 
   onMounted(async () => {
@@ -16,6 +16,7 @@ export const useToggleExtras = () => {
 
   function onExtrasToggled() {
     // Emit another event or perform any necessary actions
+    console.log("Toggle thenm Extras!")
     toggleExtras(); // Or any other action you want to perform
   }
 
