@@ -21,6 +21,8 @@
   let currentView = shallowRef(ModernProjects);
   let selectedBtn = ref(null)
 
+  const props = defineProps(['showContent'])
+  
   function switchView(view) {
     if (view === 'ModernProjects') {
       currentView.value = ModernProjects
@@ -28,12 +30,9 @@
       currentView.value = ModernSkills
     } else if (view === 'ModernAbout') {
       currentView.value = ModernAbout
+      showContent.value = false
     }
   }
-
-  onMounted(() => {
-    showContent.value = true
-  })
 
 </script>
 
@@ -42,23 +41,33 @@
 
     <transition name="topDown" appear>
       <ModernNavvy
-      :showContent="showContent" @onExtrasToggled="onExtrasToggled"
+        @toggleExtras="toggleExtras" 
+        :showContent="showContent"
       />
     </transition>
 
     <transition name="bounce2" appear>
-      <ModernSubTabs @switch-view="switchView" :selectedBtn=selectedBtn v-if="showExtras" />
+      <ModernSubTabs
+        v-if="showExtras"
+        @switch-view="switchView"
+      />
     </transition>
 
-    <main v-if="showExtras" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
+    <main 
+      v-if="showExtras" 
+      class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0"
+    >
       <component
         :is="currentView"
-        :showContent="showContent" @onExtrasToggled="onExtrasToggled"
+        :showContent="showContent"
+        @toggleExtras="toggleExtras" 
       />
     </main>
 
     <main class="mainGrid" v-if="!showExtras">
-      <component :is="ExtrasC" class="col-span-2" :showContent="showContent" @onExtrasToggled="onExtrasToggled"
+      <component :is="ExtrasC" class="col-span-2" 
+        @toggleExtras="toggleExtras" 
+        :showContent="showContent"
       />
     </main>
 

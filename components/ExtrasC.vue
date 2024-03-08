@@ -3,7 +3,7 @@
     <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper">
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
         <span
-          @click="$emit('extrasToggled')"
+          @click="$emit('toggleExtras')"
           class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </span>
           Portfolio Extras
       </h1>
@@ -25,14 +25,12 @@
 <script setup>
   import { ref } from 'vue'
   const imageRoot = ref("/img/portfolio/extras/")
+  
   const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
   const props = defineProps(['showContent'])
+  
   const emit = defineEmits()
-
-  const handleToggleExtras = () => {
-    emit('toggleExtras')
-  }
 
   const portfolioExtras = ref([
     {

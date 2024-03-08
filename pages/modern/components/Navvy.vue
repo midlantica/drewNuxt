@@ -2,10 +2,13 @@
   <header v-show="showContent" class="w-full">
     <nav class="flex flex-col items-center justify-center p-0 mt-14 flex-nowrap gap-y-4">
       <h1 class="flex items-center w-full justify-center gap-2 font-modernSubhead breakXsm:text-[2.25rem] breakSm:text-[2.75rem] breakLg:text-[3.25rem] text-[2.25rem] font-light tracking-[-0.05em] leading-10 transition ease-in duration-200 text-center antialiased grow drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] text-modern-accentRed hover:text-modern-accent lowercase">
-        <div @click="$emit('onExtrasToggled')" class="cursor-pointer text-modern-accentRed">
+        <div class="cursor-pointer text-modern-accentRed" 
+          @click="$emit('toggleExtras')" 
+        >
           drew harper
         </div>
-        <AuthenticStamp class="cursor-pointer authenticStamp" @click="$emit('onExtrasToggled')"  />
+        <AuthenticStamp class="cursor-pointer authenticStamp" @click="$emit('toggleExtras')" 
+        />
       </h1>
 
       <h2 class="text-[1.3rem] tracking-0 leading-[1.5em] font-modernCopy font-normal text-[hsla(0,0%,100%,0.85)] text-center lowercase antialiased drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)]">
@@ -32,9 +35,6 @@
 <script setup>
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
-
-  const props = defineProps(['showContent'])
-  // const showContent = ref(false)
 
   const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 

@@ -1,7 +1,7 @@
 <template>
   <div class="w-full mt-2 breakSm:px-2 breakLg:pl-2 breakLg:pr-4" v-show="showContent">
     <div class="flex items-center justify-start gap-2 justify-items-start auto-rows-auto">
-      <a href="#" @click="$emit('toggleExtras')" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center !hover:cursor-auto jelloHorizontal "></a>
+      <div @click="$emit('toggleExtras')" class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center hover:cursor-pointer jelloHorizontal " />
       <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />
     </div>
@@ -13,7 +13,7 @@
   import { useCopy } from "~/store/copy"
   const copy = useCopy()
 
-  const showContent = ref(false)
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
   onMounted(() => {
     showContent.value = true

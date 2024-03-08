@@ -12,8 +12,8 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  const showContent = ref(false)
-
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  
   onMounted(() => {
     showContent.value = true
   })

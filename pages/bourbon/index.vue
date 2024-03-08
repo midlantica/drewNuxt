@@ -15,6 +15,8 @@
       class: `bourbon`
     }
   })
+  
+  const props = defineProps(['showContent'])
 
   const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
@@ -32,7 +34,9 @@
 
     <main class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2" v-if="showExtras">
       <transition name="bounce2" appear>
-        <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :showContent="showContent" />
+        <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras"
+          :showContent="showContent"
+        />
       </transition>
       <transition name="bounce4" appear>
         <Carousel class="slides" />
@@ -50,7 +54,8 @@
 
     <main class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2" v-if="!showExtras">
       <component :is="ExtrasC" class="col-span-2"
-        @extrasToggled="onExtrasToggled"
+        @toggleExtras="toggleExtras"
+        :showContent="showContent"
       />
     </main>
 

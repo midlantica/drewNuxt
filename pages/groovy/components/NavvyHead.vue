@@ -40,12 +40,7 @@
   import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  const props = defineProps(['showContent'])
-  const showContent = ref(false)
-
-  function toggleExtras() {
-    emit('toggleExtras');
-  }
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
   onMounted(() => {
     showContent.value = true

@@ -7,7 +7,9 @@
 </template>
 
 <script setup>
-
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  
+  const props = defineProps(['showContent'])
 </script>
 
 <style scoped></style>

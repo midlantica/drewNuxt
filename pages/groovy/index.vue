@@ -30,7 +30,10 @@
 
   <main v-if="showExtras" class="mainGrid">
     <Transition name="bounce2" appear>
-      <GroovyHeadAndCopy @toggleExtras="toggleExtras" :showContent="showContent" class="copyArea" />
+      <GroovyHeadAndCopy class="copyArea" 
+        @toggleExtras="toggleExtras" 
+        :showContent="showContent" 
+      />
     </Transition>
 
     <Transition name="bounce4" appear>
@@ -47,7 +50,10 @@
   </main>
 
   <main class="mainGrid" v-if="!showExtras">
-    <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
+    <component :is="ExtrasC" class="col-span-2" 
+        @toggleExtras="toggleExtras"
+        :showContent="showContent"
+     />
   </main>
 
   <GroovyFooter />

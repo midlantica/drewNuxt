@@ -6,7 +6,10 @@
 
   <main class="mainGrid" v-if="showExtras">
     <transition name="bounce2" appear>
-      <PunkHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :showContent="showContent" />
+      <PunkHeadAndCopy class="copyArea" 
+        @toggleExtras="toggleExtras" 
+        :showContent="showContent" 
+      />
     </transition>
 
     <transition name="bounce4" appear>
@@ -23,7 +26,9 @@
   </main>
 
   <main class="mainGrid" v-if="!showExtras">
-    <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
+    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras"
+      :showContent="showContent"
+    />
   </main>
 
 </template>

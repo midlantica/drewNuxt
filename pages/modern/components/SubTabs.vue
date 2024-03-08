@@ -6,7 +6,10 @@
     <div @click="emitSwitchView('ModernSkills')" class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }">
       Skills
     </div>
-    <div @click="emitSwitchView('ModernAbout')" class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }">
+    <div @click="emitSwitchView('ModernAbout')" class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }"
+      @toggleExtras="toggleExtras"
+      :showContent="showContent"
+    >
       About
     </div>
   </div>
@@ -14,7 +17,7 @@
 
 <script setup>
   import { ref } from "vue";
-  const props = defineProps();
+  // const props = defineProps();
   const emits = defineEmits();
 
   let selectedBtn = ref(null)
@@ -24,7 +27,9 @@
     emits('switch-view', view)
   };
 
-  const showContent = ref(false)
+  // const props = defineProps(['showContent'])
+
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
   onMounted(() => {
     showContent.value = true

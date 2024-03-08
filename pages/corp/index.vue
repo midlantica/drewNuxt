@@ -16,16 +16,21 @@
     }
   })
 
+  const props = defineProps(['showContent'])
+  
   const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
 </script>
 
 <template>
   <transition name="topDown" appear>
-    <CorpNavvy @toggleExtras="toggleExtras" :showContent="showContent" />
+    <CorpNavvy 
+      @toggleExtras="toggleExtras" 
+      :showContent="showContent"
+    />
   </transition>
 
-  <main class="mainGrid" v-if="showExtras" :showContent="showContent" >
+  <main class="mainGrid" v-if="showExtras" >
     <transition name="bounce2" appear>
       <CorpHeadAndCopy />
     </transition>
@@ -44,7 +49,9 @@
   </main>
 
   <main class="mainGrid" v-if="!showExtras">
-    <component :is="ExtrasC" class="col-span-2" @extrasToggled="onExtrasToggled" />
+    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" 
+      :showContent="showContent"
+    />
   </main>
 
   <footer class="shadow-none">
