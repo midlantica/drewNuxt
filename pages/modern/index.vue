@@ -2,8 +2,6 @@
   import { ref, shallowRef, nextTick  } from 'vue';
   import { ModernProjects, ModernSkills, ModernAbout, ExtrasC } from '#components'
 
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
-
   definePageMeta({
     title: 'Modern',
     pageTransition: false,
@@ -17,11 +15,13 @@
       class: `modern`
     }
   })
+  
+  const props = defineProps(['showContent'])
+  
+  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
 
   let currentView = shallowRef(ModernProjects);
   let selectedBtn = ref(null)
-
-  const props = defineProps(['showContent'])
   
   function switchView(view) {
     if (view === 'ModernProjects') {
@@ -30,7 +30,7 @@
       currentView.value = ModernSkills
     } else if (view === 'ModernAbout') {
       currentView.value = ModernAbout
-      showContent.value = false
+      // showContent.value = true
     }
   }
 
@@ -48,23 +48,15 @@
 
     <transition name="bounce2" appear>
       <ModernSubTabs
-        v-if="showExtras"
         @switch-view="switchView"
       />
     </transition>
 
-    <main 
-      v-if="showExtras" 
-      class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0"
-    >
-      <component
-        :is="currentView"
-        :showContent="showContent"
-        @toggleExtras="toggleExtras" 
-      />
+    <main v-if="showExtras" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
+      <component :is="currentView" />
     </main>
 
-    <main class="mainGrid" v-if="!showExtras">
+    <main v-if="!showExtras" class="mainGrid">
       <component :is="ExtrasC" class="col-span-2" 
         @toggleExtras="toggleExtras" 
         :showContent="showContent"

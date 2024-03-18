@@ -10,12 +10,12 @@ export const useToggleExtras = () => {
   });
 
   function toggleExtras() {
-    console.log("toggleExtras!")
+    console.log("toggleExtras Composable! ")
     showExtras.value = !showExtras.value
   }
 
   function onExtrasToggled() {
-    console.log("onExtrasToggled!")
+    console.log("onExtrasToggled Composable!")
     toggleExtras(); 
   }
 
