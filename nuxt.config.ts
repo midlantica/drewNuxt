@@ -6,17 +6,18 @@ export default defineNuxtConfig({
   // srcDir: "client",
   // serverDir: "server",
   // baseUrl: "/",
-  devServer: {},
+  devServer: {
+    // https: {
+    //   key: './server.key',
+    //   cert: './server.crt'
+    // }
+  },
   buildDir: '.nuxt',
   css: ['~/assets/css/main.css'],
   ssr: true,
-  devtools: {
-    timeline: {
-      enabled: true,
-    },
-    enabled: true,
-  },
+  devtools: { enabled: true },
   modules: [
+    '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/sound/nuxt',
@@ -25,7 +26,7 @@ export default defineNuxtConfig({
     storesDirs: ['./stores/**'], // './custom-folder/stores/**'
   },
   imports: {
-    dirs: ['stores']
+    dirs: ['store']
   },
   // vueTransitions: {
   //   // The same options as in the plugin itself.
