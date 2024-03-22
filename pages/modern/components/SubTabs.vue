@@ -1,12 +1,16 @@
 <template>
-  <div v-show="showContent" class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
-    <div @click="emitSwitchView('ModernProjects')" class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }">
+  <div v-show="showContent" 
+    class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
+    <div @click="emitSwitchView('ModernProjects')" 
+      class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }">
       Projects
     </div>
-    <div @click="emitSwitchView('ModernSkills')" class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }">
+    <div @click="emitSwitchView('ModernSkills')" 
+      class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }">
       Skills
     </div>
-    <div @click="emitSwitchView('ModernAbout')" class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }"
+    <div @click="emitSwitchView('ModernAbout')" 
+      class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }"
       @toggleExtras="toggleExtras"
       :showContent="showContent"
     >
@@ -16,21 +20,16 @@
 </template>
 
 <script setup>
-  import { ref } from "vue";
-  // const props = defineProps();
   const emits = defineEmits();
+  const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
 
-  let selectedBtn = ref(null)
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
 
   let emitSwitchView = (view) => {
     selectedBtn.value = view
     emits('switch-view', view)
   };
-
-  // const props = defineProps(['showContent'])
-
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
-
+  
   onMounted(() => {
     showContent.value = true
     selectedBtn.value = 'ModernProjects'

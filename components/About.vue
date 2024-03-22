@@ -16,7 +16,6 @@
   import { ref, computed, onMounted } from 'vue'
   import { useMouseInElement } from '@vueuse/core'
   import { useSound } from '@vueuse/sound'
-  import { useCopy } from "~/store/copy";
 
   const copy = useCopy()
   const showAbout = ref(true)

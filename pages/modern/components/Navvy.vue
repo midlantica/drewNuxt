@@ -7,8 +7,7 @@
         >
           drew harper
         </div>
-        <AuthenticStamp class="cursor-pointer authenticStamp" @click="$emit('toggleExtras')" 
-        />
+        <AuthenticStamp class="cursor-pointer authenticStamp" @click="$emit('toggleExtras')" />
       </h1>
 
       <h2 class="text-[1.3rem] tracking-0 leading-[1.5em] font-modernCopy font-normal text-[hsla(0,0%,100%,0.85)] text-center lowercase antialiased drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)]">
@@ -33,10 +32,10 @@
 </template>
 
 <script setup>
-  import { useCopy } from "~/store/copy";
   const copy = useCopy()
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
 
   onMounted(() => {
     showContent.value = true

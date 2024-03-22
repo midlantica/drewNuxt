@@ -25,12 +25,11 @@
 </template>
 
 <script setup>
-  import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
   const props = defineProps(['showContent'])
   
-  const { showExtras, showContent, toggleExtras, onExtrasToggled, handleToggleExtras } = useToggleExtras();
+  const { showContent, toggleExtras } = useToggleExtras();
 
   onMounted(() => {
     showContent.value = true

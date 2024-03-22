@@ -13,9 +13,8 @@
 </template>
 
 <script setup>
-  const props = defineProps(['showContent'])
-  
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
 </script>
 
 <style scoped>

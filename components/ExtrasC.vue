@@ -26,9 +26,9 @@
   import { ref } from 'vue'
   const imageRoot = ref("/img/portfolio/extras/")
   
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
-  const props = defineProps(['showContent'])
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
   
   const emit = defineEmits()
 

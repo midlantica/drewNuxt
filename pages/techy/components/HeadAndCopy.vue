@@ -9,10 +9,9 @@
 </template>
 
 <script setup>
-  import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
   
   onMounted(() => {
     showContent.value = true

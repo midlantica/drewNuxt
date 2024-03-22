@@ -18,7 +18,7 @@
 
   const props = defineProps(['showContent'])
   
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
 </script>
 

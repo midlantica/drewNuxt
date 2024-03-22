@@ -14,15 +14,9 @@
 </template>
 
 <script setup>
-  import { useCopy } from "~/store/copy"
   const copy = useCopy()
-
-  const { showExtras, showContent, onExtrasToggled, handleToggleExtras } = useToggleExtras();
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
   
-  const emit = defineEmits();
+  const { toggleExtras } = useToggleExtras();
   
-  onMounted(() => {
-    showContent.value = true
-  })
-
 </script>

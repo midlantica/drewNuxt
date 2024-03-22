@@ -1,5 +1,4 @@
 <script setup>
-  import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
 
   definePageMeta({
@@ -16,7 +15,7 @@
     }
   })
 
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
 </script>
 
@@ -45,8 +44,6 @@
     <transition name="bounce8" appear>
       <About />
     </transition>
-
-
   </main>
 
   <main class="mainGrid" v-if="!showExtras">

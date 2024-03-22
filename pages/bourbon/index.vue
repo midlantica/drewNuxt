@@ -18,7 +18,7 @@
   
   const props = defineProps(['showContent'])
 
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
 </script>
 
@@ -34,7 +34,8 @@
 
     <main class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2" v-if="showExtras">
       <transition name="bounce2" appear>
-        <BourbonHeadAndCopy class="copyArea" @toggleExtras="toggleExtras"
+        <BourbonHeadAndCopy class="copyArea" 
+          @toggleExtras="toggleExtras"
           :showContent="showContent"
         />
       </transition>
@@ -52,7 +53,9 @@
       </transition>
     </main>
 
-    <main class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2" v-if="!showExtras">
+    <main v-if="!showExtras"
+      class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2" 
+    >
       <component :is="ExtrasC" class="col-span-2"
         @toggleExtras="toggleExtras"
         :showContent="showContent"

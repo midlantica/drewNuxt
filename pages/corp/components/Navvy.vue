@@ -35,15 +35,10 @@
 
 <script setup>
   import drewHarper from '../components/navvyArt/drewHarper.vue'
-  import { useCopy } from "~/store/copy"
   const copy = useCopy()
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
   const props = defineProps(['showContent'])
-  const showContent = ref(false)
-
-  function toggleExtras() {
-    emit('toggleExtras');
-  }
 
   onMounted(() => {
     showContent.value = true

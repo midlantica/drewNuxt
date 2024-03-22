@@ -8,7 +8,6 @@
 </template>
 
 <script setup>
-  import { useCopy } from "~/store/copy";
   const copy = useCopy()
 
   const showContent = ref(false)

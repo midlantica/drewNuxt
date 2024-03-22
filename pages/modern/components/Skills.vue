@@ -10,9 +10,8 @@
 </template>
 
 <script setup>
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
-
-  const props = defineProps(['showContent'])
+  const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
   
   onMounted(() => {
     showContent.value = true

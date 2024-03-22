@@ -16,12 +16,12 @@
     }
   })
   
-  const props = defineProps(['showContent'])
+  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
   
-  const { showExtras, showContent, toggleExtras, onExtrasToggled } = useToggleExtras();
+  const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
   let currentView = shallowRef(ModernProjects);
-  let selectedBtn = ref(null)
+  // let selectedBtn = ref(null)
   
   function switchView(view) {
     if (view === 'ModernProjects') {
@@ -30,7 +30,6 @@
       currentView.value = ModernSkills
     } else if (view === 'ModernAbout') {
       currentView.value = ModernAbout
-      // showContent.value = true
     }
   }
 
