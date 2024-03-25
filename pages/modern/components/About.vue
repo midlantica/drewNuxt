@@ -3,13 +3,13 @@
     <transition name="bounce3" appear>
       <ModernHeadAndCopy
         @toggleExtras="toggleExtras"
-        :showContent="showContent"
+        :isShowContent="isShowContent"
       />
     </transition>
     <transition name="bounce4" appear>
       <About 
         toggleExtras="toggleExtras"
-        :showContent="showContent"
+        :isShowContent="isShowContent"
       />
     </transition>
   </div>
@@ -18,7 +18,7 @@
 <script setup>
   const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
 
-  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
+  const props = defineProps(['isShowContent', 'selectedBtn'])
 </script>
 
 <style scoped>

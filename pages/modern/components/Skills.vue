@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showContent">
+  <div v-show="showSkills">
     <transition name="bounce2" appear>
       <Skills />
     </transition>
@@ -11,10 +11,12 @@
 
 <script setup>
   const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
-  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
+  const props = defineProps(['isShowContent', 'selectedBtn'])
+  
+  const showSkills = ref(false)
   
   onMounted(() => {
-    showContent.value = true
+    showSkills.value = true
   })
 </script>
 

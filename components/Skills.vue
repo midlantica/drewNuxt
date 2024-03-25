@@ -1,5 +1,7 @@
 <template>
-  <div class="skillsGrid" v-show="showContent">
+  <div v-show="showSkills"
+    class="skillsGrid"
+  >
     <div v-for="(item, index) in skills" :key="index">
       <component
         :is="item[0]"
@@ -57,6 +59,7 @@
   const iconNuxt = markRaw(defineAsyncComponent(() => import('./Icons/iconNuxt.vue')))
   const iconChelsea = markRaw(defineAsyncComponent(() => import('./Icons/iconChelsea.vue')))
 
+  const showSkills = ref(false)
   const modal = ref(null)
   const hover = ref(false)
   const modelItem = ref([])
@@ -151,7 +154,7 @@
   ])
 
   onMounted(() => {
-    showContent.value = true
+    showSkills.value = true
   })
 
 </script>

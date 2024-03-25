@@ -1,5 +1,4 @@
 <script setup>
-  import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
 
   definePageMeta({
@@ -16,9 +15,9 @@
     }
   })
   
-  const props = defineProps(['showContent'])
+  const props = defineProps(['isShowContent'])
 
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
 </script>
 
@@ -28,16 +27,16 @@
     <transition name="topDown" appear>
       <BourbonNavvy
         @toggleExtras="toggleExtras"
-        :showContent="showContent"
+        :isShowContent="isShowContent"
       />
     </transition>
 
-    <main v-if="showExtras"
+    <main v-if="isShowContent"
       class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2">
       <transition name="bounce2" appear>
         <BourbonHeadAndCopy class="copyArea" 
           @toggleExtras="toggleExtras"
-          :showContent="showContent"
+          :isShowContent="isShowContent"
         />
       </transition>
       <transition name="bounce4" appear>
@@ -59,7 +58,7 @@
     >
       <component :is="ExtrasC" class="col-span-2"
         @toggleExtras="toggleExtras"
-        :showContent="showContent"
+        :isShowContent="isShowContent"
       />
     </main>
 

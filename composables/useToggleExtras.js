@@ -1,26 +1,22 @@
 import { ref, onMounted, nextTick } from 'vue'
 
 export const useToggleExtras = () => {
-  const showExtras = ref(false)
-  const showContent = ref(false)
+  const isShowContent = ref(false)
   const selectedBtn = ref(null)
-  
-  const thing = ref(true)
 
   function toggleExtras() {
     console.log("toggleExtras Composable! ")
     selectedBtn.value = false
-    showExtras.value = !showExtras.value
+    isShowContent.value = !isShowContent.value
   }
   
   onMounted(async () => {
     await nextTick();
-    showExtras.value = true
+    isShowContent.value = true
   });
   
   return {
-    showExtras,
-    showContent,
+    isShowContent,
     selectedBtn,
     toggleExtras,
   }

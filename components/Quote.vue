@@ -1,5 +1,5 @@
 <template>
-  <div class="quoteBlock" v-if="currentQuote">
+  <div v-if="currentQuote" class="quoteBlock">
     <div @click="previousQuote()" class="arrowBtn" />
     <div class="flex flex-row items-center justify-center w-full p-0 m-auto leading-4 select-none">
       <p class="inline not-italic leading-normal text-center" :class="{ fadage: quoteAni }">

@@ -16,7 +16,7 @@
     }
   })
 
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
 </script>
 
@@ -24,15 +24,15 @@
   <Transition name="topDown" appear>
     <GroovyNavvyHead
       @toggleExtras="toggleExtras"
-      :showContent="showContent"
+      :isShowContent="isShowContent"
     />
   </Transition>
 
-  <main v-if="showExtras" class="mainGrid">
+  <main v-if="isShowContent" class="mainGrid">
     <Transition name="bounce2" appear>
       <GroovyHeadAndCopy class="copyArea" 
         @toggleExtras="toggleExtras" 
-        :showContent="showContent" 
+        :isShowContent="isShowContent" 
       />
     </Transition>
 
@@ -52,7 +52,7 @@
   <main class="mainGrid" v-else>
     <component :is="ExtrasC" class="col-span-2" 
         @toggleExtras="toggleExtras"
-        :showContent="showContent"
+        :isShowContent="isShowContent"
      />
   </main>
 

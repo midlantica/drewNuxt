@@ -1,5 +1,5 @@
 <template>
-  <div v-show="showContent">
+  <div v-show="isShowContent">
     <div class="flex justify-start">
       <AuthenticStamp class="authenticStampPunk" />
     </div>
@@ -27,10 +27,10 @@
 <script setup>
   const copy = useCopy()
 
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
   onMounted(() => {
-    showContent.value = true
+    isShowContent.value = true
   })
 </script>
 

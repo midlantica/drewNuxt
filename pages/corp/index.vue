@@ -1,5 +1,4 @@
 <script setup>
-  import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
 
   definePageMeta({
@@ -16,9 +15,9 @@
     }
   })
 
-  const props = defineProps(['showContent'])
+  const props = defineProps(['isShowContent'])
   
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
 </script>
 
@@ -26,11 +25,12 @@
   <transition name="topDown" appear>
     <CorpNavvy 
       @toggleExtras="toggleExtras" 
-      :showContent="showContent"
+      :isShowContent="isShowContent"
     />
   </transition>
 
-  <main class="mainGrid" v-if="showExtras" >
+  <main v-if="isShowContent" 
+    class="mainGrid" >
     <transition name="bounce2" appear>
       <CorpHeadAndCopy />
     </transition>
@@ -48,9 +48,9 @@
     </transition>
   </main>
 
-  <main class="mainGrid" v-else>
+  <main v-else class="mainGrid" >
     <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" 
-      :showContent="showContent"
+      :isShowContent="isShowContent"
     />
   </main>
 

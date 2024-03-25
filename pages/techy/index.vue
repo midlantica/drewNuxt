@@ -15,7 +15,7 @@
     }
   })
 
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
 </script>
 
@@ -23,13 +23,13 @@
   <transition name="topDown" appear>
     <TechyNavvy 
       @toggleExtras="toggleExtras"
-      :showContent="showContent" 
+      :isShowContent="isShowContent" 
     />
   </transition>
 
-  <main class="mainGrid" v-if="showExtras">
+  <main class="mainGrid" v-if="isShowContent">
     <transition name="bounce2" appear>
-      <TechyHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :showContent="showContent" 
+      <TechyHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :isShowContent="isShowContent" 
       />
     </transition>
 
@@ -47,7 +47,7 @@
   </main>
 
   <main class="mainGrid" v-else>
-    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" :showContent="showContent"
+    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" :isShowContent="isShowContent"
     />
   </main>
 

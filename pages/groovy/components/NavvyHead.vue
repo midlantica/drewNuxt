@@ -1,5 +1,5 @@
 <template>
-  <header v-show="showContent" class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
+  <header v-show="isShowContent" class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
     <div class="relative my-[-25px] flex flex-row items-center">
       <div class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]">
         <div class="block float-left clear-left groovyCircle">
@@ -39,10 +39,10 @@
 
   const copy = useCopy()
 
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
   onMounted(() => {
-    showContent.value = true
+    isShowContent.value = true
   })
 </script>
 

@@ -1,24 +1,24 @@
 <template>
-  <div v-show="showContent" 
+  <div v-show="showSubTabs" 
     class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
     <div @click="emitSwitchView('ModernProjects')" 
       class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }"
       @toggleExtras="toggleExtras"
-      :showContent="showContent"
+      :isShowContent="isShowContent"
     >
       Projects
     </div>
     <div @click="emitSwitchView('ModernSkills')" 
       class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }"
       @toggleExtras="toggleExtras"
-      :showContent="showContent"
+      :isShowContent="isShowContent"
     >
       Skills
     </div>
     <div @click="emitSwitchView('ModernAbout')" 
       class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }"
       @toggleExtras="toggleExtras"
-      :showContent="showContent"
+      :isShowContent="isShowContent"
     >
       About
     </div>
@@ -29,7 +29,9 @@
   const emit = defineEmits();
   const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
 
-  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
+  const props = defineProps(['isShowContent', 'selectedBtn'])
+  
+  const showSubTabs = ref(false)
 
   let emitSwitchView = (view) => {
     selectedBtn.value = view
@@ -37,7 +39,7 @@
   };
   
   onMounted(() => {
-    showContent.value = true
+    showSubTabs.value = true
     selectedBtn.value = 'ModernProjects'
   })
 

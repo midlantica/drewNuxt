@@ -1,5 +1,5 @@
 <template>
-  <section v-show="showContent">
+  <section v-show="isShowContent">
     <div class="flex items-center w-full gap-2 mb-2">
       <h1>
         {{ copy.druHead }}
@@ -13,10 +13,10 @@
 <script setup>
   const copy = useCopy()
 
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
   onMounted(() => {
-    showContent.value = true
+    isShowContent.value = true
   })
 </script>
 

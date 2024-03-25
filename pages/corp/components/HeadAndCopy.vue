@@ -1,5 +1,5 @@
 <template>
-  <section v-show="showContent" class="flex flex-col mx-4 mt-4 ml-6 mr-8 flex-nowrap breakXlg:mt-0">
+  <section v-show="showHeadAndCopy" class="flex flex-col mx-4 mt-4 ml-6 mr-8 flex-nowrap breakXlg:mt-0">
     <h1 class="flex items-center w-full gap-2 mb-3">
       {{ copy.druHead }} <AuthenticStamp class="authenticStamp" />
     </h1>
@@ -10,10 +10,10 @@
 <script setup>
   const copy = useCopy()
 
-  const showContent = ref(false)
-
+  const showHeadAndCopy = ref(false)
+  
   onMounted(() => {
-    showContent.value = true
+    showHeadAndCopy.value = true
   })
 </script>
 

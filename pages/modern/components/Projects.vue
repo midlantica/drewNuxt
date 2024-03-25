@@ -8,7 +8,7 @@
 
 <script setup>
   const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
-  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])  
+  const props = defineProps(['isShowContent', 'selectedBtn'])  
 </script>
 
 <style scoped></style>

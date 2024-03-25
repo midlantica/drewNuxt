@@ -1,5 +1,5 @@
 <template>
-  <header v-show="showContent" class="shadow-none">
+  <header v-show="showNavvy" class="shadow-none">
     <nav class="flex flex-row flex-wrap items-center pt-[2em] px-[2em] pb-0 justify-center mb-4">
       <section class="flex flex-row flex-wrap w-full max-[830px]:content-center justify-center gap-x-4">
         <div class="flex flex-wrap content-center text-center max-[830px]:m-auto gap-2 grow">
@@ -36,12 +36,13 @@
 <script setup>
   import drewHarper from '../components/navvyArt/drewHarper.vue'
   const copy = useCopy()
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
-
-  const props = defineProps(['showContent'])
+  const { isShowContent, toggleExtras } = useToggleExtras();
+  const showNavvy = ref(false)
+  
+  const props = defineProps(['isShowContent'])
 
   onMounted(() => {
-    showContent.value = true
+    showNavvy.value = true
   })
 </script>
 

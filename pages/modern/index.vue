@@ -16,9 +16,9 @@
     }
   })
   
-  const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
+  const props = defineProps(['isShowContent', 'selectedBtn'])
   
-  const { showExtras, showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
   const currentView = shallowRef(ModernProjects);
   
@@ -40,7 +40,7 @@
     <transition name="topDown" appear>
       <ModernNavvy
         @toggleExtras="toggleExtras" 
-        :showContent="showContent"
+        :isShowContent="isShowContent"
       />
     </transition>
 
@@ -50,7 +50,7 @@
       />
     </transition>
 
-    <main v-if="showExtras" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
+    <main v-if="isShowContent" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
       <component :is="currentView" />
     </main>
 

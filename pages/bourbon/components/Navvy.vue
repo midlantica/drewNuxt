@@ -1,5 +1,5 @@
 <template>
-  <header v-show="showContent" class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+  <header v-show="isShowContent" class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
     <nav class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
       <h1>
         <a href="#"
@@ -27,12 +27,12 @@
 <script setup>
   const copy = useCopy()
 
-  const props = defineProps(['showContent'])
+  const props = defineProps(['isShowContent'])
   
-  const { showContent, toggleExtras } = useToggleExtras();
+  const { isShowContent, toggleExtras } = useToggleExtras();
 
   onMounted(() => {
-    showContent.value = true
+    isShowContent.value = true
   })
 </script>
 
