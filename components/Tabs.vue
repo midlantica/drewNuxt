@@ -10,7 +10,6 @@
   import { ref } from "vue"
 
   const tabs = ref([ 'modern', 'bourbon', 'groovy', 'techy', 'corp', 'punk' ])
-
 </script>
 
 <style scoped>

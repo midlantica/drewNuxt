@@ -32,7 +32,8 @@
       />
     </transition>
 
-    <main class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2" v-if="showExtras">
+    <main v-if="showExtras"
+      class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2">
       <transition name="bounce2" appear>
         <BourbonHeadAndCopy class="copyArea" 
           @toggleExtras="toggleExtras"
@@ -53,7 +54,7 @@
       </transition>
     </main>
 
-    <main v-if="!showExtras"
+    <main v-else
       class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2" 
     >
       <component :is="ExtrasC" class="col-span-2"

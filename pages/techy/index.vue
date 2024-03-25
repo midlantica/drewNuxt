@@ -46,7 +46,7 @@
     </transition>
   </main>
 
-  <main class="mainGrid" v-if="!showExtras">
+  <main class="mainGrid" v-else>
     <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" :showContent="showContent"
     />
   </main>

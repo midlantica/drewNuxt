@@ -1,5 +1,5 @@
 <script setup>
-  import { ref, shallowRef, nextTick  } from 'vue';
+  import { shallowRef  } from 'vue';
   import { ModernProjects, ModernSkills, ModernAbout, ExtrasC } from '#components'
 
   definePageMeta({
@@ -20,8 +20,7 @@
   
   const { showExtras, showContent, toggleExtras } = useToggleExtras();
 
-  let currentView = shallowRef(ModernProjects);
-  // let selectedBtn = ref(null)
+  const currentView = shallowRef(ModernProjects);
   
   function switchView(view) {
     if (view === 'ModernProjects') {
@@ -55,10 +54,10 @@
       <component :is="currentView" />
     </main>
 
-    <main v-if="!showExtras" class="mainGrid">
-      <component :is="ExtrasC" class="col-span-2" 
+    <main v-else class="mainGrid">
+      <component :is="ExtrasC" 
         @toggleExtras="toggleExtras" 
-        :showContent="showContent"
+        class="col-span-2" 
       />
     </main>
 

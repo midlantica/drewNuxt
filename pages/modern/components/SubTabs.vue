@@ -2,11 +2,17 @@
   <div v-show="showContent" 
     class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
     <div @click="emitSwitchView('ModernProjects')" 
-      class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }">
+      class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }"
+      @toggleExtras="toggleExtras"
+      :showContent="showContent"
+    >
       Projects
     </div>
     <div @click="emitSwitchView('ModernSkills')" 
-      class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }">
+      class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }"
+      @toggleExtras="toggleExtras"
+      :showContent="showContent"
+    >
       Skills
     </div>
     <div @click="emitSwitchView('ModernAbout')" 
@@ -20,14 +26,14 @@
 </template>
 
 <script setup>
-  const emits = defineEmits();
+  const emit = defineEmits();
   const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
 
   const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
 
   let emitSwitchView = (view) => {
     selectedBtn.value = view
-    emits('switch-view', view)
+    emit('switch-view', view)
   };
   
   onMounted(() => {

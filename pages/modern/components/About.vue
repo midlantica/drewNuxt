@@ -7,13 +7,17 @@
       />
     </transition>
     <transition name="bounce4" appear>
-      <About />
+      <About 
+        toggleExtras="toggleExtras"
+        :showContent="showContent"
+      />
     </transition>
   </div>
 </template>
 
 <script setup>
   const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
+
   const props = defineProps(['showContent', 'selectedBtn', 'showExtras'])
 </script>
 

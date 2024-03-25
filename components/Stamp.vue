@@ -21,14 +21,7 @@
 
   const modal = ref(null)
 
-  const hover = ref(false)
-
   const modelItem = ref([])
-
-  function showModal (item) {
-    modelItem.value = item
-    isModalOpen.value = true
-  }
 
   function closeModal () {
     isModalOpen.value = false
@@ -37,14 +30,6 @@
   const isModalOpen = ref(false)
 
   onClickOutside(modal, () => (isModalOpen.value = false))
-
-  const skills = markRaw([
-    [
-      'This website 100% my own work',
-      'Each tab has the same content ',
-      'UX Design is my first love. Humility before the User. Crack the flow!'
-    ]
-  ])
 
 </script>
 

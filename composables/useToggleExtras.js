@@ -4,6 +4,8 @@ export const useToggleExtras = () => {
   const showExtras = ref(false)
   const showContent = ref(false)
   const selectedBtn = ref(null)
+  
+  const thing = ref(true)
 
   function toggleExtras() {
     console.log("toggleExtras Composable! ")
