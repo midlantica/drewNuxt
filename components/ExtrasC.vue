@@ -1,6 +1,7 @@
 <template>
   <transition name="fade" appear>
-    <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper">
+    <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper"
+    >
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
         <span
           @click="emit('toggleExtras')"

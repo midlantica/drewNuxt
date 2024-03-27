@@ -10,7 +10,7 @@
 </template>
 
 <script setup>
-  const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
+  const { isShowContent, toggleExtras, selectedBtn } = useToggleExtras();
   const props = defineProps(['isShowContent', 'selectedBtn'])
   
   const showSkills = ref(false)

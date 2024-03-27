@@ -30,10 +30,6 @@
   const props = defineProps(['isShowContent'])
   
   const { isShowContent, toggleExtras } = useToggleExtras();
-
-  onMounted(() => {
-    isShowContent.value = true
-  })
 </script>
 
 <style scoped>

@@ -36,11 +36,6 @@
   const { isShowContent, toggleExtras } = useToggleExtras();
 
   const props = defineProps(['isShowContent', 'selectedBtn'])
-
-  onMounted(() => {
-    isShowContent.value = true
-  })
-
 </script>
 
 <style scoped>

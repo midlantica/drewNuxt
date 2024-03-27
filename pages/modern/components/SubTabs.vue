@@ -3,31 +3,22 @@
     class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
     <div @click="emitSwitchView('ModernProjects')" 
       class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }"
-      @toggleExtras="toggleExtras"
-      :isShowContent="isShowContent"
-    >
-      Projects
+      >Projects 
     </div>
     <div @click="emitSwitchView('ModernSkills')" 
       class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }"
-      @toggleExtras="toggleExtras"
-      :isShowContent="isShowContent"
-    >
-      Skills
+      >Skills 
     </div>
     <div @click="emitSwitchView('ModernAbout')" 
       class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }"
-      @toggleExtras="toggleExtras"
-      :isShowContent="isShowContent"
-    >
-      About
+      >About 
     </div>
   </div>
 </template>
 
 <script setup>
   const emit = defineEmits();
-  const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
+  const { isShowContent, toggleExtras, selectedBtn } = useToggleExtras();
 
   const props = defineProps(['isShowContent', 'selectedBtn'])
   
@@ -36,13 +27,13 @@
   let emitSwitchView = (view) => {
     selectedBtn.value = view
     emit('switch-view', view)
-  };
+  }
   
   onMounted(() => {
     showSubTabs.value = true
     selectedBtn.value = 'ModernProjects'
   })
-
+  
 </script>
 
 <style scoped>

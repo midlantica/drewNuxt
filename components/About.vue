@@ -51,6 +51,8 @@
     isActive = !isActive
   }
 
+  const props = defineProps(['isShowContent'])
+  
   onMounted(() => {
     showAbout.value = true
   })

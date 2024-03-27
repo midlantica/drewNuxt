@@ -45,18 +45,25 @@
     </transition>
 
     <transition name="bounce2" appear>
-      <ModernSubTabs
-        @switch-view="switchView"
+      <ModernSubTabs @switch-view="switchView" @toggleExtras="toggleExtras"
+        :isShowContent="isShowContent"
+        :selectedBtn="selectedBtn"
       />
     </transition>
 
     <main v-if="isShowContent" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
-      <component :is="currentView" />
+      <component 
+        :is="currentView" 
+        @toggleExtras="toggleExtras" 
+        :isShowContent="isShowContent"
+      />
     </main>
 
     <main v-else class="mainGrid">
-      <component :is="ExtrasC" 
+      <component 
+        :is="ExtrasC" 
         @toggleExtras="toggleExtras" 
+        :isShowContent="isShowContent"
         class="col-span-2" 
       />
     </main>

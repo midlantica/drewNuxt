@@ -7,16 +7,15 @@
       />
     </transition>
     <transition name="bounce4" appear>
-      <About 
-        toggleExtras="toggleExtras"
-        :isShowContent="isShowContent"
-      />
+      <About />
     </transition>
   </div>
 </template>
 
 <script setup>
-  const { showExtras, showContent, toggleExtras, selectedBtn } = useToggleExtras();
+  import { ModernHeadAndCopy } from '#components';
+  
+  const { isShowContent, toggleExtras, selectedBtn } = useToggleExtras();
 
   const props = defineProps(['isShowContent', 'selectedBtn'])
 </script>
