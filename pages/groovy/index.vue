@@ -51,8 +51,8 @@
 
   <main class="mainGrid" v-else>
     <component :is="ExtrasC" class="col-span-2" 
-        @toggleExtras="toggleExtras"
-        :isShowContent="isShowContent"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
      />
   </main>
 

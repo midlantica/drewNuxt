@@ -14,7 +14,7 @@
   const { isShowContent, toggleExtras } = useToggleExtras();
   
   onMounted(() => {
-    isShowContent.value = true
+    store.initialize();
   })
 </script>
 

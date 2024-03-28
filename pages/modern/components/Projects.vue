@@ -7,8 +7,16 @@
 </template>
 
 <script setup>
-  const { isShowContent, toggleExtras, selectedBtn } = useToggleExtras();
-  const props = defineProps(['isShowContent', 'selectedBtn'])  
+  const store = useToggleExtrasStore()
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
+  
+  onMounted(() => {
+    store.selectedBtn = 'ModernProjects'
+  })
 </script>
 
-<style scoped></style>
+<style scoped>
+</style>

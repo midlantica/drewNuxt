@@ -23,10 +23,11 @@ export default defineNuxtConfig({
     '@vueuse/sound/nuxt',
   ],
   pinia: {
-    storesDirs: ['./stores/**'], // './custom-folder/stores/**'
+    storesDirs: ['./store/**'], // './custom-folder/stores/**'
   },
   imports: {
-    dirs: ['store']
+    // Auto-import pinia stores defined in `~/stores`
+    dirs: ['stores']
   },
   // vueTransitions: {
   //   // The same options as in the plugin itself.

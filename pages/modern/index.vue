@@ -1,6 +1,9 @@
 <script setup>
-  import { shallowRef  } from 'vue';
+  import { shallowRef, onMounted } from 'vue';
   import { ModernProjects, ModernSkills, ModernAbout, ExtrasC } from '#components'
+  const store = useToggleExtrasStore()
+  
+  const emit = defineEmits()
 
   definePageMeta({
     title: 'Modern',
@@ -16,13 +19,20 @@
     }
   })
   
-  const props = defineProps(['isShowContent', 'selectedBtn'])
+    
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn',
+    'currentView'
+  ])
   
-  const { isShowContent, toggleExtras } = useToggleExtras();
-
   const currentView = shallowRef(ModernProjects);
   
-  function switchView(view) {
+  const switchView = (view) => {
+    if (!store.isShowContent) {
+      store.toggleExtras();
+    }
+    
     if (view === 'ModernProjects') {
       currentView.value = ModernProjects
     } else if (view === 'ModernSkills') {
@@ -32,6 +42,10 @@
     }
   }
 
+  onMounted(() => {
+    store.initialize();
+    store.selectedBtn = 'ModernProjects'
+  })
 </script>
 
 <template>
@@ -39,31 +53,35 @@
 
     <transition name="topDown" appear>
       <ModernNavvy
-        @toggleExtras="toggleExtras" 
-        :isShowContent="isShowContent"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
       />
     </transition>
 
     <transition name="bounce2" appear>
-      <ModernSubTabs @switch-view="switchView" @toggleExtras="toggleExtras"
-        :isShowContent="isShowContent"
-        :selectedBtn="selectedBtn"
+      <ModernSubTabs 
+        @switch-view="switchView" 
+        @toggleExtras="store.toggleExtras"
+        :isShowContent="store.isShowContent"
+        :selectedBtn="store.selectedBtn"
       />
     </transition>
 
-    <main v-if="isShowContent" class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0">
+    <main v-if="store.isShowContent" 
+      class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0"
+    >
       <component 
         :is="currentView" 
-        @toggleExtras="toggleExtras" 
-        :isShowContent="isShowContent"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
       />
     </main>
 
     <main v-else class="mainGrid">
       <component 
-        :is="ExtrasC" 
-        @toggleExtras="toggleExtras" 
-        :isShowContent="isShowContent"
+        :is="ExtrasC"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
         class="col-span-2" 
       />
     </main>

@@ -1,5 +1,5 @@
 <template>
-  <header v-show="isShowContent" class="shadow-none text-base-ivory bg-techy-mango">
+  <header class="shadow-none text-base-ivory bg-techy-mango">
     <nav class="flex flex-col items-center content-center justify-center w-full flex-nowrap grow">
       <div class="w-full mastMain bg-techy-mango">
         <div class="mx-auto my-0 text-center masty">
@@ -35,10 +35,13 @@
   import mastHarper from './masthead/mastHarper.vue'
   const copy = useCopy()
   
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
   
   onMounted(() => {
-    isShowContent.value = true
+    store.initialize();
   })
 </script>
 

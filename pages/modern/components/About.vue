@@ -2,8 +2,8 @@
   <div class="aboutGrid">
     <transition name="bounce3" appear>
       <ModernHeadAndCopy
-        @toggleExtras="toggleExtras"
-        :isShowContent="isShowContent"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
       />
     </transition>
     <transition name="bounce4" appear>
@@ -15,9 +15,16 @@
 <script setup>
   import { ModernHeadAndCopy } from '#components';
   
-  const { isShowContent, toggleExtras, selectedBtn } = useToggleExtras();
+  const store = useToggleExtrasStore()
 
-  const props = defineProps(['isShowContent', 'selectedBtn'])
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
+  
+  onMounted(() => {
+    store.selectedBtn = 'ModernAbout'
+  })
 </script>
 
 <style scoped>

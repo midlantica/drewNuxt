@@ -17,5 +17,5 @@
   const emit = defineEmits()
     
   // console.log('isShowContent:', isShowContent)
-  
+  const store = useToggleExtrasStore()
 </script>

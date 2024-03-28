@@ -4,7 +4,7 @@
     >
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
         <span
-          @click="emit('toggleExtras')"
+          @click="$emit('toggleExtras')"
           class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </span>
           Portfolio Extras
       </h1>
@@ -25,11 +25,13 @@
 
 <script setup>
   import { ref } from 'vue'
-  const { isShowContent, toggleExtras } = useToggleExtras();
-  
-  const props = defineProps(['isShowContent', 'selectedBtn'])
-  
-  const emit = defineEmits()
+  const store = useToggleExtrasStore()
+
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn',
+    'currentView'
+  ])
   
   const imageRoot = ref("/img/portfolio/extras/")
   

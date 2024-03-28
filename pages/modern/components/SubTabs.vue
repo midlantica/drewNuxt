@@ -2,36 +2,52 @@
   <div v-show="showSubTabs" 
     class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
     <div @click="emitSwitchView('ModernProjects')" 
-      class="btn projectsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernProjects' }"
+      class="btn projectsTab" :class="{ 'selectedBtn': store.selectedBtn === 'ModernProjects' }"
       >Projects 
     </div>
     <div @click="emitSwitchView('ModernSkills')" 
-      class="btn skillsTab" :class="{ 'selectedBtn': selectedBtn === 'ModernSkills' }"
+      class="btn skillsTab" :class="{ 'selectedBtn': store.selectedBtn === 'ModernSkills' }"
       >Skills 
     </div>
     <div @click="emitSwitchView('ModernAbout')" 
-      class="btn aboutTab" :class="{ 'selectedBtn': selectedBtn === 'ModernAbout' }"
+      class="btn aboutTab" :class="{ 'selectedBtn': store.selectedBtn === 'ModernAbout' }"
       >About 
     </div>
   </div>
 </template>
 
 <script setup>
+  import { useRouter } from 'vue-router'
+  
   const emit = defineEmits();
-  const { isShowContent, toggleExtras, selectedBtn } = useToggleExtras();
+  const store = useToggleExtrasStore()
+  const router = useRouter();
 
-  const props = defineProps(['isShowContent', 'selectedBtn'])
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
   
   const showSubTabs = ref(false)
 
   let emitSwitchView = (view) => {
-    selectedBtn.value = view
+    store.selectedBtn = view
     emit('switch-view', view)
   }
   
   onMounted(() => {
     showSubTabs.value = true
-    selectedBtn.value = 'ModernProjects'
+    // store.selectedBtn = 'ModernProjects'
+    
+    // Set selectedBtn based on the current route
+    const currentRoute = router.currentRoute.value;
+    if (currentRoute.name === 'ModernProjects') {
+      store.selectedBtn = 'ModernProjects';
+    } else if (currentRoute.name === 'ModernSkills') {
+      store.selectedBtn = 'ModernSkills';
+    } else if (currentRoute.name === 'ModernAbout') {
+      store.selectedBtn = 'ModernAbout';
+    }
   })
   
 </script>

@@ -26,8 +26,8 @@
 
     <transition name="topDown" appear>
       <BourbonNavvy
-        @toggleExtras="toggleExtras"
-        :isShowContent="isShowContent"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
       />
     </transition>
 
@@ -57,8 +57,8 @@
       class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2" 
     >
       <component :is="ExtrasC" class="col-span-2"
-        @toggleExtras="toggleExtras"
-        :isShowContent="isShowContent"
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent"
       />
     </main>
 
