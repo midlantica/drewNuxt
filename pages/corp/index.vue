@@ -1,5 +1,6 @@
 <script setup>
   import { ExtrasC } from '#components'
+  const store = useToggleExtrasStore()
 
   definePageMeta({
     title: 'Corp',
@@ -15,21 +16,26 @@
     }
   })
 
-  const props = defineProps(['isShowContent'])
-  
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
 
+  onMounted(() => {
+    store.initialize();
+  })
+  
 </script>
 
 <template>
   <transition name="topDown" appear>
     <CorpNavvy 
-      @toggleExtras="toggleExtras" 
-      :isShowContent="isShowContent"
+      @toggleExtras="store.toggleExtras" 
+      :isShowContent="store.isShowContent"
     />
   </transition>
 
-  <main v-if="isShowContent" 
+  <main v-if="store.isShowContent" 
     class="mainGrid" >
     <transition name="bounce2" appear>
       <CorpHeadAndCopy />
@@ -49,8 +55,8 @@
   </main>
 
   <main v-else class="mainGrid" >
-    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" 
-      :isShowContent="isShowContent"
+    <component :is="ExtrasC" class="col-span-2" @toggleExtras="store.toggleExtras" 
+      :isShowContent="store.isShowContent"
     />
   </main>
 

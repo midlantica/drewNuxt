@@ -1,5 +1,5 @@
 <template>
-  <div>
+  <div v-show="store.isShowContent">
     <div class="flex justify-start">
       <AuthenticStamp class="authenticStampPunk" />
     </div>

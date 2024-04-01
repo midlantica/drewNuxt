@@ -1,5 +1,5 @@
 <template>
-  <section>
+  <section v-show="store.isShowContent">
     <div class="flex items-center w-full gap-2 mb-2">
       <h1>
         {{ copy.druHead }}
@@ -12,7 +12,8 @@
 
 <script setup>
   const copy = useCopy()
-
+  const store = useToggleExtrasStore()
+  
   const props = defineProps([
     'store.isShowContent', 
     'store.selectedBtn'

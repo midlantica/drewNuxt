@@ -15,9 +15,16 @@
     }
   })
   
-  const props = defineProps(['isShowContent'])
+  const store = useToggleExtrasStore()
+  
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
 
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  onMounted(() => {
+    store.initialize();
+  })
 
 </script>
 
@@ -31,12 +38,12 @@
       />
     </transition>
 
-    <main v-if="isShowContent"
+    <main v-if="store.isShowContent" 
       class="grid grid-cols-2 col-span-2 px-4 grid-rows-auto gap-x-0 gap-y-2">
       <transition name="bounce2" appear>
         <BourbonHeadAndCopy class="copyArea" 
-          @toggleExtras="toggleExtras"
-          :isShowContent="isShowContent"
+          @toggleExtras="store.toggleExtras" 
+          :isShowContent="store.isShowContent"
         />
       </transition>
       <transition name="bounce4" appear>

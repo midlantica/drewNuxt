@@ -15,21 +15,31 @@
     }
   })
 
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  const store = useToggleExtrasStore()
 
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn',
+  ])
+  
+  onMounted(() => {
+    store.initialize();
+  })
 </script>
 
 <template>
   <transition name="topDown" appear>
     <TechyNavvy 
-      @toggleExtras="toggleExtras"
-      :isShowContent="isShowContent" 
+      @toggleExtras="store.toggleExtras"
+      :isShowContent="store.isShowContent" 
     />
   </transition>
 
-  <main class="mainGrid" v-if="isShowContent">
+  <main class="mainGrid" v-if="store.isShowContent">
     <transition name="bounce2" appear>
-      <TechyHeadAndCopy class="copyArea" @toggleExtras="toggleExtras" :isShowContent="isShowContent" 
+      <TechyHeadAndCopy class="copyArea" 
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent" 
       />
     </transition>
 
@@ -47,7 +57,8 @@
   </main>
 
   <main class="mainGrid" v-else>
-    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras" :isShowContent="isShowContent"
+    <component :is="ExtrasC" class="col-span-2" @toggleExtras="store.toggleExtras" 
+      :isShowContent="store.isShowContent"
     />
   </main>
 

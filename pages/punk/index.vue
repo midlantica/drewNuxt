@@ -1,14 +1,17 @@
 <template>
 
   <transition name="topDown" appear>
-    <PunkNavvy @toggleExtras="toggleExtras" :isShowContent="isShowContent" />
+    <PunkNavvy 
+      @toggleExtras="store.toggleExtras" 
+      :isShowContent="store.isShowContent" 
+    />
   </transition>
 
-  <main class="mainGrid" v-if="isShowContent">
+  <main class="mainGrid" v-if="store.isShowContent">
     <transition name="bounce2" appear>
       <PunkHeadAndCopy class="copyArea" 
-        @toggleExtras="toggleExtras" 
-        :isShowContent="isShowContent" 
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent" 
       />
     </transition>
 
@@ -26,8 +29,8 @@
   </main>
 
   <main class="mainGrid" v-else>
-    <component :is="ExtrasC" class="col-span-2" @toggleExtras="toggleExtras"
-      :isShowContent="isShowContent"
+    <component :is="ExtrasC" class="col-span-2" @toggleExtras="store.toggleExtras"
+      :isShowContent="store.isShowContent"
     />
   </main>
 
@@ -36,6 +39,7 @@
 <script setup>
   import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
+  const store = useToggleExtrasStore()
 
   definePageMeta({
     title: 'Punk',
@@ -51,8 +55,15 @@
     }
   })
 
-  const { isShowContent, toggleExtras } = useToggleExtras();
-
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn',
+  ])
+  
+  onMounted(() => {
+    store.initialize();
+  })
+  
 </script>
 
 <style scoped>

@@ -34,6 +34,7 @@
   import mastDrew from './masthead/mastDrew.vue'
   import mastHarper from './masthead/mastHarper.vue'
   const copy = useCopy()
+  const store = useToggleExtrasStore()
   
   const props = defineProps([
     'store.isShowContent', 

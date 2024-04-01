@@ -1,5 +1,5 @@
 <template>
-  <section v-show="isShowContent">
+  <section v-show="store.isShowContent">
     <h1 class="flex items-center w-full gap-2">
       {{ copy.druHead }}
       <AuthenticStamp class="authenticStamp" />
@@ -10,8 +10,7 @@
 
 <script setup>
   const copy = useCopy()
-
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  const store = useToggleExtrasStore()
   
   onMounted(() => {
     store.initialize();

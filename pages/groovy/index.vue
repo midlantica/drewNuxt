@@ -1,6 +1,7 @@
 <script setup>
   import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
+  const store = useToggleExtrasStore()
 
   definePageMeta({
     title: 'Groovy',
@@ -16,23 +17,25 @@
     }
   })
 
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  onMounted(() => {
+    store.initialize();
+  })
 
 </script>
 
 <template>
   <Transition name="topDown" appear>
     <GroovyNavvyHead
-      @toggleExtras="toggleExtras"
-      :isShowContent="isShowContent"
+      @toggleExtras="store.toggleExtras"
+      :isShowContent="store.isShowContent"
     />
   </Transition>
 
-  <main v-if="isShowContent" class="mainGrid">
+  <main v-if="store.isShowContent" class="mainGrid">
     <Transition name="bounce2" appear>
       <GroovyHeadAndCopy class="copyArea" 
-        @toggleExtras="toggleExtras" 
-        :isShowContent="isShowContent" 
+        @toggleExtras="store.toggleExtras" 
+        :isShowContent="store.isShowContent" 
       />
     </Transition>
 

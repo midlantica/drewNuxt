@@ -36,13 +36,17 @@
 <script setup>
   import drewHarper from '../components/navvyArt/drewHarper.vue'
   const copy = useCopy()
-  const { isShowContent, toggleExtras } = useToggleExtras();
+  const store = useToggleExtrasStore()
   const showNavvy = ref(false)
   
-  const props = defineProps(['isShowContent'])
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
 
   onMounted(() => {
     showNavvy.value = true
+    store.initialize();
   })
 </script>
 

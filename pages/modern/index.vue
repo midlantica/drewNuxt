@@ -46,6 +46,7 @@
     store.initialize();
     store.selectedBtn = 'ModernProjects'
   })
+  
 </script>
 
 <template>

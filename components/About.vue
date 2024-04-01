@@ -51,7 +51,10 @@
     isActive = !isActive
   }
 
-  const props = defineProps(['isShowContent'])
+  const props = defineProps([
+    'store.isShowContent', 
+    'store.selectedBtn'
+  ])
   
   onMounted(() => {
     showAbout.value = true
