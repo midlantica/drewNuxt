@@ -130,7 +130,7 @@
 
   .carouselArrow {
     @apply text-[.7rem] text-gray-600 border-none rounded-sm border-l-[10px] bg-black/10 pt-[.2rem] pr-2 pb-[.16rem] pl-[.4rem] m-0 font-sans cursor-pointer absolute drop-shadow-[2px_2px_2px_hsla(0,0%,100%,0.5)];
-    filter: drop-shadow(1px 1px 1px black);
+    /* filter: drop-shadow(1px 1px 1px black); */
 
     &:hover {
       @apply bg-black/20 text-black;
@@ -287,7 +287,7 @@
     }
 
     .miniGallery .box {
-      @apply h-[180px] relative top-0;
+      @apply h-[185px] relative top-0;
 
       svg.iconSVG {
         @apply w-auto relative top-0;

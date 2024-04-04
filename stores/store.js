@@ -8,7 +8,7 @@ export const useToggleExtrasStore = defineStore({
   }),
   actions: {
     async toggleExtras() {
-      console.log("toggleExtras Store Action!");
+      // console.log("toggleExtras Store Action!");
       this.selectedBtn = false;
       this.isShowContent = !this.isShowContent;
     },

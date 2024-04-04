@@ -63,7 +63,7 @@
   const modal = ref(null)
   const hover = ref(false)
   const modelItem = ref([])
-  const showContent = ref(false)
+  // const showContent = ref(false)
 
   function showModal (item) {
     modelItem.value = item
@@ -188,7 +188,7 @@
       }
 
       p {
-        @apply text-[1rem] leading-[1.8];
+        @apply text-[1.1rem] leading-[1.8];
       }
 
       .modalInner {
@@ -407,24 +407,54 @@
     }
   }
 
-  .modern #modal .content:has(h4, p) {
+  .modern #modal .content {
     @apply font-modernCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1rem] leading-[1.8]; }
   }
 
-  .bourbon #modal .content:has(h4, p) {
+  .bourbon #modal .content {
     @apply font-bourbonCopy;
+    
+    h4 {
+        /*  */
+    }
+    p {  }
   }
-  .groovy #modal .content:has(h4, p) {
+  .groovy #modal .content {
     @apply font-groovyCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
   }
-  .techy #modal .content:has(h4, p) {
+  .techy #modal .content {
     @apply font-techyCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.2rem] leading-[1.8] tracking-wider; }
   }
-  .corp #modal .content:has(h4, p) {
+  .corp #modal .content {
     @apply font-corpCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.15rem] leading-[1.8] tracking-wide; }
   }
-  .punk #modal .content:has(h4, p) {
+  .punk #modal .content {
     @apply font-punkCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
   }
 
   .modal-fade-enter-from,

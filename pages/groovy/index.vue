@@ -112,7 +112,7 @@
   }
 
   .slides {
-    @apply col-start-2 col-end-3 row-start-1 row-end-1 z-10 mt-[-9.5rem];
+    @apply col-start-2 col-end-3 row-start-1 row-end-1 z-10 mt-[-9.1rem];
 
     @media (max-width: theme("screens.breakXlg")) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3 mt-0;

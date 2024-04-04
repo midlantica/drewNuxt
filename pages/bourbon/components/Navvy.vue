@@ -1,6 +1,5 @@
 <template>
-  <header v-show="store.isShowContent" 
-    class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow"
+  <header class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow"
   >
     <nav class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
       <h1>

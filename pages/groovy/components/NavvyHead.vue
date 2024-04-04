@@ -2,7 +2,7 @@
   <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
     <div class="relative my-[-25px] flex flex-row items-center">
       <div class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]">
-        <div class="block float-left clear-left groovyCircle">
+        <div class="block float-left clear-left groovyCircle shadow-pre-trans" :class="{ 'shadow-transition': isMounted }">
           <div @click="$emit('toggleExtras')"  class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer" />
         </div>
       </div>
@@ -44,14 +44,26 @@
     'store.selectedBtn'
   ])
   
+  const isMounted = ref(false)
+  
   onMounted(() => {
     store.initialize();
+    setTimeout(() => {
+      isMounted.value = true
+    }, 1500)
   })
 </script>
 
 <style scoped>
+
+  .shadow-pre-trans {
+    @apply shadow-[1px_1px_0px_0px_hsl(0,_0%,_0%,_50%)];
+  }
+  .shadow-transition {
+    @apply transition duration-500 ease-out shadow-[8px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
+  }
   .groovyCircle {
-    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] shadow-[8px_6px_0px_0px_hsl(0,_0%,_0%,_25%)] duration-1000 ease-out clip-path-polygon-[21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%];
+    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] clip-path-polygon-[21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%] ;
     background-image: radial-gradient(
       /* 0 - 25% */
       #99f1ec 0%,

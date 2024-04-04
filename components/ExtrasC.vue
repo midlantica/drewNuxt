@@ -3,10 +3,10 @@
     <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper"
     >
       <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
-        <span
+        <ArrowLeft 
           @click="$emit('toggleExtras')"
-          class="rounded-lg cursor-pointer hover:bg-gray-200"> <<- </span>
-          Portfolio Extras
+          class="cursor-pointer animate-pulse" />
+        Portfolio Extras
       </h1>
 
       <div class="flex flex-row flex-wrap items-start w-full p-0 extrasWrap place-content-center gap-x-4">
@@ -25,6 +25,7 @@
 
 <script setup>
   import { ref } from 'vue'
+  import ArrowLeft from './Icons/iconArrowLeft.vue'
   const store = useToggleExtrasStore()
 
   const props = defineProps([
@@ -154,3 +155,90 @@
   ])
 
 </script>
+
+<style>
+  
+  .modern svg.arrowLeft {
+
+    > path {
+      @apply stroke-modern-rubyDark;
+      /* stroke-width: 3; */
+      /* stroke-linecap: round; */
+    }
+    
+    &:hover > path {
+      @apply stroke-modern-ruby;
+    }
+  }
+
+  .bourbon svg.arrowLeft {
+
+    > path {
+      @apply stroke-bourbon-bourbon;
+      /* stroke-width: 3; */
+      /* stroke-linecap: round; */
+      color: stroke-black;
+
+    }
+    &:hover > path {
+      @apply stroke-bourbon-accentRed;
+    }
+  }
+
+  .groovy svg.arrowLeft {
+
+    > path {
+      @apply stroke-black;
+      /* stroke-width: 3; */
+      /* stroke-linecap: round; */
+      color: stroke-black;
+
+    }
+    &:hover > path {
+      @apply stroke-groovy-redDk;
+    }
+  }
+
+  .techy svg.arrowLeft {
+
+    > path {
+      @apply stroke-techy-blueTech;
+      /* stroke-width: 3; */
+      /* stroke-linecap: round; */
+      color: stroke-black;
+
+    }
+    &:hover > path {
+      @apply stroke-red-700;
+    }
+  }
+
+  .corp svg.arrowLeft {
+
+    > path {
+      @apply stroke-corp-blueDark;
+      /* stroke-width: 3; */
+      /* stroke-linecap: round; */
+      color: stroke-black;
+
+    }
+    &:hover > path {
+      @apply stroke-corp-accentRed;
+    }
+  }
+
+  .punk svg.arrowLeft {
+
+    > path {
+      @apply stroke-punk-magenta;
+      /* stroke-width: 3; */
+      /* stroke-linecap: round; */
+      color: stroke-black;
+
+    }
+    &:hover > path {
+      @apply stroke-black;
+    }
+  }
+
+</style>
