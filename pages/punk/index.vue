@@ -37,7 +37,6 @@
 </template>
 
 <script setup>
-  import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
   const store = useToggleExtrasStore()
 

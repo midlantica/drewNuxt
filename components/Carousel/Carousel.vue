@@ -346,6 +346,14 @@
       .projectHead {
         @apply font-groovyCopy mt-[1px];
       }
+      
+      .carouselArrow {
+        @apply text-black;
+
+        &:hover {
+          @apply text-white bg-groovy-redDk;
+        }
+      }
     }
 
     .miniGallery div .box {
@@ -404,10 +412,21 @@
       .projectHead {
         @apply font-techyCopy uppercase mt-[1px];
       }
+      
+      .carouselArrow {
+        @apply text-[.7rem] text-black;
+        /* filter: drop-shadow(1px 1px 1px black); */
+
+        &:hover {
+          @apply text-white bg-techy-blueTech;
+        }
+      }
+
     }
 
     .miniGallery div .box {
-      @apply h-[167px] border border-solid border-gray-200 relative top-0;
+      @apply h-[170px] border border-solid border-gray-200 relative top-0;
+      /* @apply h-[167px] border border-solid border-gray-200 relative top-0; */
 
       svg.iconSVG {
         @apply w-auto ease-in-out relative top-0;
@@ -529,10 +548,10 @@
       }
 
       .carouselArrow {
-        @apply text-white bg-black/30 pt-[.1rem] pr-[.5rem] pb-[.2rem] pl-[.4rem] shadow-none rounded-sm;
+        @apply text-white bg-punk-magenta pt-[.1rem] pr-[.5rem] pb-[.2rem] pl-[.4rem] shadow-none rounded-sm;
 
         &:hover {
-          @apply text-white bg-black/50;
+          @apply  bg-punk-magenta/80;
         }
       }
     }

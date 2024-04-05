@@ -1,28 +1,29 @@
 <template>
-  <header class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow"
-  >
-    <nav class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
-      <h1>
-        <a href="#"
-          @click="$emit('toggleExtras')"
-          class="no-underline text-base-ivory hover:text-[orange] hover:cursor-pointer">
-          DREW HARPER
-        </a>
-      </h1>
-      <section class="jobDesc">
-        <h2>{{ copy.uiuxDesigner }}</h2>
-        <h2>{{ copy.vizDesigner }}</h2>
-      </section>
-      <section class="contact">
-        <p class="email">
-          <a class="no-underline text-base-ivory hover:text-[orange]" :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
-        </p>
-        <p class="resume">
-          <a class="no-underline text-base-ivory hover:text-[orange]" :href="`${copy.portfolio}`" target="_blank">PDF Resume</a>
-        </p>
-      </section>
+  <!-- <Transition name="topDown" appear> -->
+    <nav class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow">
+      <div class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
+        <h1>
+          <a href="#"
+            @click="$emit('toggleExtras')"
+            class="no-underline text-base-ivory hover:text-[orange] hover:cursor-pointer">
+            DREW HARPER
+          </a>
+        </h1>
+        <section class="jobDesc">
+          <h2>{{ copy.uiuxDesigner }}</h2>
+          <h2>{{ copy.vizDesigner }}</h2>
+        </section>
+        <section class="contact">
+          <p class="email">
+            <a class="no-underline text-base-ivory hover:text-[orange]" :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
+          </p>
+          <p class="resume">
+            <a class="no-underline text-base-ivory hover:text-[orange]" :href="`${copy.portfolio}`" target="_blank">PDF Resume</a>
+          </p>
+        </section>
+      </div>
     </nav>
-  </header>
+  <!-- </Transition> -->
 </template>
 
 <script setup>

@@ -1,5 +1,4 @@
 <script setup>
-  import { nextTick } from 'vue';
   import { ExtrasC } from '#components'
   const store = useToggleExtrasStore()
 
@@ -32,22 +31,22 @@
   </Transition>
 
   <main v-if="store.isShowContent" class="mainGrid">
-    <Transition name="bounce2" appear>
+    <Transition name="bounce5" appear>
       <GroovyHeadAndCopy class="copyArea" 
         @toggleExtras="store.toggleExtras" 
         :isShowContent="store.isShowContent" 
       />
     </Transition>
 
-    <Transition name="bounce4" appear>
+    <Transition name="bounce7" appear>
       <Carousel class="slides" />
     </Transition>
 
-    <Transition name="bounce6" appear>
+    <Transition name="bounce9" appear>
       <About />
     </Transition>
 
-    <Transition name="bounce8" appear>
+    <Transition name="bounce10" appear>
       <Skills />
     </Transition>
   </main>
@@ -58,8 +57,10 @@
         :isShowContent="store.isShowContent"
      />
   </main>
-
-  <GroovyFooter />
+  
+  <Transition name="bounce3" appear>
+    <GroovyFooter />
+  </Transition>
 </template>
 
 <style scoped>

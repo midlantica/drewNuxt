@@ -18,8 +18,7 @@
       class: `modern`
     }
   })
-  
-    
+
   const props = defineProps([
     'store.isShowContent', 
     'store.selectedBtn',
@@ -50,7 +49,7 @@
 </script>
 
 <template>
-  <div class="flex flex-col items-center">
+  <!-- <div class="flex flex-col items-center"> -->
 
     <transition name="topDown" appear>
       <ModernNavvy
@@ -69,7 +68,7 @@
     </transition>
 
     <main v-if="store.isShowContent" 
-      class="w-[90%] grid grid-cols-1 gap-y-2 gap-x-0 breakLg:w-[90%] m-0"
+      class="w-full grid grid-cols-1 gap-y-2 gap-x-0 px-12 m-0"
     >
       <component 
         :is="currentView" 
@@ -87,7 +86,7 @@
       />
     </main>
 
-  </div>
+  <!-- </div> -->
 </template>
 
 <style scoped>
