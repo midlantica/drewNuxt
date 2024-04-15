@@ -67,7 +67,7 @@
   }
 
   p {
-    @apply font-techyCopy text-[1.25rem] leading-[3rem] tracking-[.06em] text-techy-blueTech;
+    @apply font-techyCopy text-[1.25rem] leading-[3rem] tracking-[.06em] text-techy-blueTech content-center;
 
     @media (min-width: theme("screens.breakXlg")) and (-webkit-min-device-pixel-ratio: 2) {
       /* // */

@@ -229,3 +229,19 @@
   }
 
 }
+
+.pulsey { 
+  animation: pulsey 5s cubic-bezier(0.4, 0, 0.6, 1) infinite;
+}
+
+@keyframes pulsey {
+  0%, 100% {
+    /* opacity: 1; */
+    background: black;
+  }
+  50% {
+    /* opacity: .75; */
+    background: #202020;
+  }
+}
+

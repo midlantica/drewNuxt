@@ -9,6 +9,7 @@ html a {
 
 body {
   @apply m-0 bg-gray-700;
+  overflow-y: scroll;
 }
 
 img,

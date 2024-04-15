@@ -1,7 +1,6 @@
 <template>
-  <div v-show="showSkills"
-    class="skillsGrid"
-  >
+  <div v-show="showSkills" class="skillsGrid">
+    
     <div v-for="(item, index) in skills" :key="index">
       <component
         :is="item[0]"

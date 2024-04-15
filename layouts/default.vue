@@ -1,7 +1,7 @@
 <template>
   <div class="wrapper">
-    <Tabs />
-    <slot />
+    <Tabs class="z-50 h-8 top-0" />
+    <slot class="h-8 top-8" />
   </div>
 </template>
 
@@ -156,7 +156,6 @@
       }
 
       & a {
-
 
         &:hover {
 

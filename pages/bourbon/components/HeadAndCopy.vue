@@ -66,7 +66,7 @@
   }
 
   p {
-    @apply leading-[2.4rem] font-bourbonCopy text-[1.1rem] text-base-grey mt-2 mx-2 mb-0 tracking-[0.03rem] mr-2;
+    @apply leading-[2.5rem] font-bourbonCopy text-[1.1rem] text-base-grey mt-2 mx-2 mb-0 tracking-[0.05rem] mr-2 text-pretty;
 
     @media (max-width: theme("screens.breakXlg")) {
       @apply columns-2 leading-9 gap-x-12 text-justify hyphens-auto rule-w-[1px] rule-style-solid rule-color-[hsla(7,77%,43%,50%)];
