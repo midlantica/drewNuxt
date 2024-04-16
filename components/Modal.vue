@@ -1,52 +1,54 @@
 <template>
-  <Teleport to="#modal">
-    <transition name="modal-fade" appear>
-      <div class="modalBg" v-if="isModalOpen">
-        <div class="modal" ref="modal">
-          <div class="closeBtn" @click="closeModal">
-            <xOut />
-          </div>
-          <div class="modalInner">
-            <div class="icon">
-              <component
-                :is="modelItem[0]"
-                class="icon {{modelItem[1]}} { active: hover }"
-                @mouseleave="hover = false"
-              />
+  <!-- <ClientOnly> -->
+    <Teleport to="#modal" v-if="isModalOpen">
+      <!-- <transition name="modal-fade" appear> -->
+        <div class="modalBg" >
+          <div class="modal" ref="modal">
+            <div class="closeBtn" @click="closeModal">
+              <xOut />
             </div>
-            <div class="content">
-              <h4>{{ modelItem[2] }}</h4>
-              <p>{{ modelItem[3] }}</p>
+            <div class="modalInner" v-if="modalItem">
+              <div class="icon">
+                <component
+                  :is="modalItem[0]"
+                  class="icon"
+                  @mouseleave="hover = false"
+                />
+              </div>
+              <div class="content">
+                <h4>{{ modalItem[2] }}</h4>
+                <p>{{ modalItem[3] }}</p>
+              </div>
             </div>
+            
           </div>
         </div>
-      </div>
-    </transition>
-  </Teleport>
+      <!-- </transition> -->
+    </Teleport>
+  <!-- </ClientOnly> -->
 </template>
 
 <script setup>
-  import { ref, markRaw, defineAsyncComponent } from 'vue'
+  import { ref, defineProps, defineEmits } from 'vue'
   import { onClickOutside } from '@vueuse/core'
-  import xOut from './Icons/iconXout.vue'
-
+  import xOut from '../components/Icons/iconXout.vue'
+  
+  const emits = defineEmits(['closeModal'])
   const modal = ref(null)
-  const hover = ref(false)
-  const modelItem = ref([])
   
-  function showModal (item) {
-    modelItem.value = item
-    isModalOpen.value = true
-  }
+  const props = defineProps({
+    isModalOpen: Boolean,
+    modalItem: Array,
+  })
 
-  function closeModal () {
-    isModalOpen.value = false
+  function closeModal() {
+    emits('closeModal')
   }
-
   
-  const isModalOpen = ref(false)
+  onClickOutside(modal, () => {
+    emits('closeModal')
+  })
 
-  onClickOutside(modal, () => (isModalOpen.value = false))
 </script>
 
 <style scoped>
@@ -96,6 +98,61 @@
         }
       }
     }
+  }
+  
+  .modern #modal .content {
+    @apply font-modernCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1rem] leading-[1.8]; }
+  }
+
+  .bourbon #modal .content {
+    @apply font-bourbonCopy;
+    
+    h4 {
+        /*  */
+    }
+    p {  }
+  }
+  .groovy #modal .content {
+    @apply font-groovyCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
+  }
+  .techy #modal .content {
+    @apply font-techyCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.2rem] leading-[1.8] tracking-wider; }
+  }
+  .corp #modal .content {
+    @apply font-corpCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.15rem] leading-[1.8] tracking-wide; }
+  }
+  .punk #modal .content {
+    @apply font-punkCopy;
+    
+    h4 {
+        /*  */
+    }
+    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
+  }
+
+  .modal-fade-enter-from,
+  .modal-fade-leave-to {
+    @apply opacity-0;
   }
 
 </style>

@@ -9,7 +9,6 @@
       </p>
     </div>
 
-
     <component :is="selectedView">
       <transition name="bounce" appear>
         <div class="miniGallery">
@@ -177,7 +176,6 @@
 
   body.modern {
 
-
     .projectBox {
       @apply bg-transparent;
 
@@ -216,7 +214,6 @@
           @apply text-white bg-black/80;
         }
       }
-
     }
 
     .miniGallery {
@@ -248,15 +245,11 @@
             @apply font-modernCopy font-extralight text-white text-[.85rem] relative lowercase text-center mt-[4px] mx-0 mb-0 top-[-5px];
           }
         }
-
       }
-
     }
-
   }
 
   body.bourbon {
-
 
     .projectBox {
       @apply shadow-[0px_2px_6px_-2px_hsl(0,_0%,_0%,_90%)];
@@ -312,13 +305,10 @@
           @apply ease-in-out duration-200 top-[-5px];
         }
       }
-
     }
-
   }
 
   body.groovy {
-
 
     .projectBox {
       @apply shadow-[0px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
@@ -378,13 +368,10 @@
           @apply font-groovyCopy text-center text-gray-800 ease-in-out duration-200 top-[-5px];
         }
       }
-
     }
-
   }
 
   body.techy {
-
 
     .projectBox {
       @apply shadow-[0px_2px_6px_-2px_hsl(0,_0%,_0%,_90%)] rounded-none;
@@ -421,7 +408,6 @@
           @apply text-white bg-techy-blueTech;
         }
       }
-
     }
 
     .miniGallery div .box {
@@ -512,7 +498,6 @@
           @apply ease-in-out duration-200 top-[-5px];
         }
       }
-
     }
   }
 
@@ -581,7 +566,6 @@
             @apply ease-in-out duration-200 top-[-5px];
           }
         }
-
       }
     }
   }

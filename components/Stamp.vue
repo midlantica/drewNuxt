@@ -21,7 +21,7 @@
 
   const modal = ref(null)
 
-  const modelItem = ref([])
+  const modalItem = ref([])
 
   function closeModal () {
     isModalOpen.value = false

@@ -67,7 +67,8 @@
       />
     </transition>
 
-    <main v-if="store.isShowContent" 
+    <main 
+      v-if="store.isShowContent" 
       class="w-full grid grid-cols-1 gap-y-2 gap-x-0 px-12 m-0"
     >
       <component 

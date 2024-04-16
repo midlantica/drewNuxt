@@ -1,49 +1,30 @@
 <template>
   <div v-show="showSkills" class="skillsGrid">
     
-    <div v-for="(item, index) in skills" :key="index">
+    <div v-for="(skill, index) in skills" :key="index">
       <component
-        :is="item[0]"
-        class="icon {{item[1]}} { active: hover }"
+        :is="skill[0]"
+        class="icon {{skill[1]}} { active: hover }"
         @mouseleave="hover = false"
-        @click="showModal(item)"
+        @click="showModal(skill)"
       />
+      
     </div>
-
-    <ClientOnly>
-      <Teleport to="#modal">
-        <transition name="modal-fade" appear>
-          <div class="modalBg" v-if="isModalOpen">
-            <div class="modal" ref="modal">
-              <div class="closeBtn" @click="closeModal">
-                <xOut />
-              </div>
-              <div class="modalInner">
-                <div class="icon">
-                  <component
-                    :is="modelItem[0]"
-                    class="icon {{modelItem[1]}} { active: hover }"
-                    @mouseleave="hover = false"
-                  />
-                </div>
-                <div class="content">
-                  <h4>{{ modelItem[2] }}</h4>
-                  <p>{{ modelItem[3] }}</p>
-                </div>
-              </div>
-            </div>
-          </div>
-        </transition>
-      </Teleport>
-    </ClientOnly>
+    
+    <Modal 
+      :isModalOpen="isModalOpen" 
+      :modalItem="modalItem"
+      @closeModal="closeModal" 
+    />
+    
   </div>
 </template>
 
 <script setup>
   import { ref, markRaw, defineAsyncComponent } from 'vue'
-  import { onClickOutside } from '@vueuse/core'
+  // import { onClickOutside } from '@vueuse/core'
 
-  import xOut from './Icons/iconXout.vue'
+  // import xOut from './Icons/iconXout.vue'
 
   const iconUiux = markRaw(defineAsyncComponent(() => import('./Icons/iconUiux.vue')))
   const iconHtml5 = markRaw(defineAsyncComponent(() => import('./Icons/iconHtml5.vue')))
@@ -59,23 +40,21 @@
   const iconChelsea = markRaw(defineAsyncComponent(() => import('./Icons/iconChelsea.vue')))
 
   const showSkills = ref(false)
-  const modal = ref(null)
   const hover = ref(false)
-  const modelItem = ref([])
-  // const showContent = ref(false)
+  const modalItem = ref([])
+  const isModalOpen = ref(false)
 
-  function showModal (item) {
-    modelItem.value = item
+  function showModal(skill) {
+    console.log("Duuuude!")
+    modalItem.value = skill
     isModalOpen.value = true
   }
 
-  function closeModal () {
+  function closeModal() {
     isModalOpen.value = false
   }
 
-  const isModalOpen = ref(false)
-
-  onClickOutside(modal, () => (isModalOpen.value = false))
+  // onClickOutside(modal, () => (isModalOpen.value = false))
 
   const skills = markRaw([
     [
@@ -406,58 +385,5 @@
     }
   }
 
-  .modern #modal .content {
-    @apply font-modernCopy;
-    
-    h4 {
-        /*  */
-    }
-    p { @apply text-[1rem] leading-[1.8]; }
-  }
-
-  .bourbon #modal .content {
-    @apply font-bourbonCopy;
-    
-    h4 {
-        /*  */
-    }
-    p {  }
-  }
-  .groovy #modal .content {
-    @apply font-groovyCopy;
-    
-    h4 {
-        /*  */
-    }
-    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
-  }
-  .techy #modal .content {
-    @apply font-techyCopy;
-    
-    h4 {
-        /*  */
-    }
-    p { @apply text-[1.2rem] leading-[1.8] tracking-wider; }
-  }
-  .corp #modal .content {
-    @apply font-corpCopy;
-    
-    h4 {
-        /*  */
-    }
-    p { @apply text-[1.15rem] leading-[1.8] tracking-wide; }
-  }
-  .punk #modal .content {
-    @apply font-punkCopy;
-    
-    h4 {
-        /*  */
-    }
-    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
-  }
-
-  .modal-fade-enter-from,
-  .modal-fade-leave-to {
-    @apply opacity-0;
-  }
+  
 </style>

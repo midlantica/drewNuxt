@@ -23,7 +23,7 @@
   }
 
   section {
-    @apply mt-4 mr-9 mb-0 ml-9;
+    @apply mt-4 mr-9 mb-0 ml-9 content-center;
 
     @media (max-width: theme("screens.breakXlg")) {
       @apply mt-4 mx-6 mb-4;
@@ -43,7 +43,7 @@
   }
 
   h1 {
-    @apply font-techyHead text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-4 normal-case text-techy-blueTech;
+    @apply font-techyHead text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-2 normal-case text-techy-blueTech;
 
     @media (min-width: theme("screens.breakXlg")) {
       /* // @apply max-w-[26ch]; */
@@ -67,7 +67,7 @@
   }
 
   p {
-    @apply font-techyCopy text-[1.25rem] leading-[3rem] tracking-[.06em] text-techy-blueTech content-center;
+    @apply font-techyCopy text-[1.25rem] leading-[3rem] tracking-[.06em] text-gray-900 content-center;
 
     @media (min-width: theme("screens.breakXlg")) and (-webkit-min-device-pixel-ratio: 2) {
       /* // */
