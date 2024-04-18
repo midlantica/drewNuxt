@@ -1,35 +1,33 @@
 <template>
-  <!-- <ClientOnly> -->
-    <Teleport to="#modal" v-if="isModalOpen">
-      <!-- <transition name="modal-fade" appear> -->
-        <div class="modalBg" >
-          <div class="modal" ref="modal">
-            <div class="closeBtn" @click="closeModal">
-              <xOut />
-            </div>
-            <div class="modalInner" v-if="modalItem">
-              <div class="icon">
-                <component
-                  :is="modalItem[0]"
-                  class="icon"
-                  @mouseleave="hover = false"
-                />
-              </div>
-              <div class="content">
-                <h4>{{ modalItem[2] }}</h4>
-                <p>{{ modalItem[3] }}</p>
-              </div>
-            </div>
-            
+  <Teleport to="#modal" v-if="isModalOpen">
+    <transition name="modal-fade" appear>
+      <div class="modalBg">
+        <div class="modal" ref="modal">
+          <div class="closeBtn" @click="closeModal">
+            <xOut />
           </div>
+          <div class="modalInner" v-if="modalItem">
+            <div class="icon">
+              <component
+                :is="modalItem[0]"
+                class="icon"
+                @mouseleave="hover = false"
+              />
+            </div>
+            <div class="content">
+              <h4>{{ modalItem[2] }}</h4>
+              <p>{{ modalItem[3] }}</p>
+            </div>
+          </div>
+          
         </div>
-      <!-- </transition> -->
-    </Teleport>
-  <!-- </ClientOnly> -->
+      </div>
+    </transition>
+  </Teleport>
 </template>
 
 <script setup>
-  import { ref, defineProps, defineEmits } from 'vue'
+  import { ref } from 'vue'
   import { onClickOutside } from '@vueuse/core'
   import xOut from '../components/Icons/iconXout.vue'
   
@@ -53,7 +51,7 @@
 
 <style scoped>
   .modalBg {
-    @apply fixed w-full top-0 flex justify-center items-center m-auto h-full left-0 right-0 bottom-0 z-50 bg-black/60 animate-[fade_.25s];
+    @apply fixed w-full top-0 flex justify-center items-center m-auto h-full left-0 right-0 bottom-0 z-50 bg-black/60 animate-[fade_.3s];
 
     .modal {
       width: clamp(calc(300px - 2rem), 500px, calc(100% - 2rem));

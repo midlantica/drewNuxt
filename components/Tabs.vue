@@ -1,7 +1,9 @@
 <template>
   <div class="w-full relative">
     <transition name="slide">
-      <div v-if="themeBar" @click="chooseTheme" class="slimShady text-center m-auto w-full bg-gray-800 text-white/75 tracking-widest border-b border-b-gray-600/50 h-8 leading-none p-[0.3rem_0_0_0] z-50 uppercase cursor-pointer hover:bg-gray-900 hover:text-groovy-yellowPaleDk/85 font-modernHead font-semibold text-xs top-0 absolute ease-out duration-1000" :class="{ '-translate-y-12': !themeBar }">
+      <div v-if="themeBar" @click="chooseTheme" class="slimShady text-center m-auto w-full bg-gradient-to-b from-gray-800
+       to-gray-900 text-white/75 tracking-widest border-b border-b-gray-900/50 h-8 leading-none p-[0.3rem_0_0_0] z-50 uppercase cursor-pointer hover:from-gray-900
+       hover:to-gray-950 hover:text-groovy-yellowPaleDk/85 font-modernHead font-semibold text-xs top-0 absolute ease-cubic-bezier(0.83,0.1,1,1) duration-1000" :class="{ '-translate-y-12': !themeBar }">
         Choose theme <span class="text-base text-black">😃</span>
       </div>
     </transition>
@@ -30,7 +32,7 @@
 
 <style scoped>
   .slide-enter-active, .slide-leave-active {
-    transition: transform 0.25s ease-out;
+    transition: transform 0.3s cubic-bezier(0.83, 0.1, 1, 1);
   }
   .slide-enter, .slide-leave-to {
     transform: translateY(-100%);
@@ -42,9 +44,9 @@
       box-shadow: 0px 0px 8px 0px black;
     }
   }
-    
+
   .tabs {
-    @apply font-['Barlow_Semi_Condensed'] flex flex-row flex-nowrap justify-between items-start content-center text-center text-[0.85em] relative top-0 left-0 w-[100.1%] tracking-normal overflow-x-hidden bg-[#333] cursor-pointer;
+    @apply font-['Barlow_Semi_Condensed'] flex flex-row flex-nowrap justify-between items-start content-center text-center text-[0.85em] relative top-0 left-0 w-[100.1%] tracking-normal overflow-x-hidden bg-gradient-to-b from-base-grey to-[#1F1F1F] cursor-pointer;
 
     a {
       @apply grow text-[#fffdf4bf] py-2 px-0 border-r border-[#fffdf440] no-underline uppercase tracking-[0.1em] text-[0.8em] cursor-pointer;

@@ -9,13 +9,10 @@ module.exports = {
     `./composables/**/*.{js,ts}`,
     `./plugins/**/*.{js,ts}`,
     `./utils/**/*.{js,ts}`,
-    `./App.{js,ts,vue}`,
-    `App.{js,ts,vue}`,
     `./app.{js,ts,vue}`,
-    `app.{js,ts,vue}`,
     `./Error.{js,ts,vue}`,
     `./error.{js,ts,vue}`,
-    `./app.config.{js,ts}`
+    // `./app.config.{js,ts}`
   ],
   theme: {
     listStyleType: {

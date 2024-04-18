@@ -6,14 +6,13 @@ export default defineNuxtConfig({
   // srcDir: "client",
   // serverDir: "server",
   // baseUrl: "/",
-  devServer: {
+  // devServer: {
     // https: {
     //   key: './server.key',
     //   cert: './server.crt'
     // }
-  },
+  // },
   buildDir: '.nuxt',
-  css: ['~/assets/css/main.css'],
   ssr: true,
   devtools: { enabled: true },
   modules: [
@@ -33,6 +32,7 @@ export default defineNuxtConfig({
   //   // The same options as in the plugin itself.
   //   // You will get an autocomplete using Nuxt 3.
   // },
+  css: ['~/assets/css/main.css'],
   postcss: {
     plugins: {
       'postcss-import': {},
@@ -54,7 +54,6 @@ export default defineNuxtConfig({
     { path: '~/pages/modern/components', prefix: 'Modern' },
     { path: '~/pages/punk/components', prefix: 'Punk' },
     { path: '~/pages/techy/components', prefix: 'Techy' },
-
     '~/components' // this must be last line
   ],
   app: {
@@ -86,8 +85,9 @@ export default defineNuxtConfig({
     layoutTransition: false,
   },
   experimental: {
-    viewTransition: false,
-    appManifest: false,
+    // viewTransition: false,
+    // appManifest: false,
+    // watcher: "chokidar",
   },
   build: {
     //
