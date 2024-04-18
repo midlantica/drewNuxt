@@ -22,9 +22,6 @@
 
 <script setup>
   import { ref, markRaw, defineAsyncComponent } from 'vue'
-  // import { onClickOutside } from '@vueuse/core'
-
-  // import xOut from './Icons/iconXout.vue'
 
   const iconUiux = markRaw(defineAsyncComponent(() => import('./Icons/iconUiux.vue')))
   const iconHtml5 = markRaw(defineAsyncComponent(() => import('./Icons/iconHtml5.vue')))
@@ -45,7 +42,7 @@
   const isModalOpen = ref(false)
 
   function showModal(skill) {
-    console.log("Duuuude!")
+    // console.log("Duuuude!")
     modalItem.value = skill
     isModalOpen.value = true
   }
@@ -53,8 +50,6 @@
   function closeModal() {
     isModalOpen.value = false
   }
-
-  // onClickOutside(modal, () => (isModalOpen.value = false))
 
   const skills = markRaw([
     [

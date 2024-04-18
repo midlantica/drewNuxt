@@ -41,6 +41,16 @@
 <style scoped>
 
   .authenticStampPunk {
+    @apply self-center;
+    animation: rotator2 .75s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
+    animation-delay: 2s;
+    opacity: 0;
+    animation-fill-mode: forwards;
+    border-radius: 100%;
+    background: rgba(255, 255, 255, 1);
+  }
+  
+  .authenticStampPunk {
     @apply fill-black w-[120px] max-w-[90px] min-w-[90px] pr-[.2rem] pb-[.1rem] mb-1;
 
     @media (max-width: theme("screens.breakLg")) {

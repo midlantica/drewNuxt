@@ -156,7 +156,7 @@
 
 </script>
 
-<style>
+<style scoped>
   
   .modern svg.arrowLeft {
 

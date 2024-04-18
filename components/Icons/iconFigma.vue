@@ -39,7 +39,6 @@
 
   #figmaBox {
 
-
     .background {
       fill: url(#backer) hsl(0, 0%, 10%);
     }
@@ -47,26 +46,11 @@
     .shape {
 
     }
-
-    .green {
-      @apply fill-[hsl(157,91%,43%)];
-    }
-
-    .purple {
-      @apply fill-[hsl(266,100%,67%)];
-    }
-
-    .orange {
-      @apply fill-[hsl(14,89%,53%)];
-    }
-
-    .tangerine {
-      @apply fill-[hsl(6,100%,69%)];
-    }
-
-    .blue {
-      @apply fill-[hsl(197,99%,55%)];
-    }
+    .green { @apply fill-[hsl(157,91%,43%)]; }
+    .purple { @apply fill-[hsl(266,100%,67%)]; }
+    .orange { @apply fill-[hsl(14,89%,53%)]; }
+    .tangerine { @apply fill-[hsl(6,100%,69%)]; }
+    .blue { @apply fill-[hsl(197,99%,55%)]; }
   }
 
   #figmaBox:hover #figmaIconGroup .shape {
@@ -74,42 +58,18 @@
     animation-delay: 0.75s;
     animation-iteration-count: 2;
 
-    &.orange {
-      animation-delay: 0.75s * 0;
-    }
-
-    &.tangerine {
-      animation-delay: 0.75s * 0.2;
-    }
-
-    &.purple {
-      animation-delay: 0.75s * 0.4;
-    }
-
-    &.blue {
-      animation-delay: 0.75s * 0.5;
-    }
-
-    &.blue {
-      animation-delay: 0.75s * 0.55;
-    }
-
-    &.green {
-      animation-delay: 0.75s * 0.65;
-    }
+    &.orange { animation-delay: calc(0.75s * 0); }
+    &.tangerine { animation-delay: calc(0.75s * 0.2); }
+    &.purple { animation-delay: calc(0.75s * 0.4); }
+    &.blue { animation-delay: calc(0.75s * 0.5); }
+    &.blue { animation-delay: calc(0.75s * 0.55); }
+    &.green { animation-delay: calc(0.75s * 0.65); }
   }
 
   @keyframes transparenter {
-    0% {
-      @apply opacity-100;
-    }
-
-    50% {
-      @apply opacity-0;
-    }
-
-    100% {
-      @apply opacity-100;
-    }
+    0% { @apply opacity-100; }
+    50% { @apply opacity-0; }
+    100% { @apply opacity-100; }
   }
+  
 </style>

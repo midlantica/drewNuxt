@@ -4,11 +4,11 @@
     @click="playSound"
   >
     <div class="flagBox">
-      <div class="flag">
+      <div class="block bg-no-repeat mr-4 content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url('/img/brit_amer_flag.svg')] bg-center bg-contain">
         &nbsp;
       </div>
     </div>
-    <p>{{ copy.aboutCopy }}</p>
+    <p class="text-gray-600 block text-[0.9em] leading-[1.4em] tracking-wider content-center items-center justify-center self-center text-left">{{ copy.aboutCopy }}</p>
   </div>
 </template>
 
@@ -86,15 +86,8 @@
       @apply mb-2;
     }
   }
-
-  .flag {
-    @apply block bg-no-repeat mr-4 content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url('/img/brit_amer_flag.svg')] bg-center bg-contain;
-  }
-
-  p {
-    @apply text-gray-600 block text-[0.9em] leading-[1.4em] tracking-wider content-center items-center justify-center self-center text-left;
-  }
-
+  
+  /* ###################### */
   .corp {
 
     .about {
