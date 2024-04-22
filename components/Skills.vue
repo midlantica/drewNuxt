@@ -27,7 +27,7 @@
   const iconHtml5 = markRaw(defineAsyncComponent(() => import('./Icons/iconHtml5.vue')))
   const iconCss3 = markRaw(defineAsyncComponent(() => import('./Icons/iconCss3.vue')))
   const iconJs = markRaw(defineAsyncComponent(() => import('./Icons/iconJs.vue')))
-  const iconSketch = markRaw(defineAsyncComponent(() => import('./Icons/iconSketch.vue')))
+  const iconAdobeIcons = markRaw(defineAsyncComponent(() => import('./Icons/iconAdobeIcons.vue')))
   const iconSass = markRaw(defineAsyncComponent(() => import('./Icons/iconSass.vue')))
   const iconVue = markRaw(defineAsyncComponent(() => import('./Icons/iconVue.vue')))
   const iconSvg = markRaw(defineAsyncComponent(() => import('./Icons/iconSvg.vue')))
@@ -35,7 +35,7 @@
   const iconFigma = markRaw(defineAsyncComponent(() => import('./Icons/iconFigma.vue')))
   const iconNuxt = markRaw(defineAsyncComponent(() => import('./Icons/iconNuxt.vue')))
   const iconChelsea = markRaw(defineAsyncComponent(() => import('./Icons/iconChelsea.vue')))
-
+//  
   const showSkills = ref(false)
   const hover = ref(false)
   const modalItem = ref([])
@@ -54,75 +54,75 @@
   const skills = markRaw([
     [
       iconUiux,
-      'uiux',
-      'UI/UX Design',
-      'UX Design is my first love. Humility before the User. Crack the flow!'
+      `uiux`,
+      `UI/UX Design`,
+      `UX Design is my first love. Humility before the User. Crack the flow!`
     ],
     [
       iconFigma,
-      'figma',
-      'Figma',
-      'Figma is the king of UX prototyping. It ain\'t Illustrator but collaboration ftw. I am still mad at Adobe for destroying Fireworks! Now they\'ve bought Figma; what could go wrong?!?'
+      `figma`,
+      `Figma`,
+      `Figma is the king of UX prototyping. It ain't Illustrator but collaboration ftw. I am still mad at Adobe for destroying Fireworks! Now they've bought Figma; what could go wrong?!?`
     ],
     [
       iconHtml5,
-      'html5',
-      'HTML 5',
-      'The bones of the Internet; as few divs as possible if you please.'
+      `html5`,
+      `HTML 5`,
+      `The bones of the Internet; as few divs as possible if you please.`
     ],
     [
       iconCss3,
-      'css3',
-      'CSS 3',
-      'Coders just love CSS haha! So let me do that for you! I enjoy its declarative cascading infuriating novelty.'
+      `css3`,
+      `CSS 3`,
+      `Coders just love CSS haha! So let me do that for you! I enjoy its declarative cascading infuriating novelty.`
     ],
     [
       iconJs,
-      'js',
-      'JavaScript',
-      'JavaScript: I design, do all my HTML & CSS, I\'m still mastering JS. Continuous learning, Love me some Vue 💚, like this site'
+      `js`,
+      `JavaScript`,
+      `JavaScript: I design, do all my HTML & CSS, I'm still mastering JS. Continuous learning, Love me some Vue 💚, like this site`
     ],
     [
       iconTailwind,
-      'tailwind',
-      'Tailwind CSS',
-      'Tailwind is great DX, even though it does clutter up your HTML, so just @apply it! Believe it or not, I actually made a mini Tailwind of my own, before Tailwind knocked it out of the park. Learned a lot converting this site to Tailwind 😀'
+      `tailwind`,
+      `Tailwind CSS`,
+      `Tailwind is great DX, even though it does clutter up your HTML, so just @apply it! Believe it or not, I actually made a mini Tailwind of my own, before Tailwind knocked it out of the park. Learned a lot converting this site to Tailwind 😀`
     ],
     [
       iconSass,
-      'sass',
-      'SASS',
-      'SASS has made CSS so much more fun and nesty to use. CSS\'s --vars make it more robust, but there\'s a long way to go before I give up my trusted SASS.'
+      `sass`,
+      `SASS`,
+      `SASS has made CSS so much more fun and nesty to use. CSS's --vars make it more robust, but there's a long way to go before I give up my trusted SASS.`
     ],
     [
       iconVue,
-      'vue',
-      'Vue',
-      'Vue.js is my favorite JS framework, a great balance of Angular\'s ease and React\'s abilities. This site is 100% Vue.'
+      `vue`,
+      `Vue`,
+      `Vue.js is my favorite JS framework, a great balance of Angular's ease and React's abilities. This site is 100% Vue.`
     ],
     [
       iconNuxt,
-      'nuxt',
-      'Nuxt',
-      'The Nuxt framework for Vue: SSR, routes by dir, SEO; it\'s jam-stacked with Dev happiness. Digging Gridsome.js too.'
+      `nuxt`,
+      `Nuxt`,
+      `The Nuxt framework for Vue: SSR, routes by dir, SEO; it's jam-stacked with Dev happiness. Digging Gridsome.js too.`
     ],
     [
-      iconSketch,
-      'sketch',
-      'Sketch',
-      'Sketch used to be the king of UX prototyping, now it\'s old school.'
+      iconAdobeIcons,
+      `adobeCS`,
+      `Adobe Creative Suite`,
+      `The classic Illustrator, PhotoShop, and InDesign have beeen my daily go-tos for decades. I'm checking out Affinity's Creative Suite these days. Between Figma and Affinity, I could drop the Adobe subscription.`
     ],
     [
       iconSvg,
-      'svg',
-      'SVG',
-      'SVG: Vector is best because it scales and rasters don\'t, and it\'s editable, you can even put CSS in a SVG file.'
+      `svg`,
+      `SVG`,
+      `SVG: Vector is best because it scales and rasters don't, and it's editable, you can even put CSS in a SVG file.`
     ],
     [
       iconChelsea,
-      'chelsea',
-      'Chelsea FC',
-      'I love Chelsea FC! 💙  I enjoy competition. Love Rugby and Cricket too. I was a demon fast bowler! And 🇺🇸 Football, Go Titans!'
+      `chelsea`,
+      `Chelsea FC`,
+      `I love Chelsea FC! 💙  I enjoy competition. Love Rugby and Cricket too. I was a demon fast bowler! And 🇺🇸 Football, Go Titans!`
     ]
   ])
 
