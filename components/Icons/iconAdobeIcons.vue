@@ -89,10 +89,7 @@
     }
     
     #adobeIlly {
-      /* position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(0%, 0%); */
+
       .adobeIlly { 
         fill: #FF9A00; 
       }
@@ -104,10 +101,6 @@
     }
     
     #adobePs {
-      /* position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(0%, 0%); */
 
       .adobePs { 
         fill: #31A8FF; 
@@ -120,10 +113,6 @@
     }
     
     #adobeIndy {
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      transform: translate(0%, 0%);
 
       .adobeIndy { 
         fill: #FF3366; 
@@ -147,15 +136,17 @@
   .adobeIconsFade-enter-from, 
   .adobeIconsFade-leave-to {
     opacity: 0;
+    z-index: 50;
     transform: scale(0);
-    transition: opacity 0.25s ease-out, transform 0.25s ease-out; 
+    transition: opacity 0.5s ease-out, transform 0.5s ease-out; 
   }
 
   .adobeIconsFade-enter-to, 
   .adobeIconsFade-leave-from {
     opacity: 1; 
+    z-index: 100;
     transform: scale(1);
-    transition: opacity .25s ease-out, transform .25s ease-out;
+    transition: opacity .5s ease-in-out, transform .5s ease-in-out;
   }
 
 </style>

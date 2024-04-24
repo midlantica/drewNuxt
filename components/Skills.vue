@@ -4,9 +4,11 @@
     <div v-for="(skill, index) in skills" :key="index">
       <component
         :is="skill[0]"
-        class="icon {{skill[1]}} { active: hover }"
+        class="icon {{skill[1]}} }"
+        :class="{ active: hover }"
         @mouseleave="hover = false"
         @click="showModal(skill)"
+        @mouseenter="hover = true"
       />
       
     </div>
@@ -30,7 +32,7 @@
   const iconAdobeIcons = markRaw(defineAsyncComponent(() => import('./Icons/iconAdobeIcons.vue')))
   const iconSass = markRaw(defineAsyncComponent(() => import('./Icons/iconSass.vue')))
   const iconVue = markRaw(defineAsyncComponent(() => import('./Icons/iconVue.vue')))
-  const iconSvg = markRaw(defineAsyncComponent(() => import('./Icons/iconSvg.vue')))
+  const iconAffinityIcons = markRaw(defineAsyncComponent(() => import('./Icons/iconAffinityIcons.vue')))
   const iconTailwind = markRaw(defineAsyncComponent(() => import('./Icons/iconTailwind.vue')))
   const iconFigma = markRaw(defineAsyncComponent(() => import('./Icons/iconFigma.vue')))
   const iconNuxt = markRaw(defineAsyncComponent(() => import('./Icons/iconNuxt.vue')))
@@ -40,10 +42,32 @@
   const hover = ref(false)
   const modalItem = ref([])
   const isModalOpen = ref(false)
+  
+  // Define a flag to track whether the initial animation cycle has completed
+  const initialAnimationCompleted = ref(false);
+
+  // Function to start the initial animation cycle
+  function startInitialAnimationCycle() {
+    // Set the hover flag to true to trigger the animation
+    hover.value = true;
+
+    // Set a timer to stop the animation after a delay
+    setTimeout(() => {
+      hover.value = false;
+      initialAnimationCompleted.value = true; // Update the flag to indicate completion
+    }, 1000); // Adjust the delay as needed
+  }
+
 
   function showModal(skill) {
     // console.log("Duuuude!")
-    modalItem.value = skill
+    modalItem.value = {
+      component: skill[0],
+      className: skill[1],
+      title: skill[2],
+      description: skill[3],
+      url: skill[4] || null, // Add URL field, default to null if not provided
+    }
     isModalOpen.value = true
   }
 
@@ -56,13 +80,13 @@
       iconUiux,
       `uiux`,
       `UI/UX Design`,
-      `UX Design is my first love. Humility before the User. Crack the flow!`
+      `UX Design is my first love. Humility before the User. Crack the flow! When UX is done well, it's invisible.`
     ],
     [
       iconFigma,
       `figma`,
       `Figma`,
-      `Figma is the king of UX prototyping. It ain't Illustrator but collaboration ftw. I am still mad at Adobe for destroying Fireworks! Now they've bought Figma; what could go wrong?!?`
+      `Figma is the king of UX, superb app, it's got killer collaboration chops. I am still mad at Adobe for destroying Fireworks! Adobe bought Figma; what could go wrong?!? *Update: Looks like EU courts stopped Adobe, so there's hope for Figma yet.`
     ],
     [
       iconHtml5,
@@ -86,25 +110,29 @@
       iconTailwind,
       `tailwind`,
       `Tailwind CSS`,
-      `Tailwind is great DX, even though it does clutter up your HTML, so just @apply it! Believe it or not, I actually made a mini Tailwind of my own, before Tailwind knocked it out of the park. Learned a lot converting this site to Tailwind 😀`
+      `Tailwind is great DX, even though it does clutter up your HTML, so just @apply it! Believe it or not, I actually made a mini Tailwind of my own, before Tailwind knocked it out of the park. Learned a lot converting this site to Tailwind 😀`,
+      `https://tailwindcss.com/`
     ],
     [
       iconSass,
       `sass`,
       `SASS`,
-      `SASS has made CSS so much more fun and nesty to use. CSS's --vars make it more robust, but there's a long way to go before I give up my trusted SASS.`
+      `SASS has made CSS so much more fun and nesty to use. CSS's --vars make it more robust, but there's a long way to go before I give up my trusted SASS.`,
+      `https://sass-lang.com/`
     ],
     [
       iconVue,
       `vue`,
       `Vue`,
-      `Vue.js is my favorite JS framework, a great balance of Angular's ease and React's abilities. This site is 100% Vue.`
+      `Vue.js is my favorite JS framework, a great balance of Angular's ease and React's abilities. This site is 100% Vue.`,
+      `https://vuejs.org/`
     ],
     [
       iconNuxt,
       `nuxt`,
       `Nuxt`,
-      `The Nuxt framework for Vue: SSR, routes by dir, SEO; it's jam-stacked with Dev happiness. Digging Gridsome.js too.`
+      `The Nuxt framework for Vue: SSR, routes by dir, SEO; it's jam-stacked with Dev happiness. Digging Gridsome.js too.`,
+      `https://nuxt.com/`
     ],
     [
       iconAdobeIcons,
@@ -113,10 +141,11 @@
       `The classic Illustrator, PhotoShop, and InDesign have beeen my daily go-tos for decades. I'm checking out Affinity's Creative Suite these days. Between Figma and Affinity, I could drop the Adobe subscription.`
     ],
     [
-      iconSvg,
-      `svg`,
-      `SVG`,
-      `SVG: Vector is best because it scales and rasters don't, and it's editable, you can even put CSS in a SVG file.`
+      iconAffinityIcons,
+      `affinityCS`,
+      `Affinity Creative Suite`,
+      `Affinity's apps are fantastic replacements for Adobe's subscription-ware. Superbly thought out programs with great Designer Experience. And they have been written from the ground up to work smoothly with each other.`,
+      `https://affinity.serif.com/`
     ],
     [
       iconChelsea,
@@ -129,6 +158,8 @@
   onMounted(() => {
     showSkills.value = true
   })
+  
+  startInitialAnimationCycle();
 
 </script>
 

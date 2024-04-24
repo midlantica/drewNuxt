@@ -9,14 +9,21 @@
           <div class="modalInner" v-if="modalItem">
             <div class="icon">
               <component
-                :is="modalItem[0]"
+                :is="modalItem.component"
                 class="icon"
                 @mouseleave="hover = false"
               />
             </div>
             <div class="content">
-              <h4>{{ modalItem[2] }}</h4>
-              <p>{{ modalItem[3] }}</p>
+              <h4 class="font-semibold" 
+                v-if="modalItem.url"><a class="hover:text-blue-800" 
+                :href="modalItem.url" 
+                target="_blank">{{ modalItem.title }}</a>
+              </h4>
+              <h4 class="font-semibold" 
+                v-else>{{ modalItem.title }}
+              </h4>
+              <p>{{ modalItem.description }}</p>
             </div>
           </div>
           
@@ -36,7 +43,7 @@
   
   const props = defineProps({
     isModalOpen: Boolean,
-    modalItem: Array,
+    modalItem: Object,
   })
 
   function closeModal() {
