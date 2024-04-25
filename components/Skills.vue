@@ -60,7 +60,6 @@
 
 
   function showModal(skill) {
-    // console.log("Duuuude!")
     modalItem.value = {
       component: skill[0],
       className: skill[1],

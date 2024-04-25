@@ -1,6 +1,6 @@
 import { defineStore } from 'pinia'
 
-export const useQuote = defineStore({
+export const useQuotes = defineStore({
   id: 'quotes',
   state: () => ({
     quotes: [
