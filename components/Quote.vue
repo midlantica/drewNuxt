@@ -1,12 +1,15 @@
 <template>
-  <div v-if="currentQuote" class="quoteBlock">
+  <div class="quoteBlock">
     <div @click="previousQuote()" class="arrowBtn" />
     
-    <div class="flex flex-row items-center justify-center w-full p-0 m-auto leading-4 select-none">
-      <p class="inline not-italic leading-normal text-center" :class="{ fadage: quoteAni }">
-        &ldquo;{{ currentQuote.quote }}&rdquo; <cite class="inline not-italic leading-normal break-keep whitespace-nowrap">&ndash; {{ currentQuote.author }}</cite>
-      </p>
-    </div>
+    <transition name="fade">
+      <div class="w-full" v-show="currentQuote" :key="currentQuoteIndex">
+        <p class="text-balance" >
+          &ldquo;{{ currentQuote.quote }}&rdquo;
+          <cite>&ndash; {{ currentQuote.author }}</cite>
+        </p>
+      </div>
+    </transition>
     
     <div @click="nextQuote()" class="arrowBtn" />
   </div>
@@ -14,142 +17,152 @@
 
 <script setup>
   import { ref, onMounted } from 'vue'
-
+  
+  const quotes = [
+    {
+      quote: `Human centered Design? Who was it centered on before?! Its all just Design.`,
+      author: `Unknown`
+    },
+    {
+      quote: `A user experience is like a joke: if you have to explain it, it's not that good`,
+      author: `Martin LeBlanc`
+    },
+    {
+      quote: `Everything should be made as simple as possible, but not simpler.`,
+      author: `Albert Einstein`
+    },
+    {
+      quote: `The answer to life is knowing when to stop`,
+      author: `My Mom, when I was a kid :)`
+    },
+    {
+      quote: `If you can't explain it simply, you don't understand it well enough.`,
+      author: `Albert Einstein`
+    },
+    {
+      quote: `It is vain to do with more what can be done with fewer`,
+      author: `William of Occam`
+    },
+    {
+      quote: `Design is not just what it looks like and feels like. Design is how it works`,
+      author: `Steve Jobs, 2003`
+    },
+    {
+      quote: `A picture is worth a thousand words. An interface is worth a thousand pictures`,
+      author: `Ben Shneiderman`
+    },
+    {
+      quote: `We do not see things as they are; we see things as we are`,
+      author: `The Talmud`
+    },
+    {
+      quote: `Measure twice, cut once`,
+      author: `unknown`
+    },
+    {
+      quote: `You can use an eraser on the drafting table or a sledge hammer on the construction site.`,
+      author: `Frank Lloyd Wright`
+    },
+    {
+      quote: `Design should never say, 'Look at me.' It should always say, 'Look at this.'`,
+      author: `David Craib`
+    },
+    {
+      quote: `Good web design is about the character of the content, not the character of the designer.`,
+      author: `Jeffrey Zeldman`
+    },
+    {
+      quote: `Good design is about effective communication, not decoration at the expense of legibility.`,
+      author: `Vitaly Friedman`
+    },
+    {
+      quote: `If we want users to like our software, we should design it to behave like a likeable person.`,
+      author: `Alan Cooper`
+    },
+    {
+      quote: `Good designers want to be proved wrong, bad designers hope to be proved right.`,
+      author: `Andy Budd`
+    },
+    {
+      quote: `The ability to simplify means to eliminate the unnecessary so that the necessary may speak.`,
+      author: `Hans Hofmann`
+    },
+    {
+      quote: `Simple is hard. Easy is harder. Invisible is hardest.`,
+      author: `Jean-Louis Gassée`
+    },
+    {
+      quote: `As far as the customer is concerned, the interface is the product.`,
+      author: `Jef Raskin`
+    },
+    {
+      quote: `A lot of what we are doing is getting design out of the way.`,
+      author: `Jonathan Ive`
+    },
+    {
+      quote: `It's art if can't be explained. It's fashion if no one asks for an explanation.`,
+      author: `unknown`
+    },
+    {
+      quote: `It's design if it doesn't need explanation.`,
+      author: `Wouter Stokkel`
+    },
+    {
+      quote: `Simple design, intense content.`,
+      author: `Edward Tufte`
+    },
+    {
+      quote: `The letter I have written today is longer than usual because I lacked the time to make it shorter`,
+      author: `Blaise Pascal`
+    },
+    {
+      quote: `If there's a 'trick' to it, the UI is broken`,
+      author: `Douglas Anderson`
+    },
+    {
+      quote: `Know the user, and You are not the user.`,
+      author: `unknown`
+    },
+    {
+      quote: `Usability is like oxygen, you don't notice it until it's missing`,
+      author: `unknown`
+    }
+  ]
+  
   const currentQuoteIndex = ref(0)
-  const currentQuote = ref(null)
-  const quoteAni = ref(false)
-
-  function quoteAnimator () {
-    quoteAni.value = true
-    setTimeout(() => {
-      quoteAni.value = !quoteAni.value
-    }, 3000)
-  }
-
-  const nextQuote = () => {
+  const currentQuote = ref(quotes[currentQuoteIndex.value])
+  let isAnimationPaused = false
+  
+  function nextQuote() {
+    pauseAnimation()
     currentQuoteIndex.value = (currentQuoteIndex.value + 1) % quotes.length
     currentQuote.value = quotes[currentQuoteIndex.value]
-    quoteAnimator()
+    setTimeout(resumeAnimation, 14000) // Resume animation after 20 seconds
   }
 
-  const previousQuote = () => {
+  function previousQuote() {
+    pauseAnimation()
     currentQuoteIndex.value = (currentQuoteIndex.value - 1 + quotes.length) % quotes.length
     currentQuote.value = quotes[currentQuoteIndex.value]
-    quoteAnimator()
+    setTimeout(resumeAnimation, 14000) // Resume animation after 10 seconds
+  }
+  
+  function pauseAnimation() {
+    isAnimationPaused = true
+  }
+
+  function resumeAnimation() {
+    isAnimationPaused = false
   }
 
   onMounted(() => {
-    currentQuote.value = quotes[currentQuoteIndex.value]
-    setInterval(nextQuote, 10000)
-    quoteAnimator()
+    setInterval(() => {
+      if (!isAnimationPaused) {
+        nextQuote()
+      }
+    }, 8500); // Change the quote every 5 seconds
   })
-
-  const quotes = [
-    {
-      quote: 'A user experience is like a joke: if you have to explain it, it\'s not that good',
-      author: 'Martin LeBlanc'
-    },
-    {
-      quote: 'Everything should be made as simple as possible, but not simpler.',
-      author: 'Albert Einstein'
-    },
-    {
-      quote: 'The answer to life is knowing when to stop',
-      author: 'My Mom, when I was a kid :)'
-    },
-    {
-      quote: 'If you can\'t explain it simply, you don\'t understand it well enough.',
-      author: 'Albert Einstein'
-    },
-    {
-      quote: 'It is vain to do with more what can be done with fewer',
-      author: 'William of Occam'
-    },
-    {
-      quote: 'Design is not just what it looks like and feels like. Design is how it works',
-      author: 'Steve Jobs, 2003'
-    },
-    {
-      quote: 'A picture is worth a thousand words. An interface is worth a thousand pictures',
-      author: 'Ben Shneiderman'
-    },
-    {
-      quote: 'We do not see things as they are; we see things as we are',
-      author: 'The Talmud'
-    },
-    {
-      quote: 'Measure twice, cut once',
-      author: 'unknown'
-    },
-    {
-      quote: 'You can use an eraser on the drafting table or a sledge hammer on the construction site.',
-      author: 'Frank Lloyd Wright'
-    },
-    {
-      quote: 'Design should never say, \'Look at me.\' It should always say, \'Look at this.\'',
-      author: 'David Craib'
-    },
-    {
-      quote: 'Good web design is about the character of the content, not the character of the designer.',
-      author: 'Jeffrey Zeldman'
-    },
-    {
-      quote: 'Good design is about effective communication, not decoration at the expense of legibility.',
-      author: 'Vitaly Friedman'
-    },
-    {
-      quote: 'If we want users to like our software, we should design it to behave like a likeable person.',
-      author: 'Alan Cooper'
-    },
-    {
-      quote: 'Good designers want to be proved wrong, bad designers hope to be proved right.',
-      author: 'Andy Budd'
-    },
-    {
-      quote: 'The ability to simplify means to eliminate the unnecessary so that the necessary may speak.',
-      author: 'Hans Hofmann'
-    },
-    {
-      quote: 'Simple is hard. Easy is harder. Invisible is hardest.',
-      author: 'Jean-Louis Gassée'
-    },
-    {
-      quote: 'As far as the customer is concerned, the interface is the product.',
-      author: 'Jef Raskin'
-    },
-    {
-      quote: 'A lot of what we are doing is getting design out of the way.',
-      author: 'Jonathan Ive'
-    },
-    {
-      quote: 'It\'s art if can\'t be explained. It\'s fashion if no one asks for an explanation.',
-      author: 'unknown'
-    },
-    {
-      quote: 'It\'s design if it doesn\'t need explanation.',
-      author: 'Wouter Stokkel'
-    },
-    {
-      quote: 'Simple design, intense content.',
-      author: 'Edward Tufte'
-    },
-    {
-      quote: 'The letter I have written today is longer than usual because I lacked the time to make it shorter',
-      author: 'Blaise Pascal'
-    },
-    {
-      quote: 'If there\'s a \'trick\' to it, the UI is broken',
-      author: 'Douglas Anderson'
-    },
-    {
-      quote: 'Know the user, and You are not the user.',
-      author: 'unknown'
-    },
-    {
-      quote: 'Usability is like oxygen, you don\'t notice it until it\'s missing',
-      author: 'unknown'
-    }
-  ]
+  
 </script>
 
 <style scoped>
@@ -304,59 +317,15 @@
     }
   }
 
-
-  .zoomQuote-enter-active,
-  .zoomQuote-leave-active {
-    transition: transform 300ms ease;
+  .fade-enter-active,
+  .fade-leave-active {
+    transition: opacity 0.75s ease-out; /* Adjust the transition duration as needed */
+    opacity: 1;
   }
-
-  .zoomQuote-enter-from,
-  .zoomQuote-leave-to {
-    transform: scale(0.9) translateX(-20px);
-    @apply opacity-0 transition-all duration-1000 ease-out;
-  }
-
-  .fadeTexter-enter,
-  .fadeTexter-enter-active {
-    transition: all 1s ease-out;
-    @apply opacity-100;
-  }
-
-  .fadeTexter-leave-active {
-    transition: all 1s cubic-bezier(1, 0.5, 0.8, 1);
-    @apply opacity-100;
-  }
-
-  .fadeTexter-enter-from,
-  .fadeTexter-leave-to {
-    transform: translateX(20px);
-    transition: all 1s ease-out;
-    @apply opacity-0;
-  }
-
-  .quoteFade-enter-active,
-  .quoteFade-leave-active {
-    transition: opacity;
-  }
-
-  .quoteFade-enter,
-  .quoteFade-leave-to {
-    @apply opacity-0;
-  }
-
-  .fadage {
-    animation: fadage 2s cubic-bezier(0.36, 0.07, 0.19, 0.97) both;
-    /* animation: fadage 1s ease-in-out both; */
-  }
-
-  @keyframes fadage {
-    0% {
-      @apply opacity-0;
-    }
-
-    100% {
-      @apply opacity-100 scale-100;
-    }
+  
+  .fade-enter-from,
+  .fade-leave-to {
+    opacity: 0;
   }
 
 </style>
