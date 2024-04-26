@@ -27,5 +27,9 @@
       /* stroke-width: 2px; */
     }
   }
+  
+  .modern svg.arrowLeft > path {
+    stroke: white !important;
+  }
 
 </style>

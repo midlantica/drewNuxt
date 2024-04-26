@@ -158,10 +158,12 @@
 
 <style scoped>
   
+
   .modern svg.arrowLeft {
 
     > path {
-      @apply stroke-modern-rubyDark;
+      stroke: white !important;
+      @apply !stroke-white;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
     }
