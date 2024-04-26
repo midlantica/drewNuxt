@@ -2,14 +2,14 @@
   <div v-show="showQuotes" class="quoteBlock">
     <div @click="previousQuote()" class="arrowBtn" />
     
-    <div class="w-full" v-show="currentQuote" :key="qIndex">
-      <transition name="fade">
+    <!-- <transition name="fade" appear> -->
+      <div class="w-full fade" v-show="currentQuote" :key="qIndex">
         <p class="text-balance" >
           &ldquo;{{ currentQuote.quote }}&rdquo;
           <cite>&ndash; {{ currentQuote.author }}</cite>
         </p>
-      </transition>
       </div>
+    <!-- </transition> -->
     
     <div @click="nextQuote()" class="arrowBtn" />
   </div>

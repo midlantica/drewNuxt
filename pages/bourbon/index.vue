@@ -63,7 +63,7 @@
     />
   </main>
 
-  <footer class="col-start-1 col-end-3 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow h-3" />
+  <footer class="col-start-1 col-end-3 bg-[url(img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow h-3" />
 </template>
 
 

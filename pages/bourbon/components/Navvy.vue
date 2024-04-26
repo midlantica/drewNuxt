@@ -1,5 +1,5 @@
 <template>
-  <nav class="col-start-1 col-span-2 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow z-40">
+  <nav class="col-start-1 col-span-2 bg-[url(img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow z-40">
     <div class="flex flex-row flex-wrap items-center justify-center px-5 py-2">
       <h1>
         <a href="#"
