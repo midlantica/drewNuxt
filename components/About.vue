@@ -4,7 +4,7 @@
     @click="playSound"
   >
     <div class="flagBox">
-      <div class="block bg-no-repeat mr-4 content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url('/img/brit_amer_flag.svg')] bg-center bg-contain">
+      <div class="flag block bg-no-repeat mr-4 content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url('/img/brit_amer_flag.svg')] bg-center bg-contain">
         &nbsp;
       </div>
     </div>

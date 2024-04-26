@@ -1,15 +1,15 @@
 <template>
-  <div class="quoteBlock">
+  <div v-show="showQuotes" class="quoteBlock">
     <div @click="previousQuote()" class="arrowBtn" />
     
-    <transition name="fade">
-      <div class="w-full" v-show="currentQuote" :key="qIndex">
+    <div class="w-full" v-show="currentQuote" :key="qIndex">
+      <transition name="fade">
         <p class="text-balance" >
           &ldquo;{{ currentQuote.quote }}&rdquo;
           <cite>&ndash; {{ currentQuote.author }}</cite>
         </p>
+      </transition>
       </div>
-    </transition>
     
     <div @click="nextQuote()" class="arrowBtn" />
   </div>
@@ -19,39 +19,46 @@
   import { ref } from 'vue'
   const quotesStore = useQuotes()
   
+  const showQuotes = ref(false)
   const qIndex = ref(0)
   const currentQuote = ref(quotesStore.quotes[qIndex.value])
-  let isAnimationPaused = false
-  
+  let isAnimationPaused = true // Initially set to true to prevent immediate animation
+
   function nextQuote() {
-    pauseAnimation()
     qIndex.value = (qIndex.value + 1) % quotesStore.quotes.length
     currentQuote.value = quotesStore.quotes[qIndex.value]
+    isAnimationPaused = true // Pause animation after manual navigation
     setTimeout(resumeAnimation, 14000) // Resume animation after X seconds
   }
 
   function previousQuote() {
-    pauseAnimation()
     qIndex.value = (qIndex.value - 1 + quotesStore.quotes.length) % quotesStore.quotes.length
     currentQuote.value = quotesStore.quotes[qIndex.value]
+    isAnimationPaused = true // Pause animation after manual navigation
     setTimeout(resumeAnimation, 14000) // Resume animation after X seconds
-  }
-  
-  function pauseAnimation() {
-    isAnimationPaused = true
   }
 
   function resumeAnimation() {
     isAnimationPaused = false
   }
 
+  // Function for automatic navigation without user interaction
+  function autoNextQuote() {
+    if (!isAnimationPaused) {
+      qIndex.value = (qIndex.value + 1) % quotesStore.quotes.length
+      currentQuote.value = quotesStore.quotes[qIndex.value]
+    }
+  }
+
   onMounted(() => {
-    setInterval(() => {
-      if (!isAnimationPaused) {
-        nextQuote()
-      }
-    }, 8500); // Change the quote every 5 seconds
+    showQuotes.value = true
+    // Start animation after a short delay to prevent immediate animation
+    setTimeout(() => {
+      isAnimationPaused = false
+      setInterval(autoNextQuote, 8500); // Change the quote every 5 seconds
+    }, 1000); // Delay of 1 second
   })
+
 
 </script>
 
