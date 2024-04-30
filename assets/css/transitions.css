@@ -271,7 +271,7 @@
 }
 
 .slide-enter-active, .slide-leave-active {
-  transition: transform 0.3s cubic-bezier(0.83, 0.1, 1, 1);
+  transition: transform 0.3s cubic-bezier(0.25, 0, .9, 1);
   animation: bounceUp .75s;
 }
 .slide-enter, .slide-leave-to {

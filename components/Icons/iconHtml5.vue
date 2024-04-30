@@ -98,4 +98,35 @@
       @apply opacity-100;
     }
   }
+  
+  .modern path,
+  .modern polyline, 
+  .modern polygon {
+    stroke-width: .5;
+    stroke: white;
+    stroke-linecap: round;
+    fill: none;
+  } 
+  .modern polyline#Shape {
+    fill: none;
+    stroke: none;
+  }
+
+  .modern #modal {
+    
+    #five1, 
+    #five2 {
+      fill: white !important;  
+    }
+    
+    #Shape {
+      fill: #1B86C1 !important;
+    }
+    
+    #Shape:nth-child(2) {
+      fill: #1B86C1 !important;
+    }
+    
+  }
+  
 </style>

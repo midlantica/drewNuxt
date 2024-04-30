@@ -13,7 +13,7 @@ export default defineNuxtConfig({
     // }
   // },
   buildDir: '.nuxt',
-  ssr: true,
+  ssr: false,
   devtools: { enabled: true },
   modules: [
     '@nuxt/devtools',

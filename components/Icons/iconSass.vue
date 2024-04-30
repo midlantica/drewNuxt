@@ -83,4 +83,20 @@
       fill: violet;
     }
   }
+  
+  .modern path,
+  .modern polyline {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  .modern #modal {
+    
+    path {
+      stroke: none !important;
+      fill: #cc6699 !important;
+    } 
+  }
 </style>

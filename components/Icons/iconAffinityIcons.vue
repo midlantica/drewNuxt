@@ -144,4 +144,51 @@
     transition: opacity .5s ease-in-out, transform .5s ease-in-out;
   }
 
+  .modern path,
+  .modern polyline,
+  .modern polygon {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  .modern #modal svg,
+  .modern #modal svg,
+  .modern #modal svg {
+    
+    .affPublisherIcon {
+      .front { 
+        fill: #FFA869 !important;
+        stroke: none !important;
+       }
+      .back {
+        fill: #891B26 !important;
+        stroke: none !important;
+      }
+    }
+    
+    .affDesignerIcon {
+
+      .front { 
+        fill: #5CD6FB !important;
+        stroke: none !important;
+       }
+      .back {
+        fill: #134881 !important;
+        stroke: none !important;
+      }
+    }
+    
+    .affPhotoIcon {
+      .front { 
+        fill: #F69BFF !important;
+        stroke: none !important;
+       }
+      .back {
+        fill: #4E3188 !important;
+        stroke: none !important;
+      }
+    }
+  } 
 </style>

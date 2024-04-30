@@ -287,4 +287,19 @@
       transform: rotateY(360deg) scale(95%);
     }
   }
+  
+  .modern path {
+    stroke-width: .25 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  .modern #modal {
+    
+    path {
+      stroke: none !important;
+      fill: rgb(33, 33, 219) !important;
+    } 
+  }
 </style>

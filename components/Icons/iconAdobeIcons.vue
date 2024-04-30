@@ -149,4 +149,52 @@
     transition: opacity .5s ease-in-out, transform .5s ease-in-out;
   }
 
+  /* ################ */
+  
+  .modern path,
+  .modern polyline,
+  .modern polygon {
+    stroke-width: .5;
+    stroke: white;
+    stroke-linecap: round;
+    fill: none !important;
+  } 
+  
+  .modern #modal svg {
+  
+    #adobeIlly {
+      .adobeIlly { 
+        fill: #FF9A00 !important; 
+        stroke: none !important;
+      }
+      .adobeBack {
+        fill: #001E36 !important;
+        stroke: none !important;
+      }
+    }
+
+    #adobePs {
+      .adobePs { 
+        fill: #31A8FF !important;
+        stroke: none !important;
+      }
+      .adobeBack {
+        fill: #001E36 !important;
+        stroke: none !important;
+      }
+    }
+
+    #adobeIndy {
+      .adobeIndy { 
+        fill: #FF3366 !important;
+        stroke: none !important;
+      }
+      .adobeBack {
+        fill: #49021F !important; 
+        stroke: none !important;
+      }
+    }
+  } 
+  
 </style>
+

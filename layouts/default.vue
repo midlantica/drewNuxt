@@ -336,7 +336,7 @@
     @apply w-full bg-base-backBlack;
 
     .wrapper {
-      @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),_url(img/bg/Drew-punk-back.jpg)] bg-[length:_102%_640%,100%_100%];
+      @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),_url(/img/bg/Drew-punk-back.jpg)] bg-[length:_102%_640%,100%_100%];
 
       @media (max-width: theme("screens.breakLg")) {
         @apply w-[99.8%] bg-[length:_102%_640%,130%_90%] bg-[center_center];

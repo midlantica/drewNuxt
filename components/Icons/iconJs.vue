@@ -115,4 +115,29 @@
       transform: rotate(360deg);
     }
   }
+  
+  .modern path {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  /* ############## */
+  .modern #modal {
+
+    .jsBoxInner {
+      
+      path:nth-child(1) {
+        stroke: none !important;
+        fill: #F1D545 !important;
+      } 
+      path:nth-child(2) {
+        stroke: none !important;
+        fill: white !important;
+      } 
+    }
+    
+  }
+  
 </style>

@@ -37,7 +37,7 @@
   const iconFigma = markRaw(defineAsyncComponent(() => import('./Icons/iconFigma.vue')))
   const iconNuxt = markRaw(defineAsyncComponent(() => import('./Icons/iconNuxt.vue')))
   const iconChelsea = markRaw(defineAsyncComponent(() => import('./Icons/iconChelsea.vue')))
-//  
+
   const showSkills = ref(false)
   const hover = ref(false)
   const modalItem = ref([])
@@ -362,5 +362,4 @@
     }
   }
 
-  
 </style>

@@ -41,4 +41,23 @@
       transform: rotateY(360deg) scale(95%);
     }
   }
+  
+  .modern path,
+  .modern polyline {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  /* ############# */
+  
+  .modern #modal {
+    
+    path {
+      stroke: none !important;
+      stroke-linecap: round !important;
+      fill: #38BDF8 !important;
+    } 
+  }
 </style>

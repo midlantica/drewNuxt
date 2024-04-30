@@ -71,4 +71,52 @@
       transform: translateX(2rem);
     }
   }
+  
+  .modern path,
+  .modern polyline,
+  .modern polygon {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  .modern polyline#Shape {
+    stroke: none !important;
+  }
+  
+  /* ########### */
+  
+  .modern #modal {
+    
+    path,
+    polyline,
+    polygon {
+      stroke: none !important;
+      fill: white !important;
+    } 
+    
+    #whiteStuff {
+      fill: white !important;  
+      stroke: none !important;
+      
+      path,
+      polyline,
+      polygon {
+        stroke: none !important;
+        fill: white !important;
+      } 
+    }
+    
+    #Shape {
+      fill: #FF6615 !important;
+    }
+    
+    /* #Shape:nth-child(2) {
+      fill: #FF8F54 !important;
+    } */
+    
+    
+    
+  }
 </style>

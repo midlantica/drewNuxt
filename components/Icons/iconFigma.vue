@@ -72,4 +72,34 @@
     100% { @apply opacity-100; }
   }
   
+  .modern path {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+  } 
+  
+  .modern #modal {
+    stroke-width: .5 !important;
+    stroke: white !important;
+    stroke-linecap: round !important;
+    fill: none !important;
+    
+    #figmaBox {
+
+      .background {
+        fill: url(#backer) hsl(0, 0%, 10%) !important;
+      }
+
+      .shape {
+        stroke: none !important;
+      }
+      .green { @apply !fill-[hsl(157,91%,43%)]; }
+      .purple { @apply !fill-[hsl(266,100%,67%)]; }
+      .orange { @apply !fill-[hsl(14,89%,53%)]; }
+      .tangerine { @apply !fill-[hsl(6,100%,69%)]; }
+      .blue { @apply !fill-[hsl(197,99%,55%)]; }
+      }
+  } 
+  
 </style>
