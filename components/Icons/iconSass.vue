@@ -84,6 +84,9 @@
     }
   }
   
+  .modern #svgIcon {
+    transform: scale(1.1);
+  }
   .modern path,
   .modern polyline {
     stroke-width: .5 !important;

@@ -96,7 +96,7 @@
       .adobeBack {
         fill: #001E36;
         stroke: hsla(0, 0%, 100%, 0.5);
-        stroke-width: .5px;
+        stroke-width: 1px;
       }
     }
     
@@ -108,7 +108,7 @@
       .adobeBack {
         fill: #001E36; 
         stroke: hsla(0, 0%, 100%, 0.5);
-        stroke-width: .5px;
+        stroke-width: 1px;
       }
     }
     
@@ -120,7 +120,7 @@
       .adobeBack {
         fill: #49021F; 
         stroke: hsla(0, 0%, 100%, 0.5);
-        stroke-width: .5px;
+        stroke-width: 1px;
       }
     }
    
