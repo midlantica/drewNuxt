@@ -108,50 +108,38 @@
   .modern #modal .content {
     @apply font-modernCopy;
     
-    h4 {
-        /*  */
-    }
+    h4 { }
     p { @apply text-[1rem] leading-[1.8]; }
   }
 
   .bourbon #modal .content {
     @apply font-bourbonCopy;
     
-    h4 {
-        /*  */
-    }
+    h4 { }
     p {  }
   }
   .groovy #modal .content {
     @apply font-groovyCopy;
     
-    h4 {
-        /*  */
-    }
+    h4 { }
     p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
   }
   .techy #modal .content {
     @apply font-techyCopy;
     
-    h4 {
-        /*  */
-    }
+    h4 { }
     p { @apply text-[1.2rem] leading-[1.8] tracking-wider; }
   }
   .corp #modal .content {
     @apply font-corpCopy;
     
-    h4 {
-        /*  */
-    }
+    h4 { }
     p { @apply text-[1.15rem] leading-[1.8] tracking-wide; }
   }
   .punk #modal .content {
     @apply font-punkCopy;
     
-    h4 {
-        /*  */
-    }
+    h4 { }
     p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
   }
 
