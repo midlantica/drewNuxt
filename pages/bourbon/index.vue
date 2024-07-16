@@ -1,5 +1,6 @@
 <script setup>
   import { ExtrasC } from '#components'
+  
   const store = useToggleExtrasStore()
 
   definePageMeta({
@@ -68,7 +69,7 @@
 
 
 <style scoped>
-  @import "./assets/css/fonts/bourbonFonts/bourbonFonts.css";
+  /* @import "./assets/css/fonts/bourbonFonts/bourbonFonts.css"; */
 
   .mainGrid {
     /* @apply grid grid-cols-2 my-4 mr-6 ml-4 gap-x-0 gap-y-4; */

@@ -32,7 +32,10 @@ export default defineNuxtConfig({
   //   // The same options as in the plugin itself.
   //   // You will get an autocomplete using Nuxt 3.
   // },
-  css: ['~/assets/css/main.css'],
+  css: [
+    '~/assets/css/main.css',
+    '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
+  ],
   postcss: {
     plugins: {
       'postcss-import': {},
