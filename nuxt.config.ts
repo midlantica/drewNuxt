@@ -20,6 +20,7 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/sound/nuxt',
+    "nuxt-gtag"
   ],
   pinia: {
     storesDirs: ['./store/**'], // './custom-folder/stores/**'
@@ -27,6 +28,9 @@ export default defineNuxtConfig({
   imports: {
     // Auto-import pinia stores defined in `~/stores`
     dirs: ['stores']
+  },
+  gtag: {
+    id: 'G-HK3TKWNCR6'
   },
   // vueTransitions: {
   //   // The same options as in the plugin itself.
