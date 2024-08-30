@@ -14,6 +14,7 @@ module.exports = {
     `./error.{js,ts,vue}`,
     // `./app.config.{js,ts}`
   ],
+  // purge: ['./pages/**/*.{js,jsx,ts,tsx,vue}', './components/**/*.{js,jsx,ts,tsx,vue}', './app.vue'],
   theme: {
     listStyleType: {
       none: 'none',

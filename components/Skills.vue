@@ -1,7 +1,7 @@
 <template>
   <div v-show="showSkills" class="skillsGrid">
     
-    <div v-for="(skill, index) in skills" :key="index">
+    <div v-for="skill in skills" :key="skill[1]">
       <component
         :is="skill[0]"
         class="icon {{skill[1]}} }"
@@ -25,18 +25,7 @@
 <script setup>
   import { ref, markRaw, defineAsyncComponent } from 'vue'
 
-  const iconUiux = markRaw(defineAsyncComponent(() => import('./Icons/iconUiux.vue')))
-  const iconHtml5 = markRaw(defineAsyncComponent(() => import('./Icons/iconHtml5.vue')))
-  const iconCss3 = markRaw(defineAsyncComponent(() => import('./Icons/iconCss3.vue')))
-  const iconJs = markRaw(defineAsyncComponent(() => import('./Icons/iconJs.vue')))
-  const iconAdobeIcons = markRaw(defineAsyncComponent(() => import('./Icons/iconAdobeIcons.vue')))
-  const iconSass = markRaw(defineAsyncComponent(() => import('./Icons/iconSass.vue')))
-  const iconVue = markRaw(defineAsyncComponent(() => import('./Icons/iconVue.vue')))
-  const iconAffinityIcons = markRaw(defineAsyncComponent(() => import('./Icons/iconAffinityIcons.vue')))
-  const iconTailwind = markRaw(defineAsyncComponent(() => import('./Icons/iconTailwind.vue')))
-  const iconFigma = markRaw(defineAsyncComponent(() => import('./Icons/iconFigma.vue')))
-  const iconNuxt = markRaw(defineAsyncComponent(() => import('./Icons/iconNuxt.vue')))
-  const iconChelsea = markRaw(defineAsyncComponent(() => import('./Icons/iconChelsea.vue')))
+  import { iconUiux, iconHtml5, iconCss3, iconJs, iconAdobeIcons, iconSass, iconVue, iconAffinityIcons, iconTailwind, iconFigma, iconNuxt, iconChelsea } from './Icons/allicons.vue';
 
   const showSkills = ref(false)
   const hover = ref(false)

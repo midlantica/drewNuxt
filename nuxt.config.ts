@@ -7,14 +7,16 @@ export default defineNuxtConfig({
   // serverDir: "server",
   // baseUrl: "/",
   // devServer: {
-    // https: {
-    //   key: './server.key',
-    //   cert: './server.crt'
-    // }
+  // https: {
+  //   key: './server.key',
+  //   cert: './server.crt'
+  // }
   // },
   buildDir: '.nuxt',
+
   ssr: false,
   devtools: { enabled: true },
+
   modules: [
     '@nuxt/devtools',
     '@nuxtjs/tailwindcss',
@@ -22,16 +24,20 @@ export default defineNuxtConfig({
     '@vueuse/sound/nuxt',
     "nuxt-gtag"
   ],
+
   pinia: {
     storesDirs: ['./store/**'], // './custom-folder/stores/**'
   },
+
   imports: {
     // Auto-import pinia stores defined in `~/stores`
     dirs: ['stores']
   },
+
   gtag: {
     id: 'G-HK3TKWNCR6'
   },
+
   // vueTransitions: {
   //   // The same options as in the plugin itself.
   //   // You will get an autocomplete using Nuxt 3.
@@ -40,6 +46,7 @@ export default defineNuxtConfig({
     '~/assets/css/main.css',
     '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
   ],
+
   postcss: {
     plugins: {
       'postcss-import': {},
@@ -48,12 +55,14 @@ export default defineNuxtConfig({
       'autoprefixer': {},
     },
   },
+
   routeRules: {
     '/': {
       redirect: '/modern/',
       prerender: true,
     },
   },
+
   components: [
     { path: '~/pages/bourbon/components', prefix: 'Bourbon' },
     { path: '~/pages/corp/components', prefix: 'Corp' },
@@ -63,6 +72,7 @@ export default defineNuxtConfig({
     { path: '~/pages/techy/components', prefix: 'Techy' },
     '~/components' // this must be last line
   ],
+
   app: {
     baseURL: '/',
     head: {
@@ -91,14 +101,17 @@ export default defineNuxtConfig({
     pageTransition: false,
     layoutTransition: false,
   },
+
   experimental: {
     // viewTransition: false,
     // appManifest: false,
     // watcher: "chokidar",
   },
+
   build: {
     //
   },
+
   // quiet: false,
   // server: {
   //   hmr: {
@@ -108,6 +121,7 @@ export default defineNuxtConfig({
   vue: {
     // propsDestructure: true
   },
+
   nitro: {
     output: {
       dir: '.output',
@@ -115,4 +129,6 @@ export default defineNuxtConfig({
       publicDir: '.output/public'
     }
   },
+
+  compatibilityDate: '2024-08-30',
 })
