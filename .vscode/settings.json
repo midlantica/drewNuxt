@@ -5,7 +5,8 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    ".vscode/": true
   },
   "hidefiles.configurationType": "local",
   "hidefiles.globalConfig": {
@@ -14,16 +15,12 @@
         "name": "Default",
         "detail": "",
         "description": "Test",
-        "hidden": [
-          ".vscode/"
-        ]
+        "hidden": [".vscode/"]
       },
       {
         "name": "Strict",
         "detail": "Hide everything not immediately required",
-        "hidden": [
-          "$Default"
-        ]
+        "hidden": ["$Default"]
       }
     ]
   },
@@ -32,5 +29,6 @@
   "vue.format.style.initialIndent": true,
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.vBindShorthand": true,
-  "vue.updateImportsOnFileMove.enabled": true
+  "vue.updateImportsOnFileMove.enabled": true,
+  "hidefiles.selectedProfile": "Default"
 }
