@@ -3,8 +3,7 @@
 .bounce-enter-from .slides,
 .bounce-enter-from .about,
 .bounce-enter-from .quoteBlock,
-.bounce-enter-from .extrasBlock
-{
+.bounce-enter-from .extrasBlock {
   /* animation: bounceIn calc(var(--timebase) * .25); */
   /* animation-delay: 5s; */
   /* background: red; */
@@ -18,8 +17,7 @@
 .bounce-enter-to .slides,
 .bounce-enter-to .about,
 .bounce-enter-to .quoteBlock,
-.bounce-enter-to .extrasBlock
-{
+.bounce-enter-to .extrasBlock {
   /* animation: bounceIn calc(var(--timebase) * .25); */
   /* background: yellow; */
 }
@@ -28,8 +26,7 @@
 .bounce-leave-from .slides,
 .bounce-leave-from .about,
 .bounce-leave-from .quoteBlock,
-.bounce-leave-from .extrasBlock
-{
+.bounce-leave-from .extrasBlock {
   /* animation: bounceIn calc(var(--timebase) * .25); */
   /* background: red; */
 }
@@ -39,201 +36,216 @@
 .bounce-leave-to .slides,
 .bounce-leave-to .about,
 .bounce-leave-to .quoteBlock,
-.bounce-leave-to .extrasBlock
-{
+.bounce-leave-to .extrasBlock {
   /* animation: bounceOut .5s; */
   /* background: blue; */
 }
 
-
 .bounce-enter-active,
 .bounce-enter-from,
 .bounce-enter-active .outer .bounce-enter-active,
-.bounce-enter-from .outer .bounce-enter-from
- { animation: bounceIn calc(var(--timebase) * .25); }
+.bounce-enter-from .outer .bounce-enter-from {
+  animation: bounceIn calc(var(--timebase) * 0.25);
+}
 
 .bounce-leave-active,
 .bounce-leave-to,
 .bounce-leave-active .outer .bounce-enter-active,
-.bounce-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce2-enter-active,
 .bounce2-enter-from,
 .bounce2-enter-active .outer .bounce-enter-active,
-.bounce2-enter-from .outer .bounce2-enter-from
- { animation: bounceIn calc(var(--timebase) * .75); }
+.bounce2-enter-from .outer .bounce2-enter-from {
+  animation: bounceIn calc(var(--timebase) * 0.75);
+}
 
 .bounce2-leave-active,
 .bounce2-leave-to,
 .bounce2-leave-active .outer .bounce-enter-active,
-.bounce2-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce2-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce3-enter-active,
 .bounce3-enter-from,
 .bounce3-enter-active .outer .bounce-enter-active,
-.bounce3-enter-from .outer .bounce3-enter-from
- { animation: bounceIn calc(var(--timebase) * 1); }
+.bounce3-enter-from .outer .bounce3-enter-from {
+  animation: bounceIn calc(var(--timebase) * 1);
+}
 
 .bounce3-leave-active,
 .bounce3-leave-to,
 .bounce3-leave-active .outer .bounce-enter-active,
-.bounce3-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce3-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce4-enter-active,
 .bounce4-enter-from,
 .bounce4-enter-active .outer .bounce-enter-active,
-.bounce4-enter-from .outer .bounce4-enter-from
- { animation: bounceIn calc(var(--timebase) * 1.25); }
+.bounce4-enter-from .outer .bounce4-enter-from {
+  animation: bounceIn calc(var(--timebase) * 1.25);
+}
 
 .bounce4-leave-active,
 .bounce4-leave-to,
 .bounce4-leave-active .outer .bounce-enter-active,
-.bounce4-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce4-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce5-enter-active,
 .bounce5-enter-from,
 .bounce5-enter-active .outer .bounce-enter-active,
-.bounce5-enter-from .outer .bounce5-enter-from
- { animation: bounceIn calc(var(--timebase) * 1.5); }
+.bounce5-enter-from .outer .bounce5-enter-from {
+  animation: bounceIn calc(var(--timebase) * 1.5);
+}
 
 .bounce5-leave-active,
 .bounce5-leave-to,
 .bounce5-leave-active .outer .bounce-enter-active,
-.bounce5-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce5-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce6-enter-active,
 .bounce6-enter-from,
 .bounce6-enter-active .outer .bounce-enter-active,
-.bounce6-enter-from .outer .bounce6-enter-from
- { animation: bounceIn calc(var(--timebase) * 1.75); }
+.bounce6-enter-from .outer .bounce6-enter-from {
+  animation: bounceIn calc(var(--timebase) * 1.75);
+}
 
 .bounce6-leave-active,
 .bounce6-leave-to,
 .bounce6-leave-active .outer .bounce-enter-active,
-.bounce6-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce6-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce7-enter-active,
 .bounce7-enter-from,
 .bounce7-enter-active .outer .bounce-enter-active,
-.bounce7-enter-from .outer
- { animation: bounceIn calc(var(--timebase) * 2); }
+.bounce7-enter-from .outer {
+  animation: bounceIn calc(var(--timebase) * 2);
+}
 
 .bounce7-leave-active,
 .bounce7-leave-to,
 .bounce7-leave-active .outer .bounce-enter-active,
-.bounce7-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce7-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce8-enter-active,
 .bounce8-enter-from,
 .bounce8-enter-active .outer .bounce-enter-active,
-.bounce8-enter-from .outer .bounce8-enter-from
- { animation: bounceIn calc(var(--timebase) * 2.25); }
+.bounce8-enter-from .outer .bounce8-enter-from {
+  animation: bounceIn calc(var(--timebase) * 2.25);
+}
 
 .bounce8-leave-active,
 .bounce8-leave-to,
 .bounce8-leave-active .outer .bounce-enter-active,
-.bounce8-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce8-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce9-enter-active,
 .bounce9-enter-from,
 .bounce9-enter-active .outer .bounce-enter-active,
-.bounce9-enter-from .outer .bounce9-enter-from
- { animation: bounceIn calc(var(--timebase) * 2.5); }
+.bounce9-enter-from .outer .bounce9-enter-from {
+  animation: bounceIn calc(var(--timebase) * 2.5);
+}
 
 .bounce9-leave-active,
 .bounce9-leave-to,
-.bounce9-leave-active .outer .bounce-enter-active
-.bounce9-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce9-leave-active .outer .bounce-enter-active .bounce9-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce10-enter-active,
 .bounce10-enter-from,
 .bounce10-enter-active .outer .bounce-enter-active,
-.bounce10-enter-from .outer .bounce10-enter-from
- { animation: bounceIn calc(var(--timebase) * 2.75); }
+.bounce10-enter-from .outer .bounce10-enter-from {
+  animation: bounceIn calc(var(--timebase) * 2.75);
+}
 
 .bounce10-leave-active,
 .bounce10-leave-to,
 .bounce10-leave-active .outer .bounce-enter-active,
-.bounce10-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce10-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce11-enter-active,
 .bounce11-enter-from,
 .bounce11-enter-active .outer .bounce-enter-active,
-.bounce11-enter-from .outer .bounce11-enter-from
- { animation: bounceIn calc(var(--timebase) * 3); }
+.bounce11-enter-from .outer .bounce11-enter-from {
+  animation: bounceIn calc(var(--timebase) * 3);
+}
 
 .bounce11-leave-active,
 .bounce11-leave-to,
 .bounce11-leave-active .outer .bounce-enter-active,
-.bounce11-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce11-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
 .bounce12-enter-active,
 .bounce12-enter-from,
 .bounce12-enter-active .outer .bounce-enter-active,
-.bounce12-enter-from .outer .bounce12-enter-from
- { animation: bounceIn calc(var(--timebase) * 3.5); }
+.bounce12-enter-from .outer .bounce12-enter-from {
+  animation: bounceIn calc(var(--timebase) * 3.5);
+}
 
 .bounce12-leave-active,
 .bounce12-leave-to,
 .bounce12-leave-active .outer .bounce-enter-active,
-.bounce12-leave-to .outer .bounce-leave-to
- { animation: bounceOut calc(var(--timebase) * .25); }
+.bounce12-leave-to .outer .bounce-leave-to {
+  animation: bounceOut calc(var(--timebase) * 0.25);
+}
 
+.transMainGrid-from .transHeadAndCopy-from,
+.transMainGrid-active .transHeadAndCopy-active {
+  transition: all 2s !important;
+  transition-delay: 0.25s;
+  background: red;
+}
+.transMainGrid-from .transCarousel-from,
+.transMainGrid-active .transCarousel-active {
+  transition: all 2s !important;
+  transition-delay: 0.5s;
+  background: red;
+}
+.transMainGrid-from .transSkills-from,
+.transMainGrid-active .transSkills-active {
+  transition: all 2s !important;
+  transition-delay: 0.75s;
+  background: red;
+}
+.transMainGrid-from .transAbout-from,
+.transMainGrid-active .transAbout-active {
+  transition: all 2s !important;
+  transition-delay: 1s;
+  background: red;
+}
+.transMainGrid-from .transQuote-from,
+.transMainGrid-active .transQuote-active {
+  transition: all 2s !important;
+  transition-delay: 1.25s;
+  background: red;
+}
 
+.transMainGrid-enter-active .transHeadAndCopy-enter-active,
+.transMainGrid-leave-active .transHeadAndCopy-enter-active {
+  transition: all 0.3s ease-in-out;
+}
 
-
-
-
- .transMainGrid-from .transHeadAndCopy-from,
-  .transMainGrid-active .transHeadAndCopy-active {
-    transition: all 2s !important;
-    transition-delay: 0.25s;
-    background: red;
-  }
-  .transMainGrid-from .transCarousel-from,
-  .transMainGrid-active .transCarousel-active {
-    transition: all 2s !important;
-    transition-delay: 0.5s;
-    background: red;
-  }
-  .transMainGrid-from .transSkills-from,
-  .transMainGrid-active .transSkills-active {
-    transition: all 2s !important;
-    transition-delay: 0.75s;
-    background: red;
-  }
-  .transMainGrid-from .transAbout-from,
-  .transMainGrid-active .transAbout-active {
-    transition: all 2s !important;
-    transition-delay: 1s;
-    background: red;
-  }
-  .transMainGrid-from .transQuote-from,
-  .transMainGrid-active .transQuote-active {
-    transition: all 2s !important;
-    transition-delay: 1.25s;
-    background: red;
-  }
-
-
-  .transMainGrid-enter-active .transHeadAndCopy-enter-active,
-  .transMainGrid-leave-active .transHeadAndCopy-enter-active {
-    transition: all 0.3s ease-in-out;
-  }
-
-  .transMainGrid-enter-from .transHeadAndCopy-enter-leave-active,
-  .transMainGrid-leave-to .transHeadAndCopy-enter-leave-active {
-    transform: translateX(30px);
-    opacity: 0;
-  }
+.transMainGrid-enter-from .transHeadAndCopy-enter-leave-active,
+.transMainGrid-leave-to .transHeadAndCopy-enter-leave-active {
+  transform: translateX(30px);
+  opacity: 0;
+}

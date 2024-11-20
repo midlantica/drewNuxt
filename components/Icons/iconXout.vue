@@ -1,6 +1,8 @@
 <template>
   <svg
-    class="xOut" viewBox="0 0 25 25" fill="none"
+    class="xOut"
+    viewBox="0 0 25 25"
+    fill="none"
     xmlns="http://www.w3.org/2000/svg"
   >
     <path
@@ -16,8 +18,8 @@
     margin: auto !important;
     @apply cursor-pointer;
 
-    >path {
-      stroke: hsla(0, 0%, 0%, .85);
+    > path {
+      stroke: hsla(0, 0%, 0%, 0.85);
       stroke-width: 1;
       stroke-linecap: round;
 

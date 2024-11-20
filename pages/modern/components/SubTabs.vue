@@ -1,44 +1,52 @@
 <template>
-  <div v-show="showSubTabs" 
-    class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7">
-    <div @click="emitSwitchView('ModernProjects')" 
-      class="btn projectsTab" :class="{ 'selectedBtn': store.selectedBtn === 'ModernProjects' }"
-      >Projects 
+  <div
+    v-show="showSubTabs"
+    class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7"
+  >
+    <div
+      @click="emitSwitchView('ModernProjects')"
+      class="btn projectsTab"
+      :class="{ selectedBtn: store.selectedBtn === 'ModernProjects' }"
+    >
+      Projects
     </div>
-    <div @click="emitSwitchView('ModernSkills')" 
-      class="btn skillsTab" :class="{ 'selectedBtn': store.selectedBtn === 'ModernSkills' }"
-      >Skills 
+    <div
+      @click="emitSwitchView('ModernSkills')"
+      class="btn skillsTab"
+      :class="{ selectedBtn: store.selectedBtn === 'ModernSkills' }"
+    >
+      Skills
     </div>
-    <div @click="emitSwitchView('ModernAbout')" 
-      class="btn aboutTab" :class="{ 'selectedBtn': store.selectedBtn === 'ModernAbout' }"
-      >About 
+    <div
+      @click="emitSwitchView('ModernAbout')"
+      class="btn aboutTab"
+      :class="{ selectedBtn: store.selectedBtn === 'ModernAbout' }"
+    >
+      About
     </div>
   </div>
 </template>
 
 <script setup>
-  import { useRouter } from 'vue-router'
-  
+  import { useRouter } from 'vue-router';
+
   const emit = defineEmits();
-  const store = useToggleExtrasStore()
+  const store = useToggleExtrasStore();
   const router = useRouter();
 
-  const props = defineProps([
-    'store.isShowContent', 
-    'store.selectedBtn'
-  ])
-  
-  const showSubTabs = ref(false)
+  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
 
-  let emitSwitchView = (view) => {
-    store.selectedBtn = view
-    emit('switch-view', view)
-  }
-  
+  const showSubTabs = ref(false);
+
+  let emitSwitchView = view => {
+    store.selectedBtn = view;
+    emit('switch-view', view);
+  };
+
   onMounted(() => {
-    showSubTabs.value = true
+    showSubTabs.value = true;
     // store.selectedBtn = 'ModernProjects'
-    
+
     // Set selectedBtn based on the current route
     const currentRoute = router.currentRoute.value;
     if (currentRoute.name === 'ModernProjects') {
@@ -48,12 +56,10 @@
     } else if (currentRoute.name === 'ModernAbout') {
       store.selectedBtn = 'ModernAbout';
     }
-  })
-  
+  });
 </script>
 
 <style scoped>
-
   .btn {
     @apply text-black pt-[.55rem] px-5 pb-[.4rem] rounded-[2rem] no-underline uppercase text-[.6rem] font-semibold tracking-[0.075ch] bg-modern-ruby bg-gradient-to-b from-[#D71D5B] to-[#871239] hover:bg-modern-ruby hover:text-white focus:text-white hover:bg-gradient-to-b hover:from-[#D71D5B] hover:to-[#871239] cursor-pointer;
   }
@@ -67,5 +73,4 @@
   .selectedBtn {
     @apply !text-white;
   }
-
 </style>

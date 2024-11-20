@@ -1,6 +1,4 @@
-<script setup>
-
-</script>
+<script setup></script>
 
 <template>
   <NuxtLayout>
@@ -9,6 +7,4 @@
   </NuxtLayout>
 </template>
 
-<style>
-
-</style>
+<style></style>

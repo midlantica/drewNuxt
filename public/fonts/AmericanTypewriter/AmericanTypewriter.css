@@ -20,15 +20,18 @@
  * © 2020 MyFonts Inc
 */
 
-
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/3be092");
+@import url('//hello.myfonts.net/count/3be092');
 
 @font-face {
   font-family: 'AmericanTypewriterStd-Med';
-  src: url('AmericanTypewriterStd-Med/font.woff2') format('woff2'), url('AmericanTypewriterStd-Med/font.woff') format('woff');
+  src:
+    url('AmericanTypewriterStd-Med/font.woff2') format('woff2'),
+    url('AmericanTypewriterStd-Med/font.woff') format('woff');
 }
 @font-face {
   font-family: 'AmericanTypewriterStd-Bold';
-  src: url('AmericanTypewriterStd-Bold/font.woff2') format('woff2'), url('AmericanTypewriterStd-Bold/font.woff') format('woff');
+  src:
+    url('AmericanTypewriterStd-Bold/font.woff2') format('woff2'),
+    url('AmericanTypewriterStd-Bold/font.woff') format('woff');
 }

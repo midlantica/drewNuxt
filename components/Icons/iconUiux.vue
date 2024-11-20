@@ -1,15 +1,22 @@
 <template>
   <svg
-    viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink"
+    viewBox="0 0 88 60"
+    xmlns="http://www.w3.org/2000/svg"
+    xmlns:xlink="http://www.w3.org/1999/xlink"
     id="iconUiux"
   >
     <title>UI/UX Design</title>
     <g
-      stroke="none" stroke-width="1" fill="none"
+      stroke="none"
+      stroke-width="1"
+      fill="none"
       fill-rule="evenodd"
     >
       <g transform="translate(-21.000000, -16.000000)">
-        <g id="uiux" transform="translate(38.832246, 26.459350)">
+        <g
+          id="uiux"
+          transform="translate(38.832246, 26.459350)"
+        >
           <g id="background">
             <path
               id="backRight"
@@ -49,7 +56,6 @@
 </template>
 
 <style scoped>
-
   svg {
     @apply cursor-pointer;
 
@@ -103,34 +109,31 @@
       transform: translate(3px, 13px);
     }
   }
-  
+
   .modern path,
   .modern polyline,
   .modern polygon {
-    stroke-width: .5 !important;
+    stroke-width: 0.5 !important;
     stroke: white !important;
     stroke-linecap: round !important;
     fill: none !important;
-  } 
-  
-  .modern #modal {
+  }
 
+  .modern #modal {
     path#ui,
     path#ux {
       fill: white !important;
       stroke: none !important;
     }
-    
+
     path#backLeft {
       stroke: none !important;
-      fill: #447F99 !important;
-    }
-    
-    path#backRight  {
-      stroke: none !important;
-      fill: #46B4AB !important;
+      fill: #447f99 !important;
     }
 
+    path#backRight {
+      stroke: none !important;
+      fill: #46b4ab !important;
+    }
   }
-  
 </style>

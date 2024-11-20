@@ -10,8 +10,13 @@
       </div>
 
       <div class="resumeLinks">
-        <a :href="`${copy.portfolio}`" target="_BLANK" class="resume rOne">PDF
-          Resume</a>
+        <a
+          :href="`${copy.portfolio}`"
+          target="_BLANK"
+          class="resume rOne"
+        >
+          PDF Resume
+        </a>
       </div>
     </div>
 
@@ -25,47 +30,43 @@
 </template>
 
 <script setup>
-  const copy = useCopy()
-  const store = useToggleExtrasStore()
+  const copy = useCopy();
+  const store = useToggleExtrasStore();
 
-  const props = defineProps([
-    'store.isShowContent', 
-    'store.selectedBtn'
-  ])
+  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
 
   onMounted(() => {
     store.initialize();
-  })
+  });
 </script>
 
 <style scoped>
-
   .authenticStampPunk {
     @apply self-center;
-    animation: rotator2 .75s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
+    animation: rotator2 0.75s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
     animation-delay: 2s;
     opacity: 0;
     animation-fill-mode: forwards;
     border-radius: 100%;
     background: rgba(255, 255, 255, 1);
   }
-  
+
   .authenticStampPunk {
     @apply fill-black w-[120px] max-w-[90px] min-w-[90px] pr-[.2rem] pb-[.1rem] mb-1;
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply -mr-[380px] -mt-[10px] w-[90px];
     }
 
-    @media (max-width: theme("screens.breakSm")) {
-      @apply -mr-[330px] -mt-[20px] w-[80px] ;
+    @media (max-width: theme('screens.breakSm')) {
+      @apply -mr-[330px] -mt-[20px] w-[80px];
     }
 
-    @media (max-width: theme("screens.breakXsm")) {
+    @media (max-width: theme('screens.breakXsm')) {
       @apply -mr-[300px] -mt-[20px] w-[70px];
     }
 
-    @media (max-width: theme("screens.breakXxsm")) {
+    @media (max-width: theme('screens.breakXxsm')) {
       @apply -mr-[300px] -mt-[10px] w-[70px];
     }
   }
@@ -80,11 +81,11 @@
       p {
         @apply font-punkCopy text-base-black bg-white text-[0.9em] font-medium not-italic tracking-[.02em] -hue-rotate-[1.25deg] lowercase py-1 px-2;
 
-        @media (max-width: theme("screens.breakSm")) {
+        @media (max-width: theme('screens.breakSm')) {
           /* // */
         }
 
-        @media (max-width: theme("screens.breakXsm")) {
+        @media (max-width: theme('screens.breakXsm')) {
           /* // */
         }
 
@@ -95,7 +96,6 @@
         &:nth-of-type(2) {
           @apply inline-block ml-2 rotate-2;
         }
-
       }
     }
 
@@ -132,9 +132,7 @@
         a:hover {
           @apply underline text-punk-magenta bg-punk-red;
         }
-
       }
-
     }
   }
 
@@ -142,7 +140,7 @@
     flex: 0 1 auto;
     @apply flex flex-col relative top-0 left-0;
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply mb-0;
     }
   }
@@ -161,10 +159,9 @@
     p {
       @apply font-normal text-[1em] leading-9 relative inline italic font-punkCopy text-base-grey tracking-[.045em] top-0 bg-punk-peach mt-4 mx-4 mb-0 py-[.4rem] px-[.1rem];
 
-      @media (min-width: theme("screens.breakLg")) {
+      @media (min-width: theme('screens.breakLg')) {
         /* // */
       }
     }
-
   }
 </style>

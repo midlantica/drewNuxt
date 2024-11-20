@@ -29,27 +29,30 @@
  * © 2022 MyFonts Inc
 */
 
-
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/459a0c");
+@import url('//hello.myfonts.net/count/459a0c');
 
 @font-face {
-  font-family: "AmericanTypewriterStd-Med";
-  src: url('./AmericanTypewriterStdMed/font.woff2') format('woff2'),
-       url('./AmericanTypewriterStdMed/font.woff') format('woff');
+  font-family: 'AmericanTypewriterStd-Med';
+  src:
+    url('./AmericanTypewriterStdMed/font.woff2') format('woff2'),
+    url('./AmericanTypewriterStdMed/font.woff') format('woff');
 }
 @font-face {
-  font-family: "AmericanTypewriterStd-Bold";
-  src: url('./AmericanTypewriterStdBold/font.woff2') format('woff2'),
-       url('./AmericanTypewriterStdBold/font.woff') format('woff');
+  font-family: 'AmericanTypewriterStd-Bold';
+  src:
+    url('./AmericanTypewriterStdBold/font.woff2') format('woff2'),
+    url('./AmericanTypewriterStdBold/font.woff') format('woff');
 }
 @font-face {
-  font-family: "Veneer";
-  src: url('./VeneerRegular/font.woff2') format('woff2'),
-       url('./VeneerRegular/font.woff') format('woff');
+  font-family: 'Veneer';
+  src:
+    url('./VeneerRegular/font.woff2') format('woff2'),
+    url('./VeneerRegular/font.woff') format('woff');
 }
 @font-face {
-  font-family: "VeneerTwo";
-  src: url('./VeneerTwo/font.woff2') format('woff2'),
-       url('./VeneerTwo/font.woff') format('woff');
+  font-family: 'VeneerTwo';
+  src:
+    url('./VeneerTwo/font.woff2') format('woff2'),
+    url('./VeneerTwo/font.woff') format('woff');
 }

@@ -1,28 +1,30 @@
 <template>
   <div>
-    <transition name="bounce2" appear>
+    <transition
+      name="bounce2"
+      appear
+    >
       <Skills />
     </transition>
-    <transition name="bounce4" appear>
+    <transition
+      name="bounce4"
+      appear
+    >
       <Quote />
     </transition>
   </div>
 </template>
 
 <script setup>
-  const store = useToggleExtrasStore()
-  
-  const props = defineProps([
-    'store.isShowContent', 
-    'store.selectedBtn'
-  ])
-  
-  const showSkills = ref(false)
-  
-  onMounted(() => {
-    store.selectedBtn = 'ModernSkills'
-  })
+  const store = useToggleExtrasStore();
 
+  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
+
+  const showSkills = ref(false);
+
+  onMounted(() => {
+    store.selectedBtn = 'ModernSkills';
+  });
 </script>
 
 <style scoped>
@@ -32,15 +34,15 @@
   .skillsGrid {
     @apply grid-cols-[repeat(6,_minmax(88px,_1fr))] col-start-1 col-end-2 row-start-2 row-end-4 justify-center justify-items-center w-[35vw];
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply grid-cols-[repeat(4,_minmax(88px,_1fr))] w-[70vw] row-start-2 row-end-2;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply row-start-2 row-end-2;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply row-start-2 row-end-2;
     }
   }

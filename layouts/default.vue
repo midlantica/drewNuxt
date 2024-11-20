@@ -18,9 +18,8 @@
   }
 
   .extrasWrap {
-
     a {
-      @apply basis-auto grow box-border text-center items-center no-underline text-black ;
+      @apply basis-auto grow box-border text-center items-center no-underline text-black;
 
       img.portThumbs {
         @apply w-[400px] h-auto border-2 border-solid border-black/10 text-base-ivory transition-opacity duration-1000 ease-in-out;
@@ -54,23 +53,23 @@
     .wrapper {
       @apply w-[99.8%] bg-[url('/img/bg/graphy_2.png')] bg-repeat;
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXxsm")) {
+      @media (max-width: theme('screens.breakXxsm')) {
         @apply w-[99.8%];
       }
     }
@@ -78,30 +77,28 @@
     .about > p {
       @apply w-[99.8%] my-1 mx-auto font-bourbonCopy text-[.82em];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply w-[99.8%] text-[1.65vw];
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply w-[99.8%] text-[1.85vw];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply w-[99.8%] text-[2.5vw];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply w-[99.8%] text-[3vw];
       }
     }
 
     .extrasWrapper {
-
       h1 {
         @apply pt-4 font-bourbonHead !text-bourbon-accentRed !text-[1.75em] font-light antialiased;
       }
     }
-
   }
 
   body.modern {
@@ -110,23 +107,23 @@
     .wrapper {
       @apply w-[99.8%] flex flex-col grow max-w-screen-breakXlg min-h-[780px] pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.jpeg')] bg-cover;
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXxsm")) {
+      @media (max-width: theme('screens.breakXxsm')) {
         @apply w-[99.8%];
       }
 
@@ -152,13 +149,11 @@
       @apply mt-3;
 
       & h1 {
-        @apply !text-white font-modernCopy !text-[1.5rem] leading-normal capitalize antialiased bg-transparent tracking-wider ;
+        @apply !text-white font-modernCopy !text-[1.5rem] leading-normal capitalize antialiased bg-transparent tracking-wider;
       }
 
       & a {
-
         &:hover {
-
           p {
             @apply text-white underline;
           }
@@ -179,10 +174,8 @@
             @apply underline border-base-white;
           }
         }
-
       }
     }
-
   }
 
   body.groovy {
@@ -191,23 +184,23 @@
     .wrapper {
       @apply w-[99.8%] bg-gradient-to-b from-white via-[#fff5cb] via-85% to-[#fff5cb];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXxsm")) {
+      @media (max-width: theme('screens.breakXxsm')) {
         @apply w-[99.8%];
       }
     }
@@ -235,23 +228,23 @@
     .wrapper {
       @apply w-[99.8%] bg-[#fffdf4];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme("screens.breakXxsm")) {
+      @media (max-width: theme('screens.breakXxsm')) {
         @apply w-[99.8%];
       }
     }
@@ -282,11 +275,10 @@
     .contact {
       @apply flex w-full m-0 gap-x-4 gap-y-1;
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply m-0;
       }
     }
-
   }
 
   body.corp {
@@ -295,29 +287,28 @@
     .wrapper {
       @apply w-[99.8%] bg-[url(/img/bg/white_paper_patt-01.jpg)] bg-repeat;
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme("screens.breakXxsm")) {
+      @media (max-width: theme('screens.breakXxsm')) {
         /* @apply w-[99.8%]; */
       }
     }
 
     .extrasWrapper {
-
       h1 {
         @apply font-corpHead text-corp-blueDark !text-[1.5em] bg-transparent font-semibold capitalize mt-0;
       }
@@ -338,15 +329,15 @@
     .wrapper {
       @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),_url(/img/bg/Drew-punk-back.jpg)] bg-[length:_102%_640%,100%_100%];
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply w-[99.8%] bg-[length:_102%_640%,130%_90%] bg-[center_center];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply w-[99.8%] bg-[length:_102%_600%,120%_100%] bg-[center_center,-3em_11em];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply w-[99.8%] bg-[length:_102%_600%,250%_100%] bg-[center_center,-3em_3em];
       }
     }
@@ -354,25 +345,24 @@
     .about > p {
       @apply font-punkCopy text-[.8em];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply text-[1.65vw];
       }
 
-      @media (max-width: theme("screens.breakLg")) {
+      @media (max-width: theme('screens.breakLg')) {
         @apply text-[1.85vw];
       }
 
-      @media (max-width: theme("screens.breakSm")) {
+      @media (max-width: theme('screens.breakSm')) {
         @apply text-[2.5vw];
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
+      @media (max-width: theme('screens.breakXsm')) {
         @apply text-[3vw];
       }
     }
 
     .extrasWrapper {
-
       h1 {
         @apply mt-4 text-black !text-[1.5rem] font-semibold leading-normal capitalize antialiased font-modernSubhead bg-white/70 px-2;
       }
@@ -389,7 +379,6 @@
         }
 
         img.portThumbs {
-
         }
 
         p {
@@ -399,11 +388,8 @@
             @apply border-base-white;
           }
         }
-
       }
-
     }
-
   }
 
   body.modern .box:hover .brickBack,
@@ -412,11 +398,9 @@
   }
 
   body.modern .iconSVG {
-
     g {
       @apply stroke-[1px] stroke-white/75 ease-out duration-300;
     }
-
   }
 
   body.modern .box:hover g {
@@ -447,5 +431,4 @@
   body.punk .box:hover .brickCircles {
     @apply fill-[#f995d3] ease-out duration-500;
   }
-
 </style>

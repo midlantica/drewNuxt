@@ -1,83 +1,102 @@
 <template>
-
-  <transition name="topDown" appear>
-    <PunkNavvy 
-      @toggleExtras="store.toggleExtras" 
-      :isShowContent="store.isShowContent" 
+  <transition
+    name="topDown"
+    appear
+  >
+    <PunkNavvy
+      @toggleExtras="store.toggleExtras"
+      :isShowContent="store.isShowContent"
     />
   </transition>
 
-  <main class="mainGrid" v-if="store.isShowContent">
-    <transition name="bounce2" appear>
-      <PunkHeadAndCopy class="copyArea" 
-        @toggleExtras="store.toggleExtras" 
-        :isShowContent="store.isShowContent" 
+  <main
+    class="mainGrid"
+    v-if="store.isShowContent"
+  >
+    <transition
+      name="bounce2"
+      appear
+    >
+      <PunkHeadAndCopy
+        class="copyArea"
+        @toggleExtras="store.toggleExtras"
+        :isShowContent="store.isShowContent"
       />
     </transition>
 
-    <transition name="bounce4" appear>
+    <transition
+      name="bounce4"
+      appear
+    >
       <Carousel class="slides" />
     </transition>
 
-    <transition name="bounce6" appear>
+    <transition
+      name="bounce6"
+      appear
+    >
       <Skills />
     </transition>
 
-    <transition name="bounce8" appear>
+    <transition
+      name="bounce8"
+      appear
+    >
       <About />
     </transition>
   </main>
 
-  <main class="mainGrid" v-else>
-    <component :is="ExtrasC" class="col-span-2" @toggleExtras="store.toggleExtras"
+  <main
+    class="mainGrid"
+    v-else
+  >
+    <component
+      :is="ExtrasC"
+      class="col-span-2"
+      @toggleExtras="store.toggleExtras"
       :isShowContent="store.isShowContent"
     />
   </main>
-
 </template>
 
 <script setup>
-  import { ExtrasC } from '#components'
-  const store = useToggleExtrasStore()
+  import { ExtrasC } from '#components';
+  const store = useToggleExtrasStore();
 
   definePageMeta({
     title: 'Punk',
     pageTransition: false,
     layoutTransition: false,
-    viewTransition: false,
-  })
+    viewTransition: false
+  });
 
   useHead({
     title: `DrewHarper.com | UX Designer Visual Designer - Punk`,
     bodyAttrs: {
       class: `punk`
     }
-  })
+  });
 
-  const props = defineProps([
-    'store.isShowContent', 
-    'store.selectedBtn',
-  ])
-  
+  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
+
   onMounted(() => {
     store.initialize();
-  })
-  
+  });
 </script>
 
 <style scoped>
   .mainGrid {
     @apply grid grid-cols-2 gap-x-2 gap-y-2 shadow-none py-0 px-4 bg-transparent;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply grid-cols-1 gap-x-1 gap-y-2;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       /* // */
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       /* // */
     }
   }
@@ -85,15 +104,15 @@
   .copyArea {
     @apply col-start-1 col-end-2 row-start-1 row-end-3 flex flex-col self-end;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
   }
@@ -101,15 +120,15 @@
   .slides {
     @apply col-start-2 col-end-3 row-start-1 row-end-1;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
   }
@@ -117,15 +136,15 @@
   .about {
     @apply col-start-2 col-end-3 row-start-2 row-end-2;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
@@ -137,15 +156,15 @@
   .quoteBlock {
     @apply col-start-2 col-end-3 row-start-3 row-end-3;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
   }
@@ -153,17 +172,16 @@
   .skillsGrid {
     @apply col-start-1 col-end-3 row-start-3 row-end-3;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply row-start-4 row-end-4;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply row-start-4 row-end-4;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply row-start-4 row-end-4;
     }
   }
-
 </style>

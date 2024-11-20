@@ -23,17 +23,20 @@
  * © 2020 MyFonts Inc
 */
 
-
 /* @import must be at top of file, otherwise CSS will not work */
-@import url("//hello.myfonts.net/count/3be091");
+@import url('//hello.myfonts.net/count/3be091');
 
 @font-face {
   font-family: 'Veneer';
-  src: url('Veneer/font.woff2') format('woff2'), url('Veneer/font.woff') format('woff');
+  src:
+    url('Veneer/font.woff2') format('woff2'),
+    url('Veneer/font.woff') format('woff');
 }
 @font-face {
   font-family: 'VeneerTwo';
-  src: url('VeneerTwo/font.woff2') format('woff2'), url('VeneerTwo/font.woff') format('woff');
+  src:
+    url('VeneerTwo/font.woff2') format('woff2'),
+    url('VeneerTwo/font.woff') format('woff');
 }
 /* @font-face {
   font-family: 'VeneerThree';

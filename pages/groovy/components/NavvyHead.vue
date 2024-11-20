@@ -1,30 +1,56 @@
 <template>
   <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
     <div class="relative my-[-25px] flex flex-row items-center">
-      <div class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]">
-        <div class="block float-left clear-left groovyCircle shadow-pre-trans" :class="{ 'shadow-transition': isMounted }">
-          <div @click="$emit('toggleExtras')"  class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer" />
+      <div
+        class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]"
+      >
+        <div
+          class="block float-left clear-left groovyCircle shadow-pre-trans"
+          :class="{ 'shadow-transition': isMounted }"
+        >
+          <div
+            @click="$emit('toggleExtras')"
+            class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer"
+          />
         </div>
       </div>
 
-      <div @click="$emit('toggleExtras')" class="float-left relative min-[375px]:left-[-1.95rem] sm:left-[-1.55rem] cursor-pointer">
+      <div
+        @click="$emit('toggleExtras')"
+        class="float-left relative min-[375px]:left-[-1.95rem] sm:left-[-1.55rem] cursor-pointer"
+      >
         <div class="flex flex-row flex-wrap justify-center w-auto gap-4 m-auto">
           <div class="flex gap-4">
             <mastDrew class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300" />
             <mastHarper class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300" />
           </div>
         </div>
-        <h2 class="text-base-ivory min-[375px]:text-[.8rem] sm:text-[1.45rem] text-[1rem] text-center font-normal lowercase leading-normal tracking-[.025em] my-1 w-full mx-auto ease-out duration-300">
+        <h2
+          class="text-base-ivory min-[375px]:text-[.8rem] sm:text-[1.45rem] text-[1rem] text-center font-normal lowercase leading-normal tracking-[.025em] my-1 w-full mx-auto ease-out duration-300"
+        >
           {{ copy.uiuxDesigner }} + {{ copy.vizDesigner }}
         </h2>
 
         <div class="shrink">
-          <div class="flex flex-row flex-wrap items-center justify-center w-full mx-auto lg:flex-row gap-x-4 gap-y-2">
+          <div
+            class="flex flex-row flex-wrap items-center justify-center w-full mx-auto lg:flex-row gap-x-4 gap-y-2"
+          >
             <div class="duration-300 ease-out groovyOvalBtn">
-              <a :href="`mailto:` + `${copy.druEmail}`" class="email">{{ copy.druEmail }}</a>
+              <a
+                :href="`mailto:` + `${copy.druEmail}`"
+                class="email"
+              >
+                {{ copy.druEmail }}
+              </a>
             </div>
             <div class="duration-300 ease-out groovyOvalBtn">
-              <a :href="`${copy.portfolio}`" target="_blank" class="resume">PDF Resume</a>
+              <a
+                :href="`${copy.portfolio}`"
+                target="_blank"
+                class="resume"
+              >
+                PDF Resume
+              </a>
             </div>
           </div>
         </div>
@@ -34,28 +60,24 @@
 </template>
 
 <script setup>
-  import mastDrew from './masthead/mastDrew.vue'
-  import mastHarper from './masthead/mastHarper.vue'
-  const copy = useCopy()
-  const store = useToggleExtrasStore()
+  import mastDrew from './masthead/mastDrew.vue';
+  import mastHarper from './masthead/mastHarper.vue';
+  const copy = useCopy();
+  const store = useToggleExtrasStore();
 
-  const props = defineProps([
-    'store.isShowContent', 
-    'store.selectedBtn'
-  ])
-  
-  const isMounted = ref(false)
-  
+  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
+
+  const isMounted = ref(false);
+
   onMounted(() => {
     store.initialize();
     setTimeout(() => {
-      isMounted.value = true
-    }, 1500)
-  })
+      isMounted.value = true;
+    }, 1500);
+  });
 </script>
 
 <style scoped>
-
   .shadow-pre-trans {
     @apply shadow-[1px_1px_0px_0px_hsl(0,_0%,_0%,_50%)];
   }
@@ -63,23 +85,20 @@
     @apply transition duration-500 ease-out shadow-[8px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
   }
   .groovyCircle {
-    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] clip-path-polygon-[21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%] ;
+    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] clip-path-polygon-[21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%];
     background-image: radial-gradient(
-      /* 0 - 25% */
-      #99f1ec 0%,
+      /* 0 - 25% */ #99f1ec 0%,
       #99f1ec 35%,
-      /* 25% - 50% */
-      #ffdd4b 35%,
+      /* 25% - 50% */ #ffdd4b 35%,
       #ffdd4b 47%,
-      /* 50% - 75% */
-      #ff9f00 47%,
+      /* 50% - 75% */ #ff9f00 47%,
       #ff9f00 59%,
-      /* 75% - 100% */
-      #ff1a22 59%,
-      #ff1a22 100%);
+      /* 75% - 100% */ #ff1a22 59%,
+      #ff1a22 100%
+    );
 
-      @media (max-width: 320px) {
-        @apply w-[160px] h-[160px] top-[-1.4em] left-[-2.9em];
+    @media (max-width: 320px) {
+      @apply w-[160px] h-[160px] top-[-1.4em] left-[-2.9em];
     }
   }
 
@@ -89,7 +108,5 @@
     a {
       @apply text-base-ivory no-underline min-[375px]:text-[1rem] sm:text-[1rem] md:text-[1rem];
     }
-
   }
-
 </style>

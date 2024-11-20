@@ -12,9 +12,7 @@
   filter: drop-shadow(1px 1px 1px black);
 
   &:hover {
-
   }
-
 }
 
 .vueperslides__arrow svg:hover path {
@@ -25,7 +23,7 @@
 }
 
 .vueperslides__progress {
-  @apply !text-green-600 !top-auto !bottom-0 !h-[4px] border-0;  /* text-[hsla(98,100%,37%,0.5)]  border-[hsla(0,0%,100%,0.15)]*/
+  @apply !text-green-600 !top-auto !bottom-0 !h-[4px] border-0; /* text-[hsla(98,100%,37%,0.5)]  border-[hsla(0,0%,100%,0.15)]*/
 }
 
 .vueperslides__fractions {
