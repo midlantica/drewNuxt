@@ -1,10 +1,22 @@
 <template>
   <div class="skillsGrid">
     <Teleport to="#modal">
-      <transition name="modal-fade" appear>
-        <div class="modalBg" v-if="isModalOpen">
-          <div class="modal" ref="modal">
-            <div class="closeBtn" @click="closeModal">
+      <transition
+        name="modal-fade"
+        appear
+      >
+        <div
+          class="modalBg"
+          v-if="isModalOpen"
+        >
+          <div
+            class="modal"
+            ref="modal"
+          >
+            <div
+              class="closeBtn"
+              @click="closeModal"
+            >
               <authenticStamp />
             </div>
           </div>
@@ -15,24 +27,21 @@
 </template>
 
 <script setup>
-  import { ref, markRaw } from 'vue'
-  import authenticStamp from './AuthenticStamp.vue'
-  import { onClickOutside } from '@vueuse/core'
+  import { ref, markRaw } from 'vue';
+  import authenticStamp from './AuthenticStamp.vue';
+  import { onClickOutside } from '@vueuse/core';
 
-  const modal = ref(null)
+  const modal = ref(null);
 
-  const modalItem = ref([])
+  const modalItem = ref([]);
 
-  function closeModal () {
-    isModalOpen.value = false
+  function closeModal() {
+    isModalOpen.value = false;
   }
 
-  const isModalOpen = ref(false)
+  const isModalOpen = ref(false);
 
-  onClickOutside(modal, () => (isModalOpen.value = false))
-
+  onClickOutside(modal, () => (isModalOpen.value = false));
 </script>
 
-<style scoped>
-
-</style>
+<style scoped></style>

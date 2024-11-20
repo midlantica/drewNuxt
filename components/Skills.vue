@@ -1,7 +1,12 @@
 <template>
-  <div v-show="showSkills" class="skillsGrid">
-    
-    <div v-for="skill in skills" :key="skill[1]">
+  <div
+    v-show="showSkills"
+    class="skillsGrid"
+  >
+    <div
+      v-for="skill in skills"
+      :key="skill[1]"
+    >
       <component
         :is="skill[0]"
         class="icon {{skill[1]}} }"
@@ -10,28 +15,39 @@
         @click="showModal(skill)"
         @mouseenter="hover = true"
       />
-      
     </div>
-    
-    <Modal 
-      :isModalOpen="isModalOpen" 
+
+    <Modal
+      :isModalOpen="isModalOpen"
       :modalItem="modalItem"
-      @closeModal="closeModal" 
+      @closeModal="closeModal"
     />
-    
   </div>
 </template>
 
 <script setup>
-  import { ref, markRaw, defineAsyncComponent } from 'vue'
+  import { ref, markRaw, defineAsyncComponent } from 'vue';
 
-  import { iconUiux, iconHtml5, iconCss3, iconJs, iconAdobeIcons, iconSass, iconVue, iconAffinityIcons, iconTailwind, iconFigma, iconNuxt, iconChelsea } from './Icons/allicons.vue';
+  import {
+    iconUiux,
+    iconHtml5,
+    iconCss3,
+    iconJs,
+    iconAdobeIcons,
+    iconSass,
+    iconVue,
+    iconAffinityIcons,
+    iconTailwind,
+    iconFigma,
+    iconNuxt,
+    iconChelsea
+  } from './Icons/allicons.vue';
 
-  const showSkills = ref(false)
-  const hover = ref(false)
-  const modalItem = ref([])
-  const isModalOpen = ref(false)
-  
+  const showSkills = ref(false);
+  const hover = ref(false);
+  const modalItem = ref([]);
+  const isModalOpen = ref(false);
+
   // Define a flag to track whether the initial animation cycle has completed
   const initialAnimationCompleted = ref(false);
 
@@ -47,20 +63,19 @@
     }, 1000); // Adjust the delay as needed
   }
 
-
   function showModal(skill) {
     modalItem.value = {
       component: skill[0],
       className: skill[1],
       title: skill[2],
       description: skill[3],
-      url: skill[4] || null, // Add URL field, default to null if not provided
-    }
-    isModalOpen.value = true
+      url: skill[4] || null // Add URL field, default to null if not provided
+    };
+    isModalOpen.value = true;
   }
 
   function closeModal() {
-    isModalOpen.value = false
+    isModalOpen.value = false;
   }
 
   const skills = markRaw([
@@ -141,50 +156,48 @@
       `Chelsea FC`,
       `I love Chelsea FC! 💙  I enjoy competition. Love Rugby and Cricket too. I was a demon fast bowler! And 🇺🇸 Football, Go Titans!`
     ]
-  ])
+  ]);
 
   onMounted(() => {
-    showSkills.value = true
-  })
-  
-  startInitialAnimationCycle();
+    showSkills.value = true;
+  });
 
+  startInitialAnimationCycle();
 </script>
 
 <style scoped>
-
   .skillsGrid div {
     @apply h-[70px] m-auto flex items-center justify-center;
   }
   .skillsGrid {
     @apply w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
 
-    @media (max-width: theme("screens.breakXlg")) {
+    @media (max-width: theme('screens.breakXlg')) {
       @apply row-start-2 row-end-2;
     }
 
-    @media (max-width: theme("screens.breakLg")) {
+    @media (max-width: theme('screens.breakLg')) {
       @apply row-start-2 row-end-2;
     }
 
-    @media (max-width: theme("screens.breakSm")) {
+    @media (max-width: theme('screens.breakSm')) {
       @apply row-start-2 row-end-2;
     }
 
     @media (min-width: 1026px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)] ;
+      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)] ;
+      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
     }
 
     @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)] ;
+      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
     }
 
     @media (max-width: 470px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)] ;
+      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
     }
 
     svg {
@@ -215,7 +228,6 @@
       @apply w-[100px] mx-auto drop-shadow-lg;
 
       &:hover {
-
       }
 
       g {
@@ -225,7 +237,6 @@
   }
 
   body.bourbon .skillsGrid {
-
     @media (min-width: 1026px) {
       @apply grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] mt-[-1.3rem];
     }
@@ -248,7 +259,6 @@
   }
 
   body.techy .skillsGrid {
-
     @media (min-width: 1026px) {
       @apply grid-cols-[repeat(12,_minmax(84px,_1fr))];
     }
@@ -296,11 +306,9 @@
     svg {
       @apply w-[88px] drop-shadow-tightBlackLt;
     }
-
   }
 
   body.corp .skillsGrid {
-
     @media (min-width: 1026px) {
       @apply grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] mt-[-2.8rem];
     }
@@ -309,16 +317,16 @@
       @apply grid-cols-[repeat(6,_minmax(88px,_1fr))];
     }
 
-    @media (min-width: theme("screens.breakXxsm")) and (max-width: 562px) {
+    @media (min-width: theme('screens.breakXxsm')) and (max-width: 562px) {
       @apply grid-cols-[repeat(3,_minmax(110px,_1fr))];
     }
 
-    @media (max-width: theme("screens.breakXxsm")) {
+    @media (max-width: theme('screens.breakXxsm')) {
       @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))];
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackLt ;
+      @apply w-[88px] drop-shadow-tightBlackLt;
       filter: brightness(0.85) sepia(1) hue-rotate(160deg) saturate(3);
 
       &:hover {
@@ -350,5 +358,4 @@
       @apply w-[88px] drop-shadow-tightBlackMd;
     }
   }
-
 </style>

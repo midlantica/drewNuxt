@@ -1,12 +1,27 @@
 <template>
-  <Teleport to="#modal" v-if="isModalOpen">
-    <transition name="modal-fade" appear>
+  <Teleport
+    to="#modal"
+    v-if="isModalOpen"
+  >
+    <transition
+      name="modal-fade"
+      appear
+    >
       <div class="modalBg">
-        <div class="modal" ref="modal">
-          <div class="closeBtn" @click="closeModal">
+        <div
+          class="modal"
+          ref="modal"
+        >
+          <div
+            class="closeBtn"
+            @click="closeModal"
+          >
             <xOut />
           </div>
-          <div class="modalInner" v-if="modalItem">
+          <div
+            class="modalInner"
+            v-if="modalItem"
+          >
             <div class="icon">
               <component
                 :is="modalItem.component"
@@ -15,18 +30,27 @@
               />
             </div>
             <div class="content">
-              <h4 class="font-semibold" 
-                v-if="modalItem.url"><a class="hover:text-blue-800" 
-                :href="modalItem.url" 
-                target="_blank">{{ modalItem.title }}</a>
+              <h4
+                class="font-semibold"
+                v-if="modalItem.url"
+              >
+                <a
+                  class="hover:text-blue-800"
+                  :href="modalItem.url"
+                  target="_blank"
+                >
+                  {{ modalItem.title }}
+                </a>
               </h4>
-              <h4 class="font-semibold" 
-                v-else>{{ modalItem.title }}
+              <h4
+                class="font-semibold"
+                v-else
+              >
+                {{ modalItem.title }}
               </h4>
               <p>{{ modalItem.description }}</p>
             </div>
           </div>
-          
         </div>
       </div>
     </transition>
@@ -34,26 +58,25 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  import { onClickOutside } from '@vueuse/core'
-  import xOut from '../components/Icons/iconXout.vue'
-  
-  const emits = defineEmits(['closeModal'])
-  const modal = ref(null)
-  
+  import { ref } from 'vue';
+  import { onClickOutside } from '@vueuse/core';
+  import xOut from '../components/Icons/iconXout.vue';
+
+  const emits = defineEmits(['closeModal']);
+  const modal = ref(null);
+
   const props = defineProps({
     isModalOpen: Boolean,
-    modalItem: Object,
-  })
+    modalItem: Object
+  });
 
   function closeModal() {
-    emits('closeModal')
+    emits('closeModal');
   }
-  
-  onClickOutside(modal, () => {
-    emits('closeModal')
-  })
 
+  onClickOutside(modal, () => {
+    emits('closeModal');
+  });
 </script>
 
 <style scoped>
@@ -104,48 +127,64 @@
       }
     }
   }
-  
+
   .modern #modal .content {
     @apply font-modernCopy;
-    
-    h4 { }
-    p { @apply text-[1rem] leading-[1.8]; }
+
+    h4 {
+    }
+    p {
+      @apply text-[1rem] leading-[1.8];
+    }
   }
 
   .bourbon #modal .content {
     @apply font-bourbonCopy;
-    
-    h4 { }
-    p {  }
+
+    h4 {
+    }
+    p {
+    }
   }
   .groovy #modal .content {
     @apply font-groovyCopy;
-    
-    h4 { }
-    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
+
+    h4 {
+    }
+    p {
+      @apply text-[1.1rem] leading-[1.8] tracking-wide;
+    }
   }
   .techy #modal .content {
     @apply font-techyCopy;
-    
-    h4 { }
-    p { @apply text-[1.2rem] leading-[1.8] tracking-wider; }
+
+    h4 {
+    }
+    p {
+      @apply text-[1.2rem] leading-[1.8] tracking-wider;
+    }
   }
   .corp #modal .content {
     @apply font-corpCopy;
-    
-    h4 { }
-    p { @apply text-[1.15rem] leading-[1.8] tracking-wide; }
+
+    h4 {
+    }
+    p {
+      @apply text-[1.15rem] leading-[1.8] tracking-wide;
+    }
   }
   .punk #modal .content {
     @apply font-punkCopy;
-    
-    h4 { }
-    p { @apply text-[1.1rem] leading-[1.8] tracking-wide; }
+
+    h4 {
+    }
+    p {
+      @apply text-[1.1rem] leading-[1.8] tracking-wide;
+    }
   }
 
   .modal-fade-enter-from,
   .modal-fade-leave-to {
     @apply opacity-0;
   }
-
 </style>

@@ -1,14 +1,28 @@
 <template>
   <div class="w-full relative">
     <transition name="slide">
-      <div v-if="themeBar" @click="chooseTheme" class="slimShady text-center m-auto w-full bg-gradient-to-b from-gray-800
-       to-gray-900 text-white/75 tracking-widest border-b border-b-gray-900/50 h-[2.55rem] leading-none p-[1.15rem_0_0_0] z-50 uppercase cursor-pointer hover:from-gray-900 hover:to-gray-950 hover:text-groovy-yellowPaleDk/85 font-modernHead font-semibold text-xs -top-[.5rem] absolute ease-cubic-bezier(0.83,0.1,1,1) duration-1000" :class="{ '-translate-y-12': !themeBar }">
-        Choose theme <span class="text-[0.9rem] text-black">😃</span>
+      <div
+        v-if="themeBar"
+        @click="chooseTheme"
+        class="-top-[.5rem] border-b-gray-900/50 ease-cubic-bezier(0.83,0.1,1,1) font-modernHead from-gray-800 h-[2.55rem] m-auto p-[1.15rem_0_0_0] slimShady text-white/75 to-gray-900 w-full absolute z-50 text-xs font-semibold tracking-widest leading-none text-center uppercase bg-gradient-to-b border-b duration-1000 cursor-pointer hover:from-gray-900 hover:to-gray-950 hover:text-groovy-yellowPaleDk/85"
+        :class="{ '-translate-y-12': !themeBar }"
+      >
+        Choose theme
+        <span class="text-[0.9rem] text-black">😃</span>
       </div>
     </transition>
     <transition name="flash">
-      <div v-if="!themeBar" class="tabs z-40 -top-[.25rem] absolute overflow-hidden">
-        <NuxtLink v-for="(tab, index) in tabs" :key="index" :to="`/${tab}`" class="tab h-[2.45rem]" :class="tab">
+      <div
+        v-if="!themeBar"
+        class="-top-[.25rem] tabs overflow-hidden absolute z-40"
+      >
+        <NuxtLink
+          v-for="(tab, index) in tabs"
+          :key="index"
+          :to="`/${tab}`"
+          class="h-[2.45rem] tab"
+          :class="tab"
+        >
           {{ tab }}
         </NuxtLink>
       </div>
@@ -17,22 +31,21 @@
 </template>
 
 <script setup>
-  import { ref } from "vue"
+  import { ref } from 'vue';
 
-  const tabs = ref([ 'modern', 'bourbon', 'groovy', 'techy', 'corp', 'punk' ])
-  
-  const themeBar = ref(true)
-  
+  const tabs = ref(['modern', 'bourbon', 'groovy', 'techy', 'corp', 'punk']);
+
+  const themeBar = ref(true);
+
   function chooseTheme() {
-    themeBar.value = !themeBar.value
+    themeBar.value = !themeBar.value;
   }
-  
 </script>
 
 <style scoped>
   .slimShady {
     box-shadow: 0px -2px 8px 0px black;
-    
+
     &:hover {
       box-shadow: 0px 0px 8px 0px black;
     }
@@ -52,12 +65,9 @@
         @apply text-[#fffdf4] duration-200 ease-in cursor-pointer;
       }
     }
-
-
   }
 
   body .tabs {
-
     a.modern {
       @apply drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-base-grey;
 
@@ -124,7 +134,6 @@
     &:hover {
       @apply text-base-black drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-[linear-gradient(180deg,_#6cebe4_0%,_#6cebe4_28%,_#fece00_28%,_#fece00_55%,_#e68f00_55%,_#e68f00_80%,_#e60008_80%,_#e60008_100%)];
     }
-
   }
 
   body.techy .tabs > a.router-link-active.router-link-exact-active.tab,
@@ -141,5 +150,4 @@
   body.punk.extras .tabs > a.tab.punk {
     @apply text-base-ivory/75 bg-gradient-to-b from-[#B200AA] to-[#660061];
   }
-
 </style>

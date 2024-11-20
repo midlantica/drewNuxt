@@ -1,8 +1,8 @@
 // stores/copy.js
-import { defineStore } from "pinia" // Add this import statement
+import { defineStore } from 'pinia'; // Add this import statement
 
 export const useCopy = defineStore({
-  id: "copy",
+  id: 'copy',
   state: () => ({
     drewHarper: `Drew Harper`,
     uiuxDesigner: `UI/UX Designer`,
@@ -20,28 +20,28 @@ export const useCopy = defineStore({
     punk: `Punk`,
     characters: [
       {
-        name: "Leto",
-        line: "Here on Dune we need Desert Power.",
+        name: 'Leto',
+        line: 'Here on Dune we need Desert Power.'
       },
       {
-        name: "Paul",
-        line: "I am the Quizats Hadderach!",
-      },
-    ],
+        name: 'Paul',
+        line: 'I am the Quizats Hadderach!'
+      }
+    ]
   }),
 
   actions: {
     addCharacter(name, line) {
       this.characters.push({
         name,
-        line,
-      })
-    },
+        line
+      });
+    }
   },
 
   getters: {
-    getLineByName: (state) => {
-      return (name) => state.characters.find((character) => character.name === name)
-    },
-  },
-})
+    getLineByName: state => {
+      return name => state.characters.find(character => character.name === name);
+    }
+  }
+});

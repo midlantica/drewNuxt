@@ -1,20 +1,44 @@
 <template>
-  <div class="projectBox" v-show="showCarousel">
+  <div
+    class="projectBox"
+    v-show="showCarousel"
+  >
     <div class="projectBox__top">
-      <transition name="bounce4" appear>
-        <a class="carouselArrow flash" v-if="backButtonView" @click="viewCarousel()">﹤ back</a>
+      <transition
+        name="bounce4"
+        appear
+      >
+        <a
+          class="carouselArrow flash"
+          v-if="backButtonView"
+          @click="viewCarousel()"
+        >
+          ﹤ back
+        </a>
       </transition>
-      <p class="projectHead" @click="viewCarousel()">
+      <p
+        class="projectHead"
+        @click="viewCarousel()"
+      >
         Projects - {{ selectedViewTxt }}
       </p>
     </div>
 
     <component :is="selectedView">
-      <transition name="bounce" appear>
+      <transition
+        name="bounce"
+        appear
+      >
         <div class="miniGallery">
-          <div v-for="item in projects" :key="item">
+          <div
+            v-for="item in projects"
+            :key="item"
+          >
             <a @click="selectCarousel(item[1], item[2])">
-              <div class="box" :class="item[3]">
+              <div
+                class="box"
+                :class="item[3]"
+              >
                 <component :is="item[0]" />
                 <p>{{ item[2] }}</p>
               </div>
@@ -27,88 +51,57 @@
 </template>
 
 <script setup>
-  import { ref, shallowRef } from 'vue'
+  import { ref, shallowRef } from 'vue';
 
-  import IconUiux from './icons/iconUiux.vue'
-  import IconMobile from './icons/iconMobile.vue'
-  import IconKiosk from './icons/iconKiosk.vue'
-  import IconGraphics from './icons/iconGraphics.vue'
-  import IconPrint from './icons/iconPrint.vue'
-  import IconMisc from './icons/iconMisc.vue'
+  import IconUiux from './icons/iconUiux.vue';
+  import IconMobile from './icons/iconMobile.vue';
+  import IconKiosk from './icons/iconKiosk.vue';
+  import IconGraphics from './icons/iconGraphics.vue';
+  import IconPrint from './icons/iconPrint.vue';
+  import IconMisc from './icons/iconMisc.vue';
 
-  import uiux01 from './uiux01.vue'
-  import mobile02 from './mobile02.vue'
-  import kiosk03 from './kiosk03.vue'
-  import graphics04 from './graphics04.vue'
-  import print05 from './print05.vue'
-  import misc06 from './misc06.vue'
+  import uiux01 from './uiux01.vue';
+  import mobile02 from './mobile02.vue';
+  import kiosk03 from './kiosk03.vue';
+  import graphics04 from './graphics04.vue';
+  import print05 from './print05.vue';
+  import misc06 from './misc06.vue';
 
-  const backButtonView = ref(false)
-  const selectedView = shallowRef('Carousel')
-  const selectedViewTxt = ref('Select one...')
+  const backButtonView = ref(false);
+  const selectedView = shallowRef('Carousel');
+  const selectedViewTxt = ref('Select one...');
 
-  const showCarousel = ref(false)
+  const showCarousel = ref(false);
 
   const projects = shallowRef([
-    [
-      IconUiux,
-      uiux01,
-      'UI/UX Design',
-      'Uiux'
-    ],
-    [
-      IconMobile,
-      mobile02,
-      'Mobile',
-      'Mobile'
-    ],
-    [
-      IconKiosk,
-      kiosk03,
-      'Kiosk',
-      'Kiosk'
-    ],
-    [
-      IconGraphics,
-      graphics04,
-      'Graphics',
-      'Graphics'
-    ],
-    [
-      IconPrint,
-      print05,
-      'Print',
-      'Print'
-    ],
-    [
-      IconMisc,
-      misc06,
-      'Misc.',
-      'Misc'
-    ]
-  ])
+    [IconUiux, uiux01, 'UI/UX Design', 'Uiux'],
+    [IconMobile, mobile02, 'Mobile', 'Mobile'],
+    [IconKiosk, kiosk03, 'Kiosk', 'Kiosk'],
+    [IconGraphics, graphics04, 'Graphics', 'Graphics'],
+    [IconPrint, print05, 'Print', 'Print'],
+    [IconMisc, misc06, 'Misc.', 'Misc']
+  ]);
 
   const selectCarousel = (i, x) => {
-    selectedView.value = i
-    selectedViewTxt.value = x
-    backButtonView.value = true
-  }
+    selectedView.value = i;
+    selectedViewTxt.value = x;
+    backButtonView.value = true;
+  };
 
   const viewCarousel = () => {
-    selectedView.value = 'Carousel'
-    selectedViewTxt.value = 'Select one...'
-    backButtonView.value = false
-  }
+    selectedView.value = 'Carousel';
+    selectedViewTxt.value = 'Select one...';
+    backButtonView.value = false;
+  };
 
   onMounted(() => {
-    showCarousel.value = true
-  })
-
+    showCarousel.value = true;
+  });
 </script>
 
 <style scoped>
   :root {
-    --carouselFade: .5s;
+    --carouselFade: 0.5s;
   }
 
   .projectBox {
@@ -167,32 +160,25 @@
               @apply ease-in-out duration-100 w-auto top-[-5px];
             }
           }
-
         }
       }
-
     }
   }
 
   body.modern {
-
     .projectBox {
       @apply bg-transparent;
 
-      @media (max-width: theme("screens.breakXlg")) {
-
+      @media (max-width: theme('screens.breakXlg')) {
       }
 
-      @media (max-width: theme("screens.breakLg")) {
-
+      @media (max-width: theme('screens.breakLg')) {
       }
 
-      @media (max-width: theme("screens.breakSm")) {
-
+      @media (max-width: theme('screens.breakSm')) {
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
-
+      @media (max-width: theme('screens.breakXsm')) {
       }
 
       .projectBox__top {
@@ -230,7 +216,7 @@
           @apply font-modernCopy font-extralight text-white text-[.85rem] lowercase text-center mt-[4px] mx-0 mb-0 top-0 relative ease-in-out duration-200;
         }
 
-        @media (max-width: theme("screens.breakXlg")) {
+        @media (max-width: theme('screens.breakXlg')) {
           @apply min-h-min;
         }
 
@@ -250,24 +236,19 @@
   }
 
   body.bourbon {
-
     .projectBox {
       @apply shadow-[0px_2px_6px_-2px_hsl(0,_0%,_0%,_90%)];
 
-      @media (max-width: theme("screens.breakXlg")) {
-
+      @media (max-width: theme('screens.breakXlg')) {
       }
 
-      @media (max-width: theme("screens.breakLg")) {
-
+      @media (max-width: theme('screens.breakLg')) {
       }
 
-      @media (max-width: theme("screens.breakSm")) {
-
+      @media (max-width: theme('screens.breakSm')) {
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
-
+      @media (max-width: theme('screens.breakXsm')) {
       }
 
       p {
@@ -309,24 +290,20 @@
   }
 
   body.groovy {
-
     .projectBox {
       @apply shadow-[0px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme("screens.breakLg")) {
-
+      @media (max-width: theme('screens.breakLg')) {
       }
 
-      @media (max-width: theme("screens.breakSm")) {
-
+      @media (max-width: theme('screens.breakSm')) {
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
-
+      @media (max-width: theme('screens.breakXsm')) {
       }
 
       p {
@@ -336,7 +313,7 @@
       .projectHead {
         @apply font-groovyCopy mt-[1px];
       }
-      
+
       .carouselArrow {
         @apply text-black;
 
@@ -372,24 +349,20 @@
   }
 
   body.techy {
-
     .projectBox {
       @apply shadow-[0px_2px_6px_-2px_hsl(0,_0%,_0%,_90%)] rounded-none;
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme("screens.breakLg")) {
-
+      @media (max-width: theme('screens.breakLg')) {
       }
 
-      @media (max-width: theme("screens.breakSm")) {
-
+      @media (max-width: theme('screens.breakSm')) {
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
-
+      @media (max-width: theme('screens.breakXsm')) {
       }
 
       p {
@@ -399,7 +372,7 @@
       .projectHead {
         @apply font-techyCopy uppercase mt-[1px];
       }
-      
+
       .carouselArrow {
         @apply text-[.7rem] text-black;
         /* filter: drop-shadow(1px 1px 1px black); */
@@ -437,25 +410,21 @@
   }
 
   body.corp {
-
-
     .projectBox {
       @apply bg-base-offWhite shadow-[0px_1px_1px_0px_hsl(0,_0%,_0%,_50%)];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme("screens.breakLg")) {
-
+      @media (max-width: theme('screens.breakLg')) {
       }
 
-      @media (max-width: theme("screens.breakSm")) {
-         min-height: 386px;
+      @media (max-width: theme('screens.breakSm')) {
+        min-height: 386px;
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
-
+      @media (max-width: theme('screens.breakXsm')) {
       }
 
       p {
@@ -471,7 +440,6 @@
 
         &:hover {
           @apply text-white bg-[hsla(205,98%,17%,0.85)];
-
         }
       }
     }
@@ -502,26 +470,21 @@
   }
 
   body.punk {
-
-
     .projectBox {
       @apply rounded-none bg-white/70;
       @apply shadow-[0px_1px_1px_0px_hsl(0,_0%,_0%,_50%)];
 
-      @media (max-width: theme("screens.breakXlg")) {
+      @media (max-width: theme('screens.breakXlg')) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme("screens.breakLg")) {
-
+      @media (max-width: theme('screens.breakLg')) {
       }
 
-      @media (max-width: theme("screens.breakSm")) {
-
+      @media (max-width: theme('screens.breakSm')) {
       }
 
-      @media (max-width: theme("screens.breakXsm")) {
-
+      @media (max-width: theme('screens.breakXsm')) {
       }
 
       p {
@@ -536,7 +499,7 @@
         @apply text-white bg-punk-magenta pt-[.1rem] pr-[.5rem] pb-[.2rem] pl-[.4rem] shadow-none rounded-sm;
 
         &:hover {
-          @apply  bg-punk-magenta/80;
+          @apply bg-punk-magenta/80;
         }
       }
     }
@@ -587,5 +550,4 @@
       @apply scale-100 opacity-100;
     }
   }
-
 </style>

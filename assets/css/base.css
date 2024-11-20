@@ -4,7 +4,6 @@
 
 html,
 html a {
-
 }
 
 body {
@@ -31,7 +30,7 @@ audio {
 }
 
 ::-webkit-scrollbar-track {
-  @apply rounded-none bg-[hsla(0,0%,100%,0)] ;
+  @apply rounded-none bg-[hsla(0,0%,100%,0)];
 }
 
 .smallCaps {
@@ -40,7 +39,7 @@ audio {
 
 .authenticStamp {
   @apply self-center;
-  animation: rotator .75s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
+  animation: rotator 0.75s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
   animation-delay: 2s;
   opacity: 0;
   animation-fill-mode: forwards;

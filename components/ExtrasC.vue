@@ -1,18 +1,33 @@
 <template>
-  <transition name="fade" appear>
-    <div class="flex flex-row flex-wrap w-full gap-4 m-auto extrasWrapper"
-    >
-      <h1 class="text-[2em] text-center px-auto pt-2 mx-auto mt-2 leading-normal text-black">
-        <ArrowLeft 
+  <transition
+    name="fade"
+    appear
+  >
+    <div class="extrasWrapper m-auto w-full flex flex-row flex-wrap gap-4">
+      <h1 class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center text-black">
+        <ArrowLeft
           @click="$emit('toggleExtras')"
-          class="cursor-pointer animate-pulse" />
+          class="animate-pulse cursor-pointer"
+        />
         Portfolio Extras
       </h1>
 
-      <div class="flex flex-row flex-wrap items-start w-full p-0 extrasWrap place-content-center gap-x-4">
-        <div v-for="(item, index) in portfolioExtras" :key="index" class="content-center gap-x-4">
-          <a :href="`${imageRoot}${item.imageUrl}`" target="_BLANK">
-            <img class="portThumbs" :src="`${imageRoot}${item.imageSrc}`">
+      <div
+        class="extrasWrap w-full flex flex-row flex-wrap items-start place-content-center gap-x-4 p-0"
+      >
+        <div
+          v-for="(item, index) in portfolioExtras"
+          :key="index"
+          class="content-center gap-x-4"
+        >
+          <a
+            :href="`${imageRoot}${item.imageUrl}`"
+            target="_BLANK"
+          >
+            <img
+              class="portThumbs"
+              :src="`${imageRoot}${item.imageSrc}`"
+            />
             <div class="text-center">
               <p>{{ item.text }}</p>
             </div>
@@ -24,18 +39,14 @@
 </template>
 
 <script setup>
-  import { ref } from 'vue'
-  import ArrowLeft from './Icons/iconArrowLeft.vue'
-  const store = useToggleExtrasStore()
+  import { ref } from 'vue';
+  import ArrowLeft from './Icons/iconArrowLeft.vue';
+  const store = useToggleExtrasStore();
 
-  const props = defineProps([
-    'store.isShowContent', 
-    'store.selectedBtn',
-    'currentView'
-  ])
-  
-  const imageRoot = ref("/img/portfolio/extras/")
-  
+  const props = defineProps(['store.isShowContent', 'store.selectedBtn', 'currentView']);
+
+  const imageRoot = ref('/img/portfolio/extras/');
+
   const portfolioExtras = ref([
     {
       text: 'Design System 01',
@@ -152,35 +163,29 @@
       imageUrl: 'mlotto_app.pdf',
       imageSrc: 'm-lotto-ui@2x.png'
     }
-  ])
-
+  ]);
 </script>
 
 <style scoped>
-  
-
   .modern svg.arrowLeft {
-
     > path {
       stroke: white !important;
       @apply !stroke-white;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
     }
-    
+
     &:hover > path {
       @apply stroke-modern-ruby;
     }
   }
 
   .bourbon svg.arrowLeft {
-
     > path {
       @apply stroke-bourbon-bourbon;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
-
     }
     &:hover > path {
       @apply stroke-bourbon-accentRed;
@@ -188,13 +193,11 @@
   }
 
   .groovy svg.arrowLeft {
-
     > path {
       @apply stroke-black;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
-
     }
     &:hover > path {
       @apply stroke-groovy-redDk;
@@ -202,13 +205,11 @@
   }
 
   .techy svg.arrowLeft {
-
     > path {
       @apply stroke-techy-blueTech;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
-
     }
     &:hover > path {
       @apply stroke-red-700;
@@ -216,13 +217,11 @@
   }
 
   .corp svg.arrowLeft {
-
     > path {
       @apply stroke-corp-blueDark;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
-
     }
     &:hover > path {
       @apply stroke-corp-accentRed;
@@ -230,17 +229,14 @@
   }
 
   .punk svg.arrowLeft {
-
     > path {
       @apply stroke-punk-magenta;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
-
     }
     &:hover > path {
       @apply stroke-black;
     }
   }
-
 </style>

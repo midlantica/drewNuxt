@@ -1,0 +1,8 @@
+node_modules
+dist*
+.build
+.output
+.nuxt
+.vscode
+
+

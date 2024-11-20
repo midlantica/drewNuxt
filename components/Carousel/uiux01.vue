@@ -1,11 +1,20 @@
 <template>
   <vueper-slides
-    fade :infinite="false" :bullets="false"
-    :slide-ratio="1 / 1.3" autoplay fractions
-    progress lazy
+    fade
+    :infinite="false"
+    :bullets="false"
+    :slide-ratio="1 / 1.3"
+    autoplay
+    fractions
+    progress
+    lazy
     lazy-load-on-drag
   >
-    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image">
+    <vueper-slide
+      v-for="(slide, i) in slides"
+      :key="i"
+      :image="slide.image"
+    >
       <template #loader>
         <i class="icon icon-loader spinning" />
         <span>Loading...</span>
@@ -15,9 +24,9 @@
 </template>
 
 <script setup>
-  import { shallowRef } from 'vue'
-  import { VueperSlides, VueperSlide } from 'vueperslides'
-  import 'vueperslides/dist/vueperslides.css'
+  import { shallowRef } from 'vue';
+  import { VueperSlides, VueperSlide } from 'vueperslides';
+  import 'vueperslides/dist/vueperslides.css';
 
   const slides = shallowRef([
     {
@@ -92,9 +101,9 @@
     {
       image: '/img/portfolio/01_uiux/tinsley_website.jpg'
     }
-  ])
+  ]);
 </script>
 
 <style scoped>
-  @import "../../assets/css/vueperslides.css";
+  @import '../../assets/css/vueperslides.css';
 </style>
