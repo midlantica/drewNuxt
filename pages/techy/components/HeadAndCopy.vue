@@ -1,6 +1,6 @@
 <template>
   <section v-show="store.isShowContent">
-    <h1 class="flex items-center w-full gap-2">
+    <h1 class="w-full flex items-center gap-2">
       {{ copy.druHead }}
       <AuthenticStamp class="authenticStamp" />
     </h1>

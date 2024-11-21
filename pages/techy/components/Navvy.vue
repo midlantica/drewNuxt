@@ -1,21 +1,21 @@
 <template>
-  <header class="shadow-none text-base-ivory bg-techy-mango z-30">
-    <nav class="flex flex-col items-center content-center justify-center w-full flex-nowrap grow">
-      <div class="w-full mastMain bg-techy-mango">
-        <div class="mx-auto my-0 text-center masty">
+  <header class="bg-techy-mango text-base-ivory z-30 shadow-none">
+    <nav class="w-full flex flex-col flex-nowrap grow justify-center content-center items-center">
+      <div class="bg-techy-mango mastMain w-full">
+        <div class="masty mx-auto my-0 text-center">
           <div
-            class="cursor-pointer DHmast"
+            class="DHmast cursor-pointer"
             @click="$emit('toggleExtras')"
           >
             <div
               to="/techy/ExtrasTechy"
               class="drewHeadPic jelloHorizontal"
             />
-            <mastDrew class="svgArt mastDrew" />
-            <mastHarper class="svgArt mastHarper" />
+            <mastDrew class="mastDrew svgArt" />
+            <mastHarper class="mastHarper svgArt" />
           </div>
 
-          <div class="block jobDesc">
+          <div class="jobDesc block">
             <h2>{{ copy.uiuxDesigner }} +</h2>
             <h2>{{ copy.vizDesigner }}</h2>
           </div>
@@ -27,12 +27,12 @@
               <nuxt-link :to="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</nuxt-link>
             </p>
             <p class="resume">
-              <nuxt-link
-                :to="`${copy.portfolio}`"
+              <a
+                :href="`${copy.portfolio}`"
                 target="_blank"
               >
                 PDF Resume
-              </nuxt-link>
+              </a>
             </p>
           </div>
         </div>

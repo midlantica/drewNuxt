@@ -84,7 +84,7 @@
     />
   </main>
 
-  <footer class="shadow-none text-base-ivory bg-techy-mango">
+  <footer class="bg-techy-mango text-base-ivory shadow-none">
     <Quote />
   </footer>
 </template>

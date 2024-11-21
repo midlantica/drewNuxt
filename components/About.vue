@@ -20,7 +20,7 @@
 
 <script setup>
   import { useMouseInElement } from '@vueuse/core';
-  import { Howler } from 'howler';
+  import { Howl, Howler } from 'howler';
   import yeehawSound from '/yeehaw.mp3';
   import jollyGoodSound from '/jollyGood.mp3';
 
@@ -49,7 +49,7 @@
   // Initialize audio context and sounds
   const initializeAudioContext = () => {
     if (!audioInitialized.value) {
-      if (Howler.ctx) {
+      if (Howler.ctx && Howler.ctx.state === 'suspended') {
         Howler.ctx
           .resume()
           .then(() => {
@@ -58,28 +58,34 @@
           .catch(error => {
             console.error('Failed to resume AudioContext:', error);
           });
-      } else {
+      } else if (!Howler.ctx) {
         console.warn('Howler AudioContext is not available.');
+      } else {
+        audioInitialized.value = true; // AudioContext already active
       }
     }
   };
 
   // Play sound
   const playSound = () => {
-    if (!audioInitialized.value) {
-      initializeAudioContext();
-    }
+    try {
+      if (!audioInitialized.value) {
+        initializeAudioContext();
+      }
 
-    const { Howl } = Howler;
-    const yeehaw = new Howl({ src: [yeehawSound], volume: 0.75 });
-    const jollyGood = new Howl({ src: [jollyGoodSound], volume: 0.75 });
+      const yeehaw = new Howl({ src: [yeehawSound], volume: 0.75 });
+      const jollyGood = new Howl({ src: [jollyGoodSound], volume: 0.75 });
 
-    if (isActive.value) {
-      jollyGood.play();
-    } else {
-      yeehaw.play();
+      if (isActive.value) {
+        jollyGood.play();
+      } else {
+        yeehaw.play();
+      }
+
+      isActive.value = !isActive.value;
+    } catch (error) {
+      console.error('Error playing sound:', error);
     }
-    isActive.value = !isActive.value;
   };
 
   // Props (if necessary)
