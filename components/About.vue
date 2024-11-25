@@ -20,81 +20,38 @@
 
 <script setup>
   import { useMouseInElement } from '@vueuse/core';
-  import { Howl, Howler } from 'howler';
-  import yeehawSound from '/yeehaw.mp3';
-  import jollyGoodSound from '/jollyGood.mp3';
+  // composable auto-imported:
+  // import { useCardTransform } from '~/composables/useCardTransform';
 
   // Create refs
   const copy = useCopy();
   const showAbout = ref(true);
   const isActive = ref(false);
-  const audioInitialized = ref(false);
-
-  const target = ref(null);
-  const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target);
-
-  // Dynamic card transform
-  const cardTransform = computed(() => {
-    const MAX_ROTATION = 10;
-    const rX = (MAX_ROTATION / 2 - (elementY.value / elementHeight.value) * MAX_ROTATION).toFixed(
-      2
-    );
-    const rY = (MAX_ROTATION / 2 - (elementX.value / elementWidth.value) * MAX_ROTATION).toFixed(2);
-
-    return isOutside.value
-      ? ''
-      : `perspective(${elementWidth.value}px) rotateX(${rX}deg) rotateY(${rY}deg)`;
-  });
-
-  // Initialize audio context and sounds
-  const initializeAudioContext = () => {
-    if (!audioInitialized.value) {
-      if (Howler.ctx && Howler.ctx.state === 'suspended') {
-        Howler.ctx
-          .resume()
-          .then(() => {
-            audioInitialized.value = true;
-          })
-          .catch(error => {
-            console.error('Failed to resume AudioContext:', error);
-          });
-      } else if (!Howler.ctx) {
-        console.warn('Howler AudioContext is not available.');
-      } else {
-        audioInitialized.value = true; // AudioContext already active
-      }
-    }
-  };
-
-  // Play sound
-  const playSound = () => {
-    try {
-      if (!audioInitialized.value) {
-        initializeAudioContext();
-      }
-
-      const yeehaw = new Howl({ src: [yeehawSound], volume: 0.75 });
-      const jollyGood = new Howl({ src: [jollyGoodSound], volume: 0.75 });
-
-      if (isActive.value) {
-        jollyGood.play();
-      } else {
-        yeehaw.play();
-      }
-
-      isActive.value = !isActive.value;
-    } catch (error) {
-      console.error('Error playing sound:', error);
-    }
-  };
 
   // Props (if necessary)
   const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
 
-  // Mounted hook
-  onMounted(() => {
-    showAbout.value = true;
-  });
+  // Access the global playSound method
+  const { $playSound } = useNuxtApp();
+
+  // Play sound
+  const playSound = () => {
+    $playSound(isActive.value ? 'jollyGood' : 'yeehaw');
+    isActive.value = !isActive.value;
+  };
+
+  // Mouse tracking
+  const target = ref(null);
+  const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target);
+
+  // Use card transform composable
+  const { cardTransform } = useCardTransform(
+    elementX,
+    elementY,
+    elementWidth,
+    elementHeight,
+    isOutside
+  );
 </script>
 
 <style scoped>
