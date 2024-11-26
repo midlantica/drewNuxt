@@ -36,7 +36,7 @@
 
   // Play sound
   const playSound = () => {
-    $playSound(isActive.value ? 'jollyGood' : 'yeehaw');
+    $playSound();
     isActive.value = !isActive.value;
   };
 
