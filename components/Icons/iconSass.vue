@@ -23,7 +23,6 @@
   }
 
   svg#svgIcon {
-    width: 88px;
     fill: #cc6699;
 
     &:hover #sassIcon {

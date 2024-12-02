@@ -209,7 +209,7 @@
     }
 
     svg g {
-      @apply cursor-pointer;
+      @apply cursor-pointer will-change-transform pointer-events-auto relative z-10;
     }
   }
 

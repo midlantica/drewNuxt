@@ -22,22 +22,41 @@ export default defineNuxtPlugin(() => {
   // Load the current index from localStorage or initialize it
   let currentIndex = parseInt(localStorage.getItem('currentSoundIndex') || '0', 10);
 
-  // Play the next sound in the alternating order
-  const playNextSound = () => {
-    const soundPath = allSounds[currentIndex];
-    if (!soundPath) return;
+  // Reference for the current sound
+  let currentSound = null;
+  let isPlaying = false; // Track if a sound is currently playing
 
-    const sound = new Howl({ src: [soundPath], volume: 0.75 });
-    sound.play();
+  // Play or stop the sound
+  const toggleSound = () => {
+    if (currentSound && isPlaying) {
+      // Stop the current sound
+      currentSound.stop();
+      isPlaying = false;
+    } else {
+      // Play the next sound
+      const soundPath = allSounds[currentIndex];
+      if (!soundPath) return;
 
-    // Update the index and store it
-    currentIndex = (currentIndex + 1) % allSounds.length;
-    localStorage.setItem('currentSoundIndex', currentIndex.toString());
+      currentSound = new Howl({
+        src: [soundPath],
+        volume: 0.75,
+        onend: () => {
+          isPlaying = false; // Reset when sound finishes naturally
+        }
+      });
+
+      currentSound.play();
+      isPlaying = true;
+
+      // Update the index for the next sound and store it
+      currentIndex = (currentIndex + 1) % allSounds.length;
+      localStorage.setItem('currentSoundIndex', currentIndex.toString());
+    }
   };
 
   return {
     provide: {
-      playSound: playNextSound
+      playSound: toggleSound
     }
   };
 });

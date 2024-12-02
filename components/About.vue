@@ -2,7 +2,7 @@
 <template>
   <div
     v-show="showAbout"
-    class="about"
+    class="about relative z-10 pointer-events-auto will-change-transform"
     ref="target"
     :style="{ transform: cardTransform, transition: 'transform 0.25 ease-out' }"
     @click="playSound"
@@ -56,6 +56,7 @@
 
 <style scoped>
   .about {
+    /* cursor: pointer !important; */
     @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap gap-4 justify-center items-center content-center self-center rounded-sm cursor-pointer shadow-[0px_1px_2px_0px_#00000080];
 
     @media (max-width: theme('screens.breakXlg')) {

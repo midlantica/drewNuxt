@@ -16,16 +16,17 @@
     width: 20px !important;
     height: auto !important;
     margin: auto !important;
-    @apply cursor-pointer;
+    @apply cursor-pointer will-change-transform pointer-events-auto z-10;
 
     > path {
-      stroke: hsla(0, 0%, 0%, 0.85);
+      stroke: hsla(0, 0%, 0%, 0.6);
       stroke-width: 1;
       stroke-linecap: round;
 
       &:hover {
-        stroke: hsl(0, 54%, 60%);
+        stroke: hsl(0, 64%, 48%);
         stroke-width: 2px;
+        @apply cursor-pointer will-change-transform pointer-events-auto z-10;
       }
     }
   }
