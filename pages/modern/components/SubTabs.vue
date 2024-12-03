@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="showSubTabs"
-    class="flex flex-row flex-wrap justify-center gap-4 mx-0 mb-3 font-modernCopy mt-7"
+    class="font-modernCopy flex flex-row flex-wrap justify-center gap-4 mx-0 mt-7 mb-3"
   >
     <div
       @click="emitSwitchView('ModernProjects')"
@@ -19,7 +19,7 @@
     </div>
     <div
       @click="emitSwitchView('ModernAbout')"
-      class="btn aboutTab"
+      class="aboutTab btn"
       :class="{ selectedBtn: store.selectedBtn === 'ModernAbout' }"
     >
       About
@@ -39,6 +39,8 @@
   const showSubTabs = ref(false);
 
   let emitSwitchView = view => {
+    const { $playNdok } = useNuxtApp(); // Ensure it's in scope
+    $playNdok(); // Play sound
     store.selectedBtn = view;
     emit('switch-view', view);
   };

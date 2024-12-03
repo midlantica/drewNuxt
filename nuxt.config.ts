@@ -27,7 +27,7 @@ export default defineNuxtConfig({
     'nuxt-gtag'
   ],
 
-  plugins: ['~/plugins/soundManager.js'],
+  plugins: ['~/plugins/soundManager.js', '~/plugins/ndok.js', '~/plugins/ayah.js'],
 
   pinia: {
     storesDirs: ['./stores/**'] // './custom-folder/stores/**'
