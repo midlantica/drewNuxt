@@ -1,9 +1,5 @@
 <template>
-  <svg
-    id="svgSketch"
-    viewBox="0 0 88 60"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg id="svgSketch" viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
     <title>Sketch</title>
     <g class="groupSketch1">
       <polygon
@@ -11,21 +7,13 @@
         fill="#FFAE00"
         points="22 37.8 0.988962058 13.6474326 10.097166 1.26845638 22 0 33.902834 1.26845638 43.0106278 13.6474326"
       />
-      <polygon
-        id="Polygon"
-        fill="#EC6C00"
-        points="22 37.8 1 13.65 43 13.65"
-      />
+      <polygon id="Polygon" fill="#EC6C00" points="22 37.8 1 13.65 43 13.65" />
       <polygon
         id="Polygon"
         fill="#FFAE00"
         points="22 37.8 9.4 13.65 34.6 13.65"
       />
-      <polygon
-        id="Polygon"
-        fill="#FFEFB4"
-        points="22 0 9.4 13.65 34.6 13.65"
-      />
+      <polygon id="Polygon" fill="#FFEFB4" points="22 0 9.4 13.65 34.6 13.65" />
       <polygon
         id="Polygon"
         fill="#FED305"
@@ -44,21 +32,13 @@
         fill="#FFAE00"
         points="22 37.8 0.988962058 13.6474326 10.097166 1.26845638 22 0 33.902834 1.26845638 43.0106278 13.6474326"
       />
-      <polygon
-        id="Polygon"
-        fill="#EC6C00"
-        points="22 37.8 1 13.65 43 13.65"
-      />
+      <polygon id="Polygon" fill="#EC6C00" points="22 37.8 1 13.65 43 13.65" />
       <polygon
         id="Polygon"
         fill="#FFAE00"
         points="22 37.8 9.4 13.65 34.6 13.65"
       />
-      <polygon
-        id="Polygon"
-        fill="#FFEFB4"
-        points="22 0 9.4 13.65 34.6 13.65"
-      />
+      <polygon id="Polygon" fill="#FFEFB4" points="22 0 9.4 13.65 34.6 13.65" />
       <polygon
         id="Polygon"
         fill="#FED305"

@@ -1,8 +1,5 @@
 <template>
-  <svg
-    viewBox="0 0 88 60"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
     <title>Command Line</title>
     <g
       id="Page-1"
@@ -16,10 +13,7 @@
         transform="translate(-21.000000, -202.000000)"
         fill-rule="nonzero"
       >
-        <g
-          id="terminal"
-          transform="translate(44.656320, 214.993171)"
-        >
+        <g id="terminal" transform="translate(44.656320, 214.993171)">
           <g
             id="Group"
             transform="translate(0.874329, 0.378060)"

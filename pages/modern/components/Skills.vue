@@ -1,15 +1,9 @@
 <template>
   <div>
-    <transition
-      name="bounce2"
-      appear
-    >
+    <transition name="bounce2" appear>
       <Skills />
     </transition>
-    <transition
-      name="bounce4"
-      appear
-    >
+    <transition name="bounce4" appear>
       <Quote />
     </transition>
   </div>

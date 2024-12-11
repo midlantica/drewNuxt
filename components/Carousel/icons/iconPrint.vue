@@ -20,10 +20,7 @@
         points="1.099 5.916 2.212 88.978 71.278 82.865 69.598 .921"
         transform="rotate(1 36.189 44.95)"
       />
-      <g
-        class="brickBack"
-        transform="rotate(1 -1650.558 1280.159)"
-      >
+      <g class="brickBack" transform="rotate(1 -1650.558 1280.159)">
         <polygon points="13.6 13.69 1.088 8.116 1.088 17.119 13.6 22.692" />
         <polygon points="27.006 8.116 13.6 13.69 13.6 22.692 27.006 17.119" />
         <path

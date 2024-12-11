@@ -22,24 +22,15 @@
 </script>
 
 <template>
-  <Transition
-    name="topDown"
-    appear
-  >
+  <Transition name="topDown" appear>
     <GroovyNavvyHead
       @toggleExtras="store.toggleExtras"
       :isShowContent="store.isShowContent"
     />
   </Transition>
 
-  <main
-    v-if="store.isShowContent"
-    class="mainGrid"
-  >
-    <Transition
-      name="bounce5"
-      appear
-    >
+  <main v-if="store.isShowContent" class="mainGrid">
+    <Transition name="bounce5" appear>
       <GroovyHeadAndCopy
         class="copyArea"
         @toggleExtras="store.toggleExtras"
@@ -47,32 +38,20 @@
       />
     </Transition>
 
-    <Transition
-      name="bounce7"
-      appear
-    >
+    <Transition name="bounce7" appear>
       <Carousel class="slides" />
     </Transition>
 
-    <Transition
-      name="bounce9"
-      appear
-    >
+    <Transition name="bounce9" appear>
       <About />
     </Transition>
 
-    <Transition
-      name="bounce10"
-      appear
-    >
+    <Transition name="bounce10" appear>
       <Skills />
     </Transition>
   </main>
 
-  <main
-    class="mainGrid"
-    v-else
-  >
+  <main class="mainGrid" v-else>
     <component
       :is="ExtrasC"
       class="col-span-2"
@@ -81,10 +60,7 @@
     />
   </main>
 
-  <Transition
-    name="bounce3"
-    appear
-  >
+  <Transition name="bounce3" appear>
     <GroovyFooter />
   </Transition>
 </template>

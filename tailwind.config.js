@@ -121,7 +121,9 @@ export default {
         bourbonCopy: ['AmericanTypewriterStd-Med, Helvetica, Times, serif'],
         //
         groovyHead: ['Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'],
-        groovySubhead: ['Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'],
+        groovySubhead: [
+          'Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'
+        ],
         groovyCopy: ['Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'],
         //
         techyHead: ['Dosis, "Helvetica Neue", Arial, sans-serif'],
@@ -133,7 +135,9 @@ export default {
         corpCopy: ['Bodoni Moda, Times, serif'],
         //
         punkHead: ['Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif'],
-        punkSubhead: ['Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif'],
+        punkSubhead: [
+          'Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif'
+        ],
         punkCopy: ['Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif']
       },
       dropShadow: {

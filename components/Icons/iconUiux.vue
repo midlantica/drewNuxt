@@ -6,17 +6,9 @@
     id="iconUiux"
   >
     <title>UI/UX Design</title>
-    <g
-      stroke="none"
-      stroke-width="1"
-      fill="none"
-      fill-rule="evenodd"
-    >
+    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
       <g transform="translate(-21.000000, -16.000000)">
-        <g
-          id="uiux"
-          transform="translate(38.832246, 26.459350)"
-        >
+        <g id="uiux" transform="translate(38.832246, 26.459350)">
           <g id="background">
             <path
               id="backRight"

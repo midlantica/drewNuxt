@@ -12,10 +12,7 @@
         <a :href="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</a>
       </p>
 
-      <div
-        class="cursor-pointer mastMain"
-        @click="$emit('toggleExtras')"
-      >
+      <div class="cursor-pointer mastMain" @click="$emit('toggleExtras')">
         <mastDrew class="svgArt mastDrew" />
         <mastHarper class="svgArt mastHarper" />
         <div class="DrewHead jelloHorizontal">&nbsp;</div>

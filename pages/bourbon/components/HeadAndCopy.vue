@@ -1,12 +1,14 @@
 <template>
   <div
     v-show="store.isShowContent"
-    class="w-full mt-2 breakSm:px-2 breakLg:pl-2 breakLg:pr-4"
+    class="w-full mt-2 breakLg:pr-4 breakLg:pl-2 breakSm:px-2"
   >
-    <div class="flex items-center justify-start gap-2 justify-items-start auto-rows-auto">
+    <div
+      class="flex auto-rows-auto justify-start justify-items-start items-center gap-2"
+    >
       <div
         @click="$emit('toggleExtras')"
-        class="block bg-no-repeat bg-cover w-[85px] min-w-[85px] h-[100px] min-h-[100px] bg-[url('/img/drew_mug_red.png')] self-center hover:cursor-pointer jelloHorizontal"
+        class="bg-[url( h-[100px] min-h-[100px] min-w-[85px] w-[85px] block bg-no-repeat bg-cover'/img/drew_mug_red.png')] self-center hover:cursor-pointer jelloHorizontal"
       />
       <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />

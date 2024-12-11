@@ -24,53 +24,32 @@
 </script>
 
 <template>
-  <transition
-    name="topDown"
-    appear
-  >
+  <transition name="topDown" appear>
     <CorpNavvy
       @toggleExtras="store.toggleExtras"
       :isShowContent="store.isShowContent"
     />
   </transition>
 
-  <main
-    v-if="store.isShowContent"
-    class="mainGrid"
-  >
-    <transition
-      name="bounce2"
-      appear
-    >
+  <main v-if="store.isShowContent" class="mainGrid">
+    <transition name="bounce2" appear>
       <CorpHeadAndCopy />
     </transition>
 
-    <transition
-      name="bounce4"
-      appear
-    >
+    <transition name="bounce4" appear>
       <Skills />
     </transition>
 
-    <transition
-      name="bounce6"
-      appear
-    >
+    <transition name="bounce6" appear>
       <Carousel class="slides" />
     </transition>
 
-    <transition
-      name="bounce8"
-      appear
-    >
+    <transition name="bounce8" appear>
       <About />
     </transition>
   </main>
 
-  <main
-    v-else
-    class="mainGrid"
-  >
+  <main v-else class="mainGrid">
     <component
       :is="ExtrasC"
       class="col-span-2"

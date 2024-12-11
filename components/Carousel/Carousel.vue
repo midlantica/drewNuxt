@@ -1,13 +1,7 @@
 <template>
-  <div
-    class="projectBox"
-    v-show="showCarousel"
-  >
+  <div class="projectBox" v-show="showCarousel">
     <div class="projectBox__top">
-      <transition
-        name="bounce4"
-        appear
-      >
+      <transition name="bounce4" appear>
         <a
           class="carouselArrow flash"
           v-if="backButtonView"
@@ -16,29 +10,17 @@
           ﹤ back
         </a>
       </transition>
-      <p
-        class="projectHead"
-        @click="viewCarousel()"
-      >
+      <p class="projectHead" @click="viewCarousel()">
         Projects - {{ selectedViewTxt }}
       </p>
     </div>
 
     <component :is="selectedView">
-      <transition
-        name="bounce"
-        appear
-      >
+      <transition name="bounce" appear>
         <div class="miniGallery">
-          <div
-            v-for="item in projects"
-            :key="item"
-          >
+          <div v-for="item in projects" :key="item">
             <a @click="selectCarousel(item[1], item[2])">
-              <div
-                class="box"
-                :class="item[3]"
-              >
+              <div class="box" :class="item[3]">
                 <component :is="item[0]" />
                 <p>{{ item[2] }}</p>
               </div>

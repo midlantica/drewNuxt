@@ -2,7 +2,7 @@
   "singleQuote": true,
   "semi": true,
   "singleAttributePerLine": true,
-  "printWidth": 100,
+  "printWidth": 80,
   "tabWidth": 2,
   "useTabs": false,
   "htmlWhitespaceSensitivity": "ignore",
@@ -12,5 +12,13 @@
   "endOfLine": "auto",
   "htmlVoidTags": false,
   "arrowParens": "avoid",
-  "vueIndentScriptAndStyle": true
+  "vueIndentScriptAndStyle": true,
+  "overrides": [
+    {
+      "files": "*.vue",
+      "options": {
+        "singleAttributePerLine": false
+      }
+    }
+  ]
 }

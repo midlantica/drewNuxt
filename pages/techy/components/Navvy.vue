@@ -1,16 +1,12 @@
 <template>
   <header class="bg-techy-mango text-base-ivory z-30 shadow-none">
-    <nav class="w-full flex flex-col flex-nowrap grow justify-center content-center items-center">
+    <nav
+      class="w-full flex flex-col flex-nowrap grow justify-center content-center items-center"
+    >
       <div class="bg-techy-mango mastMain w-full">
         <div class="masty mx-auto my-0 text-center">
-          <div
-            class="DHmast cursor-pointer"
-            @click="$emit('toggleExtras')"
-          >
-            <div
-              to="/techy/ExtrasTechy"
-              class="drewHeadPic jelloHorizontal"
-            />
+          <div class="DHmast cursor-pointer" @click="$emit('toggleExtras')">
+            <div to="/techy/ExtrasTechy" class="drewHeadPic jelloHorizontal" />
             <mastDrew class="mastDrew svgArt" />
             <mastHarper class="mastHarper svgArt" />
           </div>
@@ -24,15 +20,12 @@
         <div class="bar">
           <div class="contact">
             <p class="email">
-              <nuxt-link :to="`mailto:` + `${copy.druEmail}`">{{ copy.druEmail }}</nuxt-link>
+              <nuxt-link :to="`mailto:` + `${copy.druEmail}`">
+                {{ copy.druEmail }}
+              </nuxt-link>
             </p>
             <p class="resume">
-              <a
-                :href="`${copy.portfolio}`"
-                target="_blank"
-              >
-                PDF Resume
-              </a>
+              <a :href="`${copy.portfolio}`" target="_blank">PDF Resume</a>
             </p>
           </div>
         </div>

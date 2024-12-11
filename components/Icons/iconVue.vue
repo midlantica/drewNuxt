@@ -1,9 +1,5 @@
 <template>
-  <svg
-    id="svgVue"
-    viewBox="0 0 88 60"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg id="svgVue" viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
     <title>Vue.js</title>
     <g class="groupVue">
       <path

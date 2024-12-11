@@ -2,13 +2,13 @@ import { Howl } from 'howler';
 
 export default defineNuxtPlugin(() => {
   // Dynamically load sound files from folders
-  const ukSounds = Object.keys(import.meta.glob('/public/sounds/uk/*.mp3', { eager: true })).map(
-    path => path.replace('/public', '')
-  );
+  const ukSounds = Object.keys(
+    import.meta.glob('/public/sounds/uk/*.mp3', { eager: true })
+  ).map(path => path.replace('/public', ''));
 
-  const usSounds = Object.keys(import.meta.glob('/public/sounds/us/*.mp3', { eager: true })).map(
-    path => path.replace('/public', '')
-  );
+  const usSounds = Object.keys(
+    import.meta.glob('/public/sounds/us/*.mp3', { eager: true })
+  ).map(path => path.replace('/public', ''));
 
   // Merge the sounds in alternating order
   const allSounds = [];
@@ -20,7 +20,10 @@ export default defineNuxtPlugin(() => {
   }
 
   // Load the current index from localStorage or initialize it
-  let currentIndex = parseInt(localStorage.getItem('currentSoundIndex') || '0', 10);
+  let currentIndex = parseInt(
+    localStorage.getItem('currentSoundIndex') || '0',
+    10
+  );
 
   // Reference for the current sound
   let currentSound = null;

@@ -1,9 +1,5 @@
 <template>
-  <svg
-    viewBox="0 0 88 60"
-    xmlns="http://www.w3.org/2000/svg"
-    id="figmaBox"
-  >
+  <svg viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg" id="figmaBox">
     <title>Figma</title>
 
     <g id="figmaIconGroup">

@@ -24,7 +24,9 @@
 
 <script setup>
   import { markRaw, defineAsyncComponent } from 'vue';
-  const drewMug = markRaw(defineAsyncComponent(() => import('@/components/Icons/drewMug.vue')));
+  const drewMug = markRaw(
+    defineAsyncComponent(() => import('@/components/Icons/drewMug.vue'))
+  );
 
   const copy = useCopy();
   const emit = defineEmits();

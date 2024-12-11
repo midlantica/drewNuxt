@@ -41,7 +41,8 @@ export const useCopy = defineStore({
 
   getters: {
     getLineByName: state => {
-      return name => state.characters.find(character => character.name === name);
+      return name =>
+        state.characters.find(character => character.name === name);
     }
   }
 });

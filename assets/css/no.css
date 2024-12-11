@@ -162,7 +162,12 @@
 
 .bounce9-leave-active,
 .bounce9-leave-to,
-.bounce9-leave-active .outer .bounce-enter-active .bounce9-leave-to .outer .bounce-leave-to {
+.bounce9-leave-active
+  .outer
+  .bounce-enter-active
+  .bounce9-leave-to
+  .outer
+  .bounce-leave-to {
   animation: bounceOut calc(var(--timebase) * 0.25);
 }
 

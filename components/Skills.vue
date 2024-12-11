@@ -1,12 +1,6 @@
 <template>
-  <div
-    v-show="showSkills"
-    class="skillsGrid"
-  >
-    <div
-      v-for="skill in skills"
-      :key="skill[1]"
-    >
+  <div v-show="showSkills" class="skillsGrid">
+    <div v-for="skill in skills" :key="skill[1]">
       <component
         :is="skill[0]"
         class="icon {{skill[1]}} }"
@@ -169,6 +163,7 @@
   .skillsGrid div {
     @apply h-[70px] m-auto flex items-center justify-center;
   }
+
   .skillsGrid {
     @apply w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
 

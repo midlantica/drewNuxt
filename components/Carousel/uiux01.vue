@@ -10,11 +10,7 @@
     lazy
     lazy-load-on-drag
   >
-    <vueper-slide
-      v-for="(slide, i) in slides"
-      :key="i"
-      :image="slide.image"
-    >
+    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image">
       <template #loader>
         <i class="icon icon-loader spinning" />
         <span>Loading...</span>
@@ -84,7 +80,8 @@
       image: '/img/portfolio/01_uiux/jpay/jpayinc/jpayinc_website.jpg'
     },
     {
-      image: '/img/portfolio/01_uiux/jpay/jpayinc/jpayinc_website_responsive.jpg'
+      image:
+        '/img/portfolio/01_uiux/jpay/jpayinc/jpayinc_website_responsive.jpg'
     },
     {
       image: '/img/portfolio/01_uiux/prisonride/prisonride_home.jpg'

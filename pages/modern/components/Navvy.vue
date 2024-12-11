@@ -1,7 +1,9 @@
 <!-- pages/modern/components/Navvy.vue -->
 <template>
   <header class="w-full">
-    <nav class="flex flex-col flex-nowrap justify-center items-center gap-y-4 p-0 mt-14">
+    <nav
+      class="flex flex-col flex-nowrap justify-center items-center gap-y-4 p-0 mt-14"
+    >
       <h1
         class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modernSubhead text-[2.25rem] text-modern-accentRed tracking-[-0.05em] w-full flex grow justify-center items-center gap-2 antialiased font-light leading-10 text-center lowercase transition duration-200 ease-in breakLg:text-[3.25rem] breakSm:text-[2.75rem] breakXsm:text-[2.25rem] hover:text-modern-accent"
       >
@@ -27,17 +29,10 @@
         <p
           class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modernCopy leading-[1.4rem] text-[0.8rem] tracking-[0.05rem] flex flex-row flex-wrap grow justify-center gap-x-3 gap-y-3 antialiased font-medium text-center"
         >
-          <nuxt-link
-            :to="`mailto:` + `${copy.druEmail}`"
-            class="btn"
-          >
+          <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="btn">
             {{ copy.druEmail }}
           </nuxt-link>
-          <a
-            :href="`${copy.portfolio}`"
-            target="_blank"
-            class="btn"
-          >
+          <a :href="`${copy.portfolio}`" target="_blank" class="btn">
             PDF&nbsp;Resume
           </a>
         </p>

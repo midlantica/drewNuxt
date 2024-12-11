@@ -1,6 +1,11 @@
 <script setup>
   import { shallowRef, onMounted } from 'vue';
-  import { ModernProjects, ModernSkills, ModernAbout, ExtrasC } from '#components';
+  import {
+    ModernProjects,
+    ModernSkills,
+    ModernAbout,
+    ExtrasC
+  } from '#components';
   const store = useToggleExtrasStore();
 
   const emit = defineEmits();
@@ -19,7 +24,11 @@
     }
   });
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn', 'currentView']);
+  const props = defineProps([
+    'store.isShowContent',
+    'store.selectedBtn',
+    'currentView'
+  ]);
 
   const currentView = shallowRef(ModernProjects);
 
@@ -46,20 +55,14 @@
 <template>
   <!-- <div class="flex flex-col items-center"> -->
 
-  <transition
-    name="topDown"
-    appear
-  >
+  <transition name="topDown" appear>
     <ModernNavvy
       @toggleExtras="store.toggleExtras"
       :isShowContent="store.isShowContent"
     />
   </transition>
 
-  <transition
-    name="bounce2"
-    appear
-  >
+  <transition name="bounce2" appear>
     <ModernSubTabs
       @switch-view="switchView"
       @toggleExtras="store.toggleExtras"
@@ -79,10 +82,7 @@
     />
   </main>
 
-  <main
-    v-else
-    class="mainGrid"
-  >
+  <main v-else class="mainGrid">
     <component
       :is="ExtrasC"
       @toggleExtras="store.toggleExtras"

@@ -1,5 +1,7 @@
 <template>
-  <header class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown">
+  <header
+    class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown"
+  >
     <div class="relative my-[-25px] flex flex-row items-center">
       <div
         class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]"
@@ -21,8 +23,12 @@
       >
         <div class="flex flex-row flex-wrap justify-center w-auto gap-4 m-auto">
           <div class="flex gap-4">
-            <mastDrew class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300" />
-            <mastHarper class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300" />
+            <mastDrew
+              class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300"
+            />
+            <mastHarper
+              class="min-[375px]:h-[1.8rem] sm:h-[3.2rem] ease-out duration-300"
+            />
           </div>
         </div>
         <h2
@@ -36,19 +42,12 @@
             class="flex flex-row flex-wrap items-center justify-center w-full mx-auto lg:flex-row gap-x-4 gap-y-2"
           >
             <div class="duration-300 ease-out groovyOvalBtn">
-              <a
-                :href="`mailto:` + `${copy.druEmail}`"
-                class="email"
-              >
+              <a :href="`mailto:` + `${copy.druEmail}`" class="email">
                 {{ copy.druEmail }}
               </a>
             </div>
             <div class="duration-300 ease-out groovyOvalBtn">
-              <a
-                :href="`${copy.portfolio}`"
-                target="_blank"
-                class="resume"
-              >
+              <a :href="`${copy.portfolio}`" target="_blank" class="resume">
                 PDF Resume
               </a>
             </div>

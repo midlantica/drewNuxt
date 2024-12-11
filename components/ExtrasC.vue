@@ -1,10 +1,9 @@
 <template>
-  <transition
-    name="fade"
-    appear
-  >
+  <transition name="fade" appear>
     <div class="extrasWrapper m-auto w-full flex flex-row flex-wrap gap-4">
-      <h1 class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center text-black">
+      <h1
+        class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center text-black"
+      >
         <ArrowLeft
           @click="$emit('toggleExtras')"
           class="animate-pulse cursor-pointer"
@@ -20,14 +19,8 @@
           :key="index"
           class="content-center gap-x-4"
         >
-          <a
-            :href="`${imageRoot}${item.imageUrl}`"
-            target="_BLANK"
-          >
-            <img
-              class="portThumbs"
-              :src="`${imageRoot}${item.imageSrc}`"
-            />
+          <a :href="`${imageRoot}${item.imageUrl}`" target="_BLANK">
+            <img class="portThumbs" :src="`${imageRoot}${item.imageSrc}`" />
             <div class="text-center">
               <p>{{ item.text }}</p>
             </div>
@@ -43,7 +36,11 @@
   import ArrowLeft from './Icons/iconArrowLeft.vue';
   const store = useToggleExtrasStore();
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn', 'currentView']);
+  const props = defineProps([
+    'store.isShowContent',
+    'store.selectedBtn',
+    'currentView'
+  ]);
 
   const imageRoot = ref('/img/portfolio/extras/');
 

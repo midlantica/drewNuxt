@@ -1,9 +1,5 @@
 <template>
-  <svg
-    id="svgChelsea"
-    viewBox="0 0 88 60"
-    mlns="http://www.w3.org/2000/svg"
-  >
+  <svg id="svgChelsea" viewBox="0 0 88 60" mlns="http://www.w3.org/2000/svg">
     <title>Chelsea FC</title>
     <g class="groupChelsea">
       <path

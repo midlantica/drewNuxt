@@ -4,25 +4,16 @@
     class="font-modernCopy flex flex-row flex-wrap justify-center gap-4 mx-0 mt-7 mb-3"
   >
     <div
-      @click="emitSwitchView('ModernProjects')"
-      class="btn projectsTab"
-      :class="{ selectedBtn: store.selectedBtn === 'ModernProjects' }"
+      v-for="tab in tabs"
+      :key="tab.name"
+      @click="emitSwitchView(tab.name)"
+      :class="[
+        'btn',
+        tab.class,
+        { selectedBtn: store.selectedBtn === tab.name }
+      ]"
     >
-      Projects
-    </div>
-    <div
-      @click="emitSwitchView('ModernSkills')"
-      class="btn skillsTab"
-      :class="{ selectedBtn: store.selectedBtn === 'ModernSkills' }"
-    >
-      Skills
-    </div>
-    <div
-      @click="emitSwitchView('ModernAbout')"
-      class="aboutTab btn"
-      :class="{ selectedBtn: store.selectedBtn === 'ModernAbout' }"
-    >
-      About
+      {{ tab.label }}
     </div>
   </div>
 </template>
@@ -35,29 +26,30 @@
   const router = useRouter();
 
   const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
-
   const showSubTabs = ref(false);
 
-  let emitSwitchView = view => {
+  // Define tabs dynamically
+  const tabs = [
+    { name: 'ModernProjects', label: 'Projects', class: 'projectsTab' },
+    { name: 'ModernSkills', label: 'Skills', class: 'skillsTab' },
+    { name: 'ModernAbout', label: 'About', class: 'aboutTab' }
+  ];
+
+  // Handle tab switching with sound
+  const emitSwitchView = view => {
     const { $playNdok } = useNuxtApp(); // Ensure it's in scope
     $playNdok(); // Play sound
     store.selectedBtn = view;
     emit('switch-view', view);
   };
 
+  // Initialize selected tab based on the current route
   onMounted(() => {
     showSubTabs.value = true;
-    // store.selectedBtn = 'ModernProjects'
 
-    // Set selectedBtn based on the current route
-    const currentRoute = router.currentRoute.value;
-    if (currentRoute.name === 'ModernProjects') {
-      store.selectedBtn = 'ModernProjects';
-    } else if (currentRoute.name === 'ModernSkills') {
-      store.selectedBtn = 'ModernSkills';
-    } else if (currentRoute.name === 'ModernAbout') {
-      store.selectedBtn = 'ModernAbout';
-    }
+    const currentRoute = router.currentRoute.value.name;
+    store.selectedBtn =
+      tabs.find(tab => tab.name === currentRoute)?.name || 'ModernProjects';
   });
 </script>
 

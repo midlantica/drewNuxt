@@ -27,7 +27,11 @@ export default defineNuxtConfig({
     'nuxt-gtag'
   ],
 
-  plugins: ['~/plugins/soundManager.js', '~/plugins/ndok.js', '~/plugins/ayah.js'],
+  plugins: [
+    '~/plugins/soundManager.js',
+    '~/plugins/ndok.js',
+    '~/plugins/ayah.js'
+  ],
 
   pinia: {
     storesDirs: ['./stores/**'] // './custom-folder/stores/**'
@@ -46,7 +50,10 @@ export default defineNuxtConfig({
   //   // The same options as in the plugin itself.
   //   // You will get an autocomplete using Nuxt 3.
   // },
-  css: ['~/assets/css/main.css', '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'],
+  css: [
+    '~/assets/css/main.css',
+    '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
+  ],
 
   postcss: {
     plugins: {

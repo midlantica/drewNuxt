@@ -1,19 +1,9 @@
 <template>
-  <div
-    v-show="showQuotes"
-    class="quoteBlock"
-  >
-    <div
-      @click="previousQuote()"
-      class="arrowBtn"
-    />
+  <div v-show="showQuotes" class="quoteBlock">
+    <div @click="previousQuote()" class="arrowBtn" />
 
     <!-- <transition name="fade" appear> -->
-    <div
-      class="fade w-full"
-      v-show="currentQuote"
-      :key="qIndex"
-    >
+    <div class="fade w-full" v-show="currentQuote" :key="qIndex">
       <p class="text-balance">
         &ldquo;{{ currentQuote.quote }}&rdquo;
         <cite>&ndash; {{ currentQuote.author }}</cite>
@@ -21,10 +11,7 @@
     </div>
     <!-- </transition> -->
 
-    <div
-      @click="nextQuote()"
-      class="arrowBtn"
-    />
+    <div @click="nextQuote()" class="arrowBtn" />
   </div>
 </template>
 
@@ -45,7 +32,9 @@
   }
 
   function previousQuote() {
-    qIndex.value = (qIndex.value - 1 + quotesStore.quotes.length) % quotesStore.quotes.length;
+    qIndex.value =
+      (qIndex.value - 1 + quotesStore.quotes.length) %
+      quotesStore.quotes.length;
     currentQuote.value = quotesStore.quotes[qIndex.value];
     isAnimationPaused = true; // Pause animation after manual navigation
     setTimeout(resumeAnimation, 14000); // Resume animation after X seconds

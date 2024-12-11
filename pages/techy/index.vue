@@ -25,24 +25,15 @@
 </script>
 
 <template>
-  <transition
-    name="topDown"
-    appear
-  >
+  <transition name="topDown" appear>
     <TechyNavvy
       @toggleExtras="store.toggleExtras"
       :isShowContent="store.isShowContent"
     />
   </transition>
 
-  <main
-    class="mainGrid"
-    v-if="store.isShowContent"
-  >
-    <transition
-      name="bounce2"
-      appear
-    >
+  <main class="mainGrid" v-if="store.isShowContent">
+    <transition name="bounce2" appear>
       <TechyHeadAndCopy
         class="copyArea"
         @toggleExtras="store.toggleExtras"
@@ -50,32 +41,20 @@
       />
     </transition>
 
-    <transition
-      name="bounce4"
-      appear
-    >
+    <transition name="bounce4" appear>
       <Carousel class="slides" />
     </transition>
 
-    <transition
-      name="bounce6"
-      appear
-    >
+    <transition name="bounce6" appear>
       <Skills />
     </transition>
 
-    <transition
-      name="bounce8"
-      appear
-    >
+    <transition name="bounce8" appear>
       <About />
     </transition>
   </main>
 
-  <main
-    class="mainGrid"
-    v-else
-  >
+  <main class="mainGrid" v-else>
     <component
       :is="ExtrasC"
       class="col-span-2"

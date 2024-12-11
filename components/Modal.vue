@@ -1,39 +1,22 @@
+<!-- components/Modal.vue -->
 <template>
-  <Teleport
-    to="#modal"
-    v-if="isModalOpen"
-  >
-    <transition
-      name="modal-fade"
-      appear
-    >
+  <Teleport to="#modal" v-if="isModalOpen">
+    <transition name="modal-fade" appear>
       <div class="modalBg">
-        <div
-          class="modal"
-          ref="modal"
-        >
-          <div
-            class="closeBtn"
-            @click="closeModal"
-          >
+        <div class="modal" ref="modal">
+          <div class="closeBtn" @click="closeModal">
             <xOut />
           </div>
-          <div
-            class="modalInner"
-            v-if="modalItem"
-          >
+          <div class="modalInner" v-if="modalItem">
             <div class="icon">
               <component
-                :is="modalItem.component"
                 class="icon"
+                :is="modalItem.component"
                 @mouseleave="hover = false"
               />
             </div>
             <div class="content">
-              <h4
-                class="font-semibold"
-                v-if="modalItem.url"
-              >
+              <h4 class="font-semibold" v-if="modalItem.url">
                 <a
                   class="hover:text-blue-800"
                   :href="modalItem.url"
@@ -42,10 +25,7 @@
                   {{ modalItem.title }}
                 </a>
               </h4>
-              <h4
-                class="font-semibold"
-                v-else
-              >
+              <h4 class="font-semibold" v-else>
                 {{ modalItem.title }}
               </h4>
               <p>{{ modalItem.description }}</p>

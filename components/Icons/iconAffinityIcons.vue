@@ -6,14 +6,8 @@
   >
     <title>Affinity Creative Suite</title>
     <g class="groupAffinity">
-      <transition
-        name="affinityIconsFade"
-        appear
-      >
-        <g
-          class="affPublisherIcon"
-          v-if="affPublisher"
-        >
+      <transition name="affinityIconsFade" appear>
+        <g class="affPublisherIcon" v-if="affPublisher">
           <path
             class="back"
             d="M64 18.8c0-4.857-3.943-8.8-8.8-8.8H32.8c-4.857 0-8.8 3.943-8.8 8.8v22.4c0 4.857 3.943 8.8 8.8 8.8h22.4c4.857 0 8.8-3.943 8.8-8.8V18.8Z"
@@ -24,14 +18,8 @@
           />
         </g>
       </transition>
-      <transition
-        name="affinityIconsFade"
-        appear
-      >
-        <g
-          class="affDesignerIcon"
-          v-if="affDesigner"
-        >
+      <transition name="affinityIconsFade" appear>
+        <g class="affDesignerIcon" v-if="affDesigner">
           <path
             class="back"
             d="M64 18.8c0-4.857-3.943-8.8-8.8-8.8H32.8c-4.857 0-8.8 3.943-8.8 8.8v22.4c0 4.857 3.943 8.8 8.8 8.8h22.4c4.857 0 8.8-3.943 8.8-8.8V18.8Z"
@@ -42,14 +30,8 @@
           />
         </g>
       </transition>
-      <transition
-        name="affinityIconsFade"
-        appear
-      >
-        <g
-          class="affPhotoIcon"
-          v-if="affPhoto"
-        >
+      <transition name="affinityIconsFade" appear>
+        <g class="affPhotoIcon" v-if="affPhoto">
           <path
             class="back"
             d="M64 18.8c0-4.857-3.943-8.8-8.8-8.8H32.8c-4.857 0-8.8 3.943-8.8 8.8v22.4c0 4.857 3.943 8.8 8.8 8.8h22.4c4.857 0 8.8-3.943 8.8-8.8V18.8Z"

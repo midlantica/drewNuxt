@@ -1,9 +1,5 @@
 <template>
-  <svg
-    id="svgNuxt"
-    viewBox="0 0 88 60"
-    xmlns="http://www.w3.org/2000/svg"
-  >
+  <svg id="svgNuxt" viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
     <title>Nuxt JS</title>
     <g class="groupNuxt">
       <path

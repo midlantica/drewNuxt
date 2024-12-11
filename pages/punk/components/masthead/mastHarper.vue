@@ -19,12 +19,7 @@
         filterUnits="objectBoundingBox"
         id="filter-2"
       >
-        <feOffset
-          dx="8"
-          dy="8"
-          in="SourceAlpha"
-          result="shadowOffsetOuter1"
-        />
+        <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           stdDeviation="6"
           in="shadowOffsetOuter1"
@@ -48,12 +43,7 @@
         filterUnits="objectBoundingBox"
         id="filter-4"
       >
-        <feOffset
-          dx="8"
-          dy="8"
-          in="SourceAlpha"
-          result="shadowOffsetOuter1"
-        />
+        <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           stdDeviation="6"
           in="shadowOffsetOuter1"
@@ -77,12 +67,7 @@
         filterUnits="objectBoundingBox"
         id="filter-6"
       >
-        <feOffset
-          dx="8"
-          dy="8"
-          in="SourceAlpha"
-          result="shadowOffsetOuter1"
-        />
+        <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           stdDeviation="6"
           in="shadowOffsetOuter1"
@@ -106,12 +91,7 @@
         filterUnits="objectBoundingBox"
         id="filter-8"
       >
-        <feOffset
-          dx="8"
-          dy="8"
-          in="SourceAlpha"
-          result="shadowOffsetOuter1"
-        />
+        <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           stdDeviation="6"
           in="shadowOffsetOuter1"
@@ -135,12 +115,7 @@
         filterUnits="objectBoundingBox"
         id="filter-10"
       >
-        <feOffset
-          dx="8"
-          dy="8"
-          in="SourceAlpha"
-          result="shadowOffsetOuter1"
-        />
+        <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           stdDeviation="6"
           in="shadowOffsetOuter1"
@@ -164,12 +139,7 @@
         filterUnits="objectBoundingBox"
         id="filter-12"
       >
-        <feOffset
-          dx="8"
-          dy="8"
-          in="SourceAlpha"
-          result="shadowOffsetOuter1"
-        />
+        <feOffset dx="8" dy="8" in="SourceAlpha" result="shadowOffsetOuter1" />
         <feGaussianBlur
           stdDeviation="6"
           in="shadowOffsetOuter1"
@@ -188,16 +158,8 @@
         y2="100%"
         id="linearGradient-13"
       >
-        <stop
-          stop-color="#FFFFFF"
-          stop-opacity="0.5"
-          offset="0%"
-        />
-        <stop
-          stop-color="#000000"
-          stop-opacity="0.5"
-          offset="100%"
-        />
+        <stop stop-color="#FFFFFF" stop-opacity="0.5" offset="0%" />
+        <stop stop-color="#000000" stop-opacity="0.5" offset="100%" />
       </linearGradient>
       <path
         d="M901.875525,255.043341 L901.94887,37.4023159 L961.298857,37.4023159 C991.780723,37.4023159 1017.59365,58.1850132 1017.57517,113.028242 C1017.56408,145.93418 1009.66999,159.789311 991.377562,169.603363 L991.376978,171.335254 C993.886179,174.510389 996.933199,177.974172 999.620635,184.32444 L1029.00284,255.043341 L972.342428,255.043341 L950.849357,185.190386 L949.952832,185.190386 L949.929291,255.043341 L901.875525,255.043341 Z M947.01872,96.8639222 L947.006269,133.81094 L950.413066,133.81094 C958.481795,133.81094 966.551205,131.7904 966.556653,115.62608 C966.562295,98.8844623 959.211467,96.8639222 950.784127,96.8639222 L947.01872,96.8639222 Z"
@@ -211,10 +173,7 @@
         y="19.5199629"
         patternUnits="userSpaceOnUse"
       >
-        <use
-          xlink:href="#image-16"
-          transform="scale(0.37254902,0.37254902)"
-        />
+        <use xlink:href="#image-16" transform="scale(0.37254902,0.37254902)" />
       </pattern>
       <image
         id="image-16"
@@ -234,10 +193,7 @@
         y="16.5500776"
         patternUnits="userSpaceOnUse"
       >
-        <use
-          xlink:href="#image-19"
-          transform="scale(0.37254902,0.37254902)"
-        />
+        <use xlink:href="#image-19" transform="scale(0.37254902,0.37254902)" />
       </pattern>
       <image
         id="image-19"
@@ -257,10 +213,7 @@
         y="13.1158455"
         patternUnits="userSpaceOnUse"
       >
-        <use
-          xlink:href="#image-22"
-          transform="scale(0.37254902,0.37254902)"
-        />
+        <use xlink:href="#image-22" transform="scale(0.37254902,0.37254902)" />
       </pattern>
       <image
         id="image-22"
@@ -280,10 +233,7 @@
         y="9.65017569"
         patternUnits="userSpaceOnUse"
       >
-        <use
-          xlink:href="#image-25"
-          transform="scale(0.37254902,0.37254902)"
-        />
+        <use xlink:href="#image-25" transform="scale(0.37254902,0.37254902)" />
       </pattern>
       <image
         id="image-25"
@@ -303,10 +253,7 @@
         y="5.77419623"
         patternUnits="userSpaceOnUse"
       >
-        <use
-          xlink:href="#image-28"
-          transform="scale(0.37254902,0.37254902)"
-        />
+        <use xlink:href="#image-28" transform="scale(0.37254902,0.37254902)" />
       </pattern>
       <image
         id="image-28"
@@ -326,10 +273,7 @@
         y="-13.5694006"
         patternUnits="userSpaceOnUse"
       >
-        <use
-          xlink:href="#image-31"
-          transform="scale(0.37254902,0.37254902)"
-        />
+        <use xlink:href="#image-31" transform="scale(0.37254902,0.37254902)" />
       </pattern>
       <image
         id="image-31"
@@ -360,11 +304,7 @@
             filter="url(#filter-2)"
             xlink:href="#path-1"
           />
-          <use
-            fill="#F7F7F7"
-            fill-rule="evenodd"
-            xlink:href="#path-1"
-          />
+          <use fill="#F7F7F7" fill-rule="evenodd" xlink:href="#path-1" />
         </g>
         <g
           id="Rectangle-2-Copy-5"
@@ -376,11 +316,7 @@
             filter="url(#filter-4)"
             xlink:href="#path-3"
           />
-          <use
-            fill="#F7F7F7"
-            fill-rule="evenodd"
-            xlink:href="#path-3"
-          />
+          <use fill="#F7F7F7" fill-rule="evenodd" xlink:href="#path-3" />
         </g>
         <g id="Rectangle-2-Copy-4">
           <use
@@ -389,11 +325,7 @@
             filter="url(#filter-6)"
             xlink:href="#path-5"
           />
-          <use
-            fill="#F7F7F7"
-            fill-rule="evenodd"
-            xlink:href="#path-5"
-          />
+          <use fill="#F7F7F7" fill-rule="evenodd" xlink:href="#path-5" />
         </g>
         <g id="Rectangle-2-Copy-3">
           <use
@@ -402,11 +334,7 @@
             filter="url(#filter-8)"
             xlink:href="#path-7"
           />
-          <use
-            fill="#F7F7F7"
-            fill-rule="evenodd"
-            xlink:href="#path-7"
-          />
+          <use fill="#F7F7F7" fill-rule="evenodd" xlink:href="#path-7" />
         </g>
         <g
           id="Rectangle-2-Copy-2"
@@ -418,11 +346,7 @@
             filter="url(#filter-10)"
             xlink:href="#path-9"
           />
-          <use
-            fill="#F7F7F7"
-            fill-rule="evenodd"
-            xlink:href="#path-9"
-          />
+          <use fill="#F7F7F7" fill-rule="evenodd" xlink:href="#path-9" />
         </g>
         <g
           id="Rectangle-2-Copy"
@@ -434,29 +358,16 @@
             filter="url(#filter-12)"
             xlink:href="#path-11"
           />
-          <use
-            fill="#F7F7F7"
-            fill-rule="evenodd"
-            xlink:href="#path-11"
-          />
+          <use fill="#F7F7F7" fill-rule="evenodd" xlink:href="#path-11" />
         </g>
       </g>
-      <g
-        id="magenta"
-        transform="translate(48.064729, 29.546063)"
-      >
+      <g id="magenta" transform="translate(48.064729, 29.546063)">
         <g
           id="Combined-Shape"
           transform="translate(965.439182, 146.222828) rotate(2.000000) translate(-965.439182, -146.222828) "
         >
-          <use
-            fill="url(#pattern-15)"
-            xlink:href="#path-14"
-          />
-          <use
-            fill="url(#linearGradient-13)"
-            xlink:href="#path-14"
-          />
+          <use fill="url(#pattern-15)" xlink:href="#path-14" />
+          <use fill="url(#linearGradient-13)" xlink:href="#path-14" />
           <use
             fill="#FF00F4"
             style="mix-blend-mode: lighten"
@@ -467,14 +378,8 @@
           id="Path"
           transform="translate(790.889123, 143.252943) rotate(-5.000000) translate(-790.889123, -143.252943) "
         >
-          <use
-            fill="url(#pattern-18)"
-            xlink:href="#path-17"
-          />
-          <use
-            fill="url(#linearGradient-13)"
-            xlink:href="#path-17"
-          />
+          <use fill="url(#pattern-18)" xlink:href="#path-17" />
+          <use fill="url(#linearGradient-13)" xlink:href="#path-17" />
           <use
             fill="#FF00F4"
             style="mix-blend-mode: lighten"
@@ -482,14 +387,8 @@
           />
         </g>
         <g id="Combined-Shape">
-          <use
-            fill="url(#pattern-21)"
-            xlink:href="#path-20"
-          />
-          <use
-            fill="url(#linearGradient-13)"
-            xlink:href="#path-20"
-          />
+          <use fill="url(#pattern-21)" xlink:href="#path-20" />
+          <use fill="url(#linearGradient-13)" xlink:href="#path-20" />
           <use
             fill="#FF00F4"
             style="mix-blend-mode: lighten"
@@ -497,14 +396,8 @@
           />
         </g>
         <g id="Combined-Shape">
-          <use
-            fill="url(#pattern-24)"
-            xlink:href="#path-23"
-          />
-          <use
-            fill="url(#linearGradient-13)"
-            xlink:href="#path-23"
-          />
+          <use fill="url(#pattern-24)" xlink:href="#path-23" />
+          <use fill="url(#linearGradient-13)" xlink:href="#path-23" />
           <use
             fill="#FF00F4"
             style="mix-blend-mode: lighten"
@@ -515,14 +408,8 @@
           id="Combined-Shape"
           transform="translate(269.214440, 132.477062) rotate(7.000000) translate(-269.214440, -132.477062) "
         >
-          <use
-            fill="url(#pattern-27)"
-            xlink:href="#path-26"
-          />
-          <use
-            fill="url(#linearGradient-13)"
-            xlink:href="#path-26"
-          />
+          <use fill="url(#pattern-27)" xlink:href="#path-26" />
+          <use fill="url(#linearGradient-13)" xlink:href="#path-26" />
           <use
             fill="#FF00F4"
             style="mix-blend-mode: lighten"
@@ -534,14 +421,8 @@
           fill-rule="nonzero"
           transform="translate(72.493752, 119.991015) rotate(-3.000000) translate(-72.493752, -119.991015) "
         >
-          <use
-            fill="url(#pattern-30)"
-            xlink:href="#path-29"
-          />
-          <use
-            fill="url(#linearGradient-13)"
-            xlink:href="#path-29"
-          />
+          <use fill="url(#pattern-30)" xlink:href="#path-29" />
+          <use fill="url(#linearGradient-13)" xlink:href="#path-29" />
           <use
             fill="#FF00F4"
             style="mix-blend-mode: lighten"
@@ -549,11 +430,7 @@
           />
         </g>
       </g>
-      <g
-        id="black"
-        transform="translate(36.653836, 39.340385)"
-        fill="#000000"
-      >
+      <g id="black" transform="translate(36.653836, 39.340385)" fill="#000000">
         <path
           d="M902.191064,235.630179 L902.264409,34.5888925 L961.614396,34.5888925 C992.096262,34.5888925 1017.90919,53.7864689 1017.89071,104.44674 C1017.87962,134.842903 1009.98553,147.641287 991.6931,156.706809 L991.692517,158.306607 C994.201718,161.23957 997.248737,164.439166 999.936174,170.305092 L1029.31838,235.630179 L972.657967,235.630179 L951.164896,171.104991 L950.26837,171.104991 L950.24483,235.630179 L902.191064,235.630179 Z M947.334259,89.5152916 L947.321808,123.644316 L950.728604,123.644316 C958.797334,123.644316 966.866744,121.777885 966.872191,106.846437 C966.877833,91.3817226 959.527005,89.5152916 951.099666,89.5152916 L947.334259,89.5152916 Z"
           id="Combined-Shape"

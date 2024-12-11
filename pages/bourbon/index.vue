@@ -23,10 +23,7 @@
 </script>
 
 <template>
-  <transition
-    name="topDown"
-    appear
-  >
+  <transition name="topDown" appear>
     <BourbonNavvy
       @toggleExtras="store.toggleExtras"
       :isShowContent="store.isShowContent"
@@ -35,48 +32,30 @@
 
   <main
     v-if="store.isShowContent"
-    class="grid grid-cols-2 col-span-2 px-4 my-2 grid-rows-auto gap-x-2 gap-y-3"
+    class="grid-rows-auto grid grid-cols-2 col-span-2 gap-x-2 gap-y-3 px-4 my-2"
   >
-    <transition
-      name="bounce2"
-      appear
-    >
+    <transition name="bounce2" appear>
       <BourbonHeadAndCopy
         class="copyArea"
         @toggleExtras="store.toggleExtras"
         :isShowContent="store.isShowContent"
       />
     </transition>
-    <transition
-      name="bounce4"
-      appear
-    >
+    <transition name="bounce4" appear>
       <Carousel class="slides" />
     </transition>
-    <transition
-      name="bounce6"
-      appear
-    >
+    <transition name="bounce6" appear>
       <Skills class="skills" />
     </transition>
-    <transition
-      name="bounce8"
-      appear
-    >
+    <transition name="bounce8" appear>
       <About class="about" />
     </transition>
-    <transition
-      name="bounce10"
-      appear
-    >
+    <transition name="bounce10" appear>
       <Quote class="quoteBlock" />
     </transition>
   </main>
 
-  <main
-    v-else
-    class="grid w-full col-span-2 px-4 gap-x-0 gap-y-2"
-  >
+  <main v-else class="w-full grid col-span-2 gap-x-0 gap-y-2 px-4">
     <component
       :is="ExtrasC"
       class="col-span-2"
@@ -86,7 +65,7 @@
   </main>
 
   <footer
-    class="col-start-1 col-end-3 bg-[url(/img/bg/bg_bag_dk.jpg)] bg-repeat shadow-druShadow h-3"
+    class="bg-[url(/img/bg/bg_bag_dk.jpg)] shadow-druShadow h-3 col-start-1 col-end-3 bg-repeat"
   />
 </template>
 

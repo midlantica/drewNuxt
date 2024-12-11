@@ -42,7 +42,8 @@
 
   // Mouse tracking
   const target = ref(null);
-  const { elementX, elementY, isOutside, elementHeight, elementWidth } = useMouseInElement(target);
+  const { elementX, elementY, isOutside, elementHeight, elementWidth } =
+    useMouseInElement(target);
 
   // Use card transform composable
   const { cardTransform } = useCardTransform(
