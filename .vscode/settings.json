@@ -5,7 +5,12 @@
     "**/.svn": true,
     "**/.hg": true,
     "**/CVS": true,
-    "**/.DS_Store": true
+    "**/.DS_Store": true,
+    "**/Thumbs.db": true,
+    "**/.nuxt": true,
+    "**/.vscode": true,
+    "**/node_modules": true,
+    "**/.output": true
   },
   "hidefiles.configurationType": "local",
   "hidefiles.globalConfig": {
@@ -29,5 +34,6 @@
   "vue.inlayHints.missingProps": true,
   "vue.inlayHints.vBindShorthand": true,
   "vue.updateImportsOnFileMove.enabled": true,
-  "hidefiles.selectedProfile": "Show All Files"
+  "hidefiles.selectedProfile": "Show All Files",
+  "explorerExclude.backup": {}
 }

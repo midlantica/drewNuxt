@@ -6,6 +6,7 @@
     ModernAbout,
     ExtrasC
   } from '#components';
+
   const store = useToggleExtrasStore();
 
   const emit = defineEmits();
@@ -73,7 +74,7 @@
 
   <main
     v-if="store.isShowContent"
-    class="w-full grid grid-cols-1 gap-y-2 gap-x-0 px-12 m-0"
+    class="w-full grid grid-cols-1 gap-x-0 gap-y-2 px-12 m-0"
   >
     <component
       :is="currentView"

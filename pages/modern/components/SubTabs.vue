@@ -7,8 +7,7 @@
       v-for="tab in tabs"
       :key="tab.name"
       @click="emitSwitchView(tab.name)"
-      :class="[
-        'btn',
+      :class="['btn',
         tab.class,
         { selectedBtn: store.selectedBtn === tab.name }
       ]"

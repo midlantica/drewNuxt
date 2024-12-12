@@ -1,22 +1,22 @@
 <template>
   <div>
     <div
-      class="grid grid-cols-[88px_auto] auto-rows-auto gap-x-1.5 justify-items-start items-center mt-4 mb-3 gap-2"
+      class="grid-cols-[88px_auto] grid auto-rows-auto justify-items-start items-center gap-2 gap-x-1.5 mt-4 mb-3"
     >
       <div
         @click="emit('toggleExtras')"
-        class="col-start-1 col-end-2 row-start-1 row-end-2 bg-no-repeat bg-cover w-[78px] h-[94px] self-start jelloHorizontal cursor-pointer"
+        class="h-[94px] jelloHorizontal w-[78px] col-start-1 col-end-2 row-start-1 row-end-2 self-start bg-no-repeat bg-cover cursor-pointer"
       >
         <drewMug />
       </div>
       <h1
-        class="col-start-2 col-end-3 row-start-1 row-end-2 inline-block font-modernSubhead tracking-[-0.01ch] p-0 self-center mt-[2.2rem] w-auto text-white font-normal text-[1.1rem] drop-shadow-[1px_1px_4px_black] breakSm:max-w-[30ch] breakLg:w-auto max-[535px]:mt-[.75rem]"
+        class="drop-shadow-[1px_1px_4px_black] font-modernSubhead mt-[2.2rem] text-[1.1rem] tracking-[-0.01ch] w-auto inline-block col-start-2 col-end-3 row-start-1 row-end-2 self-center p-0 font-normal text-white breakLg:w-auto breakSm:max-w-[30ch] max-[535px]:mt-[.75rem]"
       >
         {{ copy.druHead }}
       </h1>
     </div>
     <p
-      class="font-light text-[0.95rem] leading-[2.2rem] tracking-[0.03rem] m-0 font-modernCopy text-white"
+      class="font-modernCopy leading-[2.2rem] text-[0.95rem] tracking-[0.03rem] m-0 font-light text-white"
       v-html="copy.druCopy"
     />
   </div>

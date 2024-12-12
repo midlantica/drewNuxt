@@ -8,7 +8,7 @@
     >
       <div
         @click="$emit('toggleExtras')"
-        class="bg-[url( h-[100px] min-h-[100px] min-w-[85px] w-[85px] block bg-no-repeat bg-cover'/img/drew_mug_red.png')] self-center hover:cursor-pointer jelloHorizontal"
+        class="bg-[url('/img/drew_mug_red.png')] h-[100px] min-h-[100px] min-w-[84px] w-[84px] block bg-no-repeat bg-cover self-center hover:cursor-pointer jelloHorizontal"
       />
       <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />
