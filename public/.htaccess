@@ -1,7 +1,7 @@
 AddType image/svg+xml .svg .svgz
 SetEnvIfNoCase Request_URI \.(?:gif|jpe?g|png)$ no-gzip dont-vary
 
-# Enable GZIP
+# Enable GZIP 
 <ifmodule mod_deflate.c>
     AddOutputFilterByType DEFLATE text/text text/html text/plain text/xml text/css application/x-javascript application/javascript image/svg+xml
     #DeflateCompressionLevel 9

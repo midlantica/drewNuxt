@@ -50,6 +50,8 @@
     modalItem: Object
   });
 
+  // MARK: This section handles user authentication
+
   function closeModal() {
     emits('closeModal');
   }
