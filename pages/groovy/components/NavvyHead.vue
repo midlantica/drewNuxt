@@ -64,12 +64,9 @@
   const copy = useCopy();
   const store = useToggleExtrasStore();
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
-
   const isMounted = ref(false);
 
   onMounted(() => {
-    store.initialize();
     setTimeout(() => {
       isMounted.value = true;
     }, 1500);

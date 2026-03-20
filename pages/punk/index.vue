@@ -56,8 +56,6 @@
     }
   });
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
-
   onMounted(() => {
     store.initialize();
   });

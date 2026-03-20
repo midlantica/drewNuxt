@@ -26,18 +26,12 @@
   // Create refs
   const copy = useCopy();
   const showAbout = ref(true);
-  const isActive = ref(false);
-
-  // Props (if necessary)
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
-
   // Access the global playSound method
   const { $playSound } = useNuxtApp();
 
   // Play sound
   const playSound = () => {
     $playSound();
-    isActive.value = !isActive.value;
   };
 
   // Mouse tracking

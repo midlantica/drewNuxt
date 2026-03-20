@@ -12,7 +12,6 @@
 <script setup>
   const store = useToggleExtrasStore();
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
 
   const showSkills = ref(false);
 

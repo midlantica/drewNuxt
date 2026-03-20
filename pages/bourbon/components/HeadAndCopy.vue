@@ -21,9 +21,7 @@
   const copy = useCopy();
   const store = useToggleExtrasStore();
 
-  onMounted(() => {
-    store.initialize();
-  });
+
 </script>
 
 <style scoped>

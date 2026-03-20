@@ -69,11 +69,8 @@
   const store = useToggleExtrasStore();
   const showNavvy = ref(false);
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
-
   onMounted(() => {
     showNavvy.value = true;
-    store.initialize();
   });
 </script>
 

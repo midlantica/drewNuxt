@@ -23,16 +23,8 @@
 </template>
 
 <script setup>
-  import { markRaw, defineAsyncComponent } from 'vue';
-  const drewMug = markRaw(
-    defineAsyncComponent(() => import('@/components/Icons/drewMug.vue'))
-  );
-
   const copy = useCopy();
-  const emit = defineEmits();
-
-  // console.log('isShowContent:', isShowContent)
-  const store = useToggleExtrasStore();
+  const emit = defineEmits(['toggleExtras']);
 </script>
 
 <style scoped></style>

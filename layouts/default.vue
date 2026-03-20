@@ -5,12 +5,7 @@
   </div>
 </template>
 
-<script setup>
-  // definePageMeta({
-  //   pageTransition: false,
-  //   layoutTransition: false
-  // })
-</script>
+<script setup></script>
 
 <style>
   .wrapper {

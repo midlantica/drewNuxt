@@ -36,12 +36,6 @@
   import ArrowLeft from './Icons/iconArrowLeft.vue';
   const store = useToggleExtrasStore();
 
-  const props = defineProps([
-    'store.isShowContent',
-    'store.selectedBtn',
-    'currentView'
-  ]);
-
   const imageRoot = ref('/img/portfolio/extras/');
 
   const portfolioExtras = ref([

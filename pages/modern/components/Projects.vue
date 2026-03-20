@@ -10,7 +10,6 @@
 
 <script setup>
   const store = useToggleExtrasStore();
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
 
   onMounted(() => {
     store.selectedBtn = 'ModernProjects';

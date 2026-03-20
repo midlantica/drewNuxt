@@ -40,7 +40,7 @@
 <script setup>
   import { ref } from 'vue';
   import { onClickOutside } from '@vueuse/core';
-  import xOut from '../components/Icons/iconXout.vue';
+  import xOut from './Icons/iconXout.vue';
 
   const emits = defineEmits(['closeModal']);
   const modal = ref(null);
@@ -50,7 +50,6 @@
     modalItem: Object
   });
 
-  // MARK: This section handles user authentication
 
   function closeModal() {
     emits('closeModal');

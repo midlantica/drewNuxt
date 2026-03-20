@@ -24,7 +24,6 @@
   const store = useToggleExtrasStore();
   const router = useRouter();
 
-  const props = defineProps(['store.isShowContent', 'store.selectedBtn']);
   const showSubTabs = ref(false);
 
   // Define tabs dynamically

@@ -3,8 +3,7 @@
     <div v-for="skill in skills" :key="skill[1]">
       <component
         :is="skill[0]"
-        class="icon {{skill[1]}} }"
-        :class="{ active: hover }"
+        :class="['icon', skill[1], { active: hover }]"
         @mouseleave="hover = false"
         @click="showModal(skill)"
         @mouseenter="hover = true"
@@ -42,19 +41,12 @@
   const modalItem = ref([]);
   const isModalOpen = ref(false);
 
-  // Define a flag to track whether the initial animation cycle has completed
-  const initialAnimationCompleted = ref(false);
-
   // Function to start the initial animation cycle
   function startInitialAnimationCycle() {
-    // Set the hover flag to true to trigger the animation
     hover.value = true;
-
-    // Set a timer to stop the animation after a delay
     setTimeout(() => {
       hover.value = false;
-      initialAnimationCompleted.value = true; // Update the flag to indicate completion
-    }, 1000); // Adjust the delay as needed
+    }, 1000);
   }
 
   function showModal(skill) {
@@ -154,9 +146,8 @@
 
   onMounted(() => {
     showSkills.value = true;
+    startInitialAnimationCycle();
   });
-
-  startInitialAnimationCycle();
 </script>
 
 <style scoped>

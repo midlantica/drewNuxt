@@ -9,8 +9,6 @@
 
   const store = useToggleExtrasStore();
 
-  const emit = defineEmits();
-
   definePageMeta({
     title: 'Modern',
     pageTransition: false,
@@ -24,12 +22,6 @@
       class: `modern`
     }
   });
-
-  const props = defineProps([
-    'store.isShowContent',
-    'store.selectedBtn',
-    'currentView'
-  ]);
 
   const currentView = shallowRef(ModernProjects);
 
