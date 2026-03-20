@@ -1,24 +1,24 @@
 // stores/store.js
 import { defineStore } from 'pinia';
-import { nextTick } from 'vue';
+import { ref, nextTick } from 'vue';
 
-export const useToggleExtrasStore = defineStore('toggleExtras', {
-  state: () => ({
-    isShowContent: false,
-    selectedBtn: ''
-  }),
-  actions: {
-    async toggleExtras() {
-      this.selectedBtn = '';
-      this.isShowContent = !this.isShowContent;
-    },
-    async initialize() {
-      try {
-        await nextTick(); // Wait for DOM updates
-        this.isShowContent = true;
-      } catch (error) {
-        console.error('Error in initialize:', error);
-      }
+export const useToggleExtrasStore = defineStore('toggleExtras', () => {
+  const isShowContent = ref(false);
+  const selectedBtn = ref('');
+
+  async function toggleExtras() {
+    selectedBtn.value = '';
+    isShowContent.value = !isShowContent.value;
+  }
+
+  async function initialize() {
+    try {
+      await nextTick();
+      isShowContent.value = true;
+    } catch (error) {
+      console.error('Error in initialize:', error);
     }
   }
+
+  return { isShowContent, selectedBtn, toggleExtras, initialize };
 });

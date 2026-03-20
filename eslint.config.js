@@ -1,17 +1,14 @@
-// eslint.config.js — flat config (ESLint 9+)
-import pluginVue from 'eslint-plugin-vue';
+// eslint.config.js — flat config using @nuxt/eslint
+import withNuxt from './.nuxt/eslint.config.mjs';
 
-export default [
-  ...pluginVue.configs['flat/recommended'],
-  {
-    rules: {
-      'vue/max-attributes-per-line': [
-        'error',
-        {
-          singleline: { max: 2 },
-          multiline: { max: 1 }
-        }
-      ]
-    }
+export default withNuxt({
+  rules: {
+    'vue/max-attributes-per-line': [
+      'error',
+      {
+        singleline: { max: 2 },
+        multiline: { max: 1 }
+      }
+    ]
   }
-];
+});

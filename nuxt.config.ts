@@ -12,6 +12,7 @@ export default defineNuxtConfig({
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
+    '@nuxt/eslint',
     'nuxt-gtag'
   ],
 
