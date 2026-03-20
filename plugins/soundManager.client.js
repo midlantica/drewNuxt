@@ -27,16 +27,14 @@ export default defineNuxtPlugin(() => {
 
   // Reference for the current sound
   let currentSound = null;
-  let isPlaying = false; // Track if a sound is currently playing
+  let isPlaying = false;
 
   // Play or stop the sound
   const toggleSound = () => {
     if (currentSound && isPlaying) {
-      // Stop the current sound
       currentSound.stop();
       isPlaying = false;
     } else {
-      // Play the next sound
       const soundPath = allSounds[currentIndex];
       if (!soundPath) return;
 
@@ -44,14 +42,13 @@ export default defineNuxtPlugin(() => {
         src: [soundPath],
         volume: 0.75,
         onend: () => {
-          isPlaying = false; // Reset when sound finishes naturally
+          isPlaying = false;
         }
       });
 
       currentSound.play();
       isPlaying = true;
 
-      // Update the index for the next sound and store it
       currentIndex = (currentIndex + 1) % allSounds.length;
       localStorage.setItem('currentSoundIndex', currentIndex.toString());
     }

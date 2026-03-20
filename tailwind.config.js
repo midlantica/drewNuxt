@@ -1,12 +1,9 @@
 /** @type {import('tailwindcss').Config} */
 
-import postcssNesting from 'postcss-nesting';
-import tailwindcss from 'tailwindcss';
 import tailwindClipPath from 'tailwind-clip-path';
 import tailwindColumnRule from 'tailwind-column-rule';
 
 export default {
-  // important: true,
   content: [
     `./components/**/*.{vue,js,ts}`,
     `./layouts/**/*.vue`,
@@ -17,7 +14,6 @@ export default {
     `./app.{js,ts,vue}`,
     `./Error.{js,ts,vue}`,
     `./error.{js,ts,vue}`
-    // `./app.config.{js,ts}`
   ],
   theme: {
     listStyleType: {
@@ -28,12 +24,12 @@ export default {
     },
     extend: {
       screens: {
-        breakXxsm: '320px', // Xxsm
-        breakXsm: '430px', // Xsm
-        breakSm: '630px', // Sm
-        breakMd: '768px', // Md
-        breakLg: '840px', // Lg
-        breakXlg: '1024px' // Xlg
+        breakXxsm: '320px',
+        breakXsm: '430px',
+        breakSm: '630px',
+        breakMd: '768px',
+        breakLg: '840px',
+        breakXlg: '1024px'
       },
       backgroundImage: {
         'gradient-radial': 'radial-gradient(var(--tw-gradient-stops))'
@@ -111,33 +107,23 @@ export default {
       },
       fontFamily: {
         base: {},
-        //
         modernHead: ['Spartan, "Helvetica Neue", Helvetica, sans-serif'],
         modernSubhead: ['Spartan, "Helvetica Neue", Helvetica, sans-serif'],
         modernCopy: ['Spartan, "Helvetica Neue", Helvetica, sans-serif'],
-        //
         bourbonHead: ['VeneerTwo, Helvetica, Arial, sans-serif'],
         bourbonSubhead: ['Veneer, Helvetica, Arial, sans-serif'],
         bourbonCopy: ['AmericanTypewriterStd-Med, Helvetica, Times, serif'],
-        //
         groovyHead: ['Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'],
-        groovySubhead: [
-          'Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'
-        ],
+        groovySubhead: ['Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'],
         groovyCopy: ['Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif'],
-        //
         techyHead: ['Dosis, "Helvetica Neue", Arial, sans-serif'],
         techySubhead: ['Dosis, "Helvetica Neue", Arial, sans-serif'],
         techyCopy: ['Dosis, "Helvetica Neue", Arial, sans-serif'],
-        //
         corpHead: ['Bodoni Moda, Times, serif'],
         corpSubhead: ['Bodoni Moda, Times, serif'],
         corpCopy: ['Bodoni Moda, Times, serif'],
-        //
         punkHead: ['Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif'],
-        punkSubhead: [
-          'Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif'
-        ],
+        punkSubhead: ['Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif'],
         punkCopy: ['Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif']
       },
       dropShadow: {
@@ -148,5 +134,5 @@ export default {
     }
   },
   darkMode: 'class',
-  plugins: [postcssNesting, tailwindcss, tailwindClipPath, tailwindColumnRule]
+  plugins: [tailwindClipPath, tailwindColumnRule]
 };

@@ -1,21 +1,9 @@
 // nuxt.config.ts
-const path = require('path');
-
 // https://nuxt.com/docs/api/configuration/nuxt-config
 export default defineNuxtConfig({
-  // rootDir: __dirname,
-  // srcDir: "client",
-  // serverDir: "server",
-  // baseUrl: "/",
-  // devServer: {
-  // https: {
-  //   key: './server.key',
-  //   cert: './server.crt'
-  // }
-  // },
   buildDir: '.nuxt',
 
-  ssr: false,
+  ssr: true,
   devtools: { enabled: true },
 
   modules: [
@@ -23,22 +11,21 @@ export default defineNuxtConfig({
     '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/nuxt',
-    // "@vueuse/sound/nuxt",
+    '@nuxtjs/google-fonts',
     'nuxt-gtag'
   ],
 
   plugins: [
-    '~/plugins/soundManager.js',
-    '~/plugins/ndok.js',
-    '~/plugins/ayah.js'
+    '~/plugins/soundManager.client.js',
+    '~/plugins/ndok.client.js',
+    '~/plugins/ayah.client.js'
   ],
 
   pinia: {
-    storesDirs: ['./stores/**'] // './custom-folder/stores/**'
+    storesDirs: ['./stores/**']
   },
 
   imports: {
-    // Auto-import pinia stores defined in `~/stores`
     dirs: ['stores']
   },
 
@@ -46,10 +33,29 @@ export default defineNuxtConfig({
     id: 'G-HK3TKWNCR6'
   },
 
-  // vueTransitions: {
-  //   // The same options as in the plugin itself.
-  //   // You will get an autocomplete using Nuxt 3.
-  // },
+  googleFonts: {
+    families: {
+      Dosis: [200, 500, 600],
+      'Alegreya SC': {
+        wght: [400, 500],
+        ital: [400, 500]
+      },
+      Spartan: [100, 200, 300, 400, 600, 900],
+      'Barlow Semi Condensed': [500],
+      'Bodoni Moda': {
+        wght: [400, 600],
+        ital: [400, 600]
+      },
+      Poppins: {
+        wght: [300, 400, 500],
+        ital: [300, 400, 500]
+      }
+    },
+    display: 'swap',
+    preconnect: true,
+    prefetch: true
+  },
+
   css: [
     '~/assets/css/main.css',
     '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
@@ -57,7 +63,6 @@ export default defineNuxtConfig({
 
   postcss: {
     plugins: {
-      // "postcss-import": {},
       'tailwindcss/nesting': {},
       tailwindcss: {},
       autoprefixer: {}
@@ -68,7 +73,13 @@ export default defineNuxtConfig({
     '/': {
       redirect: '/modern/',
       prerender: true
-    }
+    },
+    '/modern/': { prerender: true },
+    '/bourbon/': { prerender: true },
+    '/groovy/': { prerender: true },
+    '/techy/': { prerender: true },
+    '/corp/': { prerender: true },
+    '/punk/': { prerender: true }
   },
 
   components: [
@@ -81,23 +92,6 @@ export default defineNuxtConfig({
     '~/components' // this must be last line
   ],
 
-  // sound: {
-  //   sounds: {
-  //     jollyGoodSound: {
-  //       src: "/jollyGood.mp3",
-  //       options: {
-  //         volume: 0.75
-  //       }
-  //     },
-  //     yeehawSound: {
-  //       src: "/yeehaw.mp3",
-  //       options: {
-  //         volume: 0.75
-  //       }
-  //     }
-  //   }
-  // },
-
   app: {
     baseURL: '/',
     head: {
@@ -108,63 +102,14 @@ export default defineNuxtConfig({
         },
         { charset: 'utf-8' }
       ],
-      link: [
-        { rel: 'preconnect', href: 'https://fonts.gstatic.com' },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Dosis:wght@200;500;600&display=swap'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Alegreya+SC:ital,wght@0,400;0,500;1,400;1,500&display=swap'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Spartan:wght@100;200;300;400;600;900&display=swap'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Barlow+Semi+Condensed:wght@500&display=swap'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Bodoni+Moda:ital,wght@0,400;0,600;1,400;1,600&display=swap'
-        },
-        {
-          rel: 'stylesheet',
-          href: 'https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,300;0,400;0,500;1,300;1,400;1,500&display=swap'
-        }
-      ],
-      // "style": [],
-      // "script": [],
       noscript: [
         {
-          children: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>`
+          innerHTML: `<strong>We're sorry but DrewHarper.com doesn't work properly without JavaScript enabled. Please enable it to continue.</strong>`
         }
       ]
     },
     pageTransition: false,
     layoutTransition: false
-  },
-
-  experimental: {
-    // viewTransition: false,
-    // appManifest: false,
-    // watcher: "chokidar",
-  },
-
-  build: {
-    //
-  },
-
-  // quiet: false,
-  // server: {
-  //   hmr: {
-  //     overlay: false,
-  //   },
-  // },
-  vue: {
-    // propsDestructure: true
   },
 
   nitro: {

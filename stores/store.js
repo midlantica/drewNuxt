@@ -5,11 +5,11 @@ import { nextTick } from 'vue';
 export const useToggleExtrasStore = defineStore('toggleExtras', {
   state: () => ({
     isShowContent: false,
-    selectedBtn: null
+    selectedBtn: ''
   }),
   actions: {
     async toggleExtras() {
-      this.selectedBtn = null;
+      this.selectedBtn = '';
       this.isShowContent = !this.isShowContent;
     },
     async initialize() {
