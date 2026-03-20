@@ -23,6 +23,7 @@
 </template>
 
 <script setup>
+  import drewMug from '~/components/Icons/drewMug.vue';
   const copy = useCopy();
   const emit = defineEmits(['toggleExtras']);
 </script>
