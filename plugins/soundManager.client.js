@@ -58,7 +58,7 @@ export default defineNuxtPlugin(() => {
     currentSound = new Howl({
       src: [soundPath],
       volume: 0.75,
-      html5: false, // Use Web Audio API (not HTML5 audio) for better control
+      html5: true, // Stream audio (avoids blocking decode of large MP3s)
       onend: () => {
         isPlaying = false;
       },
