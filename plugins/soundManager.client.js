@@ -1,4 +1,4 @@
-import { Howl } from 'howler';
+import { Howl, Howler } from 'howler';
 
 export default defineNuxtPlugin(() => {
   // Dynamically load sound files from folders
@@ -13,7 +13,6 @@ export default defineNuxtPlugin(() => {
   // Merge the sounds in alternating order
   const allSounds = [];
   const maxLength = Math.max(ukSounds.length, usSounds.length);
-
   for (let i = 0; i < maxLength; i++) {
     if (i < usSounds.length) allSounds.push(usSounds[i]);
     if (i < ukSounds.length) allSounds.push(ukSounds[i]);
@@ -29,29 +28,57 @@ export default defineNuxtPlugin(() => {
   let currentSound = null;
   let isPlaying = false;
 
+  // Resume AudioContext if suspended (browser autoplay policy)
+  const resumeAudioContext = async () => {
+    if (Howler.ctx && Howler.ctx.state === 'suspended') {
+      await Howler.ctx.resume();
+    }
+  };
+
   // Play or stop the sound
-  const toggleSound = () => {
+  const toggleSound = async () => {
+    // Always resume AudioContext first — required by browser autoplay policy
+    await resumeAudioContext();
+
     if (currentSound && isPlaying) {
       currentSound.stop();
       isPlaying = false;
-    } else {
-      const soundPath = allSounds[currentIndex];
-      if (!soundPath) return;
-
-      currentSound = new Howl({
-        src: [soundPath],
-        volume: 0.75,
-        onend: () => {
-          isPlaying = false;
-        }
-      });
-
-      currentSound.play();
-      isPlaying = true;
-
-      currentIndex = (currentIndex + 1) % allSounds.length;
-      localStorage.setItem('currentSoundIndex', currentIndex.toString());
+      return;
     }
+
+    const soundPath = allSounds[currentIndex];
+    if (!soundPath) return;
+
+    // Stop any previous sound cleanly
+    if (currentSound) {
+      currentSound.unload();
+      currentSound = null;
+    }
+
+    currentSound = new Howl({
+      src: [soundPath],
+      volume: 0.75,
+      html5: false, // Use Web Audio API (not HTML5 audio) for better control
+      onend: () => {
+        isPlaying = false;
+      },
+      onloaderror: (id, err) => {
+        console.warn('[soundManager] load error:', err);
+        isPlaying = false;
+      },
+      onplayerror: (id, err) => {
+        console.warn('[soundManager] play error:', err);
+        isPlaying = false;
+        // Try resuming AudioContext and retry once
+        resumeAudioContext().then(() => currentSound?.play());
+      }
+    });
+
+    currentSound.play();
+    isPlaying = true;
+
+    currentIndex = (currentIndex + 1) % allSounds.length;
+    localStorage.setItem('currentSoundIndex', currentIndex.toString());
   };
 
   return {
