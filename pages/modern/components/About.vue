@@ -2,8 +2,8 @@
   <div class="aboutGrid">
     <transition name="bounce3" appear>
       <ModernHeadAndCopy
-        @toggleExtras="store.toggleExtras"
-        :isShowContent="store.isShowContent"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
       />
     </transition>
     <transition name="bounce4" appear>
@@ -16,7 +16,6 @@
   import { ModernHeadAndCopy } from '#components';
 
   const store = useToggleExtrasStore();
-
 
   onMounted(() => {
     store.selectedBtn = 'ModernAbout';
