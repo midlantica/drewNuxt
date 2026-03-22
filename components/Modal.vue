@@ -46,11 +46,9 @@
   const modal = ref(null);
 
   defineOptions({ name: 'ModalDialog' });
-  withDefaults(defineProps({
+  defineProps({
     isModalOpen: Boolean,
-    modalItem: Object
-  }), {
-    modalItem: null
+    modalItem: { type: Object, default: null }
   });
 
 
