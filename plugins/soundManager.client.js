@@ -1,6 +1,10 @@
 import { Howl, Howler } from 'howler';
 
 export default defineNuxtPlugin(() => {
+  // Force Howler to use HTML5 audio globally — bypasses Web Audio API
+  // and avoids the AudioContext autoplay policy entirely
+  Howler.usingWebAudio = false;
+
   // Dynamically load sound files from folders
   const ukSounds = Object.keys(
     import.meta.glob('/public/sounds/uk/*.mp3', { eager: true })
@@ -28,18 +32,8 @@ export default defineNuxtPlugin(() => {
   let currentSound = null;
   let isPlaying = false;
 
-  // Resume AudioContext if suspended (browser autoplay policy)
-  const resumeAudioContext = async () => {
-    if (Howler.ctx && Howler.ctx.state === 'suspended') {
-      await Howler.ctx.resume();
-    }
-  };
-
   // Play or stop the sound
-  const toggleSound = async () => {
-    // Always resume AudioContext first — required by browser autoplay policy
-    await resumeAudioContext();
-
+  const toggleSound = () => {
     if (currentSound && isPlaying) {
       currentSound.stop();
       isPlaying = false;
@@ -49,7 +43,7 @@ export default defineNuxtPlugin(() => {
     const soundPath = allSounds[currentIndex];
     if (!soundPath) return;
 
-    // Stop any previous sound cleanly
+    // Unload previous sound to free resources
     if (currentSound) {
       currentSound.unload();
       currentSound = null;
@@ -58,10 +52,9 @@ export default defineNuxtPlugin(() => {
     currentSound = new Howl({
       src: [soundPath],
       volume: 0.75,
-      html5: true, // Stream audio (avoids blocking decode of large MP3s)
-      onend: () => {
-        isPlaying = false;
-      },
+      html5: true,
+      onplay: () => { isPlaying = true; },
+      onend: () => { isPlaying = false; },
       onloaderror: (id, err) => {
         console.warn('[soundManager] load error:', err);
         isPlaying = false;
@@ -69,13 +62,10 @@ export default defineNuxtPlugin(() => {
       onplayerror: (id, err) => {
         console.warn('[soundManager] play error:', err);
         isPlaying = false;
-        // Try resuming AudioContext and retry once
-        resumeAudioContext().then(() => currentSound?.play());
       }
     });
 
     currentSound.play();
-    isPlaying = true;
 
     currentIndex = (currentIndex + 1) % allSounds.length;
     localStorage.setItem('currentSoundIndex', currentIndex.toString());
