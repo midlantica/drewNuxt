@@ -11,15 +11,15 @@
           :class="{ 'shadow-transition': isMounted }"
         >
           <div
-            @click="$emit('toggleExtras')"
             class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer"
+            @click="$emit('toggleExtras')"
           />
         </div>
       </div>
 
       <div
-        @click="$emit('toggleExtras')"
         class="float-left relative min-[375px]:left-[-1.95rem] sm:left-[-1.55rem] cursor-pointer"
+        @click="$emit('toggleExtras')"
       >
         <div class="flex flex-row flex-wrap justify-center w-auto gap-4 m-auto">
           <div class="flex gap-4">
@@ -47,7 +47,10 @@
               </a>
             </div>
             <div class="duration-300 ease-out groovyOvalBtn">
-              <a :href="`${copy.portfolio}`" target="_blank" class="resume">
+              <a
+:href="`${copy.portfolio}`"
+target="_blank"
+class="resume">
                 PDF Resume
               </a>
             </div>
@@ -61,8 +64,8 @@
 <script setup>
   import mastDrew from './masthead/mastDrew.vue';
   import mastHarper from './masthead/mastHarper.vue';
+  defineEmits(['toggleExtras']);
   const copy = useCopy();
-  const store = useToggleExtrasStore();
 
   const isMounted = ref(false);
 

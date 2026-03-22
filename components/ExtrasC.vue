@@ -5,8 +5,8 @@
         class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center text-black"
       >
         <ArrowLeft
-          @click="$emit('toggleExtras')"
           class="animate-pulse cursor-pointer"
+          @click="$emit('toggleExtras')"
         />
         Portfolio Extras
       </h1>
@@ -20,7 +20,7 @@
           class="content-center gap-x-4"
         >
           <a :href="`${imageRoot}${item.imageUrl}`" target="_BLANK">
-            <img class="portThumbs" :src="`${imageRoot}${item.imageSrc}`" />
+            <img class="portThumbs" :src="`${imageRoot}${item.imageSrc}`" >
             <div class="text-center">
               <p>{{ item.text }}</p>
             </div>
@@ -34,7 +34,7 @@
 <script setup>
   import { ref } from 'vue';
   import ArrowLeft from './Icons/iconArrowLeft.vue';
-  const store = useToggleExtrasStore();
+  defineEmits(['toggleExtras']);
 
   const imageRoot = ref('/img/portfolio/extras/');
 

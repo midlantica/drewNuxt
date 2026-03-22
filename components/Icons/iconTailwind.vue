@@ -1,9 +1,9 @@
 <template>
   <svg
+    id="svgTailwind"
     xmlns="http://www.w3.org/2000/svg"
     fill="none"
     viewBox="0 0 89 60"
-    id="svgTailwind"
   >
     <path
       class="groupTailwind"

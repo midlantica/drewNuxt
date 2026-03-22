@@ -22,10 +22,11 @@
 </script>
 
 <template>
+  <div>
   <transition name="topDown" appear>
     <CorpNavvy
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </transition>
 
@@ -51,14 +52,15 @@
     <component
       :is="ExtrasC"
       class="col-span-2"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </main>
 
   <footer class="shadow-none">
     <Quote />
   </footer>
+  </div>
 </template>
 
 <style scoped>

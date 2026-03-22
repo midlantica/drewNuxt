@@ -1,5 +1,8 @@
 <template>
-  <svg id="svgIcon" viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
+  <svg
+id="svgIcon"
+viewBox="0 0 88 60"
+xmlns="http://www.w3.org/2000/svg">
     <title>Sass</title>
 
     <g id="sassIcon" transform="translate(23, 7)">

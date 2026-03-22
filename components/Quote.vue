@@ -1,20 +1,24 @@
 <template>
   <div v-show="showQuotes" class="quoteBlock">
-    <div @click="previousQuote()" class="arrowBtn" />
+    <div class="arrowBtn" @click="previousQuote()" />
 
-    <div class="fade w-full" v-show="currentQuote" :key="qIndex">
+    <div
+v-show="currentQuote"
+:key="qIndex"
+class="fade w-full">
       <p class="text-balance">
         &ldquo;{{ currentQuote.quote }}&rdquo;
         <cite>&ndash; {{ currentQuote.author }}</cite>
       </p>
     </div>
 
-    <div @click="nextQuote()" class="arrowBtn" />
+    <div class="arrowBtn" @click="nextQuote()" />
   </div>
 </template>
 
 <script setup>
   import { ref } from 'vue';
+  defineOptions({ name: 'QuoteBlock' });
   const quotesStore = useQuotes();
 
   const showQuotes = ref(false);

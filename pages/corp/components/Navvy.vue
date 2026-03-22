@@ -65,8 +65,8 @@
 
 <script setup>
   import drewHarper from '../components/navvyArt/drewHarper.vue';
+  defineEmits(['toggleExtras']);
   const copy = useCopy();
-  const store = useToggleExtrasStore();
   const showNavvy = ref(false);
 
   onMounted(() => {

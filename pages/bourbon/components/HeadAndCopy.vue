@@ -7,8 +7,8 @@
       class="flex auto-rows-auto justify-start justify-items-start items-center gap-2"
     >
       <div
-        @click="$emit('toggleExtras')"
         class="bg-[url('/img/drew_mug_red.png')] h-[100px] min-h-[100px] min-w-[84px] w-[84px] block bg-no-repeat bg-cover self-center hover:cursor-pointer jelloHorizontal"
+        @click="$emit('toggleExtras')"
       />
       <h1>{{ copy.druHead }}</h1>
       <AuthenticStamp class="authenticStamp" />

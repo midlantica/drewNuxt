@@ -27,6 +27,7 @@
 
 <script setup>
   import { useMouseInElement } from '@vueuse/core';
+  defineOptions({ name: 'AboutCard' });
 
   // Create refs
   const copy = useCopy();

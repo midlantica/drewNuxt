@@ -1,9 +1,9 @@
 <template>
   <svg
+    id="iconCSS"
     viewBox="0 0 88 60"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    id="iconCSS"
   >
     <g id="css3">
       <path

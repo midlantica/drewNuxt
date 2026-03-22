@@ -1,12 +1,16 @@
 <template>
   <svg
+    id="iconUiux"
     viewBox="0 0 88 60"
     xmlns="http://www.w3.org/2000/svg"
     xmlns:xlink="http://www.w3.org/1999/xlink"
-    id="iconUiux"
   >
     <title>UI/UX Design</title>
-    <g stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g
+stroke="none"
+stroke-width="1"
+fill="none"
+fill-rule="evenodd">
       <g transform="translate(-21.000000, -16.000000)">
         <g id="uiux" transform="translate(38.832246, 26.459350)">
           <g id="background">

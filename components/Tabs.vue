@@ -3,9 +3,9 @@
     <transition name="slide">
       <div
         v-if="themeBar"
-        @click="chooseTheme"
         class="-top-[.5rem] border-b-gray-900/50 ease-cubic-bezier(0.83,0.1,1,1) font-modernHead from-gray-800 h-[2.55rem] m-auto p-[1.15rem_0_0_0] slimShady text-white/75 to-gray-900 w-full absolute z-50 text-xs font-semibold tracking-widest leading-none text-center uppercase bg-gradient-to-b border-b duration-1000 cursor-pointer hover:from-gray-900 hover:to-gray-950 hover:text-groovy-yellowPaleDk/85"
         :class="{ '-translate-y-12': !themeBar }"
+        @click="chooseTheme"
       >
         Choose theme
         <span class="text-[0.9rem] text-black">😃</span>
@@ -32,6 +32,7 @@
 
 <script setup>
   import { ref } from 'vue';
+  defineOptions({ name: 'ThemeTabs' });
 
   const tabs = ref(['modern', 'bourbon', 'groovy', 'techy', 'corp', 'punk']);
 

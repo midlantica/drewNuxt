@@ -1,9 +1,9 @@
 <template>
   <svg
+    id="jsBox"
     viewBox="0 0 89 60"
     fill="none"
     xmlns="http://www.w3.org/2000/svg"
-    id="jsBox"
   >
     <g class="jsBoxInner">
       <path

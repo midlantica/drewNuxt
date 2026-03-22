@@ -10,7 +10,10 @@
       </div>
 
       <div class="resumeLinks">
-        <a :href="`${copy.portfolio}`" target="_BLANK" class="resume rOne">
+        <a
+:href="`${copy.portfolio}`"
+target="_BLANK"
+class="resume rOne">
           PDF Resume
         </a>
       </div>

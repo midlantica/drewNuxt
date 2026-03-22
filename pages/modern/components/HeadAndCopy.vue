@@ -4,8 +4,8 @@
       class="grid-cols-[88px_auto] grid auto-rows-auto justify-items-start items-center gap-2 gap-x-1.5 mt-4 mb-3"
     >
       <div
-        @click="emit('toggleExtras')"
         class="h-[94px] jelloHorizontal w-[78px] col-start-1 col-end-2 row-start-1 row-end-2 self-start bg-no-repeat bg-cover cursor-pointer"
+        @click="emit('toggleExtras')"
       >
         <drewMug />
       </div>

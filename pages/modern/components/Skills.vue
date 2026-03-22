@@ -13,7 +13,7 @@
   const store = useToggleExtrasStore();
 
 
-  const showSkills = ref(false);
+  // const showSkills = ref(false);
 
   onMounted(() => {
     store.selectedBtn = 'ModernSkills';

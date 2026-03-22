@@ -1,10 +1,10 @@
 <template>
-  <div class="projectBox" v-show="showCarousel">
+  <div v-show="showCarousel" class="projectBox">
     <div class="projectBox__top">
       <transition name="bounce4" appear>
         <a
-          class="carouselArrow flash"
           v-if="backButtonView"
+          class="carouselArrow flash"
           @click="viewCarousel()"
         >
           ﹤ back

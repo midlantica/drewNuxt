@@ -23,19 +23,20 @@
 </script>
 
 <template>
+  <div>
   <transition name="topDown" appear>
     <TechyNavvy
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </transition>
 
-  <main class="mainGrid" v-if="store.isShowContent">
+  <main v-if="store.isShowContent" class="mainGrid">
     <transition name="bounce2" appear>
       <TechyHeadAndCopy
         class="copyArea"
-        @toggleExtras="store.toggleExtras"
-        :isShowContent="store.isShowContent"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
       />
     </transition>
 
@@ -52,18 +53,19 @@
     </transition>
   </main>
 
-  <main class="mainGrid" v-else>
+  <main v-else class="mainGrid">
     <component
       :is="ExtrasC"
       class="col-span-2"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </main>
 
   <footer class="bg-techy-mango text-base-ivory shadow-none">
     <Quote />
   </footer>
+  </div>
 </template>
 
 <style scoped>

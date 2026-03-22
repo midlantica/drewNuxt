@@ -9,13 +9,13 @@
       >
         <div
           class="text-modern-accentRed cursor-pointer"
-          @click="$emit('toggleExtras')"
+          @click="$emit('toggle-extras')"
         >
           drew harper
         </div>
         <AuthenticStamp
           class="authenticStamp cursor-pointer"
-          @click="$emit('toggleExtras')"
+          @click="$emit('toggle-extras')"
         />
       </h1>
 
@@ -32,7 +32,10 @@
           <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="btn">
             {{ copy.druEmail }}
           </nuxt-link>
-          <a :href="`${copy.portfolio}`" target="_blank" class="btn">
+          <a
+:href="`${copy.portfolio}`"
+target="_blank"
+class="btn">
             PDF&nbsp;Resume
           </a>
         </p>
@@ -42,10 +45,8 @@
 </template>
 
 <script setup>
+  defineEmits(['toggle-extras']);
   const copy = useCopy();
-  const store = useToggleExtrasStore();
-
-
 </script>
 
 <style scoped>

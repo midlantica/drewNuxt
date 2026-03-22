@@ -23,10 +23,11 @@
 </script>
 
 <template>
+  <div>
   <transition name="topDown" appear>
     <BourbonNavvy
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </transition>
 
@@ -37,8 +38,8 @@
     <transition name="bounce2" appear>
       <BourbonHeadAndCopy
         class="copyArea"
-        @toggleExtras="store.toggleExtras"
-        :isShowContent="store.isShowContent"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
       />
     </transition>
     <transition name="bounce4" appear>
@@ -59,14 +60,15 @@
     <component
       :is="ExtrasC"
       class="col-span-2"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </main>
 
   <footer
     class="bg-[url(/img/bg/bg_bag_dk.jpg)] shadow-druShadow h-3 col-start-1 col-end-3 bg-repeat"
   />
+  </div>
 </template>
 
 <style scoped>

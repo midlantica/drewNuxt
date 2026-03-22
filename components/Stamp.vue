@@ -2,8 +2,8 @@
   <div class="skillsGrid">
     <Teleport to="#modal">
       <transition name="modal-fade" appear>
-        <div class="modalBg" v-if="isModalOpen">
-          <div class="modal" ref="modal">
+        <div v-if="isModalOpen" class="modalBg">
+          <div ref="modal" class="modal">
             <div class="closeBtn" @click="closeModal">
               <authenticStamp />
             </div>
@@ -15,13 +15,14 @@
 </template>
 
 <script setup>
-  import { ref, markRaw } from 'vue';
+  import { ref } from 'vue';
   import authenticStamp from './AuthenticStamp.vue';
   import { onClickOutside } from '@vueuse/core';
+  defineOptions({ name: 'StampModal' });
 
   const modal = ref(null);
 
-  const modalItem = ref([]);
+  // const modalItem = ref([]);
 
   function closeModal() {
     isModalOpen.value = false;

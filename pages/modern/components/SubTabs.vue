@@ -6,11 +6,11 @@
     <div
       v-for="tab in tabs"
       :key="tab.name"
-      @click="emitSwitchView(tab.name)"
       :class="['btn',
         tab.class,
         { selectedBtn: store.selectedBtn === tab.name }
       ]"
+      @click="emitSwitchView(tab.name)"
     >
       {{ tab.label }}
     </div>
@@ -20,7 +20,7 @@
 <script setup>
   import { useRouter } from 'vue-router';
 
-  const emit = defineEmits();
+  const emit = defineEmits(['switch-view']);
   const store = useToggleExtrasStore();
   const router = useRouter();
 

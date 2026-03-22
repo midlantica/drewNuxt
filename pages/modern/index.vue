@@ -46,21 +46,22 @@
 </script>
 
 <template>
+  <div>
   <!-- <div class="flex flex-col items-center"> -->
 
   <transition name="topDown" appear>
     <ModernNavvy
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </transition>
 
   <transition name="bounce2" appear>
     <ModernSubTabs
+      :is-show-content="store.isShowContent"
+      :selected-btn="store.selectedBtn"
       @switch-view="switchView"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
-      :selectedBtn="store.selectedBtn"
+      @toggle-extras="store.toggleExtras"
     />
   </transition>
 
@@ -70,21 +71,22 @@
   >
     <component
       :is="currentView"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </main>
 
   <main v-else class="mainGrid">
     <component
       :is="ExtrasC"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
       class="col-span-2"
+      @toggle-extras="store.toggleExtras"
     />
   </main>
 
   <!-- </div> -->
+  </div>
 </template>
 
 <style scoped></style>

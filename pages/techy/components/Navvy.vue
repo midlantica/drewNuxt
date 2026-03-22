@@ -37,9 +37,8 @@
 <script setup>
   import mastDrew from './masthead/mastDrew.vue';
   import mastHarper from './masthead/mastHarper.vue';
+  defineEmits(['toggleExtras']);
   const copy = useCopy();
-  const store = useToggleExtrasStore();
-
 
 </script>
 

@@ -1,22 +1,22 @@
 <!-- components/Modal.vue -->
 <template>
-  <Teleport to="#modal" v-if="isModalOpen">
+  <Teleport v-if="isModalOpen" to="#modal">
     <transition name="modal-fade" appear>
       <div class="modalBg">
-        <div class="modal" ref="modal">
+        <div ref="modal" class="modal">
           <div class="closeBtn" @click="closeModal">
             <xOut />
           </div>
-          <div class="modalInner" v-if="modalItem">
+          <div v-if="modalItem" class="modalInner">
             <div class="icon">
               <component
-                class="icon"
                 :is="modalItem.component"
+                class="icon"
                 @mouseleave="hover = false"
               />
             </div>
             <div class="content">
-              <h4 class="font-semibold" v-if="modalItem.url">
+              <h4 v-if="modalItem.url" class="font-semibold">
                 <a
                   class="hover:text-blue-800"
                   :href="modalItem.url"
@@ -25,7 +25,7 @@
                   {{ modalItem.title }}
                 </a>
               </h4>
-              <h4 class="font-semibold" v-else>
+              <h4 v-else class="font-semibold">
                 {{ modalItem.title }}
               </h4>
               <p>{{ modalItem.description }}</p>
@@ -45,9 +45,12 @@
   const emits = defineEmits(['closeModal']);
   const modal = ref(null);
 
-  const props = defineProps({
+  defineOptions({ name: 'ModalDialog' });
+  withDefaults(defineProps({
     isModalOpen: Boolean,
     modalItem: Object
+  }), {
+    modalItem: null
   });
 
 

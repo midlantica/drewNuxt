@@ -1,5 +1,8 @@
 <template>
-  <svg id="svgVscode" viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
+  <svg
+id="svgVscode"
+viewBox="0 0 88 60"
+xmlns="http://www.w3.org/2000/svg">
     <title>VS Code</title>
     <g class="groupVscode">
       <g transform="translate(-21.000000, -202.000000)">

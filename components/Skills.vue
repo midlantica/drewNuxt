@@ -11,16 +11,15 @@
     </div>
 
     <Modal
-      :isModalOpen="isModalOpen"
-      :modalItem="modalItem"
-      @closeModal="closeModal"
+      :is-modal-open="isModalOpen"
+      :modal-item="modalItem"
+      @close-modal="closeModal"
     />
   </div>
 </template>
 
 <script setup>
-  import { ref, markRaw, defineAsyncComponent } from 'vue';
-
+  import { ref, markRaw } from 'vue';
   import {
     iconUiux,
     iconHtml5,
@@ -35,6 +34,7 @@
     iconNuxt,
     iconChelsea
   } from './Icons/allicons.vue';
+  defineOptions({ name: 'SkillsGrid' });
 
   const showSkills = ref(false);
   const hover = ref(false);

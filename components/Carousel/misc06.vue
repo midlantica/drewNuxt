@@ -8,7 +8,10 @@
     fractions
     progress
   >
-    <vueper-slide v-for="(slide, i) in slides" :key="i" :image="slide.image">
+    <vueper-slide
+v-for="(slide, i) in slides"
+:key="i"
+:image="slide.image">
       <template #loader>
         <i class="icon icon-loader spinning" />
         <span>Loading...</span>

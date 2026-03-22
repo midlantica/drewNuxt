@@ -1,17 +1,18 @@
 <template>
+  <div>
   <transition name="topDown" appear>
     <PunkNavvy
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </transition>
 
-  <main class="mainGrid" v-if="store.isShowContent">
+  <main v-if="store.isShowContent" class="mainGrid">
     <transition name="bounce2" appear>
       <PunkHeadAndCopy
         class="copyArea"
-        @toggleExtras="store.toggleExtras"
-        :isShowContent="store.isShowContent"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
       />
     </transition>
 
@@ -28,14 +29,15 @@
     </transition>
   </main>
 
-  <main class="mainGrid" v-else>
+  <main v-else class="mainGrid">
     <component
       :is="ExtrasC"
       class="col-span-2"
-      @toggleExtras="store.toggleExtras"
-      :isShowContent="store.isShowContent"
+      :is-show-content="store.isShowContent"
+      @toggle-extras="store.toggleExtras"
     />
   </main>
+  </div>
 </template>
 
 <script setup>
