@@ -1,17 +1,13 @@
-import { Howl } from 'howler';
-
 export default defineNuxtPlugin(() => {
-  let clickSound = null;
+  let audio = null;
 
   const playNdok = () => {
-    if (!clickSound) {
-      clickSound = new Howl({
-        src: ['/sounds/ndok.mp3'],
-        volume: 0.1,
-        html5: true
-      });
+    if (!audio) {
+      audio = new Audio('/sounds/ndok.mp3');
+      audio.volume = 0.1;
     }
-    clickSound.play();
+    audio.currentTime = 0;
+    audio.play().catch(() => {});
   };
 
   return {

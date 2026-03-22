@@ -1,10 +1,4 @@
-import { Howl, Howler } from 'howler';
-
 export default defineNuxtPlugin(() => {
-  // Force Howler to use HTML5 audio globally — bypasses Web Audio API
-  // and avoids the AudioContext autoplay policy entirely
-  Howler.usingWebAudio = false;
-
   // Dynamically load sound files from folders
   const ukSounds = Object.keys(
     import.meta.glob('/public/sounds/uk/*.mp3', { eager: true })
@@ -28,44 +22,41 @@ export default defineNuxtPlugin(() => {
     10
   );
 
-  // Reference for the current sound
-  let currentSound = null;
-  let isPlaying = false;
+  // Reference for the current Audio element
+  let currentAudio = null;
 
   // Play or stop the sound
   const toggleSound = () => {
-    if (currentSound && isPlaying) {
-      currentSound.stop();
-      isPlaying = false;
+    // If a sound is currently playing, stop it (toggle off)
+    if (currentAudio && !currentAudio.paused) {
+      currentAudio.pause();
+      currentAudio.currentTime = 0;
+      currentAudio = null;
       return;
     }
 
     const soundPath = allSounds[currentIndex];
     if (!soundPath) return;
 
-    // Unload previous sound to free resources
-    if (currentSound) {
-      currentSound.unload();
-      currentSound = null;
+    // Clean up previous audio element
+    if (currentAudio) {
+      currentAudio.pause();
+      currentAudio.src = '';
+      currentAudio = null;
     }
 
-    currentSound = new Howl({
-      src: [soundPath],
-      volume: 0.75,
-      html5: true,
-      onplay: () => { isPlaying = true; },
-      onend: () => { isPlaying = false; },
-      onloaderror: (id, err) => {
-        console.warn('[soundManager] load error:', err);
-        isPlaying = false;
-      },
-      onplayerror: (id, err) => {
-        console.warn('[soundManager] play error:', err);
-        isPlaying = false;
-      }
-    });
+    const audio = new Audio(soundPath);
+    audio.volume = 0.75;
+    currentAudio = audio;
 
-    currentSound.play();
+    audio.addEventListener('ended', () => {
+      currentAudio = null;
+    }, { once: true });
+
+    audio.play().catch(err => {
+      console.warn('[soundManager] play error:', err);
+      currentAudio = null;
+    });
 
     currentIndex = (currentIndex + 1) % allSounds.length;
     localStorage.setItem('currentSoundIndex', currentIndex.toString());

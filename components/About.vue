@@ -2,26 +2,31 @@
 <template>
   <div
     v-show="showAbout"
-    class="about relative z-10 pointer-events-auto will-change-transform"
     ref="target"
-    :style="{ transform: cardTransform, transition: 'transform 0.25 ease-out' }"
+    class="aboutWrapper pointer-events-auto cursor-pointer"
     @click="playSound"
   >
-    <div class="flagBox">
-      <div class="flag">&nbsp;</div>
-    </div>
-    <p
-      class="leading-[1.4em] text-[0.9em] block justify-center content-center items-center self-center tracking-wider text-left text-gray-600"
+    <div
+      class="about relative z-10 will-change-transform"
+      :style="{
+        transform: cardTransform,
+        transition: 'transform 0.25s ease-out'
+      }"
     >
-      {{ copy.aboutCopy }}
-    </p>
+      <div class="flagBox">
+        <div class="flag">&nbsp;</div>
+      </div>
+      <p
+        class="leading-[1.4em] text-[0.9em] block justify-center content-center items-center self-center tracking-wider text-left text-gray-600"
+      >
+        {{ copy.aboutCopy }}
+      </p>
+    </div>
   </div>
 </template>
 
 <script setup>
   import { useMouseInElement } from '@vueuse/core';
-  // composable auto-imported:
-  // import { useCardTransform } from '~/composables/useCardTransform';
 
   // Create refs
   const copy = useCopy();
@@ -34,7 +39,7 @@
     $playSound();
   };
 
-  // Mouse tracking
+  // Mouse tracking — track the stable wrapper, not the transformed card
   const target = ref(null);
   const { elementX, elementY, isOutside, elementHeight, elementWidth } =
     useMouseInElement(target);
@@ -51,8 +56,7 @@
 
 <style scoped>
   .about {
-    /* cursor: pointer !important; */
-    @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap gap-4 justify-center items-center content-center self-center rounded-sm cursor-pointer shadow-[0px_1px_2px_0px_#00000080];
+    @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap gap-4 justify-center items-center content-center self-center rounded-sm shadow-[0px_1px_2px_0px_#00000080];
 
     @media (max-width: theme('screens.breakXlg')) {
       @apply mt-0 mx-0 mb-0;
