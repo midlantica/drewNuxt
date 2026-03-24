@@ -99,6 +99,7 @@ key="adobeIndy">
 </script>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg {
     width: 88px;
 

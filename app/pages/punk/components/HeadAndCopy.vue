@@ -36,6 +36,7 @@ class="resume rOne">
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   .authenticStampPunk {
     @apply self-center;
     animation: rotator2 0.75s cubic-bezier(0.39, 0.59, 0.15, 1.29) 1;
@@ -49,19 +50,19 @@ class="resume rOne">
   .authenticStampPunk {
     @apply fill-black w-[120px] max-w-[90px] min-w-[90px] pr-[.2rem] pb-[.1rem] mb-1;
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply -mr-[380px] -mt-[10px] w-[90px];
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply -mr-[330px] -mt-[20px] w-[80px];
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply -mr-[300px] -mt-[20px] w-[70px];
     }
 
-    @media (max-width: theme('screens.breakXxsm')) {
+    @media (max-width: 320px) {
       @apply -mr-[300px] -mt-[10px] w-[70px];
     }
   }
@@ -74,13 +75,14 @@ class="resume rOne">
       @apply flex-row self-start;
 
       p {
-        @apply font-punkCopy text-base-black bg-white text-[0.9em] font-medium not-italic tracking-[.02em] -hue-rotate-[1.25deg] lowercase py-1 px-2;
+ @apply text-base-black bg-white text-[0.9em] font-medium not-italic tracking-[.02em] -hue-rotate-[1.25deg] lowercase py-1 px-2;
+        font-family: var(--font-family-punk-copy);
 
-        @media (max-width: theme('screens.breakSm')) {
+        @media (max-width: 630px) {
           /* // */
         }
 
-        @media (max-width: theme('screens.breakXsm')) {
+        @media (max-width: 430px) {
           /* // */
         }
 
@@ -98,7 +100,8 @@ class="resume rOne">
       @apply self-end flex-row;
 
       .resume {
-        @apply text-[0.9em] font-punkCopy text-base-black bg-white font-medium not-italic tracking-[.02em] lowercase inline-block ml-1 mb-4 py-[0.3em] px-2;
+ @apply text-[0.9em] text-base-black bg-white font-medium not-italic tracking-[.02em] lowercase inline-block ml-1 mb-4 py-[0.3em] px-2;
+        font-family: var(--font-family-punk-copy);
 
         &.rOne {
           @apply text-white -rotate-2 bg-punk-magenta/50;
@@ -135,7 +138,7 @@ class="resume rOne">
     flex: 0 1 auto;
     @apply flex flex-col relative top-0 left-0;
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply mb-0;
     }
   }
@@ -144,7 +147,8 @@ class="resume rOne">
     @apply -rotate-1;
 
     h1 {
-      @apply font-punkHead font-medium z-10 leading-[1.7rem] text-white text-[1.16rem] bg-punk-red/80 rotate-1 py-1 pr-0 pb-[.1rem] pl-[.2rem] tracking-[.025em] uppercase inline;
+ @apply font-medium z-10 leading-[1.7rem] text-white text-[1.16rem] bg-punk-red/80 rotate-1 py-1 pr-0 pb-[.1rem] pl-[.2rem] tracking-[.025em] uppercase inline;
+      font-family: var(--font-family-punk-head);
 
       &:nth-of-type(1) {
         @apply rotate-0;
@@ -152,9 +156,10 @@ class="resume rOne">
     }
 
     p {
-      @apply font-normal text-[1em] leading-9 relative inline italic font-punkCopy text-base-grey tracking-[.045em] top-0 bg-punk-peach mt-4 mx-4 mb-0 py-[.4rem] px-[.1rem];
+ @apply font-normal text-[1em] leading-9 relative inline italic text-base-grey tracking-[.045em] top-0 bg-punk-peach mt-4 mx-4 mb-0 py-[.4rem] px-[.1rem];
+      font-family: var(--font-family-punk-copy);
 
-      @media (min-width: theme('screens.breakLg')) {
+      @media (min-width: 840px) {
         /* // */
       }
     }

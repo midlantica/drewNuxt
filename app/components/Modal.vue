@@ -62,6 +62,7 @@
 </script>
 
 <style scoped>
+  @reference "../assets/css/tailwind.css";
   .modalBg {
     @apply fixed w-full top-0 flex justify-center items-center m-auto h-full left-0 right-0 bottom-0 z-50 bg-black/60 animate-[fade_.3s];
 
@@ -111,7 +112,7 @@
   }
 
   .modern #modal .content {
-    @apply font-modernCopy;
+    font-family: var(--font-family-modern-copy);
 
     h4 {
     }
@@ -121,7 +122,7 @@
   }
 
   .bourbon #modal .content {
-    @apply font-bourbonCopy;
+    font-family: var(--font-family-bourbon-copy);
 
     h4 {
     }
@@ -129,7 +130,7 @@
     }
   }
   .groovy #modal .content {
-    @apply font-groovyCopy;
+    font-family: var(--font-family-groovy-copy);
 
     h4 {
     }
@@ -138,7 +139,7 @@
     }
   }
   .techy #modal .content {
-    @apply font-techyCopy;
+    font-family: var(--font-family-techy-copy);
 
     h4 {
     }
@@ -147,7 +148,7 @@
     }
   }
   .corp #modal .content {
-    @apply font-corpCopy;
+    font-family: var(--font-family-corp-copy);
 
     h4 {
     }
@@ -156,7 +157,7 @@
     }
   }
   .punk #modal .content {
-    @apply font-punkCopy;
+    font-family: var(--font-family-punk-copy);
 
     h4 {
     }

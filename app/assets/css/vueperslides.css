@@ -1,31 +1,53 @@
 .vueperslides__arrow {
   stroke-linejoin: round;
-  @apply text-base-grey drop-shadow-[0px_0px_3px_hsla(0,0%,100%,0.85)];
+  color: var(--color-base-grey);
+  filter: drop-shadow(0px 0px 3px hsla(0,0%,100%,0.85));
 
   &:hover {
-    @apply stroke-1 stroke-white;
+    stroke-width: 1px;
+    stroke: white;
   }
 }
 
 .vueperslides__arrow svg {
-  @apply w-12 stroke-black outline-1;
+  width: 3rem;
+  stroke: black;
+  outline-width: 1px;
   filter: drop-shadow(1px 1px 1px black);
-
-  &:hover {
-  }
 }
 
 .vueperslides__arrow svg:hover path {
-  @apply stroke-1 stroke-green-600;
-
-  &:hover {
-  }
+  stroke-width: 1px;
+  stroke: #16a34a;
 }
 
 .vueperslides__progress {
-  @apply !text-green-600 !top-auto !bottom-0 !h-[4px] border-0; /* text-[hsla(98,100%,37%,0.5)]  border-[hsla(0,0%,100%,0.15)]*/
+  color: #16a34a !important;
+  top: auto !important;
+  bottom: 0 !important;
+  height: 4px !important;
+  border: 0;
 }
 
 .vueperslides__fractions {
-  @apply absolute !top-auto !left-auto z-10 inline !px-2 !py-1 font-sans text-xs border border-solid !rounded-md !bottom-2 !text-white/80 !bg-base-white/10 !border-base-white/30 right-2 !contrast-150 shadow-sm;
+  position: absolute;
+  top: auto !important;
+  left: auto !important;
+  z-index: 10;
+  display: inline;
+  padding-left: 0.5rem !important;
+  padding-right: 0.5rem !important;
+  padding-top: 0.25rem !important;
+  padding-bottom: 0.25rem !important;
+  font-family: ui-sans-serif, system-ui, sans-serif;
+  font-size: 0.75rem;
+  line-height: 1rem;
+  border: 1px solid rgba(255,255,255,0.3);
+  border-radius: 9999px !important;
+  bottom: 0.5rem !important;
+  right: 0.5rem;
+  filter: contrast(1.5);
+  box-shadow: 0 1px 2px 0 rgb(0 0 0 / 0.05);
+  color: rgba(255,255,255,0.8);
+  background-color: rgba(255,255,255,0.1);
 }

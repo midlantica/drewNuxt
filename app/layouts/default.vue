@@ -8,8 +8,10 @@
 <script setup></script>
 
 <style>
+  @reference "../assets/css/tailwind.css";
+
   .wrapper {
-    @apply relative max-w-screen-breakXlg my-0 mx-auto;
+    @apply relative max-w-[var(--breakpoint-break-xlg)] my-0 mx-auto;
   }
 
   .extrasWrap {
@@ -20,7 +22,7 @@
         @apply w-[400px] h-auto border-2 border-solid border-black/10 text-base-ivory transition-opacity duration-1000 ease-in-out;
 
         &:hover {
-          @apply border-2 border-solid border-black text-base-accentRed;
+          @apply border-2 border-solid border-black text-base-accent-red;
         }
       }
 
@@ -33,65 +35,67 @@
       }
 
       &:hover p {
-        @apply text-base-accentRed underline;
+        @apply text-base-accent-red underline;
       }
 
       &:hover img {
-        @apply shadow-none cursor-pointer border-b-2 border-solid border-b-base-accentRed;
+        @apply shadow-none cursor-pointer border-b-2 border-solid border-b-base-accent-red;
       }
     }
   }
 
   body.bourbon {
-    @apply bg-base-backBlack;
+    @apply bg-base-back-black;
 
     .wrapper {
       @apply w-[99.8%] bg-[url('/img/bg/graphy_2.png')] bg-repeat;
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXxsm')) {
+      @media (max-width: 320px) {
         @apply w-[99.8%];
       }
     }
 
     .about > p {
-      @apply w-[99.8%] my-1 mx-auto font-bourbonCopy text-[.82em];
+ @apply w-[99.8%] my-1 mx-auto text-[.82em];
+      font-family: var(--font-family-bourbon-copy);
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply w-[99.8%] text-[1.65vw];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply w-[99.8%] text-[1.85vw];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply w-[99.8%] text-[2.5vw];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply w-[99.8%] text-[3vw];
       }
     }
 
     .extrasWrapper {
       h1 {
-        @apply pt-4 font-bourbonHead !text-bourbon-accentRed !text-[1.75em] font-light antialiased;
+ @apply pt-4 !text-bourbon-accent-red !text-[1.75em] font-light antialiased;
+        font-family: var(--font-family-bourbon-head);
       }
     }
   }
@@ -100,25 +104,25 @@
     @apply h-[calc(100%)] bg-[hsl(320,100%,9%)];
 
     .wrapper {
-      @apply w-[99.8%] flex flex-col grow max-w-screen-breakXlg min-h-[780px] pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.jpeg')] bg-cover;
+      @apply w-[99.8%] flex flex-col grow max-w-[var(--breakpoint-break-xlg)] min-h-[780px] pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.jpeg')] bg-cover;
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXxsm')) {
+      @media (max-width: 320px) {
         @apply w-[99.8%];
       }
 
@@ -136,7 +140,8 @@
       @apply bg-[#2e001f];
 
       .flexxy a p {
-        @apply text-white font-modernSubhead border-b border-solid border-[hsla(0,0%,100%,.5)];
+ @apply text-white border-b border-solid border-[hsla(0,0%,100%,.5)];
+        font-family: var(--font-family-modern-subhead);
       }
     }
 
@@ -144,7 +149,8 @@
       @apply mt-3;
 
       & h1 {
-        @apply !text-white font-modernCopy !text-[1.5rem] leading-normal capitalize antialiased bg-transparent tracking-wider;
+ @apply !text-white !text-[1.5rem] leading-normal capitalize antialiased bg-transparent tracking-wider;
+        font-family: var(--font-family-modern-copy);
       }
 
       & a {
@@ -174,72 +180,75 @@
   }
 
   body.groovy {
-    @apply bg-base-backBlack;
+    @apply bg-base-back-black;
 
     .wrapper {
       @apply w-[99.8%] bg-gradient-to-b from-white via-[#fff5cb] via-85% to-[#fff5cb];
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXxsm')) {
+      @media (max-width: 320px) {
         @apply w-[99.8%];
       }
     }
 
     .about > p {
-      @apply text-[0.8em] tracking-wider font-groovyCopy;
+ @apply text-[0.8em] tracking-wider ;
+      font-family: var(--font-family-groovy-copy);
     }
 
     .extrasWrapper {
       @apply !mt-6;
 
       h1 {
-        @apply pt-0 text-groovy-redDk !text-[1.5em] font-semibold capitalize font-groovyHead bg-transparent mt-0 mb-0;
+ @apply pt-0 text-groovy-red-dk !text-[1.5em] font-semibold capitalize bg-transparent mt-0 mb-0;
+        font-family: var(--font-family-groovy-head);
       }
 
       p {
-        @apply text-[1em] font-groovyCopy;
+ @apply text-[1em] ;
+        font-family: var(--font-family-groovy-copy);
       }
     }
   }
 
   body.techy {
-    @apply bg-base-backBlack;
+    @apply bg-base-back-black;
 
     .wrapper {
       @apply w-[99.8%] bg-[#fffdf4];
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply w-[99.8%];
       }
 
-      @media (max-width: theme('screens.breakXxsm')) {
+      @media (max-width: 320px) {
         @apply w-[99.8%];
       }
     }
@@ -248,7 +257,8 @@
       @apply bg-[#ffe268] shadow-none;
 
       p {
-        @apply my-0 mx-auto font-techyCopy;
+ @apply my-0 mx-auto ;
+        font-family: var(--font-family-techy-copy);
       }
     }
 
@@ -260,110 +270,118 @@
       @apply bg-[#fffff1];
 
       h1 {
-        @apply font-techyHead mt-6 mb-0 p-0 mx-auto !text-[1.65em] font-medium text-techy-blueTech capitalize;
+ @apply mt-6 mb-0 p-0 mx-auto !text-[1.65em] font-medium text-techy-blue-tech capitalize;
+        font-family: var(--font-family-techy-head);
       }
 
       p {
-        @apply font-techyCopy text-[1em];
+ @apply text-[1em];
+        font-family: var(--font-family-techy-copy);
       }
     }
     .contact {
       @apply flex w-full m-0 gap-x-4 gap-y-1;
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply m-0;
       }
     }
   }
 
   body.corp {
-    @apply bg-base-backBlack;
+    @apply bg-base-back-black;
 
     .wrapper {
       @apply w-[99.8%] bg-[url(/img/bg/white_paper_patt-01.jpg)] bg-repeat;
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         /* @apply w-[99.8%]; */
       }
 
-      @media (max-width: theme('screens.breakXxsm')) {
+      @media (max-width: 320px) {
         /* @apply w-[99.8%]; */
       }
     }
 
     .extrasWrapper {
       h1 {
-        @apply font-corpHead text-corp-blueDark !text-[1.5em] bg-transparent font-semibold capitalize mt-0;
+ @apply text-corp-blue-dark !text-[1.5em] bg-transparent font-semibold capitalize mt-0;
+        font-family: var(--font-family-corp-head);
       }
 
       p {
-        @apply text-[1em] font-corpCopy;
+ @apply text-[1em] ;
+        font-family: var(--font-family-corp-copy);
       }
     }
 
     .about p {
-      @apply text-[1em] font-corpCopy;
+ @apply text-[1em] ;
+      font-family: var(--font-family-corp-copy);
     }
   }
 
   body.punk {
-    @apply w-full bg-base-backBlack;
+    @apply w-full bg-base-back-black;
 
     .wrapper {
       @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),_url(/img/bg/Drew-punk-back.jpg)] bg-[length:_102%_640%,100%_100%];
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply w-[99.8%] bg-[length:_102%_640%,130%_90%] bg-[center_center];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply w-[99.8%] bg-[length:_102%_600%,120%_100%] bg-[center_center,-3em_11em];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply w-[99.8%] bg-[length:_102%_600%,250%_100%] bg-[center_center,-3em_3em];
       }
     }
 
     .about > p {
-      @apply font-punkCopy text-[.8em];
+ @apply text-[.8em];
+      font-family: var(--font-family-punk-copy);
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply text-[1.65vw];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply text-[1.85vw];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply text-[2.5vw];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply text-[3vw];
       }
     }
 
     .extrasWrapper {
       h1 {
-        @apply mt-4 text-black !text-[1.5rem] font-semibold leading-normal capitalize antialiased font-modernSubhead bg-white/70 px-2;
+ @apply mt-4 text-black !text-[1.5rem] font-semibold leading-normal capitalize antialiased bg-white/70 px-2;
+        font-family: var(--font-family-modern-subhead);
       }
 
       p {
-        @apply font-punkCopy text-black;
+ @apply text-black;
+        font-family: var(--font-family-punk-copy);
       }
 
       a {

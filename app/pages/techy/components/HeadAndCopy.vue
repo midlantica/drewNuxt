@@ -16,66 +16,72 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
+
   .authenticStamp {
-    @apply fill-techy-blueTech w-[120px] max-w-[90px] min-w-[90px];
+ @apply w-[120px] max-w-[90px] min-w-[90px];
+    fill: var(--color-techy-blue-tech);
   }
 
   section {
     @apply mt-4 mr-9 mb-0 ml-9 content-center;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply mt-4 mx-6 mb-4;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply mx-4;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply mx-4;
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply ml-4 mr-2;
     }
   }
 
   h1 {
-    @apply font-techyHead text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-2 normal-case text-techy-blueTech;
+ @apply text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-2 normal-case text-techy-blue-tech;
+    font-family: var(--font-family-techy-head);
 
-    @media (min-width: theme('screens.breakXlg')) {
+    @media (min-width: 1024px) {
       /* // @apply max-w-[26ch]; */
     }
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply max-w-none;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply max-w-none;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       /* // max-width: 26ch; */
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply max-w-none text-[1.5rem];
     }
   }
 
   p {
-    @apply font-techyCopy text-[1.25rem] leading-[3rem] tracking-[.06em] text-gray-900 content-center;
+ @apply text-[1.25rem] leading-[3rem] tracking-[.06em] text-gray-900 content-center;
+    font-family: var(--font-family-techy-copy);
 
-    @media (min-width: theme('screens.breakXlg')) and (-webkit-min-device-pixel-ratio: 2) {
+    @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
       /* // */
     }
 
-    @media (max-width: theme('screens.breakXlg')) {
-      @apply columns-2 text-[1.2rem] leading-[2.1em] text-justify tracking-wider gap-x-12 hyphens-auto rule-w-[2px] rule-style-dotted rule-color-[#423ba08b];
+    @media (max-width: 1024px) {
+      @apply columns-2 text-[1.2rem] leading-[2.1em] text-justify tracking-wider gap-x-12 hyphens-auto;
+      column-rule: 2px dotted #423ba08b;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply columns-2;
     }
 
@@ -83,11 +89,11 @@
       @apply columns-1;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply columns-1 text-[1.2rem] leading-[2.3em] tracking-[.01em];
     }
 
-    @media (max-width: theme('screens.breakSm')) and (-webkit-min-device-pixel-ratio: 2) {
+    @media (max-width: 630px) and (-webkit-min-device-pixel-ratio: 2) {
       @apply columns-1 text-[1.15rem];
     }
 

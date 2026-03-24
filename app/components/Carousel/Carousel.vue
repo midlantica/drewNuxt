@@ -82,6 +82,7 @@
 </script>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   :root {
     --carouselFade: 0.5s;
   }
@@ -151,16 +152,16 @@
     .projectBox {
       @apply bg-transparent;
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
       }
 
       .projectBox__top {
@@ -172,7 +173,8 @@
       }
 
       p {
-        @apply font-modernCopy text-white text-[.85rem] text-center lowercase tracking-[0em];
+ @apply text-white text-[.85rem] text-center lowercase tracking-[0em];
+        font-family: var(--font-family-modern-copy);
       }
 
       .carouselArrow {
@@ -195,10 +197,11 @@
         }
 
         p {
-          @apply font-modernCopy font-extralight text-white text-[.85rem] lowercase text-center mt-[4px] mx-0 mb-0 top-0 relative ease-in-out duration-200;
+ @apply font-extralight text-white text-[.85rem] lowercase text-center mt-[4px] mx-0 mb-0 top-0 relative ease-in-out duration-200;
+          font-family: var(--font-family-modern-copy);
         }
 
-        @media (max-width: theme('screens.breakXlg')) {
+        @media (max-width: 1024px) {
           @apply min-h-min;
         }
 
@@ -210,7 +213,8 @@
           }
 
           p {
-            @apply font-modernCopy font-extralight text-white text-[.85rem] relative lowercase text-center mt-[4px] mx-0 mb-0 top-[-5px];
+ @apply font-extralight text-white text-[.85rem] relative lowercase text-center mt-[4px] mx-0 mb-0 top-[-5px];
+            font-family: var(--font-family-modern-copy);
           }
         }
       }
@@ -221,24 +225,26 @@
     .projectBox {
       @apply shadow-[0px_2px_6px_-2px_hsl(0,_0%,_0%,_90%)];
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
       }
 
       p {
-        @apply text-gray-800 font-bourbonCopy font-medium lowercase;
+ @apply text-gray-800 font-medium lowercase;
+        font-family: var(--font-family-bourbon-copy);
       }
 
       .projectHead {
-        @apply font-bourbonCopy mt-[1px] tracking-wide;
+ @apply mt-[1px] tracking-wide;
+        font-family: var(--font-family-bourbon-copy);
       }
     }
 
@@ -250,7 +256,8 @@
       }
 
       p {
-        @apply text-[.85rem] font-bourbonCopy text-gray-800 text-center tracking-normal lowercase relative top-0;
+ @apply text-[.85rem] text-gray-800 text-center tracking-normal lowercase relative top-0;
+        font-family: var(--font-family-bourbon-copy);
 
         a {
           @apply text-gray-800;
@@ -275,17 +282,17 @@
     .projectBox {
       @apply shadow-[0px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
       }
 
       p {
@@ -293,14 +300,15 @@
       }
 
       .projectHead {
-        @apply font-groovyCopy mt-[1px];
+ @apply mt-[1px];
+        font-family: var(--font-family-groovy-copy);
       }
 
       .carouselArrow {
         @apply text-black;
 
         &:hover {
-          @apply text-white bg-groovy-redDk;
+          @apply text-white bg-groovy-red-dk;
         }
       }
     }
@@ -313,7 +321,8 @@
       }
 
       p {
-        @apply font-groovyCopy text-gray-800 text-[.85rem] relative top-0;
+ @apply text-gray-800 text-[.85rem] relative top-0;
+        font-family: var(--font-family-groovy-copy);
       }
 
       &:hover {
@@ -324,7 +333,8 @@
         }
 
         p {
-          @apply font-groovyCopy text-center text-gray-800 ease-in-out duration-200 top-[-5px];
+ @apply text-center text-gray-800 ease-in-out duration-200 top-[-5px];
+          font-family: var(--font-family-groovy-copy);
         }
       }
     }
@@ -334,17 +344,17 @@
     .projectBox {
       @apply shadow-[0px_2px_6px_-2px_hsl(0,_0%,_0%,_90%)] rounded-none;
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
       }
 
       p {
@@ -352,7 +362,8 @@
       }
 
       .projectHead {
-        @apply font-techyCopy uppercase mt-[1px];
+ @apply uppercase mt-[1px];
+        font-family: var(--font-family-techy-copy);
       }
 
       .carouselArrow {
@@ -360,7 +371,7 @@
         /* filter: drop-shadow(1px 1px 1px black); */
 
         &:hover {
-          @apply text-white bg-techy-blueTech;
+          @apply text-white bg-techy-blue-tech;
         }
       }
     }
@@ -374,7 +385,8 @@
       }
 
       p {
-        @apply font-groovyCopy text-gray-800 text-[.85rem] text-center ease-in-out relative top-0;
+ @apply text-gray-800 text-[.85rem] text-center ease-in-out relative top-0;
+        font-family: var(--font-family-groovy-copy);
       }
 
       &:hover {
@@ -385,7 +397,8 @@
         }
 
         p {
-          @apply font-groovyCopy text-center text-gray-800 ease-in-out duration-200 top-[-5px];
+ @apply text-center text-gray-800 ease-in-out duration-200 top-[-5px];
+          font-family: var(--font-family-groovy-copy);
         }
       }
     }
@@ -393,20 +406,20 @@
 
   body.corp {
     .projectBox {
-      @apply bg-base-offWhite shadow-[0px_1px_1px_0px_hsl(0,_0%,_0%,_50%)];
+      @apply bg-base-off-white shadow-[0px_1px_1px_0px_hsl(0,_0%,_0%,_50%)];
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         min-height: 386px;
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
       }
 
       p {
@@ -414,11 +427,12 @@
       }
 
       .projectHead {
-        @apply font-corpHead mt-[1px];
+ @apply mt-[1px];
+        font-family: var(--font-family-corp-head);
       }
 
       .carouselArrow {
-        @apply text-corp-blueDark bg-corp-blueDark/5 tracking-[0.05em] shadow-none rounded-sm border border-corp-blueDark/70 border-solid;
+        @apply text-corp-blue-dark bg-corp-blue-dark/5 tracking-[0.05em] shadow-none rounded-sm border border-corp-blue-dark/70 border-solid;
 
         &:hover {
           @apply text-white bg-[hsla(205,98%,17%,0.85)];
@@ -434,7 +448,8 @@
       }
 
       p {
-        @apply font-corpCopy tracking-wider text-center text-gray-800 text-[.85rem] ease-in-out relative duration-200 top-0;
+ @apply tracking-wider text-center text-gray-800 text-[.85rem] ease-in-out relative duration-200 top-0;
+        font-family: var(--font-family-corp-copy);
       }
 
       &:hover {
@@ -456,17 +471,17 @@
       @apply rounded-none bg-white/70;
       @apply shadow-[0px_1px_1px_0px_hsl(0,_0%,_0%,_50%)];
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply min-h-min;
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
       }
 
       p {
@@ -474,7 +489,8 @@
       }
 
       .projectHead {
-        @apply font-punkCopy mt-[1px];
+ @apply mt-[1px];
+        font-family: var(--font-family-punk-copy);
       }
 
       .carouselArrow {
@@ -497,7 +513,8 @@
         }
 
         p {
-          @apply text-center font-punkCopy text-gray-800 tracking-wider text-[.85rem] ease-in-out relative duration-200 top-0;
+ @apply text-center text-gray-800 tracking-wider text-[.85rem] ease-in-out relative duration-200 top-0;
+          font-family: var(--font-family-punk-copy);
         }
 
         &:hover {
@@ -517,19 +534,23 @@
 
   @keyframes carouselFader {
     0% {
-      @apply scale-0 opacity-0;
+      scale: 0;
+      opacity: 0;
     }
 
     50% {
-      @apply scale-0 opacity-0;
+      scale: 0;
+      opacity: 0;
     }
 
     95% {
-      @apply scale-100 opacity-100;
+      scale: 1;
+      opacity: 1;
     }
 
     100% {
-      @apply scale-100 opacity-100;
+      scale: 1;
+      opacity: 1;
     }
   }
 </style>

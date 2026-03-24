@@ -69,6 +69,7 @@ points="22 0 9.4 13.65 34.6 13.65" />
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg:hover {
     @apply cursor-pointer;
   }
@@ -93,23 +94,23 @@ points="22 0 9.4 13.65 34.6 13.65" />
 
   @keyframes cycleAni1 {
     0% {
-      @apply opacity-0;
+      opacity: 0;
     }
 
     100% {
       transform: translate(21px, 9px);
-      @apply opacity-100;
+      opacity: 1;
     }
   }
 
   @keyframes cycleAni2 {
     0% {
-      @apply opacity-100;
+      opacity: 1;
     }
 
     100% {
       transform: translate(21px, 40px);
-      @apply opacity-0;
+      opacity: 0;
     }
   }
 </style>

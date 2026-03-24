@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="store.isShowContent"
-    class="w-full mt-2 breakLg:pr-4 breakLg:pl-2 breakSm:px-2"
+    class="w-full mt-2 break-lg:pr-4 break-lg:pl-2 break-sm:px-2"
   >
     <div
       class="flex auto-rows-auto justify-start justify-items-start items-center gap-2"
@@ -25,54 +25,63 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
+
   .authenticStamp {
-    @apply fill-bourbon-accentRed w-[180px] max-w-[90px] min-w-[90px];
+ @apply w-[180px] max-w-[90px] min-w-[90px];
+    fill: var(--color-bourbon-accent-red);
 
-    @media (max-width: theme('screens.breakLg')) {
-      @apply fill-bourbon-accentRed w-[120px];
+    @media (max-width: 840px) {
+ @apply w-[120px];
+      fill: var(--color-bourbon-accent-red);
     }
 
-    @media (max-width: theme('screens.breakSm')) {
-      @apply fill-bourbon-accentRed w-[120px];
+    @media (max-width: 630px) {
+ @apply w-[120px];
+      fill: var(--color-bourbon-accent-red);
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
-      @apply fill-bourbon-accentRed w-[120px];
+    @media (max-width: 430px) {
+ @apply w-[120px];
+      fill: var(--color-bourbon-accent-red);
     }
 
-    @media (max-width: theme('screens.breakXxsm')) {
+    @media (max-width: 320px) {
       @apply min-w-[100px];
     }
   }
 
   h1 {
-    @apply font-normal leading-[1.1em] text-bourbon-accentRed text-left tracking-[.025em] uppercase mt-2 mx-0 font-bourbonSubhead text-[1.7rem] p-0 self-center;
+ @apply font-normal leading-[1.1em] text-bourbon-accent-red text-left tracking-[.025em] uppercase mt-2 mx-0 text-[1.7rem] p-0 self-center;
+    font-family: var(--font-family-bourbon-subhead);
 
-    @media (min-width: theme('screens.breakXlg')) {
+    @media (min-width: 1024px) {
       /* @apply max-w-[21ch]; */
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply text-[1.65rem];
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply text-[1.4rem];
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply text-[1.25rem] m-0;
     }
   }
 
   p {
-    @apply leading-[2.5rem] font-bourbonCopy text-[1.1rem] text-base-grey mt-2 mx-2 mb-0 tracking-[0.05rem] mr-2 text-pretty;
+ @apply leading-[2.5rem] text-[1.1rem] text-base-grey mt-2 mx-2 mb-0 tracking-[0.05rem] mr-2 text-pretty;
+    font-family: var(--font-family-bourbon-copy);
 
-    @media (max-width: theme('screens.breakXlg')) {
-      @apply columns-2 leading-9 gap-x-12 text-justify hyphens-auto rule-w-[1px] rule-style-solid rule-color-[hsla(7,77%,43%,50%)];
+    @media (max-width: 1024px) {
+      @apply columns-2 leading-9 gap-x-12 text-justify hyphens-auto;
+      column-rule: 1px solid hsla(7,77%,43%,50%);
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply columns-2 tracking-[0.05rem] text-justify hyphens-auto;
     }
 
@@ -80,7 +89,7 @@
       @apply columns-1 text-justify hyphens-auto;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply columns-1 text-justify hyphens-auto;
     }
   }

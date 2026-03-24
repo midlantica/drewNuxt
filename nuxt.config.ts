@@ -1,7 +1,5 @@
 // nuxt.config.ts
 // https://nuxt.com/docs/api/configuration/nuxt-config
-import tailwindcss from '@tailwindcss/vite';
-
 export default defineNuxtConfig({
   buildDir: '.nuxt',
 
@@ -63,8 +61,10 @@ export default defineNuxtConfig({
     '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
   ],
 
-  vite: {
-    plugins: [tailwindcss()]
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {}
+    }
   },
 
   routeRules: {

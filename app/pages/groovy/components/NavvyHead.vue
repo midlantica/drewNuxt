@@ -77,6 +77,7 @@ class="resume">
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   .shadow-pre-trans {
     @apply shadow-[1px_1px_0px_0px_hsl(0,_0%,_0%,_50%)];
   }
@@ -102,7 +103,7 @@ class="resume">
   }
 
   .groovyOvalBtn {
-    @apply w-fit py-[.1rem] px-4 pb-[.2rem] border border-groovy-orange border-solid rounded-[20rem] leading-normal gap-0 tracking-wide hover:bg-groovy-redDk hover:text-white hover:cursor-pointer;
+    @apply w-fit py-[.1rem] px-4 pb-[.2rem] border border-groovy-orange border-solid rounded-[20rem] leading-normal gap-0 tracking-wide hover:bg-groovy-red-dk hover:text-white hover:cursor-pointer;
 
     a {
       @apply text-base-ivory no-underline min-[375px]:text-[1rem] sm:text-[1rem] md:text-[1rem];

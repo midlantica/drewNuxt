@@ -64,18 +64,20 @@
 </script>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
+
   .mainGrid {
     @apply grid grid-cols-2 gap-x-2 gap-y-2 shadow-none py-0 px-4 bg-transparent;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply grid-cols-1 gap-x-1 gap-y-2;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       /* // */
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       /* // */
     }
   }
@@ -83,15 +85,15 @@
   .copyArea {
     @apply col-start-1 col-end-2 row-start-1 row-end-3 flex flex-col self-end;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
   }
@@ -99,15 +101,15 @@
   .slides {
     @apply col-start-2 col-end-3 row-start-1 row-end-1;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
   }
@@ -115,15 +117,15 @@
   .about {
     @apply col-start-2 col-end-3 row-start-2 row-end-2;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
@@ -135,15 +137,15 @@
   .quoteBlock {
     @apply col-start-2 col-end-3 row-start-3 row-end-3;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
   }
@@ -151,15 +153,15 @@
   .skillsGrid {
     @apply col-start-1 col-end-3 row-start-3 row-end-3;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply row-start-4 row-end-4;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply row-start-4 row-end-4;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply row-start-4 row-end-4;
     }
   }

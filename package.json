@@ -12,6 +12,7 @@
   },
   "devDependencies": {
     "@nuxt/devtools": "^1.7.0",
+    "@tailwindcss/postcss": "^4.2.2",
     "@tailwindcss/vite": "^4.2.2",
     "nuxt": "^4.4.2",
     "nuxt-gtag": "^4.1.0",

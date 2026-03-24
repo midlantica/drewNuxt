@@ -22,50 +22,55 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   .authenticStamp {
-    @apply fill-corp-blueDark w-[120px] max-w-[90px] min-w-[90px];
+ @apply w-[120px] max-w-[90px] min-w-[90px];
+    fill: var(--color-corp-blue-dark);
   }
 
   h1 {
-    @apply font-corpHead text-corp-blueDark normal-case p-0 leading-[2rem] transition duration-[.25s] ease-in tracking-[0.01rem] w-full font-semibold text-[1.3rem] mt-0 mx-0;
+ @apply text-corp-blue-dark normal-case p-0 leading-[2rem] transition duration-[.25s] ease-in tracking-[0.01rem] w-full font-semibold text-[1.3rem] mt-0 mx-0;
+    font-family: var(--font-family-corp-head);
 
-    @media (min-width: theme('screens.breakXlg')) {
+    @media (min-width: 1024px) {
       /* // @apply max-w-[28ch]; */
     }
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       /* // @apply max-w-none; */
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       /* // @apply max-w-none; */
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       /* // @apply max-w-[28ch]; */
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply text-[1.25rem];
     }
   }
 
   p {
-    @apply text-corp-blueDark/90 font-corpCopy font-normal border-l-2 border-dotted border-corp-paleBlue ml-[.2rem] text-justify pl-[1.2rem] leading-[2.5rem] text-[1.1rem] tracking-[-0.01rem] hyphens-auto;
+ @apply text-corp-blue-dark/90 font-normal border-l-2 border-dotted border-corp-pale-blue ml-[.2rem] text-justify pl-[1.2rem] leading-[2.5rem] text-[1.1rem] tracking-[-0.01rem] hyphens-auto;
+    font-family: var(--font-family-corp-copy);
 
-    @media (max-width: theme('screens.breakXlg')) {
-      @apply columns-2 gap-x-12 text-justify hyphens-auto rule-w-[2px] rule-style-dotted rule-color-[#7cc3fa];
+    @media (max-width: 1024px) {
+      @apply columns-2 gap-x-12 text-justify hyphens-auto;
+      column-rule: 2px dotted #7cc3fa;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply columns-2 tracking-[0.05rem];
     }
 
     @media (max-width: 670px) {
-      @apply columns-auto border-l-2 border-dotted border-corp-paleBlue mr-2 pl-[1.3rem];
+      @apply columns-auto border-l-2 border-dotted border-corp-pale-blue mr-2 pl-[1.3rem];
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       /* // */
     }
   }

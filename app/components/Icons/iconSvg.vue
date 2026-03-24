@@ -35,6 +35,7 @@
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg {
     &:hover {
       @apply cursor-pointer;
@@ -74,34 +75,34 @@
 
   @keyframes animateWhiteFill {
     0% {
-      @apply opacity-100;
+      opacity: 1;
       transform: translate(0px, 0px);
     }
 
     50% {
-      @apply opacity-0;
+      opacity: 0;
       transform: translate(0px, -50px);
     }
 
     100% {
-      @apply opacity-100;
+      opacity: 1;
       transform: translate(0px, 0px);
     }
   }
 
   @keyframes animateWhiteFill2 {
     0% {
-      @apply opacity-0;
+      opacity: 0;
       transform: translate(0px, 50px);
     }
 
     50% {
-      @apply opacity-100;
+      opacity: 1;
       transform: translate(0px, 0px);
     }
 
     100% {
-      @apply opacity-0;
+      opacity: 0;
       transform: translate(0px, 50px);
     }
   }

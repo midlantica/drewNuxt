@@ -65,6 +65,7 @@ class="fade w-full">
 </script>
 
 <style scoped>
+  @reference "../assets/css/tailwind.css";
   .arrowBtn {
     @apply text-white select-none p-2 font-normal font-sans;
 
@@ -90,19 +91,21 @@ class="fade w-full">
   }
 
   .modern .quoteBlock {
-    @apply font-modernCopy text-[hsl(0,0%,80%)] mt-12;
+ @apply text-[hsl(0,0%,80%)] mt-12;
+    font-family: var(--font-family-modern-copy);
 
     p {
-      @apply font-modernCopy;
+      font-family: var(--font-family-modern-copy);
     }
 
     .cite {
-      @apply font-modernCopy;
+      font-family: var(--font-family-modern-copy);
     }
   }
 
   .bourbon .quoteBlock {
-    @apply font-bourbonCopy bg-[#932213] rounded-sm shadow-[0px_1px_2px_0px_hsl(0,_0%,_0%,_50%)];
+ @apply bg-[#932213] rounded-sm shadow-[0px_1px_2px_0px_hsl(0,_0%,_0%,_50%)];
+    font-family: var(--font-family-bourbon-copy);
 
     @media only screen and (min-device-width: 375px) and (max-device-width: 660px) and (-webkit-min-device-pixel-ratio: 2) {
       @apply clear-both mt-2 mb-2 gap-y-0;
@@ -112,7 +115,7 @@ class="fade w-full">
       @apply text-[0.9em] text-base-ivory tracking-wider leading-[1.5em] text-center;
       animation: fadeTexter 2s forwards;
 
-      @media only screen and (min-device-width: 700px) and (max-device-width: theme('screens.breakXlg')) {
+      @media only screen and (min-device-width: 700px) and (max-device-width: 1024px) {
         @apply text-[0.9em];
       }
 
@@ -123,53 +126,58 @@ class="fade w-full">
   }
 
   .groovy .quoteBlock {
-    @apply font-groovyCopy bg-[#932213] pt-[0.75em] px-[2em] pb-[1em] text-center shadow-druShadow;
+ @apply bg-[#932213] pt-[0.75em] px-[2em] pb-[1em] text-center ;
+      box-shadow: var(--shadow-dru-shadow);
+    font-family: var(--font-family-groovy-copy);
   }
 
   .techy .quoteBlock {
-    @apply font-techyCopy p-4 min-h-min bg-techy-mango;
+ @apply p-4 min-h-min bg-techy-mango;
+    font-family: var(--font-family-techy-copy);
 
     .arrowBtn {
-      @apply text-techy-blueTech pt-0 px-2 pb-[0.2rem] leading-[1.3] border border-solid border-techy-blueTech;
+      @apply text-techy-blue-tech pt-0 px-2 pb-[0.2rem] leading-[1.3] border border-solid border-techy-blue-tech;
 
       :hover {
-        @apply bg-techy-blueTech text-techy-mango;
+        @apply bg-techy-blue-tech text-techy-mango;
       }
     }
 
     p {
-      @apply font-techyCopy text-[1em] text-techy-blueTech text-center tracking-wide;
+ @apply text-[1em] text-techy-blue-tech text-center tracking-wide;
+      font-family: var(--font-family-techy-copy);
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply text-[1.25em];
       }
 
-      @media (max-width: theme('screens.breakLg')) {
+      @media (max-width: 840px) {
         @apply text-[1.2em];
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply text-[1em];
       }
 
-      @media (max-width: theme('screens.breakXsm')) {
+      @media (max-width: 430px) {
         @apply text-[.85em] leading-5;
       }
     }
 
     .cite {
-      @apply text-techy-blueTech tracking-[.08em] inline;
+      @apply text-techy-blue-tech tracking-[.08em] inline;
     }
   }
 
   .corp .quoteBlock {
-    @apply font-corpCopy bg-corp-blueDark py-3 px-3 text-center min-h-min text-white;
+ @apply bg-corp-blue-dark py-3 px-3 text-center min-h-min text-white;
+    font-family: var(--font-family-corp-copy);
 
     .arrowBtn {
       @apply text-white py-0 px-1 font-bold;
 
       &:hover {
-        @apply text-techy-mango bg-corp-blueDark;
+        @apply text-techy-mango bg-corp-blue-dark;
       }
     }
 
@@ -188,21 +196,21 @@ class="fade w-full">
     }
 
     p {
-      @apply font-corpCopy;
+      font-family: var(--font-family-corp-copy);
     }
 
     .cite {
-      @apply font-corpCopy;
+      font-family: var(--font-family-corp-copy);
     }
   }
 
   .punk .quoteBlock {
     p {
-      @apply font-modernCopy;
+      font-family: var(--font-family-modern-copy);
     }
 
     .cite {
-      @apply font-modernCopy;
+      font-family: var(--font-family-modern-copy);
     }
   }
 

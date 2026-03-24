@@ -12,6 +12,7 @@
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg.xOut {
     width: 20px !important;
     height: auto !important;

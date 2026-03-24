@@ -23,6 +23,7 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   .aboutGrid {
     @apply w-[80%] grid grid-cols-[minmax(auto,_2fr)_minmax(225px,_1fr)] gap-8 m-auto;
 

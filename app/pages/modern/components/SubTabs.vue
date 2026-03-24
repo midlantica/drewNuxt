@@ -1,7 +1,7 @@
 <template>
   <div
     v-show="showSubTabs"
-    class="font-modernCopy flex flex-row flex-wrap justify-center gap-4 mx-0 mt-7 mb-3"
+    class="font-modern-copy flex flex-row flex-wrap justify-center gap-4 mx-0 mt-7 mb-3"
   >
     <div
       v-for="tab in tabs"
@@ -52,6 +52,7 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   .btn {
     @apply text-black pt-[.55rem] px-5 pb-[.4rem] rounded-[2rem] no-underline uppercase text-[.6rem] font-semibold tracking-[0.075ch] bg-modern-ruby bg-gradient-to-b from-[#D71D5B] to-[#871239] hover:bg-modern-ruby hover:text-white focus:text-white hover:bg-gradient-to-b hover:from-[#D71D5B] hover:to-[#871239] cursor-pointer;
   }

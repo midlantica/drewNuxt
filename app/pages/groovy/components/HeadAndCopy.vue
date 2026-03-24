@@ -18,63 +18,68 @@
 </script>
 
 <style scoped>
+  @reference "../../../assets/css/tailwind.css";
   :root {
     --breakXsm: 530px;
   }
 
   .authenticStamp {
-    @apply fill-groovy-red w-[120px] max-w-[90px] min-w-[90px];
+ @apply w-[120px] max-w-[90px] min-w-[90px];
+    fill: var(--color-groovy-red);
   }
 
   section {
     @apply mt-4 mr-9 mb-0 ml-9;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply mt-[1.8rem] mx-4 mb-0;
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
     }
   }
 
   h1 {
-    @apply font-groovyHead text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-redDk normal-case;
+ @apply text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-red-dk normal-case;
+    font-family: var(--font-family-groovy-head);
 
-    @media (min-width: theme('screens.breakXlg')) {
+    @media (min-width: 1024px) {
     }
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply max-w-[initial];
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply max-w-[initial];
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply text-[1.3rem] leading-6;
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply max-w-[initial];
     }
   }
 
   p {
-    @apply font-groovyCopy text-base-grey text-[1.125rem] tracking-[0.009rem] leading-[2.6rem];
+ @apply text-base-grey text-[1.125rem] tracking-[0.009rem] leading-[2.6rem];
+    font-family: var(--font-family-groovy-copy);
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       columns: 2 200px;
-      @apply gap-x-12 text-justify hyphens-auto rule-w-2 rule-style-dotted rule-color-[hsla(39,100%,50%,.75)];
+      @apply gap-x-12 text-justify hyphens-auto;
+      column-rule: 8px dotted hsla(39,100%,50%,.75);
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       columns: 2 200px;
       @apply tracking-[0.05rem];
     }
@@ -84,7 +89,7 @@
       @apply text-[1.05rem] leading-[2.4rem] pl-[1.3rem] mr-2 border-l-2 border-dotted border-[hsla(39,100%,50%,.75)];
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
     }
   }
 </style>

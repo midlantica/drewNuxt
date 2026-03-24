@@ -46,6 +46,7 @@
 <script></script>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg {
     .darkGreen {
       @apply fill-[rgba(12,42,13,1)];

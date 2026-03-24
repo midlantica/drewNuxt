@@ -29,6 +29,7 @@
 <script></script>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg:hover {
     cursor: grab;
   }

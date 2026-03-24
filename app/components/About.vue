@@ -56,18 +56,20 @@
 </script>
 
 <style scoped>
+  @reference "../assets/css/tailwind.css";
+
   .about {
     @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap gap-4 justify-center items-center content-center self-center rounded-sm shadow-[0px_1px_2px_0px_#00000080];
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply mt-0 mx-0 mb-0;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply mt-0 mx-0 mb-0;
     }
 
-    @media (max-width: theme('screens.breakXxsm')) {
+    @media (max-width: 320px) {
       @apply flex-col;
     }
   }
@@ -79,7 +81,7 @@
   .flagBox {
     @apply flex flex-col content-center items-center justify-center self-center float-left clear-left basis-auto;
 
-    @media (max-width: theme('screens.breakXxsm')) {
+    @media (max-width: 320px) {
       @apply mb-2;
     }
   }
@@ -108,22 +110,24 @@
   }
 
   .techy .about {
-    @apply bg-techy-blueTech;
+    @apply bg-techy-blue-tech;
 
     p {
-      @apply text-white my-0 mx-auto font-techyCopy;
+ @apply text-white my-0 mx-auto ;
+      font-family: var(--font-family-techy-copy);
     }
   }
 
   .corp .about {
     p {
-      @apply text-[0.9rem] tracking-[0.02rem] leading-6 m-0 font-medium font-corpCopy;
+ @apply text-[0.9rem] tracking-[0.02rem] leading-6 m-0 font-medium ;
+      font-family: var(--font-family-corp-copy);
 
-      @media (max-width: theme('screens.breakXlg')) {
+      @media (max-width: 1024px) {
         @apply leading-7;
       }
 
-      @media (max-width: theme('screens.breakSm')) {
+      @media (max-width: 630px) {
         @apply leading-6;
       }
     }
@@ -149,7 +153,8 @@
     }
 
     p {
-      @apply tracking-normal leading-6 m-0 font-light text-base-ivory font-modernCopy text-[.8rem];
+ @apply tracking-normal leading-6 m-0 font-light text-base-ivory text-[.8rem];
+      font-family: var(--font-family-modern-copy);
     }
   }
 </style>

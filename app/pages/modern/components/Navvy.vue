@@ -5,10 +5,10 @@
       class="flex flex-col flex-nowrap justify-center items-center gap-y-4 p-0 mt-14"
     >
       <h1
-        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modernSubhead text-[2.25rem] text-modern-accentRed tracking-[-0.05em] w-full flex grow justify-center items-center gap-2 antialiased font-light leading-10 text-center lowercase transition duration-200 ease-in breakLg:text-[3.25rem] breakSm:text-[2.75rem] breakXsm:text-[2.25rem] hover:text-modern-accent"
+        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-subhead text-[2.25rem] text-modern-accent-red tracking-[-0.05em] w-full flex grow justify-center items-center gap-2 antialiased font-light leading-10 text-center lowercase transition duration-200 ease-in break-lg:text-[3.25rem] break-sm:text-[2.75rem] break-xsm:text-[2.25rem] hover:text-modern-accent"
       >
         <div
-          class="text-modern-accentRed cursor-pointer"
+          class="text-modern-accent-red cursor-pointer"
           @click="$emit('toggle-extras')"
         >
           drew harper
@@ -20,14 +20,14 @@
       </h1>
 
       <h2
-        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modernCopy leading-[1.5em] text-[1.3rem] text-[hsla(0,0%,100%,0.85)] tracking-0 antialiased font-normal text-center lowercase"
+        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-copy leading-[1.5em] text-[1.3rem] text-[hsla(0,0%,100%,0.85)] tracking-0 antialiased font-normal text-center lowercase"
       >
         {{ copy.uiuxDesigner }} / {{ copy.vizDesigner }}
       </h2>
 
       <section class="duration-[.25s] z-10 mt-0 transition ease-in">
         <p
-          class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modernCopy leading-[1.4rem] text-[0.8rem] tracking-[0.05rem] flex flex-row flex-wrap grow justify-center gap-x-3 gap-y-3 antialiased font-medium text-center"
+          class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-copy leading-[1.4rem] text-[0.8rem] tracking-[0.05rem] flex flex-row flex-wrap grow justify-center gap-x-3 gap-y-3 antialiased font-medium text-center"
         >
           <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="btn">
             {{ copy.druEmail }}
@@ -50,22 +50,25 @@ class="btn">
 </script>
 
 <style scoped>
-  .authenticStamp {
-    @apply -mr-[420px] h-auto fill-base-ivory w-[90px] fixed max-w-[90px] min-w-[90px];
+  @reference "../../../assets/css/tailwind.css";
 
-    @media (max-width: theme('screens.breakLg')) {
+  .authenticStamp {
+ @apply -mr-[420px] h-auto w-[90px] fixed max-w-[90px] min-w-[90px];
+    fill: var(--color-base-ivory);
+
+    @media (max-width: 840px) {
       @apply -mr-[380px] -mt-[10px] w-[90px];
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply -mr-[330px] -mt-[20px] w-[80px];
     }
 
-    @media (max-width: theme('screens.breakXsm')) {
+    @media (max-width: 430px) {
       @apply -mr-[300px] -mt-[20px] w-[70px];
     }
 
-    @media (max-width: theme('screens.breakXxsm')) {
+    @media (max-width: 320px) {
       @apply -mr-[300px] -mt-[10px] w-[70px];
     }
   }

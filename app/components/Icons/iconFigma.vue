@@ -38,6 +38,7 @@ xmlns="http://www.w3.org/2000/svg">
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg:hover {
     @apply cursor-pointer;
   }
@@ -93,13 +94,13 @@ xmlns="http://www.w3.org/2000/svg">
 
   @keyframes transparenter {
     0% {
-      @apply opacity-100;
+      opacity: 1;
     }
     50% {
-      @apply opacity-0;
+      opacity: 0;
     }
     100% {
-      @apply opacity-100;
+      opacity: 1;
     }
   }
 

@@ -158,6 +158,7 @@
 </script>
 
 <style scoped>
+  @reference "../assets/css/tailwind.css";
   .modern svg.arrowLeft {
     > path {
       stroke: white !important;
@@ -179,7 +180,7 @@
       color: stroke-black;
     }
     &:hover > path {
-      @apply stroke-bourbon-accentRed;
+      @apply stroke-bourbon-accent-red;
     }
   }
 
@@ -191,13 +192,13 @@
       color: stroke-black;
     }
     &:hover > path {
-      @apply stroke-groovy-redDk;
+      @apply stroke-groovy-red-dk;
     }
   }
 
   .techy svg.arrowLeft {
     > path {
-      @apply stroke-techy-blueTech;
+      @apply stroke-techy-blue-tech;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
@@ -209,13 +210,13 @@
 
   .corp svg.arrowLeft {
     > path {
-      @apply stroke-corp-blueDark;
+      @apply stroke-corp-blue-dark;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
       color: stroke-black;
     }
     &:hover > path {
-      @apply stroke-corp-accentRed;
+      @apply stroke-corp-accent-red;
     }
   }
 

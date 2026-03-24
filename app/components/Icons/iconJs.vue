@@ -23,6 +23,7 @@
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   #jsBox {
     .jsBoxInner {
       transform-origin: 50% 50%;

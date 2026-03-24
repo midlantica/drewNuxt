@@ -20,6 +20,7 @@
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   .modern #iconCSS:hover #whiteLetters {
     transform: translateX(10px);
   }

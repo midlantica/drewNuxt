@@ -46,6 +46,7 @@ xmlns="http://www.w3.org/2000/svg">
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg {
     @apply cursor-pointer;
 
@@ -79,31 +80,31 @@ xmlns="http://www.w3.org/2000/svg">
 
   @keyframes cycleAni1 {
     0% {
-      @apply opacity-100;
+      opacity: 1;
     }
 
     60% {
-      @apply opacity-0;
+      opacity: 0;
     }
 
     100% {
       transform: translate(0px, -30px);
-      @apply opacity-0;
+      opacity: 0;
     }
   }
 
   @keyframes cycleAni2 {
     0% {
-      @apply opacity-0;
+      opacity: 0;
     }
 
     60% {
-      @apply opacity-0;
+      opacity: 0;
     }
 
     100% {
       transform: translate(0px, 0px);
-      @apply opacity-100;
+      opacity: 1;
     }
   }
 

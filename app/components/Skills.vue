@@ -151,6 +151,7 @@
 </script>
 
 <style scoped>
+  @reference "../assets/css/tailwind.css";
   .skillsGrid div {
     @apply h-[70px] m-auto flex items-center justify-center;
   }
@@ -158,15 +159,15 @@
   .skillsGrid {
     @apply w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
 
-    @media (max-width: theme('screens.breakXlg')) {
+    @media (max-width: 1024px) {
       @apply row-start-2 row-end-2;
     }
 
-    @media (max-width: theme('screens.breakLg')) {
+    @media (max-width: 840px) {
       @apply row-start-2 row-end-2;
     }
 
-    @media (max-width: theme('screens.breakSm')) {
+    @media (max-width: 630px) {
       @apply row-start-2 row-end-2;
     }
 
@@ -187,7 +188,8 @@
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackLt;
+      @apply w-[88px] ;
+      filter: drop-shadow(var(--drop-shadow-tight-black-lt));
 
       &:hover {
         @apply animate-[shimmy] duration-[.25s];
@@ -240,7 +242,8 @@
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackLt;
+      @apply w-[88px] ;
+      filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
@@ -262,7 +265,8 @@
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackLt;
+      @apply w-[88px] ;
+      filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
@@ -290,7 +294,8 @@
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackLt;
+      @apply w-[88px] ;
+      filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
@@ -303,16 +308,17 @@
       @apply grid-cols-[repeat(6,_minmax(88px,_1fr))];
     }
 
-    @media (min-width: theme('screens.breakXxsm')) and (max-width: 562px) {
+    @media (min-width: 320px) and (max-width: 562px) {
       @apply grid-cols-[repeat(3,_minmax(110px,_1fr))];
     }
 
-    @media (max-width: theme('screens.breakXxsm')) {
+    @media (max-width: 320px) {
       @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))];
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackLt;
+      @apply w-[88px] ;
+      filter: drop-shadow(var(--drop-shadow-tight-black-lt));
       filter: brightness(0.85) sepia(1) hue-rotate(160deg) saturate(3);
 
       &:hover {
@@ -341,7 +347,8 @@
     }
 
     svg {
-      @apply w-[88px] drop-shadow-tightBlackMd;
+      @apply w-[88px] ;
+      filter: drop-shadow(var(--drop-shadow-tight-black-md));
     }
   }
 </style>

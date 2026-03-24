@@ -52,6 +52,7 @@ fill-rule="evenodd">
 </template>
 
 <style scoped>
+  @reference "../../assets/css/tailwind.css";
   svg {
     @apply cursor-pointer;
 
@@ -86,22 +87,22 @@ fill-rule="evenodd">
 
   @keyframes cycleAni1 {
     0% {
-      @apply opacity-100;
+      opacity: 1;
     }
 
     100% {
-      @apply opacity-0;
+      opacity: 0;
       transform: translate(3px, -52px);
     }
   }
 
   @keyframes cycleAni2 {
     0% {
-      @apply opacity-0;
+      opacity: 0;
     }
 
     100% {
-      @apply opacity-100;
+      opacity: 1;
       transform: translate(3px, 13px);
     }
   }
