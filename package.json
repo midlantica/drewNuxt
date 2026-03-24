@@ -33,10 +33,7 @@
     "@vueuse/core": "^14.2.1",
     "@vueuse/nuxt": "^14.2.1",
     "eslint": "^9.15.0",
-    "glob": "^11.0.0",
-    "lru-cache": "^11.0.2",
     "pinia": "^3.0.4",
-    "rimraf": "^6.0.1",
     "tailwind-column-rule": "^1.0.2",
     "vueperslides": "^3.5.1"
   }
