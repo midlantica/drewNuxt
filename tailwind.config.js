@@ -5,15 +5,15 @@ import tailwindColumnRule from 'tailwind-column-rule';
 
 export default {
   content: [
-    `./components/**/*.{vue,js,ts}`,
-    `./layouts/**/*.vue`,
-    `./pages/**/*.vue`,
-    `./composables/**/*.{js,ts}`,
-    `./plugins/**/*.{js,ts}`,
-    `./utils/**/*.{js,ts}`,
-    `./app.{js,ts,vue}`,
-    `./Error.{js,ts,vue}`,
-    `./error.{js,ts,vue}`
+    `./app/components/**/*.{vue,js,ts}`,
+    `./app/layouts/**/*.vue`,
+    `./app/pages/**/*.vue`,
+    `./app/composables/**/*.{js,ts}`,
+    `./app/plugins/**/*.{js,ts}`,
+    `./app/utils/**/*.{js,ts}`,
+    `./app/app.{js,ts,vue}`,
+    `./app/Error.{js,ts,vue}`,
+    `./app/error.{js,ts,vue}`
   ],
   theme: {
     listStyleType: {
