@@ -109,3 +109,59 @@
   /* List Style Types */
   --list-style-type-square: square;
 }
+
+/* Explicit font utility classes for custom font families */
+@utility font-modern-head {
+  font-family: var(--font-family-modern-head);
+}
+@utility font-modern-subhead {
+  font-family: var(--font-family-modern-subhead);
+}
+@utility font-modern-copy {
+  font-family: var(--font-family-modern-copy);
+}
+@utility font-bourbon-head {
+  font-family: var(--font-family-bourbon-head);
+}
+@utility font-bourbon-subhead {
+  font-family: var(--font-family-bourbon-subhead);
+}
+@utility font-bourbon-copy {
+  font-family: var(--font-family-bourbon-copy);
+}
+@utility font-groovy-head {
+  font-family: var(--font-family-groovy-head);
+}
+@utility font-groovy-subhead {
+  font-family: var(--font-family-groovy-subhead);
+}
+@utility font-groovy-copy {
+  font-family: var(--font-family-groovy-copy);
+}
+@utility font-techy-head {
+  font-family: var(--font-family-techy-head);
+}
+@utility font-techy-subhead {
+  font-family: var(--font-family-techy-subhead);
+}
+@utility font-techy-copy {
+  font-family: var(--font-family-techy-copy);
+}
+@utility font-corp-head {
+  font-family: var(--font-family-corp-head);
+}
+@utility font-corp-subhead {
+  font-family: var(--font-family-corp-subhead);
+}
+@utility font-corp-copy {
+  font-family: var(--font-family-corp-copy);
+}
+@utility font-punk-head {
+  font-family: var(--font-family-punk-head);
+}
+@utility font-punk-subhead {
+  font-family: var(--font-family-punk-subhead);
+}
+@utility font-punk-copy {
+  font-family: var(--font-family-punk-copy);
+}
