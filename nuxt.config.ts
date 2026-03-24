@@ -1,5 +1,7 @@
 // nuxt.config.ts
 // https://nuxt.com/docs/api/configuration/nuxt-config
+import tailwindcss from '@tailwindcss/vite';
+
 export default defineNuxtConfig({
   buildDir: '.nuxt',
 
@@ -8,7 +10,6 @@ export default defineNuxtConfig({
 
   modules: [
     '@nuxt/devtools',
-    '@nuxtjs/tailwindcss',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
@@ -62,12 +63,8 @@ export default defineNuxtConfig({
     '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
   ],
 
-  postcss: {
-    plugins: {
-      'tailwindcss/nesting': {},
-      tailwindcss: {},
-      autoprefixer: {}
-    }
+  vite: {
+    plugins: [tailwindcss()]
   },
 
   routeRules: {

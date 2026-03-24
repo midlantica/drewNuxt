@@ -1,3 +1,111 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import "tailwindcss";
+
+@theme {
+  /* Screens */
+  --breakpoint-break-xxsm: 320px;
+  --breakpoint-break-xsm: 430px;
+  --breakpoint-break-sm: 630px;
+  --breakpoint-break-md: 768px;
+  --breakpoint-break-lg: 840px;
+  --breakpoint-break-xlg: 1024px;
+
+  /* Background Images */
+  --background-image-gradient-radial: radial-gradient(var(--tw-gradient-stops));
+
+  /* Box Shadows */
+  --shadow-dru-shadow: 0px 0px 4px 0px #000000;
+
+  /* Drop Shadows */
+  --drop-shadow-tight-black-dk: 1px 1px 1px hsla(0, 0%, 0%, 1);
+  --drop-shadow-tight-black-md: 1px 1px 1px hsla(0, 0%, 0%, 0.5);
+  --drop-shadow-tight-black-lt: 1px 1px 1px hsla(0, 0%, 0%, 0.25);
+
+  /* Colors - base */
+  --color-base-grey: #333;
+  --color-base-white: white;
+  --color-base-black: black;
+  --color-base-ivory: #fffdf4;
+  --color-base-accent: #ffa500;
+  --color-base-accent-red: #7c0000;
+  --color-base-off-white: #d7e7f3;
+  --color-base-back-black: #1f1f1f;
+
+  /* Colors - modern */
+  --color-modern-ruby-light: #e54379;
+  --color-modern-ruby: #d71d5b;
+  --color-modern-ruby-dark: #ab1748;
+  --color-modern-ruby-darker: #7e1135;
+  --color-modern-accent: #ffc05c;
+  --color-modern-accent-red: #d71d5b;
+  --color-modern-grey: #352e38;
+  --color-modern-backer: #352e38;
+
+  /* Colors - bourbon */
+  --color-bourbon-bourbon: #52090a;
+  --color-bourbon-blue-dark: #46646e;
+  --color-bourbon-blue-mid: #5b7d96;
+  --color-bourbon-blue-light: #8fa9c2;
+  --color-bourbon-accent: #ecb469;
+  --color-bourbon-orange: #e34234;
+  --color-bourbon-paleyellow: #ffffbf99;
+  --color-bourbon-accent-red: #c02c19;
+  --color-bourbon-ivory: #fffdf4;
+
+  /* Colors - groovy */
+  --color-groovy-aqua: #99f1ec;
+  --color-groovy-yellow: #ffdd4b;
+  --color-groovy-orange: #ff9f00;
+  --color-groovy-red: #ff1a22;
+  --color-groovy-yellow-pale: #ffe985;
+  --color-groovy-aqua-dk: #80cbc7;
+  --color-groovy-yellow-dk: #d3b83e;
+  --color-groovy-orange-dk: #e78e00;
+  --color-groovy-red-dk: #d5161d;
+  --color-groovy-yellow-pale-dk: #ffdd4b;
+
+  /* Colors - techy */
+  --color-techy-mango: #ffc600;
+  --color-techy-blue-tech: #423ba0;
+
+  /* Colors - corp */
+  --color-corp-grey: #333;
+  --color-corp-blue-dark: #01487f;
+  --color-corp-black: #012946;
+  --color-corp-blue-mid: #5b7d96;
+  --color-corp-blue-light: #8fa9c2;
+  --color-corp-accent: #ecb469;
+  --color-corp-ivory: #fffdf4;
+  --color-corp-orange: #e34234;
+  --color-corp-paleyellow: #ffffbf99;
+  --color-corp-pale-blue: #7cc3fa;
+  --color-corp-accent-red: #c02c19;
+  --color-corp-white: #fffdf4;
+
+  /* Colors - punk */
+  --color-punk-red: #ff0000;
+  --color-punk-magenta: #ff4bf5;
+  --color-punk-peach: #fbc83f;
+
+  /* Font Families */
+  --font-family-modern-head: Spartan, "Helvetica Neue", Helvetica, sans-serif;
+  --font-family-modern-subhead: Spartan, "Helvetica Neue", Helvetica, sans-serif;
+  --font-family-modern-copy: Spartan, "Helvetica Neue", Helvetica, sans-serif;
+  --font-family-bourbon-head: VeneerTwo, Helvetica, Arial, sans-serif;
+  --font-family-bourbon-subhead: Veneer, Helvetica, Arial, sans-serif;
+  --font-family-bourbon-copy: AmericanTypewriterStd-Med, Helvetica, Times, serif;
+  --font-family-groovy-head: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-groovy-subhead: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-groovy-copy: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-techy-head: Dosis, "Helvetica Neue", Arial, sans-serif;
+  --font-family-techy-subhead: Dosis, "Helvetica Neue", Arial, sans-serif;
+  --font-family-techy-copy: Dosis, "Helvetica Neue", Arial, sans-serif;
+  --font-family-corp-head: "Bodoni Moda", Times, serif;
+  --font-family-corp-subhead: "Bodoni Moda", Times, serif;
+  --font-family-corp-copy: "Bodoni Moda", Times, serif;
+  --font-family-punk-head: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-punk-subhead: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-punk-copy: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+
+  /* List Style Types */
+  --list-style-type-square: square;
+}

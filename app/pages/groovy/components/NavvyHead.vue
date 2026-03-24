@@ -84,7 +84,7 @@ class="resume">
     @apply transition duration-500 ease-out shadow-[8px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
   }
   .groovyCircle {
-    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] clip-path-polygon-[21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%];
+    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] [clip-path:polygon(21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%)];
     background-image: radial-gradient(
       /* 0 - 25% */ #99f1ec 0%,
       #99f1ec 35%,
