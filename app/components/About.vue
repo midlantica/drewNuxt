@@ -87,18 +87,24 @@
   }
 
   /* ###################### */
-  .corp {
-    .about {
-      @apply shadow-none bg-[#6bbaff42];
+  .bourbon .about {
+    @apply shadow-none pt-3 pb-2 px-4;
+  }
 
-      p {
-        @apply text-corp-black;
-      }
-    }
+  .corp .aboutWrapper {
+    @apply flex items-center justify-center;
+  }
 
-    .flag {
-      filter: hue-rotate(236deg) sepia(0.6);
+  .corp .about {
+    @apply shadow-none pt-3 pb-2 px-4 bg-[#6bbaff42];
+
+    p {
+      @apply text-corp-black;
     }
+  }
+
+  .corp .flag {
+    filter: hue-rotate(236deg) sepia(0.6);
   }
 
   .punk .about {
@@ -113,14 +119,18 @@
     @apply bg-techy-blue-tech;
 
     p {
- @apply text-white my-0 mx-auto ;
+      @apply text-white my-0 mx-auto;
       font-family: var(--font-family-techy-copy);
     }
   }
 
+  .modern .aboutWrapper {
+    @apply flex items-center justify-center;
+  }
+
   .corp .about {
     p {
- @apply text-[0.9rem] tracking-[0.02rem] leading-6 m-0 font-medium ;
+      @apply text-[0.9rem] tracking-[0.02rem] leading-6 m-0 font-medium;
       font-family: var(--font-family-corp-copy);
 
       @media (max-width: 1024px) {
@@ -153,7 +163,7 @@
     }
 
     p {
- @apply tracking-normal leading-6 m-0 font-light text-base-ivory text-[.8rem];
+      @apply tracking-normal leading-6 m-0 font-light text-base-ivory text-[.8rem];
       font-family: var(--font-family-modern-copy);
     }
   }

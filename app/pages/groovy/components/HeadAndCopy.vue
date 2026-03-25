@@ -13,8 +13,6 @@
 <script setup>
   const copy = useCopy();
   const store = useToggleExtrasStore();
-
-
 </script>
 
 <style scoped>
@@ -24,7 +22,7 @@
   }
 
   .authenticStamp {
- @apply w-[120px] max-w-[90px] min-w-[90px];
+    @apply w-[120px] max-w-[90px] min-w-[90px];
     fill: var(--color-groovy-red);
   }
 
@@ -46,7 +44,7 @@
   }
 
   h1 {
- @apply text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-red-dk normal-case;
+    @apply text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-red-dk normal-case;
     font-family: var(--font-family-groovy-head);
 
     @media (min-width: 1024px) {
@@ -70,13 +68,15 @@
   }
 
   p {
- @apply text-base-grey text-[1.125rem] tracking-[0.009rem] leading-[2.6rem];
+    @apply text-base-grey text-[1.125rem] tracking-[0.009rem] leading-[2.6rem];
     font-family: var(--font-family-groovy-copy);
 
     @media (max-width: 1024px) {
       columns: 2 200px;
       @apply gap-x-12 text-justify hyphens-auto;
-      column-rule: 8px dotted hsla(39,100%,50%,.75);
+      column-rule-width: 3px;
+      column-rule-style: dotted;
+      column-rule-color: hsla(39, 100%, 50%, 0.75);
     }
 
     @media (max-width: 840px) {

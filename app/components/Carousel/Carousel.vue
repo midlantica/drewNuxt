@@ -173,7 +173,7 @@
       }
 
       p {
- @apply text-white text-[.85rem] text-center lowercase tracking-[0em];
+        @apply text-white text-[.85rem] text-center lowercase tracking-[0em];
         font-family: var(--font-family-modern-copy);
       }
 
@@ -197,7 +197,7 @@
         }
 
         p {
- @apply font-extralight text-white text-[.85rem] lowercase text-center mt-[4px] mx-0 mb-0 top-0 relative ease-in-out duration-200;
+          @apply font-extralight text-white text-[.85rem] lowercase text-center mt-[4px] mx-0 mb-0 top-0 relative ease-in-out duration-200;
           font-family: var(--font-family-modern-copy);
         }
 
@@ -213,7 +213,7 @@
           }
 
           p {
- @apply font-extralight text-white text-[.85rem] relative lowercase text-center mt-[4px] mx-0 mb-0 top-[-5px];
+            @apply font-extralight text-white text-[.85rem] relative lowercase text-center mt-[4px] mx-0 mb-0 top-[-5px];
             font-family: var(--font-family-modern-copy);
           }
         }
@@ -238,25 +238,25 @@
       }
 
       p {
- @apply text-gray-800 font-medium lowercase;
+        @apply text-gray-800 font-medium lowercase;
         font-family: var(--font-family-bourbon-copy);
       }
 
       .projectHead {
- @apply mt-[1px] tracking-wide;
+        @apply mt-[1px] tracking-wide;
         font-family: var(--font-family-bourbon-copy);
       }
     }
 
     .miniGallery .box {
-      @apply h-[185px] relative top-0;
+      @apply h-[185px] border-gray-300 relative top-0;
 
       svg.iconSVG {
         @apply w-auto relative top-0;
       }
 
       p {
- @apply text-[.85rem] text-gray-800 text-center tracking-normal lowercase relative top-0;
+        @apply text-[.85rem] text-gray-800 text-center tracking-normal lowercase relative top-0;
         font-family: var(--font-family-bourbon-copy);
 
         a {
@@ -300,7 +300,7 @@
       }
 
       .projectHead {
- @apply mt-[1px];
+        @apply mt-[1px];
         font-family: var(--font-family-groovy-copy);
       }
 
@@ -314,14 +314,14 @@
     }
 
     .miniGallery div .box {
-      @apply h-[170px] relative top-0;
+      @apply h-[170px] border-gray-300 relative top-0;
 
       svg.iconSVG {
         @apply w-auto relative top-0;
       }
 
       p {
- @apply text-gray-800 text-[.85rem] relative top-0;
+        @apply text-gray-800 text-[.85rem] relative top-0;
         font-family: var(--font-family-groovy-copy);
       }
 
@@ -333,7 +333,7 @@
         }
 
         p {
- @apply text-center text-gray-800 ease-in-out duration-200 top-[-5px];
+          @apply text-center text-gray-800 ease-in-out duration-200 top-[-5px];
           font-family: var(--font-family-groovy-copy);
         }
       }
@@ -362,7 +362,7 @@
       }
 
       .projectHead {
- @apply uppercase mt-[1px];
+        @apply uppercase mt-[1px];
         font-family: var(--font-family-techy-copy);
       }
 
@@ -385,7 +385,7 @@
       }
 
       p {
- @apply text-gray-800 text-[.85rem] text-center ease-in-out relative top-0;
+        @apply text-gray-800 text-[.85rem] text-center ease-in-out relative top-0;
         font-family: var(--font-family-groovy-copy);
       }
 
@@ -397,7 +397,7 @@
         }
 
         p {
- @apply text-center text-gray-800 ease-in-out duration-200 top-[-5px];
+          @apply text-center text-gray-800 ease-in-out duration-200 top-[-5px];
           font-family: var(--font-family-groovy-copy);
         }
       }
@@ -407,10 +407,6 @@
   body.corp {
     .projectBox {
       @apply bg-base-off-white shadow-[0px_1px_1px_0px_hsl(0,_0%,_0%,_50%)];
-
-      @media (max-width: 1024px) {
-        @apply min-h-min;
-      }
 
       @media (max-width: 840px) {
       }
@@ -427,7 +423,7 @@
       }
 
       .projectHead {
- @apply mt-[1px];
+        @apply mt-[1px];
         font-family: var(--font-family-corp-head);
       }
 
@@ -448,7 +444,7 @@
       }
 
       p {
- @apply tracking-wider text-center text-gray-800 text-[.85rem] ease-in-out relative duration-200 top-0;
+        @apply tracking-wider text-center text-gray-800 text-[.85rem] ease-in-out relative duration-200 top-0;
         font-family: var(--font-family-corp-copy);
       }
 
@@ -489,7 +485,7 @@
       }
 
       .projectHead {
- @apply mt-[1px];
+        @apply mt-[1px];
         font-family: var(--font-family-punk-copy);
       }
 
@@ -506,14 +502,14 @@
       @apply top-0;
 
       div .box {
-        @apply h-[183px];
+        @apply h-[183px] border-gray-300;
 
         svg.iconSVG {
           @apply w-auto ease-in-out duration-200 relative top-0;
         }
 
         p {
- @apply text-center text-gray-800 tracking-wider text-[.85rem] ease-in-out relative duration-200 top-0;
+          @apply text-center text-gray-800 tracking-wider text-[.85rem] ease-in-out relative duration-200 top-0;
           font-family: var(--font-family-punk-copy);
         }
 

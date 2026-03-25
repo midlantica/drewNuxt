@@ -23,43 +23,43 @@
 
 <template>
   <div>
-  <transition name="topDown" appear>
-    <CorpNavvy
-      :is-show-content="store.isShowContent"
-      @toggle-extras="store.toggleExtras"
-    />
-  </transition>
-
-  <main v-if="store.isShowContent" class="mainGrid">
-    <transition name="bounce2" appear>
-      <CorpHeadAndCopy />
+    <transition name="topDown" appear>
+      <CorpNavvy
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
+      />
     </transition>
 
-    <transition name="bounce4" appear>
-      <Skills />
-    </transition>
+    <main v-if="store.isShowContent" class="mainGrid">
+      <transition name="bounce2" appear>
+        <CorpHeadAndCopy class="copyArea" />
+      </transition>
 
-    <transition name="bounce6" appear>
-      <Carousel class="slides" />
-    </transition>
+      <transition name="bounce4" appear>
+        <Skills />
+      </transition>
 
-    <transition name="bounce8" appear>
-      <About />
-    </transition>
-  </main>
+      <transition name="bounce6" appear>
+        <Carousel class="slides" />
+      </transition>
 
-  <main v-else class="mainGrid">
-    <component
-      :is="ExtrasC"
-      class="col-span-2"
-      :is-show-content="store.isShowContent"
-      @toggle-extras="store.toggleExtras"
-    />
-  </main>
+      <transition name="bounce8" appear>
+        <About class="aboutArea" />
+      </transition>
+    </main>
 
-  <footer class="shadow-none">
-    <Quote />
-  </footer>
+    <main v-else class="mainGrid">
+      <component
+        :is="ExtrasC"
+        class="col-span-2"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
+      />
+    </main>
+
+    <footer class="shadow-none">
+      <Quote />
+    </footer>
   </div>
 </template>
 
@@ -71,93 +71,41 @@
     @media (max-width: 1024px) {
       @apply grid-cols-1 gap-y-2 mx-4;
     }
-
-    @media (max-width: 840px) {
-      /* // */
-    }
-
-    @media (max-width: 630px) {
-      /* // */
-    }
   }
 
+  /* Desktop: HeadAndCopy spans col 1, rows 1-2 */
   .copyArea {
     @apply col-start-1 col-end-2 row-start-1 row-end-3;
 
     @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-1 row-end-1 mb-[-1em];
-    }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-1 row-end-1;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-1 row-end-1;
+      @apply col-span-full row-start-1 row-end-auto;
     }
   }
 
+  /* Desktop: Carousel in col 2 row 1 */
   .slides {
-    @apply col-start-2 col-end-3 row-start-1 row-end-1 -mt-4;
+    @apply col-start-2 col-end-3 row-start-1 row-end-2 mt-4;
 
     @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-3 row-end-3 mt-0;
-    }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-3 row-end-3 mt-0;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-3 row-end-3 mt-0;
+      @apply col-span-full row-start-3 row-end-auto mt-0;
     }
   }
 
+  /* Desktop: Skills in col 1 row 2 (below HeadAndCopy) */
   .skillsGrid {
-    @apply col-start-1 col-end-2 row-start-2 row-end-2;
+    @apply col-start-1 col-end-2 row-start-2 row-end-3;
 
     @media (max-width: 1024px) {
-      /* // */
-    }
-
-    @media (max-width: 840px) {
-      /* // */
-    }
-
-    @media (max-width: 630px) {
-      /* // */
+      @apply col-span-full row-start-2 row-end-auto;
     }
   }
 
-  .about {
-    @apply col-start-2 col-end-3 row-start-2 row-end-2;
+  /* Desktop: About in col 2 row 2 (below Carousel) */
+  .aboutArea {
+    @apply col-start-2 col-end-3 row-start-2 row-end-3;
 
     @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-4 row-end-4;
-    }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-4 row-end-4;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-4 row-end-4;
-    }
-  }
-
-  .quoteBlock {
-    @apply col-start-2 col-end-3 row-start-3 row-end-3;
-
-    @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
+      @apply col-span-full row-start-4 row-end-auto;
     }
   }
 </style>

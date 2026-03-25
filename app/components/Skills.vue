@@ -120,14 +120,14 @@
       iconNuxt,
       `nuxt`,
       `Nuxt`,
-      `The Nuxt framework for Vue: SSR, routes by dir, SEO; it's jam-stacked with Dev happiness. Digging Gridsome.js too.`,
+      `The Nuxt framework for Vue: SSR, routes by dir, SEO; it's jam-stacked with Dev happiness. Digging Svelte too.`,
       `https://nuxt.com/`
     ],
     [
       iconAdobeIcons,
       `adobeCS`,
       `Adobe Creative Suite`,
-      `The classic Illustrator, PhotoShop, and InDesign have beeen my daily go-tos for decades. I'm checking out Affinity's Creative Suite these days. Between Figma and Affinity, I could drop the Adobe subscription.`
+      `The classic Illustrator, PhotoShop, and InDesign have been my daily go-tos for decades. I'm checking out Affinity's Creative Suite these days. Between Figma and Affinity, I could drop the Adobe subscription.`
     ],
     [
       iconAffinityIcons,
@@ -158,37 +158,10 @@
 
   .skillsGrid {
     @apply w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
-
-    @media (max-width: 1024px) {
-      @apply row-start-2 row-end-2;
-    }
-
-    @media (max-width: 840px) {
-      @apply row-start-2 row-end-2;
-    }
-
-    @media (max-width: 630px) {
-      @apply row-start-2 row-end-2;
-    }
-
-    @media (min-width: 1026px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
-    }
-
-    @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
-    }
-
-    @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
-    }
-
-    @media (max-width: 470px) {
-      @apply grid-rows-[auto-fit,_minmax(120px,_1fr)];
-    }
+    min-width: 0;
 
     svg {
-      @apply w-[88px] ;
+      @apply w-[88px];
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
 
       &:hover {
@@ -242,30 +215,30 @@
     }
 
     svg {
-      @apply w-[88px] ;
+      @apply w-[88px];
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
   body.techy .skillsGrid {
-    @media (min-width: 1026px) {
-      @apply grid-cols-[repeat(12,_minmax(84px,_1fr))];
+    /* Mobile-first: 2 cols base */
+    @apply grid-cols-[repeat(2,_1fr)];
+
+    @media (min-width: 321px) and (max-width: 562px) {
+      @apply grid-cols-[repeat(4,_1fr)];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_minmax(84px,_1fr))];
+      @apply grid-cols-[repeat(6,_1fr)];
     }
 
-    @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(110px,_1fr))];
-    }
-
-    @media (max-width: 470px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(110px,_1fr))];
+    @media (min-width: 1026px) {
+      @apply grid-cols-[repeat(12,_1fr)] mt-[-0.5rem] ml-[-1rem] mr-0 w-[104%];
     }
 
     svg {
-      @apply w-[88px] ;
+      /* Scale with column, max out at 88px */
+      @apply w-full max-w-[88px];
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
@@ -294,31 +267,30 @@
     }
 
     svg {
-      @apply w-[88px] ;
+      @apply w-[88px];
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
   body.corp .skillsGrid {
+    /* Base: 4 cols fits in the half-width left column at desktop */
+    @apply grid-cols-[repeat(4,_1fr)];
+
     @media (min-width: 1026px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] mt-[-2.8rem];
+      @apply mt-[-2.8rem];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_minmax(88px,_1fr))];
-    }
-
-    @media (min-width: 320px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(3,_minmax(110px,_1fr))];
+      /* Full width at tablet — 6 cols fits fine */
+      @apply grid-cols-[repeat(6,_1fr)];
     }
 
     @media (max-width: 320px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(3,_1fr)];
     }
 
     svg {
-      @apply w-[88px] ;
-      filter: drop-shadow(var(--drop-shadow-tight-black-lt));
+      @apply w-[88px];
       filter: brightness(0.85) sepia(1) hue-rotate(160deg) saturate(3);
 
       &:hover {
@@ -347,7 +319,7 @@
     }
 
     svg {
-      @apply w-[88px] ;
+      @apply w-[88px];
       filter: drop-shadow(var(--drop-shadow-tight-black-md));
     }
   }
