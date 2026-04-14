@@ -26,18 +26,18 @@
   @reference "../../../assets/css/tailwind.css";
 
   .authenticStamp {
-    @apply w-45 max-w-22.5 min-w-22.5 fill-(--color-bourbon-accent-red);
+    @apply w-45 max-w-22.5 min-w-22.5 fill-bourbon-accent-red;
 
     @media (max-width: 840px) {
-      @apply w-30 fill-(--color-bourbon-accent-red);
+      @apply w-30 fill-bourbon-accent-red;
     }
 
     @media (max-width: 630px) {
-      @apply w-30 fill-(--color-bourbon-accent-red);
+      @apply w-30 fill-bourbon-accent-red;
     }
 
     @media (max-width: 430px) {
-      @apply w-30 fill-(--color-bourbon-accent-red);
+      @apply w-30 fill-bourbon-accent-red;
     }
 
     @media (max-width: 320px) {

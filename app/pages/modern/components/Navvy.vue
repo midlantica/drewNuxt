@@ -50,7 +50,7 @@
   @reference "../../../assets/css/tailwind.css";
 
   .authenticStamp {
-    @apply -mr-105 h-auto w-22.5 fixed max-w-22.5 min-w-22.5 fill-(--color-base-ivory);
+    @apply -mr-105 h-auto w-22.5 fixed max-w-22.5 min-w-22.5 fill-base-ivory;
 
     @media (max-width: 840px) {
       @apply -mr-95 -mt-2.5 w-22.5;

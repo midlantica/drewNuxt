@@ -24,7 +24,7 @@
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
   .authenticStamp {
-    @apply w-30 max-w-22.5 min-w-22.5 fill-(--color-corp-blue-dark);
+    @apply w-30 max-w-22.5 min-w-22.5 fill-corp-blue-dark;
   }
 
   h1 {

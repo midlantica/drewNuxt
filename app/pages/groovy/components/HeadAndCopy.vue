@@ -22,7 +22,7 @@
   }
 
   .authenticStamp {
-    @apply w-30 max-w-22.5 min-w-22.5 fill-(--color-groovy-red);
+    @apply w-30 max-w-22.5 min-w-22.5 fill-groovy-red;
   }
 
   section {
