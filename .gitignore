@@ -23,13 +23,3 @@ logs
 .env.*
 !.env.example
 pnpm-lock.yaml
-
-# Large binary assets - not suitable for git
-public/img/portfolio/
-public/img/bg/Drew-punk-back.jpg
-public/img/bg/Drew-punk-back.png
-public/img/bg/bg_bak_dk3.jpeg
-public/img/bg/bg_bak_dk4.jpeg
-public/img/bg/bg_bak_dk4.jpg
-public/greek-warrior-standing.afdesign
-public/resume/drew_harper_resume_portfolio.pdf

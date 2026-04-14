@@ -18,6 +18,7 @@
 </template>
 
 <script setup>
+  defineEmits(['toggleExtras']);
   const copy = useCopy();
   const store = useToggleExtrasStore();
 </script>

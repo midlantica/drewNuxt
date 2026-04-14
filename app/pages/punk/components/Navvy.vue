@@ -53,7 +53,6 @@
       }
     }
 
-    /* // ############################### */
     .mastMain {
       @apply flex flex-row flex-nowrap justify-center items-center content-center mt-[-1.5em] z-2 w-full;
 

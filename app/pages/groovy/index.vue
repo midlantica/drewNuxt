@@ -1,9 +1,3 @@
-<script setup>
-  import { ExtrasC } from '#components';
-
-  const { store } = usePageSetup('Groovy');
-</script>
-
 <template>
   <div>
     <Transition name="topDown" appear>
@@ -49,6 +43,11 @@
     </Transition>
   </div>
 </template>
+
+<script setup>
+  import { ExtrasC } from '#components';
+  const { store } = usePageSetup('Groovy');
+</script>
 
 <style scoped>
   @reference "../../assets/css/tailwind.css";
