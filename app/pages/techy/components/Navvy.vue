@@ -74,7 +74,7 @@
         }
 
         .drewHeadPic {
-          @apply col-start-1 col-end-2 row-start-1 row-end-3 w-23 h-27.25 pt-4 pr-4 pb-0 pl-4 bg-no-repeat bg-cover justify-self-end bg-[url('/img/drew_mug_dig.png')];
+          @apply col-start-1 col-end-2 row-start-1 row-end-3 w-23 h-27.25 pt-4 pr-4 pb-0 pl-4 bg-no-repeat bg-cover justify-self-end bg-[url('/img/drew_mug_dig.webp')];
 
           @media (max-width: 1024px) {
             @apply col-start-1 col-end-2 row-start-1 row-end-2 w-23 h-27.25 mt-0 mr-2 mb-0 ml-0 justify-self-end;

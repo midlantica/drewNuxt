@@ -9,7 +9,7 @@
           :class="{ 'shadow-transition': isMounted }"
         >
           <div
-            class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-24.5 h-29.75 min-[375px]:left-18 min-[375px]:top-[2.8rem] sm:left-14 sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer"
+            class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.webp')] w-24.5 h-29.75 min-[375px]:left-18 min-[375px]:top-[2.8rem] sm:left-14 sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer"
             @click="$emit('toggleExtras')"
           />
         </div>

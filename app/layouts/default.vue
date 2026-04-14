@@ -102,7 +102,7 @@
     @apply h-[calc(100%)] bg-[hsl(320,100%,9%)];
 
     .wrapper {
-      @apply w-[99.8%] flex flex-col grow max-w-(--breakpoint-break-xlg) min-h-195 pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.jpeg')] bg-cover;
+      @apply w-[99.8%] flex flex-col grow max-w-(--breakpoint-break-xlg) min-h-195 pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.webp')] bg-cover;
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
@@ -282,7 +282,7 @@
     @apply bg-base-back-black;
 
     .wrapper {
-      @apply w-[99.8%] bg-[url(/img/bg/white_paper_patt-01.jpg)] bg-repeat;
+      @apply w-[99.8%] bg-[url(/img/bg/white_paper_patt-01.webp)] bg-repeat;
 
       @media (max-width: 1024px) {
         /* @apply w-[99.8%]; */
@@ -324,7 +324,7 @@
     @apply w-full bg-base-back-black;
 
     .wrapper {
-      @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),url(/img/bg/Drew-punk-back.jpg)] bg-size-[102%_640%,100%_100%];
+      @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),url(/img/bg/Drew-punk-back.webp)] bg-size-[102%_640%,100%_100%];
 
       @media (max-width: 840px) {
         @apply w-[99.8%] bg-size-[102%_640%,130%_90%] bg-position-[center_center];

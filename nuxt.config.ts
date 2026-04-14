@@ -124,5 +124,18 @@ export default defineNuxtConfig({
     }
   },
 
+  // Workaround for known Nuxt 4.4 bug: https://github.com/nuxt/nuxt/issues/34812
+  // Duplicate "useAppConfig" import warning from nitropack vs @nuxt/nitro-server
+  // Safe to apply here since useAppConfig is not used in any server routes
+  hooks: {
+    'nitro:config'(nitroConfig) {
+      const imports = (
+        nitroConfig as { imports?: { imports?: Array<{ name?: string }> } }
+      ).imports;
+      if (!imports?.imports) return;
+      imports.imports = imports.imports.filter(i => i?.name !== 'useAppConfig');
+    }
+  },
+
   compatibilityDate: '2024-08-30'
 });

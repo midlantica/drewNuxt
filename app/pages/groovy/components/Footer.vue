@@ -23,7 +23,7 @@
     }
 
     .car {
-      @apply bg-no-repeat bg-cover block absolute top-[-.3rem] left-2 w-56.5 h-41.25 bg-[url('/img/alfa-carabo.png')];
+      @apply bg-no-repeat bg-cover block absolute top-[-.3rem] left-2 w-56.5 h-41.25 bg-[url('/img/alfa-carabo.webp')];
 
       @media (max-width: 430px) {
         @apply w-41.25 h-33.75 top-4 -left-4;
@@ -36,7 +36,7 @@
     }
 
     .starWars {
-      @apply bg-no-repeat bg-cover block absolute -top-4.25 right-0 w-37 h-44.25 bg-[url('/img/star-wars-transfers.png')];
+      @apply bg-no-repeat bg-cover block absolute -top-4.25 right-0 w-37 h-44.25 bg-[url('/img/star-wars-transfers.webp')];
 
       @media (max-width: 430px) {
         @apply w-30 h-44.25;

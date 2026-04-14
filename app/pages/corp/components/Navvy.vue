@@ -14,7 +14,7 @@
             @click="$emit('toggleExtras')"
           >
             <div
-              class="content-center m-0 bg-[url('/img/drew_mug_red.png')] inline-block w-20 h-20 bg-size-[151%] bg-position-[-39px_-59px] bg-no-repeat bg-corp-accent-red rounded-px shadow-[0px_0px_1px_1px_#00000026] hue-rotate-210 grayscale-50 jelloHorizontal"
+              class="content-center m-0 bg-[url('/img/drew_mug_red.webp')] inline-block w-20 h-20 bg-size-[151%] bg-position-[-39px_-59px] bg-no-repeat bg-corp-accent-red rounded-px shadow-[0px_0px_1px_1px_#00000026] hue-rotate-210 grayscale-50 jelloHorizontal"
             />
             <div class="flex flex-col flex-wrap">
               <drewHarper

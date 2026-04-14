@@ -141,7 +141,7 @@
       }
 
       div.DrewHead {
-        @apply bg-[url('/img/drew_mug_punk.png')] bg-no-repeat bg-contain w-[18vw] h-30 no-underline;
+        @apply bg-[url('/img/drew_mug_punk.webp')] bg-no-repeat bg-contain w-[18vw] h-30 no-underline;
 
         @media (max-width: 840px) {
           @apply w-30.5 h-30.5 mt-4;

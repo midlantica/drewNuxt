@@ -7,7 +7,7 @@
       class="flex auto-rows-auto justify-start justify-items-start items-center gap-2"
     >
       <div
-        class="bg-[url('/img/drew_mug_red.png')] h-25 min-h-25 min-w-21 w-21 block bg-no-repeat bg-cover self-center hover:cursor-pointer jelloHorizontal"
+        class="bg-[url('/img/drew_mug_red.webp')] h-25 min-h-25 min-w-21 w-21 block bg-no-repeat bg-cover self-center hover:cursor-pointer jelloHorizontal"
         @click="$emit('toggleExtras')"
       />
       <h1>{{ copy.druHead }}</h1>

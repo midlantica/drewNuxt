@@ -48,7 +48,7 @@
     </main>
 
     <footer
-      class="bg-[url(/img/bg/bg_bag_dk.jpg)] shadow-dru-shadow h-3 col-start-1 col-end-3 bg-repeat"
+      class="bg-[url(/img/bg/bg_bag_dk.webp)] shadow-dru-shadow h-3 col-start-1 col-end-3 bg-repeat"
     />
   </div>
 </template>
