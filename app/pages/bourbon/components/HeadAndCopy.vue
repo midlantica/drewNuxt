@@ -7,7 +7,7 @@
       class="flex auto-rows-auto justify-start justify-items-start items-center gap-2"
     >
       <div
-        class="bg-[url('/img/drew_mug_red.png')] h-[100px] min-h-[100px] min-w-[84px] w-[84px] block bg-no-repeat bg-cover self-center hover:cursor-pointer jelloHorizontal"
+        class="bg-[url('/img/drew_mug_red.png')] h-25 min-h-25 min-w-21 w-21 block bg-no-repeat bg-cover self-center hover:cursor-pointer jelloHorizontal"
         @click="$emit('toggleExtras')"
       />
       <h1>{{ copy.druHead }}</h1>
@@ -20,40 +20,33 @@
 <script setup>
   const copy = useCopy();
   const store = useToggleExtrasStore();
-
-
 </script>
 
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
 
   .authenticStamp {
- @apply w-[180px] max-w-[90px] min-w-[90px];
-    fill: var(--color-bourbon-accent-red);
+    @apply w-45 max-w-22.5 min-w-22.5 fill-(--color-bourbon-accent-red);
 
     @media (max-width: 840px) {
- @apply w-[120px];
-      fill: var(--color-bourbon-accent-red);
+      @apply w-30 fill-(--color-bourbon-accent-red);
     }
 
     @media (max-width: 630px) {
- @apply w-[120px];
-      fill: var(--color-bourbon-accent-red);
+      @apply w-30 fill-(--color-bourbon-accent-red);
     }
 
     @media (max-width: 430px) {
- @apply w-[120px];
-      fill: var(--color-bourbon-accent-red);
+      @apply w-30 fill-(--color-bourbon-accent-red);
     }
 
     @media (max-width: 320px) {
-      @apply min-w-[100px];
+      @apply min-w-25;
     }
   }
 
   h1 {
- @apply font-normal leading-[1.1em] text-bourbon-accent-red text-left tracking-[.025em] uppercase mt-2 mx-0 text-[1.7rem] p-0 self-center;
-    font-family: var(--font-family-bourbon-subhead);
+    @apply font-normal leading-[1.1em] text-bourbon-accent-red text-left tracking-wide uppercase mt-2 mx-0 text-[1.7rem] p-0 self-center font-(family-name:--font-family-bourbon-subhead);
 
     @media (min-width: 1024px) {
       /* @apply max-w-[21ch]; */
@@ -73,24 +66,31 @@
   }
 
   p {
- @apply leading-[2.5rem] text-[1.1rem] text-base-grey mt-2 mx-2 mb-0 tracking-[0.05rem] mr-2 text-pretty;
-    font-family: var(--font-family-bourbon-copy);
+    @apply leading-10 text-[1.1rem] text-base-grey mt-2 mx-2 mb-0 tracking-[0.05rem] mr-2 font-(family-name:--font-family-bourbon-copy);
+    text-wrap: pretty;
 
     @media (max-width: 1024px) {
-      @apply columns-2 leading-9 gap-x-12 text-justify hyphens-auto;
-      column-rule: 1px solid hsla(7,77%,43%,50%);
+      @apply leading-9 hyphens-auto;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 840px) {
-      @apply columns-2 tracking-[0.05rem] text-justify hyphens-auto;
+      @apply tracking-[0.05rem] hyphens-auto;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 670px) {
-      @apply columns-1 text-justify hyphens-auto;
+      @apply hyphens-auto;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 630px) {
-      @apply columns-1 text-justify hyphens-auto;
+      @apply hyphens-auto;
+      orphans: 3;
+      widows: 3;
     }
   }
 </style>

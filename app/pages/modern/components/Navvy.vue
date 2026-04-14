@@ -5,7 +5,7 @@
       class="flex flex-col flex-nowrap justify-center items-center gap-y-4 p-0 mt-14"
     >
       <h1
-        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-subhead text-[2.25rem] text-modern-accent-red tracking-[-0.05em] w-full flex grow justify-center items-center gap-2 antialiased font-light leading-10 text-center lowercase transition duration-200 ease-in break-lg:text-[3.25rem] break-sm:text-[2.75rem] break-xsm:text-[2.25rem] hover:text-modern-accent"
+        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-subhead text-[2.25rem] text-modern-accent-red tracking-tight w-full flex grow justify-center items-center gap-2 antialiased font-light leading-10 text-center lowercase transition duration-200 ease-in break-lg:text-[3.25rem] break-sm:text-[2.75rem] break-xsm:text-[2.25rem] hover:text-modern-accent"
       >
         <div
           class="text-modern-accent-red cursor-pointer"
@@ -20,7 +20,7 @@
       </h1>
 
       <h2
-        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-copy leading-[1.5em] text-[1.3rem] text-[hsla(0,0%,100%,0.85)] tracking-0 antialiased font-normal text-center lowercase"
+        class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-copy leading-[1.5em] text-[1.3rem] text-[hsla(0,0%,100%,0.85)] tracking-normal antialiased font-normal text-center lowercase"
       >
         {{ copy.uiuxDesigner }} / {{ copy.vizDesigner }}
       </h2>
@@ -32,10 +32,7 @@
           <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="btn">
             {{ copy.druEmail }}
           </nuxt-link>
-          <a
-:href="`${copy.portfolio}`"
-target="_blank"
-class="btn">
+          <a :href="`${copy.portfolio}`" target="_blank" class="btn">
             PDF&nbsp;Resume
           </a>
         </p>
@@ -53,26 +50,25 @@ class="btn">
   @reference "../../../assets/css/tailwind.css";
 
   .authenticStamp {
- @apply -mr-[420px] h-auto w-[90px] fixed max-w-[90px] min-w-[90px];
-    fill: var(--color-base-ivory);
+    @apply -mr-105 h-auto w-22.5 fixed max-w-22.5 min-w-22.5 fill-(--color-base-ivory);
 
     @media (max-width: 840px) {
-      @apply -mr-[380px] -mt-[10px] w-[90px];
+      @apply -mr-95 -mt-2.5 w-22.5;
     }
 
     @media (max-width: 630px) {
-      @apply -mr-[330px] -mt-[20px] w-[80px];
+      @apply -mr-82.5 -mt-5 w-20;
     }
 
     @media (max-width: 430px) {
-      @apply -mr-[300px] -mt-[20px] w-[70px];
+      @apply -mr-75 -mt-5 w-17.5;
     }
 
     @media (max-width: 320px) {
-      @apply -mr-[300px] -mt-[10px] w-[70px];
+      @apply -mr-75 -mt-2.5 w-17.5;
     }
   }
   .btn {
-    @apply border border-[#ff000054] border-solid py-[0.3rem] rounded-[2rem] my-0 px-5 text-base-ivory hover:text-black hover:no-underline hover:bg-modern-ruby no-underline;
+    @apply border border-[#ff000054] border-solid py-[0.3rem] rounded-4xl my-0 px-5 text-base-ivory hover:text-black hover:no-underline hover:bg-modern-ruby no-underline;
   }
 </style>

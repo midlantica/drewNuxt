@@ -1,67 +1,50 @@
+<script setup>
+  import { ExtrasC } from '#components';
+
+  const { store } = usePageSetup('Punk');
+</script>
+
 <template>
   <div>
-  <transition name="topDown" appear>
-    <PunkNavvy
-      :is-show-content="store.isShowContent"
-      @toggle-extras="store.toggleExtras"
-    />
-  </transition>
-
-  <main v-if="store.isShowContent" class="mainGrid">
-    <transition name="bounce2" appear>
-      <PunkHeadAndCopy
-        class="copyArea"
+    <transition name="topDown" appear>
+      <PunkNavvy
         :is-show-content="store.isShowContent"
         @toggle-extras="store.toggleExtras"
       />
     </transition>
 
-    <transition name="bounce4" appear>
-      <Carousel class="slides" />
-    </transition>
+    <main v-if="store.isShowContent" class="mainGrid">
+      <transition name="bounce2" appear>
+        <PunkHeadAndCopy
+          class="copyArea"
+          :is-show-content="store.isShowContent"
+          @toggle-extras="store.toggleExtras"
+        />
+      </transition>
 
-    <transition name="bounce6" appear>
-      <Skills />
-    </transition>
+      <transition name="bounce4" appear>
+        <Carousel class="slides" />
+      </transition>
 
-    <transition name="bounce8" appear>
-      <About />
-    </transition>
-  </main>
+      <transition name="bounce6" appear>
+        <Skills />
+      </transition>
 
-  <main v-else class="mainGrid">
-    <component
-      :is="ExtrasC"
-      class="col-span-2"
-      :is-show-content="store.isShowContent"
-      @toggle-extras="store.toggleExtras"
-    />
-  </main>
+      <transition name="bounce8" appear>
+        <About />
+      </transition>
+    </main>
+
+    <main v-else class="mainGrid">
+      <component
+        :is="ExtrasC"
+        class="col-span-2"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
+      />
+    </main>
   </div>
 </template>
-
-<script setup>
-  import { ExtrasC } from '#components';
-  const store = useToggleExtrasStore();
-
-  definePageMeta({
-    title: 'Punk',
-    pageTransition: false,
-    layoutTransition: false,
-    viewTransition: false
-  });
-
-  useHead({
-    title: `DrewHarper.com | UX Designer Visual Designer - Punk`,
-    bodyAttrs: {
-      class: `punk`
-    }
-  });
-
-  onMounted(() => {
-    store.initialize();
-  });
-</script>
 
 <style scoped>
   @reference "../../assets/css/tailwind.css";
@@ -72,28 +55,12 @@
     @media (max-width: 1024px) {
       @apply grid-cols-1 gap-x-1 gap-y-2;
     }
-
-    @media (max-width: 840px) {
-      /* // */
-    }
-
-    @media (max-width: 630px) {
-      /* // */
-    }
   }
 
   .copyArea {
     @apply col-start-1 col-end-2 row-start-1 row-end-3 flex flex-col self-end;
 
     @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-1 row-end-1;
-    }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-1 row-end-1;
-    }
-
-    @media (max-width: 630px) {
       @apply col-start-1 col-end-3 row-start-1 row-end-1;
     }
   }
@@ -104,14 +71,6 @@
     @media (max-width: 1024px) {
       @apply col-start-1 col-end-3 row-start-3 row-end-3;
     }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-3 row-end-3;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-3 row-end-3;
-    }
   }
 
   .about {
@@ -120,48 +79,12 @@
     @media (max-width: 1024px) {
       @apply col-start-1 col-end-3 row-start-5 row-end-5;
     }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
-
-    @media only screen and (min-device-width: 375px) and (max-device-width: 660px) and (-webkit-min-device-pixel-ratio: 2) {
-      @apply gap-y-0;
-    }
-  }
-
-  .quoteBlock {
-    @apply col-start-2 col-end-3 row-start-3 row-end-3;
-
-    @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
-
-    @media (max-width: 840px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
-
-    @media (max-width: 630px) {
-      @apply col-start-1 col-end-3 row-start-5 row-end-5;
-    }
   }
 
   .skillsGrid {
     @apply col-start-1 col-end-3 row-start-3 row-end-3;
 
     @media (max-width: 1024px) {
-      @apply row-start-4 row-end-4;
-    }
-
-    @media (max-width: 840px) {
-      @apply row-start-4 row-end-4;
-    }
-
-    @media (max-width: 630px) {
       @apply row-start-4 row-end-4;
     }
   }

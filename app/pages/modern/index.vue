@@ -1,5 +1,5 @@
 <script setup>
-  import { shallowRef, onMounted } from 'vue';
+  import { shallowRef } from 'vue';
   import {
     ModernProjects,
     ModernSkills,
@@ -7,85 +7,58 @@
     ExtrasC
   } from '#components';
 
-  const store = useToggleExtrasStore();
+  const { store } = usePageSetup('Modern');
 
-  definePageMeta({
-    title: 'Modern',
-    pageTransition: false,
-    layoutTransition: false,
-    viewTransition: false
-  });
-
-  useHead({
-    title: `DrewHarper.com | UX Designer Visual Designer - Modern`,
-    bodyAttrs: {
-      class: `modern`
-    }
-  });
-
+  const views = { ModernProjects, ModernSkills, ModernAbout };
   const currentView = shallowRef(ModernProjects);
 
-  const switchView = view => {
-    if (!store.isShowContent) {
-      store.toggleExtras();
-    }
-
-    if (view === 'ModernProjects') {
-      currentView.value = ModernProjects;
-    } else if (view === 'ModernSkills') {
-      currentView.value = ModernSkills;
-    } else if (view === 'ModernAbout') {
-      currentView.value = ModernAbout;
-    }
-  };
+  function switchView(viewName) {
+    if (!store.isShowContent) store.toggleExtras();
+    if (views[viewName]) currentView.value = views[viewName];
+  }
 
   onMounted(() => {
-    store.initialize();
     store.selectedBtn = 'ModernProjects';
   });
 </script>
 
 <template>
   <div>
-  <!-- <div class="flex flex-col items-center"> -->
+    <transition name="topDown" appear>
+      <ModernNavvy
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
+      />
+    </transition>
 
-  <transition name="topDown" appear>
-    <ModernNavvy
-      :is-show-content="store.isShowContent"
-      @toggle-extras="store.toggleExtras"
-    />
-  </transition>
+    <transition name="bounce2" appear>
+      <ModernSubTabs
+        :is-show-content="store.isShowContent"
+        :selected-btn="store.selectedBtn"
+        @switch-view="switchView"
+        @toggle-extras="store.toggleExtras"
+      />
+    </transition>
 
-  <transition name="bounce2" appear>
-    <ModernSubTabs
-      :is-show-content="store.isShowContent"
-      :selected-btn="store.selectedBtn"
-      @switch-view="switchView"
-      @toggle-extras="store.toggleExtras"
-    />
-  </transition>
+    <main
+      v-if="store.isShowContent"
+      class="w-full grid grid-cols-1 gap-x-0 gap-y-2 px-12 m-0"
+    >
+      <component
+        :is="currentView"
+        :is-show-content="store.isShowContent"
+        @toggle-extras="store.toggleExtras"
+      />
+    </main>
 
-  <main
-    v-if="store.isShowContent"
-    class="w-full grid grid-cols-1 gap-x-0 gap-y-2 px-12 m-0"
-  >
-    <component
-      :is="currentView"
-      :is-show-content="store.isShowContent"
-      @toggle-extras="store.toggleExtras"
-    />
-  </main>
-
-  <main v-else class="mainGrid">
-    <component
-      :is="ExtrasC"
-      :is-show-content="store.isShowContent"
-      class="col-span-2"
-      @toggle-extras="store.toggleExtras"
-    />
-  </main>
-
-  <!-- </div> -->
+    <main v-else class="mainGrid">
+      <component
+        :is="ExtrasC"
+        :is-show-content="store.isShowContent"
+        class="col-span-2"
+        @toggle-extras="store.toggleExtras"
+      />
+    </main>
   </div>
 </template>
 

@@ -10,10 +10,7 @@
       </div>
 
       <div class="resumeLinks">
-        <a
-:href="`${copy.portfolio}`"
-target="_BLANK"
-class="resume rOne">
+        <a :href="`${copy.portfolio}`" target="_BLANK" class="resume rOne">
           PDF Resume
         </a>
       </div>
@@ -31,8 +28,6 @@ class="resume rOne">
 <script setup>
   const copy = useCopy();
   const store = useToggleExtrasStore();
-
-
 </script>
 
 <style scoped>
@@ -48,22 +43,22 @@ class="resume rOne">
   }
 
   .authenticStampPunk {
-    @apply fill-black w-[120px] max-w-[90px] min-w-[90px] pr-[.2rem] pb-[.1rem] mb-1;
+    @apply fill-black w-30 max-w-22.5 min-w-22.5 pr-[.2rem] pb-[.1rem] mb-1;
 
     @media (max-width: 840px) {
-      @apply -mr-[380px] -mt-[10px] w-[90px];
+      @apply -mr-95 -mt-2.5 w-22.5;
     }
 
     @media (max-width: 630px) {
-      @apply -mr-[330px] -mt-[20px] w-[80px];
+      @apply -mr-82.5 -mt-5 w-20;
     }
 
     @media (max-width: 430px) {
-      @apply -mr-[300px] -mt-[20px] w-[70px];
+      @apply -mr-75 -mt-5 w-17.5;
     }
 
     @media (max-width: 320px) {
-      @apply -mr-[300px] -mt-[10px] w-[70px];
+      @apply -mr-75 -mt-2.5 w-17.5;
     }
   }
 
@@ -71,12 +66,10 @@ class="resume rOne">
     @apply flex flex-row justify-between;
 
     .jobTitles {
-      flex: 0 1 auto;
-      @apply flex-row self-start;
+      @apply flex-auto flex-row self-start;
 
       p {
- @apply text-base-black bg-white text-[0.9em] font-medium not-italic tracking-[.02em] -hue-rotate-[1.25deg] lowercase py-1 px-2;
-        font-family: var(--font-family-punk-copy);
+        @apply text-base-black bg-white text-[0.9em] font-medium not-italic tracking-[.02em] -hue-rotate-[1.25deg] lowercase py-1 px-2 font-(family-name:--font-family-punk-copy);
 
         @media (max-width: 630px) {
           /* // */
@@ -100,8 +93,7 @@ class="resume rOne">
       @apply self-end flex-row;
 
       .resume {
- @apply text-[0.9em] text-base-black bg-white font-medium not-italic tracking-[.02em] lowercase inline-block ml-1 mb-4 py-[0.3em] px-2;
-        font-family: var(--font-family-punk-copy);
+        @apply text-[0.9em] text-base-black bg-white font-medium not-italic tracking-[.02em] lowercase inline-block ml-1 mb-4 py-[0.3em] px-2 font-(family-name:--font-family-punk-copy);
 
         &.rOne {
           @apply text-white -rotate-2 bg-punk-magenta/50;
@@ -135,8 +127,7 @@ class="resume rOne">
   }
 
   .copyGrid {
-    flex: 0 1 auto;
-    @apply flex flex-col relative top-0 left-0;
+    @apply flex-auto flex flex-col relative top-0 left-0;
 
     @media (max-width: 840px) {
       @apply mb-0;
@@ -147,8 +138,7 @@ class="resume rOne">
     @apply -rotate-1;
 
     h1 {
- @apply font-medium z-10 leading-[1.7rem] text-white text-[1.16rem] bg-punk-red/80 rotate-1 py-1 pr-0 pb-[.1rem] pl-[.2rem] tracking-[.025em] uppercase inline;
-      font-family: var(--font-family-punk-head);
+      @apply font-medium z-10 leading-[1.7rem] text-white text-[1.16rem] bg-punk-red/80 rotate-1 py-1 pr-0 pb-[.1rem] pl-[.2rem] tracking-wide uppercase inline font-(family-name:--font-family-punk-head);
 
       &:nth-of-type(1) {
         @apply rotate-0;
@@ -156,8 +146,7 @@ class="resume rOne">
     }
 
     p {
- @apply font-normal text-[1em] leading-9 relative inline italic text-base-grey tracking-[.045em] top-0 bg-punk-peach mt-4 mx-4 mb-0 py-[.4rem] px-[.1rem];
-      font-family: var(--font-family-punk-copy);
+      @apply font-normal text-[1em] leading-9 relative inline italic text-base-grey tracking-[.045em] top-0 bg-punk-peach mt-4 mx-4 mb-0 py-[.4rem] px-[.1rem] font-(family-name:--font-family-punk-copy);
 
       @media (min-width: 840px) {
         /* // */

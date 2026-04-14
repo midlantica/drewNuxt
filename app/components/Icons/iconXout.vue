@@ -16,7 +16,7 @@
   svg.xOut {
     width: 20px !important;
     height: auto !important;
-    margin: auto !important;
+    margin: auto 0rem auto 0.1rem !important;
     @apply cursor-pointer will-change-transform pointer-events-auto z-10;
 
     > path {
@@ -25,7 +25,7 @@
       stroke-linecap: round;
 
       &:hover {
-        stroke: hsl(0, 64%, 48%);
+        stroke: black;
         stroke-width: 2px;
         @apply cursor-pointer will-change-transform pointer-events-auto z-10;
       }
@@ -33,7 +33,7 @@
   }
 
   .closeBtn:hover svg.xOut path {
-    stroke: hsl(0, 54%, 60%);
+    stroke: hsla(0, 0%, 0%, 0.75);
     stroke-width: 2px;
   }
 </style>

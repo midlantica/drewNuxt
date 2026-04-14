@@ -26,7 +26,7 @@ audio {
 }
 
 ::-webkit-scrollbar-thumb {
-  @apply rounded-md bg-gradient-to-b from-[hsla(0,0%,79%,0.226)] to-[hsla(0,0%,79%,0.514)];
+  @apply rounded-md bg-linear-to-b from-[hsla(0,0%,79%,0.226)] to-[hsla(0,0%,79%,0.514)];
 }
 
 ::-webkit-scrollbar-track {
@@ -47,4 +47,8 @@ audio {
 
 p {
   @apply text-wrap;
+}
+
+.nah {
+  color: black;
 }

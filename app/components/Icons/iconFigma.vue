@@ -1,8 +1,5 @@
 <template>
-  <svg
-id="figmaBox"
-viewBox="0 0 88 60"
-xmlns="http://www.w3.org/2000/svg">
+  <svg id="figmaBox" viewBox="0 0 88 60" xmlns="http://www.w3.org/2000/svg">
     <title>Figma</title>
 
     <g id="figmaIconGroup">
@@ -126,19 +123,19 @@ xmlns="http://www.w3.org/2000/svg">
         stroke: none !important;
       }
       .green {
-        @apply !fill-[hsl(157,91%,43%)];
+        @apply fill-[hsl(157,91%,43%)]!;
       }
       .purple {
-        @apply !fill-[hsl(266,100%,67%)];
+        @apply fill-[hsl(266,100%,67%)]!;
       }
       .orange {
-        @apply !fill-[hsl(14,89%,53%)];
+        @apply fill-[hsl(14,89%,53%)]!;
       }
       .tangerine {
-        @apply !fill-[hsl(6,100%,69%)];
+        @apply fill-[hsl(6,100%,69%)]!;
       }
       .blue {
-        @apply !fill-[hsl(197,99%,55%)];
+        @apply fill-[hsl(197,99%,55%)]!;
       }
     }
   }

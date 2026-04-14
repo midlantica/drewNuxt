@@ -59,7 +59,7 @@
   @reference "../assets/css/tailwind.css";
 
   .about {
-    @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap gap-4 justify-center items-center content-center self-center rounded-sm shadow-[0px_1px_2px_0px_#00000080];
+    @apply bg-[hsl(47.01deg_93.99%_77.67%)] pt-4 pb-3 px-6 flex flex-row flex-nowrap gap-4 justify-center items-center content-center self-center rounded-xs shadow-[0px_1px_2px_0px_#00000080];
 
     @media (max-width: 1024px) {
       @apply mt-0 mx-0 mb-0;
@@ -75,7 +75,7 @@
   }
 
   .flag {
-    @apply block bg-no-repeat bg-center bg-contain w-[100px] h-[60px] bg-[url('/img/brit_amer_flag.svg')];
+    @apply block bg-no-repeat bg-center bg-contain w-25 h-15 bg-[url('/img/brit_amer_flag.svg')];
   }
 
   .flagBox {
@@ -99,7 +99,15 @@
     @apply shadow-none pt-3 pb-2 px-4 bg-[#6bbaff42];
 
     p {
-      @apply text-corp-black;
+      @apply text-corp-black text-[0.9rem] tracking-[0.02rem] leading-6 m-0 font-medium font-(family-name:--font-family-corp-copy);
+
+      @media (max-width: 1024px) {
+        @apply leading-7;
+      }
+
+      @media (max-width: 630px) {
+        @apply leading-6;
+      }
     }
   }
 
@@ -119,28 +127,12 @@
     @apply bg-techy-blue-tech;
 
     p {
-      @apply text-white my-0 mx-auto;
-      font-family: var(--font-family-techy-copy);
+      @apply text-white my-0 mx-auto font-(family-name:--font-family-techy-copy);
     }
   }
 
   .modern .aboutWrapper {
     @apply flex items-center justify-center;
-  }
-
-  .corp .about {
-    p {
-      @apply text-[0.9rem] tracking-[0.02rem] leading-6 m-0 font-medium;
-      font-family: var(--font-family-corp-copy);
-
-      @media (max-width: 1024px) {
-        @apply leading-7;
-      }
-
-      @media (max-width: 630px) {
-        @apply leading-6;
-      }
-    }
   }
 
   .modern .about {
@@ -159,12 +151,11 @@
     }
 
     .flag {
-      @apply block bg-no-repeat content-center items-center justify-center self-center w-[100px] h-[60px] bg-[url("/img/brit_amer_flag.svg")] bg-contain mr-0 bg-center;
+      @apply block bg-no-repeat content-center items-center justify-center self-center w-25 h-15 bg-[url("/img/brit_amer_flag.svg")] bg-contain mr-0 bg-center;
     }
 
     p {
-      @apply tracking-normal leading-6 m-0 font-light text-base-ivory text-[.8rem];
-      font-family: var(--font-family-modern-copy);
+      @apply tracking-normal leading-6 m-0 font-light text-base-ivory text-[.8rem] font-(family-name:--font-family-modern-copy);
     }
   }
 </style>

@@ -1,24 +1,7 @@
 <script setup>
   import { ExtrasC } from '#components';
-  const store = useToggleExtrasStore();
 
-  definePageMeta({
-    title: 'Corp',
-    pageTransition: false,
-    layoutTransition: false,
-    viewTransition: false
-  });
-
-  useHead({
-    title: `DrewHarper.com | UX Designer Visual Designer - Corp`,
-    bodyAttrs: {
-      class: `corp`
-    }
-  });
-
-  onMounted(() => {
-    store.initialize();
-  });
+  const { store } = usePageSetup('Corp');
 </script>
 
 <template>
@@ -65,6 +48,7 @@
 
 <style scoped>
   @reference "../../assets/css/tailwind.css";
+
   .mainGrid {
     @apply grid-cols-2 grid gap-y-2 gap-x-0 ml-4 mb-4 mr-6;
 
@@ -73,7 +57,6 @@
     }
   }
 
-  /* Desktop: HeadAndCopy spans col 1, rows 1-2 */
   .copyArea {
     @apply col-start-1 col-end-2 row-start-1 row-end-3;
 
@@ -82,7 +65,6 @@
     }
   }
 
-  /* Desktop: Carousel in col 2 row 1 */
   .slides {
     @apply col-start-2 col-end-3 row-start-1 row-end-2 mt-4;
 
@@ -91,7 +73,6 @@
     }
   }
 
-  /* Desktop: Skills in col 1 row 2 (below HeadAndCopy) */
   .skillsGrid {
     @apply col-start-1 col-end-2 row-start-2 row-end-3;
 
@@ -100,7 +81,6 @@
     }
   }
 
-  /* Desktop: About in col 2 row 2 (below Carousel) */
   .aboutArea {
     @apply col-start-2 col-end-3 row-start-2 row-end-3;
 

@@ -39,7 +39,6 @@
   import mastHarper from './masthead/mastHarper.vue';
   defineEmits(['toggleExtras']);
   const copy = useCopy();
-
 </script>
 
 <style scoped>
@@ -75,22 +74,22 @@
         }
 
         .drewHeadPic {
-          @apply col-start-1 col-end-2 row-start-1 row-end-3 w-[92px] h-[109px] pt-4 pr-4 pb-0 pl-4 bg-no-repeat bg-cover justify-self-end bg-[url('/img/drew_mug_dig.png')];
+          @apply col-start-1 col-end-2 row-start-1 row-end-3 w-23 h-27.25 pt-4 pr-4 pb-0 pl-4 bg-no-repeat bg-cover justify-self-end bg-[url('/img/drew_mug_dig.png')];
 
           @media (max-width: 1024px) {
-            @apply col-start-1 col-end-2 row-start-1 row-end-2 w-[92px] h-[109px] mt-0 mr-2 mb-0 ml-0 justify-self-end;
+            @apply col-start-1 col-end-2 row-start-1 row-end-2 w-23 h-27.25 mt-0 mr-2 mb-0 ml-0 justify-self-end;
           }
 
           @media (max-width: 630px) {
-            @apply w-[64px] h-[75px];
+            @apply w-16 h-18.75;
           }
 
           @media (max-width: 430px) {
-            @apply w-[46px] h-[55px] m-0;
+            @apply w-11.5 h-13.75 m-0;
           }
 
           @media (max-width: 320px) {
-            @apply h-[55px] m-0;
+            @apply h-13.75 m-0;
           }
         }
 
@@ -173,11 +172,10 @@
     }
 
     h2 {
- @apply text-techy-blue-tech m-0 font-normal lowercase text-[1.6em] leading-[1.1em] tracking-[.03em] inline;
-      font-family: var(--font-family-techy-head);
+      @apply text-techy-blue-tech m-0 font-normal lowercase text-[1.6em] leading-[1.1em] tracking-[.03em] inline font-(family-name:--font-family-techy-head);
 
       @media (max-width: 1024px) {
-        @apply inline text-[3.3vw] mt-[-3px];
+        @apply inline text-[3.3vw] -mt-0.75;
 
         &:nth-child(2) {
           @apply ml-1;
@@ -185,7 +183,7 @@
       }
 
       @media (max-width: 840px) {
-        @apply inline text-[3.7vw] mt-[-3px];
+        @apply inline text-[3.7vw] -mt-0.75;
 
         &:nth-child(2) {
           @apply ml-1;
@@ -221,11 +219,10 @@
       }
 
       p {
- @apply font-medium tracking-[.09em] text-base-ivory text-[1.3em] leading-10 ml-2;
-        font-family: var(--font-family-techy-copy);
+        @apply font-medium tracking-widest text-base-ivory text-[1.3em] leading-10 ml-2 font-(family-name:--font-family-techy-copy);
 
         > a {
-          @apply no-underline text-base-ivory/[.9] underline-offset-4;
+          @apply no-underline text-base-ivory/90 underline-offset-4;
 
           &:hover {
             @apply underline;
@@ -233,7 +230,7 @@
         }
 
         @media (max-width: 840px) {
-          @apply justify-center text-[1.2em] tracking-[.1em];
+          @apply justify-center text-[1.2em] tracking-widest;
         }
 
         @media (max-width: 630px) {

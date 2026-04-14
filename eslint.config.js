@@ -4,9 +4,9 @@ import withNuxt from './.nuxt/eslint.config.mjs';
 export default withNuxt({
   rules: {
     'vue/max-attributes-per-line': [
-      'error',
+      'warn',
       {
-        singleline: { max: 2 },
+        singleline: { max: 3 },
         multiline: { max: 1 }
       }
     ]

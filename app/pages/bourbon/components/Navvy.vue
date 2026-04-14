@@ -42,15 +42,13 @@
 <script setup>
   defineEmits(['toggleExtras']);
   const copy = useCopy();
-
 </script>
 
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
 
   h1 {
- @apply text-bourbon-ivory font-normal text-[4em] leading-none tracking-[.06em] p-0 m-0 transition duration-[.25s] ease-in antialiased w-auto grow-0 drop-shadow-[4px_0px_3px_rgba(0,0,0,0.1)];
-    font-family: var(--font-family-bourbon-subhead);
+    @apply text-bourbon-ivory font-normal text-[4em] leading-none tracking-[.06em] p-0 m-0 transition duration-[.25s] ease-in antialiased w-auto grow-0 drop-shadow-[4px_0px_3px_rgba(0,0,0,0.1)] font-(family-name:--font-family-bourbon-subhead);
 
     @media (max-width: 840px) {
       @apply grow-0 text-right;
@@ -61,7 +59,7 @@
     }
 
     @media (max-width: 430px) {
-      @apply font-[3.05rem];
+      @apply text-[3.05rem];
     }
   }
 
@@ -81,8 +79,7 @@
     }
 
     h2 {
- @apply p-0 m-0 text-bourbon-ivory text-[1.675rem] tracking-[0.075rem] leading-[1.55rem] antialiased mb-[.15rem] drop-shadow-[3px_0px_3px_rgba(0,0,0,0.1)];
-      font-family: var(--font-family-bourbon-head);
+      @apply p-0 m-0 text-bourbon-ivory text-[1.675rem] tracking-[0.075rem] leading-[1.55rem] antialiased mb-[.15rem] drop-shadow-[3px_0px_3px_rgba(0,0,0,0.1)] font-(family-name:--font-family-bourbon-head);
 
       &:nth-child(2) {
         @apply text-[1.51rem] mb-[.1em];
@@ -107,7 +104,7 @@
   }
 
   section.contact {
-    @apply uppercase mt-[.5rem] z-10 transition duration-[.25s] ease-in drop-shadow-[3px_0px_1px_rgba(0,0,0,0.1)];
+    @apply uppercase mt-2 z-10 transition duration-[.25s] ease-in drop-shadow-[3px_0px_1px_rgba(0,0,0,0.1)];
 
     @media (max-width: 840px) {
       @apply w-full flex flex-row flex-wrap items-center justify-center gap-4;
@@ -122,8 +119,7 @@
     }
 
     p {
- @apply tracking-[0.05rem] text-[1.15rem] leading-[1.35rem] lowercase antialiased;
-      font-family: var(--font-family-bourbon-copy);
+      @apply tracking-[0.05rem] text-[1.15rem] leading-[1.35rem] lowercase antialiased font-(family-name:--font-family-bourbon-copy);
 
       @media (max-width: 840px) {
         @apply justify-center text-[1.5rem] tracking-[0.1785rem] mt-[-.3em] leading-[1.95rem];

@@ -1,9 +1,7 @@
-// stores/quotes.js
-import { defineStore } from 'pinia';
-import { ref } from 'vue';
-
-export const useQuotes = defineStore('quotes', () => {
-  const quotes = ref([
+// composables/useQuotes.js
+// Static quote data — no Pinia needed, plain composable is sufficient.
+export function useQuotes() {
+  const quotes = [
     {
       quote: `Human centered Design? Who was it centered on before?! Its all just Design.`,
       author: `Unknown`
@@ -112,7 +110,7 @@ export const useQuotes = defineStore('quotes', () => {
       quote: `Usability is like oxygen, you don't notice it until it's missing`,
       author: `unknown`
     }
-  ]);
+  ];
 
   return { quotes };
-});
+}

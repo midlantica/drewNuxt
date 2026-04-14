@@ -19,9 +19,7 @@
     /* height: auto !important; */
     /* margin: auto !important; */
     /* @apply cursor-pointer; */
-    cursor: pointer;
-    display: inline;
-    margin-right: 0.25rem;
+    @apply cursor-pointer inline mr-1;
 
     > path {
       stroke: hsla(0, 0%, 0%, 0.85);

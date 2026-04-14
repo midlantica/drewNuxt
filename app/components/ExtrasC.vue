@@ -20,7 +20,7 @@
           class="content-center gap-x-4"
         >
           <a :href="`${imageRoot}${item.imageUrl}`" target="_BLANK">
-            <img class="portThumbs" :src="`${imageRoot}${item.imageSrc}`" >
+            <img class="portThumbs" :src="`${imageRoot}${item.imageSrc}`" />
             <div class="text-center">
               <p>{{ item.text }}</p>
             </div>
@@ -162,7 +162,7 @@
   .modern svg.arrowLeft {
     > path {
       stroke: white !important;
-      @apply !stroke-white;
+      @apply stroke-white!;
       /* stroke-width: 3; */
       /* stroke-linecap: round; */
     }

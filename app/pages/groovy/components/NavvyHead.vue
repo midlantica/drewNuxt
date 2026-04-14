@@ -1,17 +1,15 @@
 <template>
-  <header
-    class="text-base-ivory bg-groovy-red after:clear-both h-[188px] topDown"
-  >
-    <div class="relative my-[-25px] flex flex-row items-center">
+  <header class="text-base-ivory bg-groovy-red after:clear-both h-47 topDown">
+    <div class="relative -my-6.25 flex flex-row items-center">
       <div
-        class="relative w-[210px] h-[210px] sm:left-[-2.75rem] min-[375px]:left-[-5.7rem] ease-out duration-300 top-[-5px]"
+        class="relative w-52.5 h-52.5 sm:-left-11 min-[375px]:left-[-5.7rem] ease-out duration-300 -top-1.25"
       >
         <div
           class="block float-left clear-left groovyCircle shadow-pre-trans"
           :class="{ 'shadow-transition': isMounted }"
         >
           <div
-            class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-[98px] h-[119px] min-[375px]:left-[4.5rem] min-[375px]:top-[2.8rem] sm:left-[3.5rem] sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer"
+            class="jelloHorizontal relative bg-[url('/img/drew_mug_sepia.png')] w-24.5 h-29.75 min-[375px]:left-18 min-[375px]:top-[2.8rem] sm:left-14 sm:top-[2.8rem] bg-no-repeat bg-cover block ease-out duration-300 cursor-pointer"
             @click="$emit('toggleExtras')"
           />
         </div>
@@ -32,7 +30,7 @@
           </div>
         </div>
         <h2
-          class="text-base-ivory min-[375px]:text-[.8rem] sm:text-[1.45rem] text-[1rem] text-center font-normal lowercase leading-normal tracking-[.025em] my-1 w-full mx-auto ease-out duration-300"
+          class="text-base-ivory min-[375px]:text-[.8rem] sm:text-[1.45rem] text-[1rem] text-center font-normal lowercase leading-normal tracking-wide my-1 w-full mx-auto ease-out duration-300"
         >
           {{ copy.uiuxDesigner }} + {{ copy.vizDesigner }}
         </h2>
@@ -47,10 +45,7 @@
               </a>
             </div>
             <div class="duration-300 ease-out groovyOvalBtn">
-              <a
-:href="`${copy.portfolio}`"
-target="_blank"
-class="resume">
+              <a :href="`${copy.portfolio}`" target="_blank" class="resume">
                 PDF Resume
               </a>
             </div>
@@ -79,13 +74,13 @@ class="resume">
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
   .shadow-pre-trans {
-    @apply shadow-[1px_1px_0px_0px_hsl(0,_0%,_0%,_50%)];
+    @apply shadow-[1px_1px_0px_0px_hsl(0,0%,0%,50%)];
   }
   .shadow-transition {
-    @apply transition duration-500 ease-out shadow-[8px_6px_0px_0px_hsl(0,_0%,_0%,_25%)];
+    @apply transition duration-500 ease-out shadow-[8px_6px_0px_0px_hsl(0,0%,0%,25%)];
   }
   .groovyCircle {
-    @apply w-[210px] h-[210px] rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] [clip-path:polygon(21%_0,_100%_0,_110%_50%,_100%_100%,_21%_110%)];
+    @apply w-52.5 h-52.5 rounded-[10em] z-10 block mr-[-2.75em] mb-[-5.3em] [clip-path:polygon(21%_0,100%_0,110%_50%,100%_100%,21%_110%)];
     background-image: radial-gradient(
       /* 0 - 25% */ #99f1ec 0%,
       #99f1ec 35%,
@@ -98,12 +93,12 @@ class="resume">
     );
 
     @media (max-width: 320px) {
-      @apply w-[160px] h-[160px] top-[-1.4em] left-[-2.9em];
+      @apply w-40 h-40 top-[-1.4em] left-[-2.9em];
     }
   }
 
   .groovyOvalBtn {
-    @apply w-fit py-[.1rem] px-4 pb-[.2rem] border border-groovy-orange border-solid rounded-[20rem] leading-normal gap-0 tracking-wide hover:bg-groovy-red-dk hover:text-white hover:cursor-pointer;
+    @apply w-fit py-[.1rem] px-4 pb-[.2rem] border border-groovy-orange border-solid rounded-[320px] leading-normal gap-0 tracking-wide hover:bg-groovy-red-dk hover:text-white hover:cursor-pointer;
 
     a {
       @apply text-base-ivory no-underline min-[375px]:text-[1rem] sm:text-[1rem] md:text-[1rem];

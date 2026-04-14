@@ -1,4 +1,4 @@
-@import "tailwindcss";
+@import 'tailwindcss';
 
 @theme {
   /* Screens */
@@ -87,24 +87,32 @@
   --color-punk-peach: #fbc83f;
 
   /* Font Families */
-  --font-family-modern-head: Spartan, "Helvetica Neue", Helvetica, sans-serif;
-  --font-family-modern-subhead: Spartan, "Helvetica Neue", Helvetica, sans-serif;
-  --font-family-modern-copy: Spartan, "Helvetica Neue", Helvetica, sans-serif;
+  --font-family-modern-head: Spartan, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-family-modern-subhead:
+    Spartan, 'Helvetica Neue', Helvetica, sans-serif;
+  --font-family-modern-copy: Spartan, 'Helvetica Neue', Helvetica, sans-serif;
   --font-family-bourbon-head: VeneerTwo, Helvetica, Arial, sans-serif;
   --font-family-bourbon-subhead: Veneer, Helvetica, Arial, sans-serif;
-  --font-family-bourbon-copy: AmericanTypewriterStd-Med, Helvetica, Times, serif;
-  --font-family-groovy-head: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-groovy-subhead: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-groovy-copy: Avenir, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-techy-head: Dosis, "Helvetica Neue", Arial, sans-serif;
-  --font-family-techy-subhead: Dosis, "Helvetica Neue", Arial, sans-serif;
-  --font-family-techy-copy: Dosis, "Helvetica Neue", Arial, sans-serif;
-  --font-family-corp-head: "Bodoni Moda", Times, serif;
-  --font-family-corp-subhead: "Bodoni Moda", Times, serif;
-  --font-family-corp-copy: "Bodoni Moda", Times, serif;
-  --font-family-punk-head: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-punk-subhead: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
-  --font-family-punk-copy: Poppins, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  --font-family-bourbon-copy:
+    AmericanTypewriterStd-Med, Helvetica, Times, serif;
+  --font-family-groovy-head:
+    Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-groovy-subhead:
+    Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-groovy-copy:
+    Avenir, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-techy-head: Dosis, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-techy-subhead: Dosis, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-techy-copy: Dosis, 'Helvetica Neue', Arial, sans-serif;
+  --font-family-corp-head: 'Bodoni Moda', Times, serif;
+  --font-family-corp-subhead: 'Bodoni Moda', Times, serif;
+  --font-family-corp-copy: 'Bodoni Moda', Times, serif;
+  --font-family-punk-head:
+    Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-punk-subhead:
+    Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-punk-copy:
+    Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* List Style Types */
   --list-style-type-square: square;

@@ -6,7 +6,8 @@
     <div
       v-for="tab in tabs"
       :key="tab.name"
-      :class="['btn',
+      :class="[
+        'btn',
         tab.class,
         { selectedBtn: store.selectedBtn === tab.name }
       ]"
@@ -54,7 +55,7 @@
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
   .btn {
-    @apply text-black pt-[.55rem] px-5 pb-[.4rem] rounded-[2rem] no-underline uppercase text-[.6rem] font-semibold tracking-[0.075ch] bg-modern-ruby bg-gradient-to-b from-[#D71D5B] to-[#871239] hover:bg-modern-ruby hover:text-white focus:text-white hover:bg-gradient-to-b hover:from-[#D71D5B] hover:to-[#871239] cursor-pointer;
+    @apply text-black pt-[.55rem] px-5 pb-[.4rem] rounded-4xl no-underline uppercase text-[.6rem] font-semibold tracking-[0.075ch] bg-modern-ruby bg-linear-to-b from-[#D71D5B] to-[#871239] hover:bg-modern-ruby hover:text-white focus:text-white hover:bg-linear-to-b hover:from-[#D71D5B] hover:to-[#871239] cursor-pointer;
   }
   body.modern .btn.projectsTab .router-link-active .router-link-exact-active,
   /* body.modern .btn.projectsTab :focus, */
@@ -64,6 +65,6 @@
   }
 
   .selectedBtn {
-    @apply !text-white;
+    @apply text-white!;
   }
 </style>

@@ -64,85 +64,85 @@
     isModalOpen.value = false;
   }
 
-  const skills = markRaw([
+  const skills = [
     [
-      iconUiux,
+      markRaw(iconUiux),
       `uiux`,
       `UI/UX Design`,
       `UX Design is my first love. Humility before the User. Crack the flow! When UX is done well, it's invisible.`
     ],
     [
-      iconFigma,
+      markRaw(iconFigma),
       `figma`,
       `Figma`,
-      `Figma is the king of UX, superb app, it's got killer collaboration chops. I am still mad at Adobe for destroying Fireworks! Adobe bought Figma; what could go wrong?!? *Update: Looks like EU courts stopped Adobe, so there's hope for Figma yet.`
+      `Figma is the king of UX, superb app, it's got killer collaboration chops. I am still mad at Adobe for destroying Fireworks! Adobe tried and failed to buy Figma; hoorah!`
     ],
     [
-      iconHtml5,
+      markRaw(iconHtml5),
       `html5`,
       `HTML 5`,
       `The bones of the Internet; as few divs as possible if you please.`
     ],
     [
-      iconCss3,
+      markRaw(iconCss3),
       `css3`,
       `CSS 3`,
-      `Coders just love CSS haha! So let me do that for you! I enjoy its declarative cascading infuriating novelty.`
+      `Coders love CSS haha! So let me do that for you! I enjoy its mostly declarative cascading infuriating novelty. Recent updates have made it more programming friendly, variables! The excitement! 😆`
     ],
     [
-      iconJs,
+      markRaw(iconJs),
       `js`,
       `JavaScript`,
-      `JavaScript: I design, do all my HTML & CSS, I'm still mastering JS. Continuous learning, Love me some Vue 💚, like this site`
+      `JavaScript: I design, do all my HTML & CSS, I'm still mastering JS. Continuous learning, Love me some Vue/Nuxt 💚, like this site!`
     ],
     [
-      iconTailwind,
+      markRaw(iconTailwind),
       `tailwind`,
       `Tailwind CSS`,
       `Tailwind is great DX, even though it does clutter up your HTML, so just @apply it! Believe it or not, I actually made a mini Tailwind of my own, before Tailwind knocked it out of the park. Learned a lot converting this site to Tailwind 😀`,
       `https://tailwindcss.com/`
     ],
     [
-      iconSass,
+      markRaw(iconSass),
       `sass`,
       `SASS`,
-      `SASS has made CSS so much more fun and nesty to use. CSS's --vars make it more robust, but there's a long way to go before I give up my trusted SASS.`,
+      `SASS\u2009—\u2009my old friend\u2009—\u2009had made CSS so much more fun and nesty to use. CSS has very slowly updated to have most of its features, but there are plenty of old sites still using my old trusted SASS.`,
       `https://sass-lang.com/`
     ],
     [
-      iconVue,
+      markRaw(iconVue),
       `vue`,
       `Vue`,
-      `Vue.js is my favorite JS framework, a great balance of Angular's ease and React's abilities. This site is 100% Vue.`,
+      `Vue.js is my favorite JS framework, a great balance of Angular's ease and React's abilities. This site is 100% Vue, which I converted to Nuxt.`,
       `https://vuejs.org/`
     ],
     [
-      iconNuxt,
+      markRaw(iconNuxt),
       `nuxt`,
       `Nuxt`,
       `The Nuxt framework for Vue: SSR, routes by dir, SEO; it's jam-stacked with Dev happiness. Digging Svelte too.`,
       `https://nuxt.com/`
     ],
     [
-      iconAdobeIcons,
+      markRaw(iconAdobeIcons),
       `adobeCS`,
       `Adobe Creative Suite`,
       `The classic Illustrator, PhotoShop, and InDesign have been my daily go-tos for decades. I'm checking out Affinity's Creative Suite these days. Between Figma and Affinity, I could drop the Adobe subscription.`
     ],
     [
-      iconAffinityIcons,
+      markRaw(iconAffinityIcons),
       `affinityCS`,
       `Affinity Creative Suite`,
       `Affinity's apps are fantastic replacements for Adobe's subscription-ware. Superbly thought out programs with great Designer Experience. And they have been written from the ground up to work smoothly with each other.`,
       `https://affinity.serif.com/`
     ],
     [
-      iconChelsea,
+      markRaw(iconChelsea),
       `chelsea`,
       `Chelsea FC`,
       `I love Chelsea FC! 💙  I enjoy competition. Love Rugby and Cricket too. I was a demon fast bowler! And 🇺🇸 Football, Go Titans!`
     ]
-  ]);
+  ];
 
   onMounted(() => {
     showSkills.value = true;
@@ -153,15 +153,14 @@
 <style scoped>
   @reference "../assets/css/tailwind.css";
   .skillsGrid div {
-    @apply h-[70px] m-auto flex items-center justify-center;
+    @apply h-17.5 m-auto flex items-center justify-center;
   }
 
   .skillsGrid {
-    @apply w-full grid justify-center items-stretch content-between relative gap-y-[.5] gap-x-[auto] justify-items-center;
-    min-width: 0;
+    @apply w-full grid justify-center items-stretch content-between relative gap-y-0.5 justify-items-center min-w-0;
 
     svg {
-      @apply w-[88px];
+      @apply w-22;
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
 
       &:hover {
@@ -175,18 +174,18 @@
   }
 
   body.modern .skillsGrid {
-    @apply grid-cols-[repeat(auto-fit,_minmax(25%,_1fr))] w-[70%] justify-center my-4 mx-auto gap-y-4 gap-x-0;
+    @apply grid-cols-[repeat(auto-fit,minmax(25%,1fr))] w-[70%] justify-center my-4 mx-auto gap-y-4 gap-x-0;
 
     @media (min-width: 770px) {
       @apply w-3/5;
     }
 
     @media (max-width: 700px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(100px,_1fr))] w-[80%];
+      @apply grid-cols-[repeat(auto-fit,minmax(100px,1fr))] w-[80%];
     }
 
     svg {
-      @apply w-[100px] mx-auto drop-shadow-lg;
+      @apply w-25 mx-auto drop-shadow-xl;
 
       &:hover {
       }
@@ -199,82 +198,82 @@
 
   body.bourbon .skillsGrid {
     @media (min-width: 1026px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(120px,_1fr))] mt-[-1.3rem];
+      @apply grid-cols-[repeat(auto-fit,minmax(120px,1fr))] mt-[-1.3rem];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_minmax(88px,_1fr))] col-span-full;
+      @apply grid-cols-[repeat(6,minmax(88px,1fr))] col-span-full;
     }
 
     @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(3,_minmax(110px,_1fr))] col-span-full;
+      @apply grid-cols-[repeat(3,minmax(110px,1fr))] col-span-full;
     }
 
     @media (max-width: 470px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))] col-span-full;
+      @apply grid-cols-[repeat(auto-fit,minmax(88px,1fr))] col-span-full;
     }
 
     svg {
-      @apply w-[88px];
+      @apply w-22;
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
   body.techy .skillsGrid {
     /* Mobile-first: 2 cols base */
-    @apply grid-cols-[repeat(2,_1fr)];
+    @apply grid-cols-[repeat(2,1fr)];
 
     @media (min-width: 321px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(4,_1fr)];
+      @apply grid-cols-[repeat(4,1fr)];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_1fr)];
+      @apply grid-cols-[repeat(6,1fr)];
     }
 
     @media (min-width: 1026px) {
-      @apply grid-cols-[repeat(12,_1fr)] mt-[-0.5rem] ml-[-1rem] mr-0 w-[104%];
+      @apply grid-cols-[repeat(12,1fr)] -mt-2 -ml-4 mr-0 w-[104%];
     }
 
     svg {
       /* Scale with column, max out at 88px */
-      @apply w-full max-w-[88px];
+      @apply w-full max-w-22;
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
   body.groovy .skillsGrid {
-    @apply transition duration-[.25s] ease-in mt-0 mr-[-1rem] mb-0 ml-0;
+    @apply transition duration-[.25s] ease-in mt-0 -mr-4 mb-0 ml-0;
 
     @media (min-width: 1026px) {
-      @apply grid-cols-[repeat(12,_minmax(84px,_1fr))];
+      @apply grid-cols-[repeat(12,minmax(84px,1fr))];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_minmax(84px,_1fr))];
+      @apply grid-cols-[repeat(6,minmax(84px,1fr))];
     }
 
     @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(4,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(4,minmax(88px,1fr))];
     }
 
     @media (max-width: 470px) {
-      @apply grid-cols-[repeat(3,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(3,minmax(88px,1fr))];
     }
 
     @media (max-width: 320px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(auto-fit,minmax(88px,1fr))];
     }
 
     svg {
-      @apply w-[88px];
+      @apply w-22;
       filter: drop-shadow(var(--drop-shadow-tight-black-lt));
     }
   }
 
   body.corp .skillsGrid {
     /* Base: 4 cols fits in the half-width left column at desktop */
-    @apply grid-cols-[repeat(4,_1fr)];
+    @apply grid-cols-[repeat(4,1fr)];
 
     @media (min-width: 1026px) {
       @apply mt-[-2.8rem];
@@ -282,15 +281,15 @@
 
     @media (min-width: 563px) and (max-width: 1025px) {
       /* Full width at tablet — 6 cols fits fine */
-      @apply grid-cols-[repeat(6,_1fr)];
+      @apply grid-cols-[repeat(6,1fr)];
     }
 
     @media (max-width: 320px) {
-      @apply grid-cols-[repeat(3,_1fr)];
+      @apply grid-cols-[repeat(3,1fr)];
     }
 
     svg {
-      @apply w-[88px];
+      @apply w-22;
       filter: brightness(0.85) sepia(1) hue-rotate(160deg) saturate(3);
 
       &:hover {
@@ -303,23 +302,23 @@
     @apply transition duration-[.25s] ease-in mt-2 mx-auto mb-0 bg-[rgba(0,140,0,0.3)];
 
     @media (min-width: 1026px) {
-      @apply grid-cols-[repeat(12,_minmax(84px,_1fr))];
+      @apply grid-cols-[repeat(12,minmax(84px,1fr))];
     }
 
     @media (min-width: 563px) and (max-width: 1025px) {
-      @apply grid-cols-[repeat(6,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(6,minmax(88px,1fr))];
     }
 
     @media (min-width: 471px) and (max-width: 562px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(110px,_1fr))];
+      @apply grid-cols-[repeat(auto-fit,minmax(110px,1fr))];
     }
 
     @media (max-width: 470px) {
-      @apply grid-cols-[repeat(auto-fit,_minmax(88px,_1fr))];
+      @apply grid-cols-[repeat(auto-fit,minmax(88px,1fr))];
     }
 
     svg {
-      @apply w-[88px];
+      @apply w-22;
       filter: drop-shadow(var(--drop-shadow-tight-black-md));
     }
   }

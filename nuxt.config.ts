@@ -61,12 +61,6 @@ export default defineNuxtConfig({
     '~/pages/bourbon/assets/css/fonts/bourbonFonts/bourbonFonts.css'
   ],
 
-  postcss: {
-    plugins: {
-      '@tailwindcss/postcss': {}
-    }
-  },
-
   routeRules: {
     '/': {
       redirect: '/modern/',
@@ -115,6 +109,18 @@ export default defineNuxtConfig({
       dir: '.output',
       serverDir: '.output/server',
       publicDir: '.output/public'
+    }
+  },
+
+  postcss: {
+    plugins: {
+      '@tailwindcss/postcss': {}
+    }
+  },
+
+  vite: {
+    optimizeDeps: {
+      include: ['vueperslides']
     }
   },
 

@@ -22,8 +22,7 @@
   }
 
   .authenticStamp {
-    @apply w-[120px] max-w-[90px] min-w-[90px];
-    fill: var(--color-groovy-red);
+    @apply w-30 max-w-22.5 min-w-22.5 fill-(--color-groovy-red);
   }
 
   section {
@@ -44,8 +43,7 @@
   }
 
   h1 {
-    @apply text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-red-dk normal-case;
-    font-family: var(--font-family-groovy-head);
+    @apply text-[1.5rem] leading-[2.1rem] font-medium mt-2 mb-0 text-groovy-red-dk normal-case font-(family-name:--font-family-groovy-head);
 
     @media (min-width: 1024px) {
     }
@@ -68,25 +66,25 @@
   }
 
   p {
-    @apply text-base-grey text-[1.125rem] tracking-[0.009rem] leading-[2.6rem];
-    font-family: var(--font-family-groovy-copy);
+    @apply text-base-grey text-[1.125rem] tracking-[0.009rem] leading-[2.6rem] font-(family-name:--font-family-groovy-copy);
+    text-wrap: pretty;
 
     @media (max-width: 1024px) {
-      columns: 2 200px;
-      @apply gap-x-12 text-justify hyphens-auto;
-      column-rule-width: 3px;
-      column-rule-style: dotted;
-      column-rule-color: hsla(39, 100%, 50%, 0.75);
+      @apply hyphens-auto;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 840px) {
-      columns: 2 200px;
       @apply tracking-[0.05rem];
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 670px) {
-      columns: initial;
       @apply text-[1.05rem] leading-[2.4rem] pl-[1.3rem] mr-2 border-l-2 border-dotted border-[hsla(39,100%,50%,.75)];
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 630px) {

@@ -51,7 +51,6 @@
     modalItem: { type: Object, default: null }
   });
 
-
   function closeModal() {
     emits('closeModal');
   }
@@ -68,11 +67,11 @@
 
     .modal {
       width: clamp(calc(300px - 2rem), 500px, calc(100% - 2rem));
-      @apply relative mb-auto mt-[260px] bg-white rounded-[20px]
-      bg-gradient-to-b from-[#fff] to-[#E2F2F3] shadow-[0px_6px_10px_0px_#0000004D];
+      @apply relative mb-auto mt-65 bg-white rounded-[20px]
+      bg-linear-to-b from-white to-[#E2F2F3] shadow-[0px_6px_10px_0px_#0000004D];
 
       .closeBtn {
-        @apply absolute flex items-center justify-center cursor-pointer bg-white rounded-[20px] w-[40px] h-[40px] border-none text-black/50 top-[-10px] right-[-10px] will-change-transform pointer-events-auto;
+        @apply absolute flex items-center justify-center cursor-pointer bg-white rounded-[20px] w-10 h-10 border-none text-black/50 -top-2.5 -right-2.5 will-change-transform pointer-events-auto;
       }
 
       h1,
@@ -97,10 +96,10 @@
         @apply relative flex flex-wrap justify-center items-center justify-items-center mt-4 mx-8 mb-6;
 
         .icon {
-          @apply self-center justify-items-center h-[88px] gap-0;
+          @apply self-center justify-items-center h-22 gap-0;
 
           svg {
-            @apply w-[180px] m-auto;
+            @apply w-45 m-auto;
           }
         }
 
@@ -112,7 +111,7 @@
   }
 
   .modern #modal .content {
-    font-family: var(--font-family-modern-copy);
+      @apply font-(family-name:--font-family-modern-copy);
 
     h4 {
     }
@@ -122,7 +121,7 @@
   }
 
   .bourbon #modal .content {
-    font-family: var(--font-family-bourbon-copy);
+      @apply font-(family-name:--font-family-bourbon-copy);
 
     h4 {
     }
@@ -130,7 +129,7 @@
     }
   }
   .groovy #modal .content {
-    font-family: var(--font-family-groovy-copy);
+      @apply font-(family-name:--font-family-groovy-copy);
 
     h4 {
     }
@@ -139,7 +138,7 @@
     }
   }
   .techy #modal .content {
-    font-family: var(--font-family-techy-copy);
+      @apply font-(family-name:--font-family-techy-copy);
 
     h4 {
     }
@@ -148,7 +147,7 @@
     }
   }
   .corp #modal .content {
-    font-family: var(--font-family-corp-copy);
+      @apply font-(family-name:--font-family-corp-copy);
 
     h4 {
     }
@@ -157,7 +156,7 @@
     }
   }
   .punk #modal .content {
-    font-family: var(--font-family-punk-copy);
+      @apply font-(family-name:--font-family-punk-copy);
 
     h4 {
     }

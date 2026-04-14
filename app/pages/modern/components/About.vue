@@ -25,7 +25,7 @@
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
   .aboutGrid {
-    @apply w-[80%] grid grid-cols-[minmax(auto,_2fr)_minmax(225px,_1fr)] gap-8 m-auto;
+    @apply w-[80%] grid grid-cols-[minmax(auto,2fr)_minmax(225px,1fr)] gap-8 m-auto;
 
     @media (max-width: 850px) {
       @apply w-[90%] grid grid-cols-1;

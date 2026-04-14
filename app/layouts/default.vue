@@ -11,7 +11,7 @@
   @reference "../assets/css/tailwind.css";
 
   .wrapper {
-    @apply relative max-w-[var(--breakpoint-break-xlg)] my-0 mx-auto;
+    @apply relative max-w-(--breakpoint-break-xlg) my-0 mx-auto;
   }
 
   .extrasWrap {
@@ -19,7 +19,7 @@
       @apply basis-auto grow box-border text-center items-center no-underline text-black;
 
       img.portThumbs {
-        @apply w-[400px] h-auto border-2 border-solid border-black/10 text-base-ivory transition-opacity duration-1000 ease-in-out;
+        @apply w-100 h-auto border-2 border-solid border-black/10 text-base-ivory transition-opacity duration-1000 ease-in-out;
 
         &:hover {
           @apply border-2 border-solid border-black text-base-accent-red;
@@ -27,7 +27,7 @@
       }
 
       p {
-        @apply inline-block text-center mt-2 text-[0.85em] text-black mb-4 max-w-[400px] pb-0 border-b border-solid border-transparent;
+        @apply inline-block text-center mt-2 text-[0.85em] text-black mb-4 max-w-100 pb-0 border-b border-solid border-transparent;
 
         &:hover {
           @apply underline;
@@ -72,8 +72,7 @@
     }
 
     .about > p {
- @apply w-[99.8%] my-1 mx-auto text-[.82em];
-      font-family: var(--font-family-bourbon-copy);
+      @apply w-[99.8%] my-1 mx-auto text-[.82em] font-(family-name:--font-family-bourbon-copy);
 
       @media (max-width: 1024px) {
         @apply w-[99.8%] text-[1.65vw];
@@ -94,8 +93,7 @@
 
     .extrasWrapper {
       h1 {
- @apply pt-4 !text-bourbon-accent-red !text-[1.75em] font-light antialiased;
-        font-family: var(--font-family-bourbon-head);
+        @apply pt-4 text-bourbon-accent-red! text-[1.75em]! font-light antialiased font-(family-name:--font-family-bourbon-head);
       }
     }
   }
@@ -104,7 +102,7 @@
     @apply h-[calc(100%)] bg-[hsl(320,100%,9%)];
 
     .wrapper {
-      @apply w-[99.8%] flex flex-col grow max-w-[var(--breakpoint-break-xlg)] min-h-[780px] pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.jpeg')] bg-cover;
+      @apply w-[99.8%] flex flex-col grow max-w-(--breakpoint-break-xlg) min-h-195 pb-14 bg-[hsl(320,100%,9%)] bg-[url('/img/bg/bg_bak_dk4.jpeg')] bg-cover;
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
@@ -133,15 +131,14 @@
     }
 
     .about {
-      @apply w-1/2 my-0 mx-auto bg-gradient-to-b from-[#d71d5b] to-[#8b133b];
+      @apply w-1/2 my-0 mx-auto bg-linear-to-b from-[#d71d5b] to-[#8b133b];
     }
 
     .extras {
       @apply bg-[#2e001f];
 
       .flexxy a p {
- @apply text-white border-b border-solid border-[hsla(0,0%,100%,.5)];
-        font-family: var(--font-family-modern-subhead);
+        @apply text-white border-b border-solid border-[hsla(0,0%,100%,.5)] font-(family-name:--font-family-modern-subhead);
       }
     }
 
@@ -149,8 +146,7 @@
       @apply mt-3;
 
       & h1 {
- @apply !text-white !text-[1.5rem] leading-normal capitalize antialiased bg-transparent tracking-wider;
-        font-family: var(--font-family-modern-copy);
+        @apply text-white! text-[1.5rem]! leading-normal capitalize antialiased bg-transparent tracking-wider font-(family-name:--font-family-modern-copy);
       }
 
       & a {
@@ -183,7 +179,7 @@
     @apply bg-base-back-black;
 
     .wrapper {
-      @apply w-[99.8%] bg-gradient-to-b from-white via-[#fff5cb] via-85% to-[#fff5cb];
+      @apply w-[99.8%] bg-linear-to-b from-white via-[#fff5cb] via-85% to-[#fff5cb];
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
@@ -207,21 +203,18 @@
     }
 
     .about > p {
- @apply text-[0.8em] tracking-wider ;
-      font-family: var(--font-family-groovy-copy);
+      @apply text-[0.8em] tracking-wider font-(family-name:--font-family-groovy-copy);
     }
 
     .extrasWrapper {
-      @apply !mt-6;
+      @apply mt-6!;
 
       h1 {
- @apply pt-0 text-groovy-red-dk !text-[1.5em] font-semibold capitalize bg-transparent mt-0 mb-0;
-        font-family: var(--font-family-groovy-head);
+        @apply pt-0 text-groovy-red-dk text-[1.5em]! font-semibold capitalize bg-transparent mt-0 mb-0 font-(family-name:--font-family-groovy-head);
       }
 
       p {
- @apply text-[1em] ;
-        font-family: var(--font-family-groovy-copy);
+        @apply text-[1em] font-(family-name:--font-family-groovy-copy);
       }
     }
   }
@@ -257,8 +250,7 @@
       @apply bg-[#ffe268] shadow-none;
 
       p {
- @apply my-0 mx-auto ;
-        font-family: var(--font-family-techy-copy);
+        @apply my-0 mx-auto font-(family-name:--font-family-techy-copy);
       }
     }
 
@@ -270,13 +262,11 @@
       @apply bg-[#fffff1];
 
       h1 {
- @apply mt-6 mb-0 p-0 mx-auto !text-[1.65em] font-medium text-techy-blue-tech capitalize;
-        font-family: var(--font-family-techy-head);
+        @apply mt-6 mb-0 p-0 mx-auto text-[1.65em]! font-medium text-techy-blue-tech capitalize font-(family-name:--font-family-techy-head);
       }
 
       p {
- @apply text-[1em];
-        font-family: var(--font-family-techy-copy);
+        @apply text-[1em] font-(family-name:--font-family-techy-copy);
       }
     }
     .contact {
@@ -317,19 +307,16 @@
 
     .extrasWrapper {
       h1 {
- @apply text-corp-blue-dark !text-[1.5em] bg-transparent font-semibold capitalize mt-0;
-        font-family: var(--font-family-corp-head);
+        @apply text-corp-blue-dark text-[1.5em]! bg-transparent font-semibold capitalize mt-0 font-(family-name:--font-family-corp-head);
       }
 
       p {
- @apply text-[1em] ;
-        font-family: var(--font-family-corp-copy);
+        @apply text-[1em] font-(family-name:--font-family-corp-copy);
       }
     }
 
     .about p {
- @apply text-[1em] ;
-      font-family: var(--font-family-corp-copy);
+      @apply text-[1em] font-(family-name:--font-family-corp-copy);
     }
   }
 
@@ -337,24 +324,23 @@
     @apply w-full bg-base-back-black;
 
     .wrapper {
-      @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),_url(/img/bg/Drew-punk-back.jpg)] bg-[length:_102%_640%,100%_100%];
+      @apply w-[99.8%] bg-repeat bg-center bg-[url(/img/bg/circles.svg),url(/img/bg/Drew-punk-back.jpg)] bg-size-[102%_640%,100%_100%];
 
       @media (max-width: 840px) {
-        @apply w-[99.8%] bg-[length:_102%_640%,130%_90%] bg-[center_center];
+        @apply w-[99.8%] bg-size-[102%_640%,130%_90%] bg-position-[center_center];
       }
 
       @media (max-width: 630px) {
-        @apply w-[99.8%] bg-[length:_102%_600%,120%_100%] bg-[center_center,-3em_11em];
+        @apply w-[99.8%] bg-size-[102%_600%,120%_100%] bg-position-[center_center,-3em_11em];
       }
 
       @media (max-width: 430px) {
-        @apply w-[99.8%] bg-[length:_102%_600%,250%_100%] bg-[center_center,-3em_3em];
+        @apply w-[99.8%] bg-size-[102%_600%,250%_100%] bg-position-[center_center,-3em_3em];
       }
     }
 
     .about > p {
- @apply text-[.8em];
-      font-family: var(--font-family-punk-copy);
+      @apply text-[.8em] font-(family-name:--font-family-punk-copy);
 
       @media (max-width: 1024px) {
         @apply text-[1.65vw];
@@ -375,17 +361,15 @@
 
     .extrasWrapper {
       h1 {
- @apply mt-4 text-black !text-[1.5rem] font-semibold leading-normal capitalize antialiased bg-white/70 px-2;
-        font-family: var(--font-family-modern-subhead);
+        @apply mt-4 text-black text-[1.5rem]! font-semibold leading-normal capitalize antialiased bg-white/70 px-2 font-(family-name:--font-family-modern-subhead);
       }
 
       p {
- @apply text-black;
-        font-family: var(--font-family-punk-copy);
+        @apply text-black font-(family-name:--font-family-punk-copy);
       }
 
       a {
-        @apply bg-punk-red shadow;
+        @apply bg-punk-red shadow-xs;
 
         &:hover p {
           @apply text-yellow-200 shadow-black no-underline;
@@ -395,7 +379,7 @@
         }
 
         p {
-          @apply text-white bg-punk-red py-[.15rem] px-[.25rem];
+          @apply text-white bg-punk-red py-[.15rem] px-1;
 
           &:hover {
             @apply border-base-white;

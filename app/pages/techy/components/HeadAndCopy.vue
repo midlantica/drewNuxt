@@ -11,16 +11,13 @@
 <script setup>
   const copy = useCopy();
   const store = useToggleExtrasStore();
-
-
 </script>
 
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
 
   .authenticStamp {
- @apply w-[120px] max-w-[90px] min-w-[90px];
-    fill: var(--color-techy-blue-tech);
+    @apply w-30 max-w-22.5 min-w-22.5 fill-(--color-techy-blue-tech);
   }
 
   section {
@@ -44,8 +41,7 @@
   }
 
   h1 {
- @apply text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-2 normal-case text-techy-blue-tech;
-    font-family: var(--font-family-techy-head);
+    @apply text-[1.6rem] font-semibold leading-9 tracking-wide mt-0 mb-2 normal-case text-techy-blue-tech font-(family-name:--font-family-techy-head);
 
     @media (min-width: 1024px) {
       /* // @apply max-w-[26ch]; */
@@ -69,36 +65,41 @@
   }
 
   p {
- @apply text-[1.25rem] leading-[3rem] tracking-[.06em] text-gray-900 content-center;
-    font-family: var(--font-family-techy-copy);
+    @apply text-[1.25rem] leading-12 tracking-[.06em] text-gray-900 content-center font-(family-name:--font-family-techy-copy);
+    text-wrap: pretty;
 
     @media (min-width: 1024px) and (-webkit-min-device-pixel-ratio: 2) {
       /* // */
     }
 
     @media (max-width: 1024px) {
-      @apply columns-2 text-[1.2rem] leading-[2.1em] text-justify tracking-wider gap-x-12 hyphens-auto;
-      column-rule: 2px dotted #423ba08b;
+      @apply text-[1.2rem] leading-[2.1em] tracking-wider hyphens-auto;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 840px) {
-      @apply columns-2;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 700px) {
-      @apply columns-1;
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 630px) {
-      @apply columns-1 text-[1.2rem] leading-[2.3em] tracking-[.01em];
+      @apply text-[1.2rem] leading-[2.3em] tracking-[.01em];
+      orphans: 3;
+      widows: 3;
     }
 
     @media (max-width: 630px) and (-webkit-min-device-pixel-ratio: 2) {
-      @apply columns-1 text-[1.15rem];
+      @apply text-[1.15rem];
     }
 
     @media only screen and (min-device-width: 375px) and (max-device-width: 660px) and (-webkit-min-device-pixel-ratio: 2) {
-      @apply columns-1 text-[1.18em] mt-2 mr-0 mb-0 pt-0 px-0 pb-0;
+      @apply text-[1.18em] mt-2 mr-0 mb-0 pt-0 px-0 pb-0;
     }
 
     @media only screen and (min-device-width: 375px) and (max-device-width: 667px) {

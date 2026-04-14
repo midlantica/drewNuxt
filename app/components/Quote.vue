@@ -2,10 +2,7 @@
   <div v-show="showQuotes" class="quoteBlock">
     <div class="arrowBtn" @click="previousQuote()" />
 
-    <div
-v-show="currentQuote"
-:key="qIndex"
-class="fade w-full">
+    <div v-show="currentQuote" :key="qIndex" class="fade w-full">
       <p class="text-balance">
         &ldquo;{{ currentQuote.quote }}&rdquo;
         <cite>&ndash; {{ currentQuote.author }}</cite>
@@ -83,7 +80,7 @@ class="fade w-full">
   }
 
   .quoteBlock {
-    @apply flex justify-center items-center pt-2 px-4 pb-2 text-center m-auto w-full basis-auto min-w-full min-h-[5rem] leading-normal text-[0.9rem] gap-2;
+    @apply flex justify-center items-center pt-2 px-4 pb-2 text-center m-auto w-full basis-auto min-w-full min-h-20 leading-normal text-[0.9rem] gap-2;
 
     @media only screen and (min-device-width: 375px) and (max-device-width: 660px) and (-webkit-min-device-pixel-ratio: 2) {
       @apply clear-both my-2 gap-y-0 text-[0.8rem] gap-1;
@@ -91,21 +88,19 @@ class="fade w-full">
   }
 
   .modern .quoteBlock {
- @apply text-[hsl(0,0%,80%)] mt-12;
-    font-family: var(--font-family-modern-copy);
+    @apply text-[hsl(0,0%,80%)] mt-12 font-(family-name:--font-family-modern-copy);
 
     p {
-      font-family: var(--font-family-modern-copy);
+      @apply font-(family-name:--font-family-modern-copy);
     }
 
     .cite {
-      font-family: var(--font-family-modern-copy);
+      @apply font-(family-name:--font-family-modern-copy);
     }
   }
 
   .bourbon .quoteBlock {
- @apply bg-[#932213] rounded-sm shadow-[0px_1px_2px_0px_hsl(0,_0%,_0%,_50%)];
-    font-family: var(--font-family-bourbon-copy);
+    @apply bg-[#932213] rounded-xs shadow-[0px_1px_2px_0px_hsl(0,0%,0%,50%)] font-(family-name:--font-family-bourbon-copy);
 
     @media only screen and (min-device-width: 375px) and (max-device-width: 660px) and (-webkit-min-device-pixel-ratio: 2) {
       @apply clear-both mt-2 mb-2 gap-y-0;
@@ -126,17 +121,14 @@ class="fade w-full">
   }
 
   .groovy .quoteBlock {
- @apply bg-[#932213] pt-[0.75em] px-[2em] pb-[1em] text-center ;
-      box-shadow: var(--shadow-dru-shadow);
-    font-family: var(--font-family-groovy-copy);
+    @apply bg-[#932213] pt-[0.75em] px-[2em] pb-[1em] text-center shadow-(--shadow-dru-shadow) font-(family-name:--font-family-groovy-copy);
   }
 
   .techy .quoteBlock {
- @apply p-4 min-h-min bg-techy-mango;
-    font-family: var(--font-family-techy-copy);
+    @apply p-4 min-h-min bg-techy-mango font-(family-name:--font-family-techy-copy);
 
     .arrowBtn {
-      @apply text-techy-blue-tech pt-0 px-2 pb-[0.2rem] leading-[1.3] border border-solid border-techy-blue-tech;
+      @apply text-techy-blue-tech pt-0 px-2 pb-[0.2rem] leading-[1.3] border border-techy-blue-tech;
 
       :hover {
         @apply bg-techy-blue-tech text-techy-mango;
@@ -144,8 +136,7 @@ class="fade w-full">
     }
 
     p {
- @apply text-[1em] text-techy-blue-tech text-center tracking-wide;
-      font-family: var(--font-family-techy-copy);
+      @apply text-[1em] text-techy-blue-tech text-center tracking-wide font-(family-name:--font-family-techy-copy);
 
       @media (max-width: 1024px) {
         @apply text-[1.25em];
@@ -170,8 +161,7 @@ class="fade w-full">
   }
 
   .corp .quoteBlock {
- @apply bg-corp-blue-dark py-3 px-3 text-center min-h-min text-white;
-    font-family: var(--font-family-corp-copy);
+    @apply bg-corp-blue-dark py-3 px-3 text-center min-h-min text-white font-(family-name:--font-family-corp-copy);
 
     .arrowBtn {
       @apply text-white py-0 px-1 font-bold;
@@ -196,21 +186,21 @@ class="fade w-full">
     }
 
     p {
-      font-family: var(--font-family-corp-copy);
+      @apply font-(family-name:--font-family-corp-copy);
     }
 
     .cite {
-      font-family: var(--font-family-corp-copy);
+      @apply font-(family-name:--font-family-corp-copy);
     }
   }
 
   .punk .quoteBlock {
     p {
-      font-family: var(--font-family-modern-copy);
+      @apply font-(family-name:--font-family-modern-copy);
     }
 
     .cite {
-      font-family: var(--font-family-modern-copy);
+      @apply font-(family-name:--font-family-modern-copy);
     }
   }
 
