@@ -1,6 +1,8 @@
 // composables/usePageSetup.js
 // Shared setup logic for all theme pages.
 // Handles store initialization and the head/bodyAttrs boilerplate.
+import { useToggleExtrasStore } from '~/stores/store';
+
 export function usePageSetup(theme) {
   const store = useToggleExtrasStore();
 

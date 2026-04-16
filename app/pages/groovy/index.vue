@@ -21,7 +21,7 @@
       </Transition>
 
       <Transition name="bounce9" appear>
-        <About />
+        <About class="aboutArea" />
       </Transition>
 
       <Transition name="bounce10" appear>
@@ -80,7 +80,7 @@
     @apply col-start-2 col-end-3 row-start-1 row-end-1 z-10 mt-[-9.1rem];
 
     @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-start-3 row-end-3 mt-0;
+      @apply col-start-1 col-end-3 row-start-2 row-end-2 mt-0;
     }
   }
 
@@ -88,15 +88,15 @@
     @apply col-span-full row-span-3 mt-0;
 
     @media (max-width: 1024px) {
-      @apply row-span-2 mt-0;
+      @apply col-start-1 col-end-3 row-start-3 row-end-3 row-span-1 mt-0;
     }
   }
 
-  .about {
+  .aboutArea {
     @apply col-start-2 col-end-3 row-span-2 mb-0;
 
     @media (max-width: 1024px) {
-      @apply col-start-1 col-end-3 row-span-4;
+      @apply col-start-1 col-end-3 row-start-4 row-end-4;
     }
   }
 
