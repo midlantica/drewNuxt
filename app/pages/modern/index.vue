@@ -1,11 +1,6 @@
 <script setup>
   import { shallowRef } from 'vue';
-  import {
-    ModernProjects,
-    ModernSkills,
-    ModernAbout,
-    ExtrasC
-  } from '#components';
+  import { ModernProjects, ModernSkills, ModernAbout } from '#components';
 
   const { store } = usePageSetup('Modern');
 
@@ -52,8 +47,7 @@
     </main>
 
     <main v-else class="mainGrid">
-      <component
-        :is="ExtrasC"
+      <ExtrasC
         :is-show-content="store.isShowContent"
         class="col-span-2"
         @toggle-extras="store.toggleExtras"

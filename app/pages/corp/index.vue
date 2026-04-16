@@ -1,6 +1,4 @@
 <script setup>
-  import { ExtrasC } from '#components';
-
   const { store } = usePageSetup('Corp');
 </script>
 
@@ -32,8 +30,7 @@
     </main>
 
     <main v-else class="mainGrid">
-      <component
-        :is="ExtrasC"
+      <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
         @toggle-extras="store.toggleExtras"

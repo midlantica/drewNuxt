@@ -6,18 +6,15 @@ export const useToggleExtrasStore = defineStore('toggleExtras', () => {
   const isShowContent = ref(false);
   const selectedBtn = ref('');
 
-  async function toggleExtras() {
+  function toggleExtras() {
     selectedBtn.value = '';
     isShowContent.value = !isShowContent.value;
   }
 
-  async function initialize() {
-    try {
-      await nextTick();
+  function initialize() {
+    nextTick(() => {
       isShowContent.value = true;
-    } catch (error) {
-      console.error('Error in initialize:', error);
-    }
+    });
   }
 
   return { isShowContent, selectedBtn, toggleExtras, initialize };

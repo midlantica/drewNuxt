@@ -1,6 +1,4 @@
 <script setup>
-  import { ExtrasC } from '#components';
-
   const { store } = usePageSetup('Bourbon');
 </script>
 
@@ -39,8 +37,7 @@
     </main>
 
     <main v-else class="w-full grid col-span-2 gap-x-0 gap-y-2 px-4">
-      <component
-        :is="ExtrasC"
+      <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
         @toggle-extras="store.toggleExtras"
