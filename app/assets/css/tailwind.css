@@ -86,6 +86,16 @@
   --color-punk-magenta: #ff4bf5;
   --color-punk-peach: #fbc83f;
 
+  /* Colors - anthro */
+  --color-anthro-cream: #f5f0e8;
+  --color-anthro-linen: #ede7d9;
+  --color-anthro-charcoal: #2c2825;
+  --color-anthro-brown: #3d3530;
+  --color-anthro-rust: #c4603a;
+  --color-anthro-rust-light: #d4795a;
+  --color-anthro-rust-pale: #c4603a1a;
+  --color-anthro-rule: #2c282520;
+
   /* Font Families */
   --font-family-modern-head: Spartan, 'Helvetica Neue', Helvetica, sans-serif;
   --font-family-modern-subhead:
@@ -112,6 +122,12 @@
   --font-family-punk-subhead:
     Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
   --font-family-punk-copy:
+    Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+
+  /* Font Families - anthro */
+  --font-family-anthro-head: 'Bodoni Moda', Times, serif;
+  --font-family-anthro-subhead: 'Bodoni Moda', Times, serif;
+  --font-family-anthro-copy:
     Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
   /* List Style Types */
@@ -172,4 +188,13 @@
 }
 @utility font-punk-copy {
   font-family: var(--font-family-punk-copy);
+}
+@utility font-anthro-head {
+  font-family: var(--font-family-anthro-head);
+}
+@utility font-anthro-subhead {
+  font-family: var(--font-family-anthro-subhead);
+}
+@utility font-anthro-copy {
+  font-family: var(--font-family-anthro-copy);
 }

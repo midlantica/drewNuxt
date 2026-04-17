@@ -66,7 +66,8 @@ export default defineNuxtConfig({
     '/groovy/': { prerender: true },
     '/techy/': { prerender: true },
     '/corp/': { prerender: true },
-    '/punk/': { prerender: true }
+    '/punk/': { prerender: true },
+    '/anthro/': { prerender: true }
   },
 
   components: [
@@ -76,6 +77,7 @@ export default defineNuxtConfig({
     { path: '~/pages/modern/components', prefix: 'Modern' },
     { path: '~/pages/punk/components', prefix: 'Punk' },
     { path: '~/pages/techy/components', prefix: 'Techy' },
+    { path: '~/pages/anthro/components', prefix: 'Anthro' },
     '~/components' // this must be last line
   ],
 

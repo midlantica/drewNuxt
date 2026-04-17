@@ -298,6 +298,28 @@
     }
   }
 
+  body.anthro .skillsGrid {
+    /* Mobile-first: 4 cols base */
+    @apply grid-cols-[repeat(4,1fr)];
+
+    @media (min-width: 321px) and (max-width: 562px) {
+      @apply grid-cols-[repeat(4,1fr)];
+    }
+
+    @media (min-width: 563px) and (max-width: 1025px) {
+      @apply grid-cols-[repeat(6,1fr)];
+    }
+
+    @media (min-width: 1026px) {
+      @apply grid-cols-[repeat(12,1fr)] -mt-2 -ml-4 mr-0 w-[104%];
+    }
+
+    svg {
+      @apply w-full max-w-22;
+      filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.15));
+    }
+  }
+
   body.punk .skillsGrid {
     @apply transition duration-[.25s] ease-in mt-2 mx-auto mb-0 bg-[rgba(0,140,0,0.3)];
 

@@ -31,7 +31,7 @@
   import { ref } from 'vue';
   defineOptions({ name: 'ThemeTabs' });
 
-  const tabs = ref(['modern', 'bourbon', 'groovy', 'techy', 'corp', 'punk']);
+  const tabs = ref(['modern', 'bourbon', 'groovy', 'anthro', 'corp', 'punk']);
 
   const themeBar = ref(true);
 
@@ -107,6 +107,14 @@
       }
     }
 
+    > a.anthro {
+      @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
+
+      &:hover {
+        @apply bg-[#7a3520];
+      }
+    }
+
     > a.punk {
       @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
 
@@ -143,6 +151,11 @@
   body.corp .tabs > a.router-link-active.router-link-exact-active.tab,
   body.corp.extras .tabs > a.tab.corp {
     @apply text-base-ivory/75 drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-linear-to-b from-[#025088] to-[#013255];
+  }
+
+  body.anthro .tabs > a.router-link-active.router-link-exact-active.tab,
+  body.anthro.extras .tabs > a.tab.anthro {
+    @apply text-[#f5f0e8] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-linear-to-b from-[#c4603a] to-[#7a3520];
   }
 
   body.punk .tabs > a.router-link-active.router-link-exact-active.tab,

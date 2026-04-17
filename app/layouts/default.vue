@@ -320,6 +320,54 @@
     }
   }
 
+  body.anthro {
+    @apply bg-[#ede7d9];
+
+    .wrapper {
+      @apply w-[99.8%] bg-[#f5f0e8];
+
+      @media (max-width: 1024px) {
+        @apply w-[99.8%];
+      }
+
+      @media (max-width: 840px) {
+        @apply w-[99.8%];
+      }
+
+      @media (max-width: 630px) {
+        @apply w-[99.8%];
+      }
+
+      @media (max-width: 430px) {
+        @apply w-[99.8%];
+      }
+
+      @media (max-width: 320px) {
+        @apply w-[99.8%];
+      }
+    }
+
+    .about {
+      @apply bg-[#ede7d9] shadow-none;
+
+      p {
+        @apply my-0 mx-auto text-[#3d3530] font-(family-name:--font-family-anthro-copy);
+      }
+    }
+
+    .extrasWrapper {
+      @apply bg-[#f5f0e8];
+
+      h1 {
+        @apply mt-6 mb-0 p-0 mx-auto text-[1.65em]! font-normal italic text-[#c4603a] capitalize font-(family-name:--font-family-anthro-head);
+      }
+
+      p {
+        @apply text-[1em] font-(family-name:--font-family-anthro-copy);
+      }
+    }
+  }
+
   body.punk {
     @apply w-full bg-base-back-black;
 
@@ -422,6 +470,11 @@
   body.corp .box:hover .brickBack,
   body.corp .box:hover .brickCircles {
     @apply fill-[#95d5ff] ease-out duration-500;
+  }
+
+  body.anthro .box:hover .brickBack,
+  body.anthro .box:hover .brickCircles {
+    @apply fill-[#c4603a] ease-out duration-500;
   }
 
   body.punk .box:hover .brickBack,
