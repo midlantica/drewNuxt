@@ -63,7 +63,7 @@
 <style scoped>
   @reference "../assets/css/tailwind.css";
   .modalBg {
-    @apply fixed w-full top-0 flex justify-center items-center m-auto h-full left-0 right-0 bottom-0 z-50 bg-black/60 animate-[fade_.3s];
+    @apply fixed w-full top-0 flex justify-center items-center m-auto h-full left-0 right-0 bottom-0 z-50 bg-black/85 animate-[fade_.3s];
 
     .modal {
       width: clamp(calc(300px - 2rem), 500px, calc(100% - 2rem));
@@ -111,7 +111,7 @@
   }
 
   .modern #modal .content {
-      @apply font-(family-name:--font-family-modern-copy);
+    @apply font-(family-name:--font-family-modern-copy);
 
     h4 {
     }
@@ -121,7 +121,7 @@
   }
 
   .bourbon #modal .content {
-      @apply font-(family-name:--font-family-bourbon-copy);
+    @apply font-(family-name:--font-family-bourbon-copy);
 
     h4 {
     }
@@ -129,7 +129,7 @@
     }
   }
   .groovy #modal .content {
-      @apply font-(family-name:--font-family-groovy-copy);
+    @apply font-(family-name:--font-family-groovy-copy);
 
     h4 {
     }
@@ -138,7 +138,7 @@
     }
   }
   .techy #modal .content {
-      @apply font-(family-name:--font-family-techy-copy);
+    @apply font-(family-name:--font-family-techy-copy);
 
     h4 {
     }
@@ -147,7 +147,7 @@
     }
   }
   .corp #modal .content {
-      @apply font-(family-name:--font-family-corp-copy);
+    @apply font-(family-name:--font-family-corp-copy);
 
     h4 {
     }
@@ -156,7 +156,7 @@
     }
   }
   .punk #modal .content {
-      @apply font-(family-name:--font-family-punk-copy);
+    @apply font-(family-name:--font-family-punk-copy);
 
     h4 {
     }

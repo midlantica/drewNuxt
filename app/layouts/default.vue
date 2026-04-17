@@ -639,19 +639,22 @@
       0 0 0 1px #0a1a0a,
       6px 6px 0 #000,
       0 0 20px rgba(51, 255, 51, 0.15) !important;
+    overflow: visible !important;
 
-    /* Hard title bar */
+    /* Hard title bar — taller, flex row with X at right end */
     &::before {
       content: '▶ SKILL_INFO.EXE';
-      display: block;
+      display: flex;
+      align-items: center;
       background: linear-gradient(180deg, #1a4a1a 0%, #0d2a0d 100%);
       border-bottom: 1px solid #33ff33;
-      padding: 4px 10px;
+      padding: 10px 48px 10px 12px; /* right padding leaves room for X */
       font-family: 'Share Tech Mono', monospace;
-      font-size: 0.58rem;
+      font-size: 0.65rem;
       letter-spacing: 0.14em;
       color: #33ff33;
       text-shadow: 0 0 5px rgba(51, 255, 51, 0.7);
+      min-height: 36px;
     }
 
     h4 {
@@ -679,12 +682,41 @@
       }
     }
 
+    /* X button: sits inside the title bar at the right end */
     .closeBtn {
-      background: #0a1a0a !important;
-      border: 1px solid #33ff33 !important;
+      position: absolute !important;
+      top: 0 !important;
+      right: 0 !important;
+      width: 36px !important;
+      height: 36px !important;
+      background: transparent !important;
+      border: none !important;
+      border-left: 1px solid #33ff33 !important;
       border-radius: 0 !important;
+      box-shadow: none !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
       color: #33ff33 !important;
-      box-shadow: 2px 2px 0 #000;
+
+      /* Hide the SVG xOut icon, show a plain text × instead */
+      svg {
+        display: none !important;
+      }
+
+      &::after {
+        content: '✕';
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 1rem;
+        color: #33ff33;
+        text-shadow: 0 0 6px rgba(51, 255, 51, 0.8);
+        line-height: 1;
+      }
+
+      &:hover::after {
+        color: #ffb000;
+        text-shadow: 0 0 8px rgba(255, 176, 0, 0.9);
+      }
     }
   }
 
