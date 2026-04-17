@@ -16,7 +16,15 @@
           <span class="corner bl" />
           <span class="corner br" />
         </div>
-        <div class="contactStack">
+      </div>
+
+      <!-- CENTER: name + contact + sys info -->
+      <div class="centerCol" @click="$emit('toggleExtras')">
+        <div class="nameStack">
+          <div class="nameFirst">DREW</div>
+          <div class="nameLast">HARPER</div>
+        </div>
+        <div class="contactUnderName">
           <div class="cLine">
             <span class="cKey">EMAIL</span>
             <a :href="`mailto:${copy.druEmail}`" class="cVal">
@@ -30,23 +38,7 @@
             </a>
           </div>
         </div>
-      </div>
-
-      <!-- CENTER: name + system info -->
-      <div class="centerCol" @click="$emit('toggleExtras')">
-        <div class="nameStack">
-          <div class="nameFirst">DREW</div>
-          <div class="nameLast">HARPER</div>
-        </div>
         <div class="sysGrid">
-          <div class="sysLine">
-            <span class="sysKey">SYSTEM</span>
-            <span class="sysVal">PORTFOLIO OS 1.0</span>
-          </div>
-          <div class="sysLine">
-            <span class="sysKey">SINCE</span>
-            <span class="sysVal">1999</span>
-          </div>
           <div class="sysLine">
             <span class="sysKey">STATUS</span>
             <span class="sysVal blink">AVAILABLE ▮</span>
@@ -58,30 +50,36 @@
         </div>
       </div>
 
-      <!-- RIGHT: progress / readouts -->
+      <!-- RIGHT: progress / readouts — 2 columns -->
       <div class="rightCol">
         <div class="readoutLabel">// SKILL LEVEL</div>
-        <div class="readoutRow">
-          <span class="readKey">UX/UI</span>
-          <div class="bar"><div class="barFill" style="width: 95%" /></div>
-        </div>
-        <div class="readoutRow">
-          <span class="readKey">HTML/CSS</span>
-          <div class="bar"><div class="barFill" style="width: 90%" /></div>
-        </div>
-        <div class="readoutRow">
-          <span class="readKey">VUE/NUXT</span>
-          <div class="bar">
-            <div class="barFill amber" style="width: 75%" />
+        <div class="readoutGrid">
+          <div class="readoutRow">
+            <span class="readKey">UX/UI</span>
+            <div class="bar"><div class="barFill" style="width: 95%" /></div>
           </div>
-        </div>
-        <div class="readoutRow">
-          <span class="readKey">FIGMA</span>
-          <div class="bar"><div class="barFill" style="width: 92%" /></div>
-        </div>
-        <div class="readoutRow">
-          <span class="readKey">ADOBE CC</span>
-          <div class="bar"><div class="barFill" style="width: 88%" /></div>
+          <div class="readoutRow">
+            <span class="readKey">HTML/CSS</span>
+            <div class="bar"><div class="barFill" style="width: 90%" /></div>
+          </div>
+          <div class="readoutRow">
+            <span class="readKey">VUE/NUXT</span>
+            <div class="bar">
+              <div class="barFill amber" style="width: 75%" />
+            </div>
+          </div>
+          <div class="readoutRow">
+            <span class="readKey">FIGMA</span>
+            <div class="bar"><div class="barFill" style="width: 92%" /></div>
+          </div>
+          <div class="readoutRow">
+            <span class="readKey">ADOBE CC</span>
+            <div class="bar"><div class="barFill" style="width: 88%" /></div>
+          </div>
+          <div class="readoutRow">
+            <span class="readKey">SKETCH</span>
+            <div class="bar"><div class="barFill" style="width: 80%" /></div>
+          </div>
         </div>
         <div class="dashDivider" />
         <div class="clockRow">
@@ -250,13 +248,9 @@
     border-right-width: 2px;
   }
 
-  /* Contact under mugshot */
-  .contactStack {
-    @apply flex flex-col gap-1 w-full;
-
-    @media (max-width: 630px) {
-      @apply flex-col justify-center;
-    }
+  /* Contact under name in center col */
+  .contactUnderName {
+    @apply flex flex-col gap-1;
   }
 
   .cLine {
@@ -363,10 +357,10 @@
   /* ── RIGHT: readouts ── */
   .rightCol {
     @apply flex flex-col justify-center px-5 py-4 gap-1.5 flex-shrink-0;
-    flex: 0 0 200px;
+    flex: 0 0 320px;
 
     @media (max-width: 840px) {
-      flex: 0 0 170px;
+      flex: 0 0 260px;
       @apply px-3;
     }
 
@@ -384,8 +378,14 @@
     text-shadow: 0 0 4px rgba(255, 176, 0, 0.3);
   }
 
+  /* 2-column grid for skill bars */
+  .readoutGrid {
+    @apply grid gap-x-3 gap-y-1;
+    grid-template-columns: 1fr 1fr;
+  }
+
   .readoutRow {
-    @apply flex flex-row items-center gap-2;
+    @apply flex flex-row items-center gap-1.5;
   }
 
   .readKey {

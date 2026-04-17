@@ -20,7 +20,7 @@
 
         <!-- Prompt lines -->
         <div class="promptLine">
-          <span class="prompt">C:\PORTFOLIO&gt;</span>
+          <span class="prompt">C:\ABOUT&gt;</span>
           <span class="cmd">TYPE PROFILE.TXT</span>
         </div>
 
@@ -28,7 +28,6 @@
 
         <!-- Headline as terminal output -->
         <div class="termOutput">
-          <span class="outputLabel">// ABOUT</span>
           <h2 class="termHeadline">{{ copy.druHead }}</h2>
         </div>
 
@@ -47,12 +46,6 @@
 
         <!-- Body copy -->
         <div class="termCopy" v-html="copy.druCopy" />
-
-        <!-- Blinking cursor at end -->
-        <div class="cursorLine">
-          <span class="prompt">C:\PORTFOLIO&gt;</span>
-          <span class="cursor">▮</span>
-        </div>
       </div>
     </div>
   </section>
@@ -255,32 +248,20 @@
     }
   }
 
-  /* Body copy */
+  /* Body copy — 15% larger than original 0.72rem */
   .termCopy {
-    @apply text-[0.72rem] leading-[1.85] tracking-[0.04em] relative z-20;
+    @apply text-[0.83rem] leading-[1.85] tracking-[0.04em] relative z-20;
     font-family: 'Share Tech Mono', monospace;
     color: #88cc88;
     text-shadow: 0 0 3px rgba(51, 255, 51, 0.2);
 
     @media (max-width: 1024px) {
-      @apply text-[0.68rem] leading-[1.8];
+      @apply text-[0.78rem] leading-[1.8];
     }
 
     @media (max-width: 630px) {
-      @apply text-[0.65rem] leading-[1.75];
+      @apply text-[0.75rem] leading-[1.75];
     }
-  }
-
-  /* Cursor line */
-  .cursorLine {
-    @apply flex flex-row items-baseline gap-2 relative z-20;
-  }
-
-  .cursor {
-    @apply text-[#33ff33] text-[0.7rem];
-    font-family: 'Share Tech Mono', monospace;
-    text-shadow: 0 0 6px rgba(51, 255, 51, 0.9);
-    animation: blink 1s step-end infinite;
   }
 
   @keyframes blink {

@@ -572,7 +572,7 @@
     border-radius: 0 !important;
 
     svg.iconSVG {
-      filter: saturate(0.3) brightness(0.8) sepia(0.3) hue-rotate(80deg);
+      filter: brightness(0) invert(1) opacity(0.55);
     }
 
     p {
@@ -590,7 +590,8 @@
         2px 2px 0 #000;
 
       svg.iconSVG {
-        filter: saturate(0.6) brightness(1.1) sepia(0.2) hue-rotate(80deg);
+        filter: brightness(0) invert(1) opacity(0.9)
+          drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
       }
 
       p {
@@ -654,6 +655,35 @@
       border-radius: 0 !important;
       color: #33ff33 !important;
       box-shadow: 2px 2px 0 #000;
+    }
+  }
+
+  /* ── Anthro: Quote — 30% less vertical padding ── */
+  body.anthro .quoteBlock {
+    padding-top: 0.35rem !important;
+    padding-bottom: 0.35rem !important;
+    min-height: auto !important;
+    color: #88cc88;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.72rem;
+
+    p {
+      color: #88cc88 !important;
+      font-family: 'Share Tech Mono', monospace !important;
+      font-size: 0.72rem !important;
+    }
+
+    cite {
+      color: #ffb000 !important;
+      font-style: italic;
+    }
+
+    .arrowBtn {
+      color: #33ff33 !important;
+
+      &:hover {
+        color: #ffb000 !important;
+      }
     }
   }
 

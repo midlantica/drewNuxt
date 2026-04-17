@@ -36,10 +36,6 @@
         <Carousel class="slides" />
       </transition>
 
-      <transition name="bounce6" appear>
-        <Skills class="skillsGrid" />
-      </transition>
-
       <transition name="bounce8" appear>
         <About />
       </transition>
@@ -54,6 +50,7 @@
     </main>
 
     <footer class="anthroFooter">
+      <Skills class="skillsDock" />
       <Quote />
     </footer>
   </div>
@@ -101,10 +98,6 @@
     @apply row-start-2 z-30 mt-0;
   }
 
-  .skillsGrid {
-    @apply row-start-3;
-  }
-
   .about {
     @apply row-start-4;
   }
@@ -116,6 +109,11 @@
     box-shadow: 0 0 12px rgba(51, 255, 51, 0.15);
     color: #88cc88;
     font-family: 'Share Tech Mono', monospace;
+  }
+
+  .skillsDock {
+    @apply w-full;
+    border-bottom: 2px solid #33ff33;
   }
 
   @media (min-width: 1025px) {
