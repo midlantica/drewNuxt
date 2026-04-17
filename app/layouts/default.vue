@@ -321,7 +321,7 @@
   }
 
   body.anthro {
-    @apply bg-[#ede7d9];
+    @apply bg-[#0d0f14];
 
     .wrapper {
       @apply w-[99.8%] bg-[#f5f0e8];
@@ -348,10 +348,14 @@
     }
 
     .about {
-      @apply bg-[#ede7d9] shadow-none;
+      @apply bg-[#0d0f14] shadow-none rounded-none;
 
       p {
-        @apply my-0 mx-auto text-[#3d3530] font-(family-name:--font-family-anthro-copy);
+        @apply my-0 mx-auto text-[#f0ebe0]/80 font-(family-name:--font-family-anthro-copy);
+      }
+
+      .flag {
+        filter: brightness(0.7) contrast(1.2);
       }
     }
 
@@ -359,7 +363,7 @@
       @apply bg-[#f5f0e8];
 
       h1 {
-        @apply mt-6 mb-0 p-0 mx-auto text-[1.65em]! font-normal italic text-[#c4603a] capitalize font-(family-name:--font-family-anthro-head);
+        @apply mt-6 mb-0 p-0 mx-auto text-[1.65em]! font-bold text-[#0d0f14] capitalize font-(family-name:--font-family-anthro-head);
       }
 
       p {

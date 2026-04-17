@@ -1,49 +1,44 @@
 <template>
   <header class="anthroHeader">
-    <nav class="anthroNav">
-      <!-- Decorative top rule -->
-      <div class="topRule" />
-
-      <div class="mastMain">
-        <!-- Portrait -->
-        <div class="portraitWrap" @click="$emit('toggleExtras')">
-          <div class="portrait" />
-          <div class="portraitRing" />
+    <!-- Big typographic name block — full bleed, dramatic -->
+    <div class="nameStage" @click="$emit('toggleExtras')">
+      <div class="nameInner">
+        <!-- Oversized italic serif first name -->
+        <div class="firstNameWrap">
+          <span class="eyebrow">
+            {{ copy.uiuxDesigner }} &amp; {{ copy.vizDesigner }}
+          </span>
+          <h1 class="firstName">Drew</h1>
         </div>
 
-        <!-- Name + title block -->
-        <div class="nameBlock" @click="$emit('toggleExtras')">
-          <div class="nameRow">
-            <span class="firstName">Drew</span>
-            <span class="lastName">Harper</span>
-          </div>
-          <div class="titleRow">
-            <span class="titlePill">{{ copy.uiuxDesigner }}</span>
-            <span class="titleDivider">·</span>
-            <span class="titlePill">{{ copy.vizDesigner }}</span>
-          </div>
-        </div>
-
-        <!-- Contact block -->
-        <div class="contactBlock">
-          <a :href="`mailto:${copy.druEmail}`" class="contactLink emailLink">
-            <span class="contactIcon">✉</span>
-            {{ copy.druEmail }}
-          </a>
-          <a
-            :href="copy.portfolio"
-            target="_blank"
-            class="contactLink resumeLink"
-          >
-            <span class="contactIcon">↓</span>
-            PDF Résumé
-          </a>
+        <!-- Last name in bold caps with accent underline -->
+        <div class="lastNameWrap">
+          <h1 class="lastName">Harper</h1>
+          <div class="accentUnderline" />
         </div>
       </div>
 
-      <!-- Bottom accent bar -->
-      <div class="accentBar" />
-    </nav>
+      <!-- Portrait — large, offset, overlapping -->
+      <div class="portraitZone">
+        <div class="portrait" />
+        <div class="portraitAccent" />
+      </div>
+    </div>
+
+    <!-- Contact bar — dark strip at bottom of header -->
+    <div class="contactBar">
+      <a :href="`mailto:${copy.druEmail}`" class="contactItem">
+        <span class="contactLabel">Email</span>
+        <span class="contactValue">{{ copy.druEmail }}</span>
+      </a>
+      <div class="contactDivider" />
+      <a :href="copy.portfolio" target="_blank" class="contactItem">
+        <span class="contactLabel">Résumé</span>
+        <span class="contactValue">PDF Download ↗</span>
+      </a>
+      <div class="contactSpacer" />
+      <div class="availBadge">Available for work</div>
+    </div>
   </header>
 </template>
 
@@ -55,151 +50,169 @@
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
 
+  /* ── Header shell ── */
   .anthroHeader {
-    @apply w-full bg-[#f5f0e8];
+    @apply w-full flex flex-col bg-[#0d0f14] overflow-hidden;
   }
 
-  .anthroNav {
-    @apply w-full flex flex-col;
-  }
-
-  .topRule {
-    @apply w-full h-[3px] bg-[#c4603a];
-  }
-
-  .mastMain {
-    @apply flex flex-row flex-wrap items-center gap-6 px-8 py-5;
+  /* ── Name stage: the big dramatic block ── */
+  .nameStage {
+    @apply relative flex flex-row items-end justify-between cursor-pointer overflow-hidden;
+    min-height: 200px;
+    padding: 2.5rem 2.5rem 0 2.5rem;
 
     @media (max-width: 840px) {
-      @apply px-5 py-4 gap-4;
+      min-height: 160px;
+      padding: 2rem 1.5rem 0 1.5rem;
     }
 
     @media (max-width: 630px) {
-      @apply px-4 py-3 gap-3 flex-col items-start;
+      min-height: 140px;
+      padding: 1.5rem 1rem 0 1rem;
+      flex-direction: column;
+      align-items: flex-start;
     }
   }
 
-  /* Portrait */
-  .portraitWrap {
-    @apply relative flex-shrink-0 cursor-pointer;
-    width: 72px;
-    height: 72px;
+  .nameInner {
+    @apply flex flex-col gap-0 z-10 relative;
+  }
+
+  /* Eyebrow label */
+  .eyebrow {
+    @apply block text-[#e8623a] text-[0.7rem] font-semibold tracking-[0.22em] uppercase mb-1;
+    font-family: Poppins, sans-serif;
 
     @media (max-width: 630px) {
-      width: 56px;
-      height: 56px;
+      @apply text-[0.65rem];
     }
   }
 
-  .portrait {
-    @apply absolute inset-0 rounded-full bg-no-repeat bg-cover bg-center z-10;
-    background-image: url('/img/drew_mug_sepia.webp');
-    width: 72px;
-    height: 72px;
-
-    @media (max-width: 630px) {
-      width: 56px;
-      height: 56px;
-    }
-  }
-
-  .portraitRing {
-    @apply absolute rounded-full border-2 border-[#c4603a] z-20;
-    inset: -4px;
-    width: calc(72px + 8px);
-    height: calc(72px + 8px);
-
-    @media (max-width: 630px) {
-      width: calc(56px + 8px);
-      height: calc(56px + 8px);
-    }
-  }
-
-  /* Name block */
-  .nameBlock {
-    @apply flex flex-col gap-1 flex-1 cursor-pointer;
-
-    @media (max-width: 630px) {
-      @apply gap-1;
-    }
-  }
-
-  .nameRow {
-    @apply flex flex-row items-baseline gap-3 leading-none;
-  }
-
+  /* "Drew" — huge italic Bodoni */
   .firstName {
-    @apply text-[2.6rem] font-normal tracking-tight text-[#2c2825] leading-none;
+    @apply m-0 p-0 leading-[0.88] text-[#f0ebe0] font-normal;
     font-family: 'Bodoni Moda', Times, serif;
     font-style: italic;
-
-    @media (max-width: 840px) {
-      @apply text-[2rem];
-    }
+    font-size: clamp(4.5rem, 11vw, 9rem);
+    letter-spacing: -0.03em;
 
     @media (max-width: 630px) {
-      @apply text-[1.8rem];
+      font-size: clamp(3.5rem, 16vw, 5.5rem);
     }
   }
 
+  /* "Harper" — bold upright caps */
   .lastName {
-    @apply text-[2.6rem] font-semibold tracking-tight text-[#2c2825] leading-none;
+    @apply m-0 p-0 leading-[0.88] text-[#f0ebe0] font-bold uppercase;
     font-family: 'Bodoni Moda', Times, serif;
-
-    @media (max-width: 840px) {
-      @apply text-[2rem];
-    }
+    font-style: normal;
+    font-size: clamp(4.5rem, 11vw, 9rem);
+    letter-spacing: 0.06em;
 
     @media (max-width: 630px) {
-      @apply text-[1.8rem];
+      font-size: clamp(3.5rem, 16vw, 5.5rem);
     }
   }
 
-  .titleRow {
-    @apply flex flex-row items-center gap-2 mt-1;
+  .lastNameWrap {
+    @apply flex flex-col;
+  }
+
+  /* Thick rust accent line under HARPER */
+  .accentUnderline {
+    @apply h-[5px] bg-[#e8623a] mt-2 mb-4;
+    width: clamp(3rem, 8vw, 6rem);
+
+    @media (max-width: 630px) {
+      @apply mb-3;
+    }
+  }
+
+  /* ── Portrait zone ── */
+  .portraitZone {
+    @apply relative flex-shrink-0 self-end z-10;
+    width: clamp(120px, 18vw, 220px);
+    height: clamp(140px, 21vw, 260px);
+    margin-bottom: 0;
+
+    @media (max-width: 630px) {
+      @apply absolute;
+      right: 1rem;
+      bottom: 0;
+      width: clamp(80px, 22vw, 130px);
+      height: clamp(95px, 26vw, 155px);
+    }
+  }
+
+  /* Accent block behind portrait */
+  .portraitAccent {
+    @apply absolute bg-[#e8623a];
+    inset: 0;
+    transform: translate(8px, -8px);
+    z-index: 0;
+  }
+
+  /* Portrait photo */
+  .portrait {
+    @apply absolute inset-0 bg-no-repeat bg-cover bg-top z-10;
+    background-image: url('/img/drew_mug_sepia.webp');
+    /* desaturate slightly for drama */
+    filter: contrast(1.1) brightness(0.95);
+  }
+
+  /* ── Contact bar ── */
+  .contactBar {
+    @apply flex flex-row items-center gap-0 bg-[#e8623a] px-6 py-2.5 mt-0;
+
+    @media (max-width: 630px) {
+      @apply px-4 py-2 flex-wrap gap-y-1;
+    }
+  }
+
+  .contactItem {
+    @apply flex flex-col no-underline gap-0 pr-6;
 
     @media (max-width: 430px) {
-      @apply flex-wrap gap-1;
+      @apply pr-3;
     }
   }
 
-  .titlePill {
-    @apply text-[0.72rem] font-medium tracking-[0.12em] uppercase text-[#c4603a] bg-[#c4603a1a] px-2 py-0.5 rounded-sm;
-    font-family: Poppins, 'Helvetica Neue', sans-serif;
+  .contactLabel {
+    @apply text-[#0d0f14] text-[0.58rem] font-bold tracking-[0.18em] uppercase leading-none;
+    font-family: Poppins, sans-serif;
   }
 
-  .titleDivider {
-    @apply text-[#c4603a] text-sm font-light;
-  }
+  .contactValue {
+    @apply text-[#0d0f14] text-[0.82rem] font-medium leading-tight tracking-wide;
+    font-family: Poppins, sans-serif;
 
-  /* Contact block */
-  .contactBlock {
-    @apply flex flex-col gap-2 ml-auto;
-
-    @media (max-width: 840px) {
-      @apply ml-0;
+    @media (max-width: 430px) {
+      @apply text-[0.72rem];
     }
+  }
+
+  .contactDivider {
+    @apply w-[1px] h-7 bg-[#0d0f1440] mx-4 flex-shrink-0;
 
     @media (max-width: 630px) {
-      @apply flex-row flex-wrap gap-3 ml-0;
+      @apply hidden;
     }
   }
 
-  .contactLink {
-    @apply flex items-center gap-2 no-underline text-[#2c2825] text-[0.82rem] tracking-wide transition-colors duration-200;
-    font-family: Poppins, 'Helvetica Neue', sans-serif;
+  .contactSpacer {
+    @apply flex-1;
 
-    &:hover {
-      @apply text-[#c4603a];
+    @media (max-width: 630px) {
+      @apply hidden;
     }
   }
 
-  .contactIcon {
-    @apply text-[#c4603a] text-[0.9rem];
-  }
+  .availBadge {
+    @apply text-[0.65rem] font-bold tracking-[0.15em] uppercase text-[#0d0f14] border border-[#0d0f1450] px-3 py-1 rounded-full flex-shrink-0;
+    font-family: Poppins, sans-serif;
 
-  /* Accent bar */
-  .accentBar {
-    @apply w-full h-[1px] bg-[#2c282520];
+    @media (max-width: 630px) {
+      @apply hidden;
+    }
   }
 </style>
