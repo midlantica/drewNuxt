@@ -243,7 +243,7 @@
     text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
 
     &.big {
-      font-size: 1.24rem;
+      font-size: 0.62rem;
       letter-spacing: 0.12em;
       line-height: 1.3;
     }

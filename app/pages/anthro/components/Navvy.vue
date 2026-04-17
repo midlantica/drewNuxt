@@ -164,11 +164,11 @@
   /* ── LEFT: mugshot column ── */
   .mugCol {
     @apply flex flex-col items-start justify-start px-0 py-0 gap-0 cursor-pointer flex-shrink-0 overflow-hidden;
-    flex: 0 0 140px;
+    flex: 0 0 80px;
 
     @media (max-width: 840px) {
-      flex: 0 0 120px;
-      @apply px-3;
+      flex: 0 0 70px;
+      @apply px-0;
     }
 
     @media (max-width: 630px) {
@@ -249,9 +249,10 @@
     border-right-width: 2px;
   }
 
-  /* Contact under name in center col */
+  /* Contact under name in center col — 2-column grid */
   .contactUnderName {
-    @apply flex flex-col gap-1;
+    @apply grid gap-x-4 gap-y-0;
+    grid-template-columns: 1fr 1fr;
   }
 
   .cLine {

@@ -103,7 +103,7 @@
   }
 
   .anthroFooter {
-    @apply shadow-none mt-0;
+    @apply shadow-none mt-0 mx-0 px-0 w-full;
     background: #050d05;
     border-top: 2px solid #33ff33;
     box-shadow: 0 0 12px rgba(51, 255, 51, 0.15);
@@ -112,7 +112,7 @@
   }
 
   .skillsDock {
-    @apply w-full;
+    @apply w-full mx-0 px-0;
     border-bottom: 2px solid #33ff33;
   }
 

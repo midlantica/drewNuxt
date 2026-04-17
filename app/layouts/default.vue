@@ -324,7 +324,16 @@
     @apply bg-[#0a0e0a];
 
     .wrapper {
-      @apply w-[99.8%] bg-[#0a0e0a];
+      @apply w-[99.8%];
+      background-color: #0a0e0a;
+      /* Subtle CRT horizontal scanlines over entire page */
+      background-image: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 2px,
+        rgba(0, 0, 0, 0.18) 2px,
+        rgba(0, 0, 0, 0.18) 3px
+      );
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
@@ -574,7 +583,17 @@
     padding-bottom: 1.2rem !important;
 
     svg.iconSVG {
-      filter: saturate(0) brightness(1.2) sepia(1) hue-rotate(80deg) saturate(8) !important;
+      /* Neon green stroke lines */
+      stroke: #33ff33 !important;
+      fill: transparent !important;
+      filter: drop-shadow(0 0 3px rgba(51, 255, 51, 0.6))
+        drop-shadow(0 0 6px rgba(51, 255, 51, 0.3)) !important;
+      transition: filter 0.2s ease !important;
+
+      * {
+        stroke: #33ff33 !important;
+        fill: transparent !important;
+      }
     }
 
     p {
@@ -592,8 +611,17 @@
         2px 2px 0 #000;
 
       svg.iconSVG {
-        filter: saturate(0) brightness(1.4) sepia(1) hue-rotate(80deg)
-          saturate(10) drop-shadow(0 0 6px rgba(51, 255, 51, 0.8)) !important;
+        /* Neon green halo on hover */
+        stroke: #33ff33 !important;
+        fill: transparent !important;
+        filter: drop-shadow(0 0 4px rgba(51, 255, 51, 0.9))
+          drop-shadow(0 0 10px rgba(51, 255, 51, 0.7))
+          drop-shadow(0 0 20px rgba(51, 255, 51, 0.4)) !important;
+
+        * {
+          stroke: #33ff33 !important;
+          fill: transparent !important;
+        }
       }
 
       p {
