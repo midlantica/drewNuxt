@@ -26,7 +26,7 @@
             <span class="nameLast">HARPER</span>
           </div>
         </div>
-        <div class="contactUnderName">
+        <div class="infoGrid">
           <div class="cLine">
             <span class="cKey">EMAIL</span>
             <a :href="`mailto:${copy.druEmail}`" class="cVal">
@@ -39,15 +39,13 @@
               PDF_DOWNLOAD.PDF
             </a>
           </div>
-        </div>
-        <div class="sysGrid">
-          <div class="sysLine">
-            <span class="sysKey">STATUS</span>
-            <span class="sysVal blink">AVAILABLE ▮</span>
+          <div class="cLine">
+            <span class="cKey">STATUS</span>
+            <span class="cVal blink">AVAILABLE ▮</span>
           </div>
-          <div class="sysLine">
-            <span class="sysKey">LOCATION</span>
-            <span class="sysVal">NASHVILLE, TN</span>
+          <div class="cLine">
+            <span class="cKey">LOCATION</span>
+            <span class="cVal">NASHVILLE, TN</span>
           </div>
         </div>
       </div>
@@ -249,9 +247,9 @@
     border-right-width: 2px;
   }
 
-  /* Contact under name in center col — 2-column grid */
-  .contactUnderName {
-    @apply grid gap-x-4 gap-y-0;
+  /* 2×2 info grid: EMAIL, RESUME, STATUS, LOCATION */
+  .infoGrid {
+    @apply grid gap-x-6 gap-y-2;
     grid-template-columns: 1fr 1fr;
   }
 
@@ -277,6 +275,12 @@
     &:hover {
       color: #33ff33;
       text-shadow: 0 0 6px rgba(51, 255, 51, 0.8);
+    }
+
+    &.blink {
+      color: #ffb000;
+      text-shadow: 0 0 5px rgba(255, 176, 0, 0.7);
+      animation: blink 1.2s step-end infinite;
     }
   }
 
