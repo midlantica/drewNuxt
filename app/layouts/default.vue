@@ -357,8 +357,8 @@
         @apply my-0 mx-auto;
         color: #88cc88;
         font-family: 'Share Tech Mono', monospace;
-        font-size: 0.72rem;
-        line-height: 1.85;
+        font-size: 0.82rem;
+        line-height: 1.7;
         text-shadow: 0 0 3px rgba(51, 255, 51, 0.15);
       }
 
@@ -570,9 +570,11 @@
     background: #080f08 !important;
     border: 1px solid #1a3a1a !important;
     border-radius: 0 !important;
+    padding-top: 1.2rem !important;
+    padding-bottom: 1.2rem !important;
 
     svg.iconSVG {
-      filter: brightness(0) invert(1) opacity(0.55);
+      filter: saturate(0) brightness(1.2) sepia(1) hue-rotate(80deg) saturate(8) !important;
     }
 
     p {
@@ -590,8 +592,8 @@
         2px 2px 0 #000;
 
       svg.iconSVG {
-        filter: brightness(0) invert(1) opacity(0.9)
-          drop-shadow(0 0 4px rgba(255, 255, 255, 0.6));
+        filter: saturate(0) brightness(1.4) sepia(1) hue-rotate(80deg)
+          saturate(10) drop-shadow(0 0 6px rgba(51, 255, 51, 0.8)) !important;
       }
 
       p {

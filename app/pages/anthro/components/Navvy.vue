@@ -7,7 +7,6 @@
     <div class="dashInner">
       <!-- LEFT: mugshot column -->
       <div class="mugCol" @click="$emit('toggleExtras')">
-        <div class="roleLabel">// UI · UX · VISUAL DESIGN</div>
         <div class="mugWrap">
           <div class="mugPixel" />
           <div class="mugScanlines" aria-hidden="true" />
@@ -20,9 +19,12 @@
 
       <!-- CENTER: name + contact + sys info -->
       <div class="centerCol" @click="$emit('toggleExtras')">
+        <div class="roleAboveName">// UI · UX · VISUAL DESIGN</div>
         <div class="nameStack">
-          <div class="nameFirst">DREW</div>
-          <div class="nameLast">HARPER</div>
+          <div class="nameLine">
+            <span class="nameFirst">Drew</span>
+            <span class="nameLast">HARPER</span>
+          </div>
         </div>
         <div class="contactUnderName">
           <div class="cLine">
@@ -161,7 +163,7 @@
 
   /* ── LEFT: mugshot column ── */
   .mugCol {
-    @apply flex flex-col items-center justify-between px-4 py-3 gap-2 cursor-pointer flex-shrink-0;
+    @apply flex flex-col items-start justify-start px-0 py-0 gap-0 cursor-pointer flex-shrink-0 overflow-hidden;
     flex: 0 0 140px;
 
     @media (max-width: 840px) {
@@ -187,11 +189,10 @@
     }
   }
 
-  /* Mugshot */
+  /* Mugshot — flush to top, fills column width */
   .mugWrap {
-    @apply relative flex-shrink-0;
-    width: clamp(60px, 8vw, 90px);
-    height: clamp(72px, 9.5vw, 110px);
+    @apply relative flex-shrink-0 w-full;
+    height: clamp(120px, 14vw, 180px);
 
     @media (max-width: 630px) {
       width: 70px;
@@ -260,7 +261,7 @@
   .cKey {
     @apply text-[#4488cc] leading-none;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.48rem;
+    font-size: 0.7rem;
     letter-spacing: 0.12em;
     text-transform: uppercase;
   }
@@ -268,7 +269,7 @@
   .cVal {
     @apply no-underline leading-tight;
     font-family: 'Share Tech Mono', monospace;
-    font-size: clamp(0.42rem, 0.75vw, 0.58rem);
+    font-size: clamp(0.75rem, 1.2vw, 1rem);
     color: #ffb000;
     text-shadow: 0 0 4px rgba(255, 176, 0, 0.5);
 
@@ -291,14 +292,29 @@
     }
   }
 
+  /* Role label above name */
+  .roleAboveName {
+    @apply text-[#33ff33]/60 leading-tight;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: clamp(0.5rem, 0.9vw, 0.65rem);
+    letter-spacing: 0.1em;
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.3);
+  }
+
   .nameStack {
     @apply flex flex-col leading-none gap-0;
+  }
+
+  /* Single-line name row */
+  .nameLine {
+    @apply flex flex-row items-baseline gap-2 leading-none;
+    flex-wrap: nowrap;
   }
 
   .nameFirst {
     @apply leading-[0.88] font-black;
     font-family: 'Doto', 'Share Tech Mono', monospace;
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
     color: #33ff33;
     text-shadow:
       0 0 10px rgba(51, 255, 51, 0.9),
@@ -306,14 +322,14 @@
     letter-spacing: 0.03em;
 
     @media (max-width: 630px) {
-      font-size: clamp(2.4rem, 11vw, 3.8rem);
+      font-size: clamp(1.8rem, 8vw, 3rem);
     }
   }
 
   .nameLast {
     @apply leading-[0.88] font-black;
     font-family: 'Doto', 'Share Tech Mono', monospace;
-    font-size: clamp(2.8rem, 6vw, 5.5rem);
+    font-size: clamp(2.2rem, 4.5vw, 4.2rem);
     color: #ffb000;
     text-shadow:
       0 0 10px rgba(255, 176, 0, 0.9),
@@ -321,7 +337,7 @@
     letter-spacing: 0.03em;
 
     @media (max-width: 630px) {
-      font-size: clamp(2.4rem, 11vw, 3.8rem);
+      font-size: clamp(1.8rem, 8vw, 3rem);
     }
   }
 
@@ -354,9 +370,9 @@
     }
   }
 
-  /* ── RIGHT: readouts ── */
+  /* ── RIGHT: readouts — flush to top ── */
   .rightCol {
-    @apply flex flex-col justify-center px-5 py-4 gap-1.5 flex-shrink-0;
+    @apply flex flex-col justify-start px-5 py-4 gap-1.5 flex-shrink-0;
     flex: 0 0 320px;
 
     @media (max-width: 840px) {

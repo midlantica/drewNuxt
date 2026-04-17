@@ -37,8 +37,8 @@
         <div class="stampRow">
           <AuthenticStamp class="termStamp" />
           <div class="stampMeta">
-            <span class="stampLine">CERTIFIED GENUINE</span>
-            <span class="stampLine dim">EST. 1999 · NASHVILLE, TN</span>
+            <span class="stampLine big">CERTIFIED GENUINE</span>
+            <span class="stampLine big dim">EST. 1999 · NASHVILLE, TN</span>
           </div>
         </div>
 
@@ -242,26 +242,27 @@
     font-family: 'Share Tech Mono', monospace;
     text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
 
+    &.big {
+      font-size: 1.24rem;
+      letter-spacing: 0.12em;
+      line-height: 1.3;
+    }
+
     &.dim {
       @apply text-[#33ff33]/40;
       text-shadow: none;
     }
   }
 
-  /* Body copy — 15% larger than original 0.72rem */
+  /* Body copy */
   .termCopy {
-    @apply text-[0.83rem] leading-[1.85] tracking-[0.04em] relative z-20;
+    @apply relative z-20;
     font-family: 'Share Tech Mono', monospace;
+    font-size: 1rem !important;
+    line-height: 1.6 !important;
+    letter-spacing: 0.04em;
     color: #88cc88;
     text-shadow: 0 0 3px rgba(51, 255, 51, 0.2);
-
-    @media (max-width: 1024px) {
-      @apply text-[0.78rem] leading-[1.8];
-    }
-
-    @media (max-width: 630px) {
-      @apply text-[0.75rem] leading-[1.75];
-    }
   }
 
   @keyframes blink {
