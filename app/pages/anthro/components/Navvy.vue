@@ -28,24 +28,22 @@
         </div>
         <div class="infoGrid">
           <div class="cLine">
-            <span class="cKey">EMAIL</span>
             <a :href="`mailto:${copy.druEmail}`" class="cVal">
               {{ copy.druEmail }}
             </a>
           </div>
           <div class="cLine">
-            <span class="cKey">RESUME</span>
             <a :href="copy.portfolio" target="_blank" class="cVal">
               PDF_DOWNLOAD.PDF
             </a>
           </div>
           <div class="cLine">
-            <span class="cKey">STATUS</span>
-            <span class="cVal blink">AVAILABLE ▮</span>
-          </div>
-          <div class="cLine">
             <span class="cKey">LOCATION</span>
             <span class="cVal">NASHVILLE, TN</span>
+          </div>
+          <div class="cLine">
+            <span class="cKey">STATUS</span>
+            <span class="cVal blinkSlow">AVAILABLE ▮</span>
           </div>
         </div>
       </div>
@@ -166,7 +164,6 @@
 
     @media (max-width: 840px) {
       flex: 0 0 70px;
-      @apply px-0;
     }
 
     @media (max-width: 630px) {
@@ -175,22 +172,10 @@
     }
   }
 
-  .roleLabel {
-    @apply text-[#33ff33]/60 text-center leading-tight;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: clamp(0.42rem, 0.8vw, 0.55rem);
-    letter-spacing: 0.1em;
-    text-shadow: 0 0 4px rgba(51, 255, 51, 0.3);
-
-    @media (max-width: 630px) {
-      @apply hidden;
-    }
-  }
-
-  /* Mugshot — flush to top, fills column width */
+  /* Mugshot — flush to top, fills column width, show full image */
   .mugWrap {
     @apply relative flex-shrink-0 w-full;
-    height: clamp(120px, 14vw, 180px);
+    height: clamp(160px, 16vw, 220px);
 
     @media (max-width: 630px) {
       width: 70px;
@@ -199,7 +184,7 @@
   }
 
   .mugPixel {
-    @apply absolute inset-0 bg-no-repeat bg-cover bg-top;
+    @apply absolute inset-0 bg-no-repeat bg-contain bg-top;
     background-image: url('/img/drew_mug.webp');
     filter: saturate(0.1) brightness(0.8) sepia(0.4) hue-rotate(80deg)
       contrast(1.4);
@@ -247,7 +232,7 @@
     border-right-width: 2px;
   }
 
-  /* 2×2 info grid: EMAIL, RESUME, STATUS, LOCATION */
+  /* 2×2 info grid: email, resume, location, status */
   .infoGrid {
     @apply grid gap-x-6 gap-y-2;
     grid-template-columns: 1fr 1fr;
@@ -277,14 +262,14 @@
       text-shadow: 0 0 6px rgba(51, 255, 51, 0.8);
     }
 
-    &.blink {
+    &.blinkSlow {
       color: #ffb000;
       text-shadow: 0 0 5px rgba(255, 176, 0, 0.7);
-      animation: blink 1.2s step-end infinite;
+      animation: blinkSlow 3s step-end infinite;
     }
   }
 
-  /* ── CENTER: name + sys info ── */
+  /* ── CENTER: name + info grid ── */
   .centerCol {
     @apply flex flex-col justify-center px-6 py-4 gap-3 cursor-pointer flex-1;
 
@@ -343,35 +328,6 @@
 
     @media (max-width: 630px) {
       font-size: clamp(1.8rem, 8vw, 3rem);
-    }
-  }
-
-  .sysGrid {
-    @apply flex flex-col gap-0.5;
-  }
-
-  .sysLine {
-    @apply flex flex-row items-baseline gap-2;
-  }
-
-  .sysKey {
-    @apply text-[#4488cc] flex-shrink-0;
-    font-family: 'Share Tech Mono', monospace;
-    font-size: clamp(0.48rem, 0.9vw, 0.6rem);
-    letter-spacing: 0.1em;
-    min-width: 5.5em;
-  }
-
-  .sysVal {
-    @apply text-[#88ccff];
-    font-family: 'Share Tech Mono', monospace;
-    font-size: clamp(0.48rem, 0.9vw, 0.6rem);
-    letter-spacing: 0.06em;
-
-    &.blink {
-      color: #ffb000;
-      text-shadow: 0 0 5px rgba(255, 176, 0, 0.7);
-      animation: blink 1.2s step-end infinite;
     }
   }
 
@@ -483,6 +439,16 @@
   }
 
   @keyframes blink {
+    0%,
+    100% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+  }
+
+  @keyframes blinkSlow {
     0%,
     100% {
       opacity: 1;
