@@ -108,10 +108,15 @@
     }
 
     > a.anthro {
-      @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
+      @apply bg-[#0a0e0a] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
+      color: #33ff33;
+      text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
 
       &:hover {
-        @apply bg-[#7a3520];
+        background: #050d05;
+        color: #33ff33;
+        text-shadow: 0 0 8px rgba(51, 255, 51, 0.9);
+        box-shadow: inset 0 0 8px rgba(51, 255, 51, 0.15);
       }
     }
 
@@ -155,7 +160,14 @@
 
   body.anthro .tabs > a.router-link-active.router-link-exact-active.tab,
   body.anthro.extras .tabs > a.tab.anthro {
-    @apply text-[#f5f0e8] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)] bg-linear-to-b from-[#c4603a] to-[#7a3520];
+    background: #050d05;
+    color: #33ff33 !important;
+    text-shadow:
+      0 0 10px rgba(51, 255, 51, 1),
+      0 0 20px rgba(51, 255, 51, 0.5) !important;
+    box-shadow:
+      inset 0 0 12px rgba(51, 255, 51, 0.2),
+      0 2px 0 #33ff33;
   }
 
   body.punk .tabs > a.router-link-active.router-link-exact-active.tab,

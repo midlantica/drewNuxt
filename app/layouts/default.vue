@@ -321,10 +321,10 @@
   }
 
   body.anthro {
-    @apply bg-[#1a2e1a];
+    @apply bg-[#0a0e0a];
 
     .wrapper {
-      @apply w-[99.8%] bg-[#f0ebe0];
+      @apply w-[99.8%] bg-[#0a0e0a];
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
@@ -348,26 +348,64 @@
     }
 
     .about {
-      @apply bg-[#0d0f14] shadow-none rounded-none;
+      @apply shadow-none rounded-none;
+      background: #050d05;
+      border: 1px solid #1a3a1a;
+      box-shadow: 0 0 12px rgba(51, 255, 51, 0.08);
 
       p {
-        @apply my-0 mx-auto text-[#f0ebe0]/80 font-(family-name:--font-family-anthro-copy);
+        @apply my-0 mx-auto;
+        color: #88cc88;
+        font-family: 'Share Tech Mono', monospace;
+        font-size: 0.72rem;
+        line-height: 1.85;
+        text-shadow: 0 0 3px rgba(51, 255, 51, 0.15);
       }
 
       .flag {
-        filter: brightness(0.7) contrast(1.2);
+        filter: saturate(0.1) brightness(0.6) sepia(0.5) hue-rotate(80deg);
       }
     }
 
     .extrasWrapper {
-      @apply bg-[#f5f0e8];
+      background: #050d05;
+      border-top: 1px solid #1a3a1a;
 
       h1 {
-        @apply mt-6 mb-0 p-0 mx-auto text-[1.65em]! font-bold text-[#0d0f14] capitalize font-(family-name:--font-family-anthro-head);
+        @apply mt-6 mb-0 p-0 mx-auto text-[1.2em]!;
+        color: #33ff33;
+        font-family: 'Doto', 'Share Tech Mono', monospace !important;
+        text-shadow: 0 0 8px rgba(51, 255, 51, 0.6);
+        letter-spacing: 0.08em;
+        text-transform: uppercase;
       }
 
       p {
-        @apply text-[1em] font-(family-name:--font-family-anthro-copy);
+        @apply text-[0.75em];
+        color: #88cc88;
+        font-family: 'Share Tech Mono', monospace;
+      }
+
+      a {
+        border: 1px solid #1a3a1a;
+
+        &:hover p {
+          color: #33ff33;
+        }
+
+        img.portThumbs {
+          filter: saturate(0.2) brightness(0.7) sepia(0.3) hue-rotate(80deg);
+          border: 1px solid #1a3a1a;
+
+          &:hover {
+            filter: saturate(0.4) brightness(0.9) sepia(0.2) hue-rotate(80deg);
+            border-color: #33ff33;
+          }
+        }
+
+        p {
+          color: #88cc88;
+        }
       }
     }
   }

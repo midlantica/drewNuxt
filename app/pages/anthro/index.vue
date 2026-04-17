@@ -71,7 +71,12 @@
   }
 
   .anthroFooter {
-    @apply bg-[#1a2e1a] text-[#f0ebe0]/70 shadow-none mt-0 border-t-4 border-[#e8623a];
+    @apply shadow-none mt-0;
+    background: #050d05;
+    border-top: 2px solid #33ff33;
+    box-shadow: 0 0 12px rgba(51, 255, 51, 0.15);
+    color: #88cc88;
+    font-family: 'Share Tech Mono', monospace;
   }
 
   @media (min-width: 1025px) {

@@ -301,6 +301,9 @@
   body.anthro .skillsGrid {
     /* Mobile-first: 4 cols base */
     @apply grid-cols-[repeat(4,1fr)];
+    background: #050d05;
+    border: 1px solid #1a3a1a;
+    padding: 8px 4px;
 
     @media (min-width: 321px) and (max-width: 562px) {
       @apply grid-cols-[repeat(4,1fr)];
@@ -314,9 +317,41 @@
       @apply grid-cols-[repeat(12,1fr)] -mt-2 -ml-4 mr-0 w-[104%];
     }
 
+    /* Each skill cell gets a "folder" look */
+    div {
+      @apply relative;
+      border: 1px solid #1a3a1a;
+      background: #080f08;
+      margin: 2px;
+
+      &::before {
+        content: '';
+        @apply absolute top-0 left-1 w-8 h-1;
+        background: #1a3a1a;
+        border-radius: 2px 2px 0 0;
+        top: -3px;
+      }
+
+      &:hover {
+        border-color: #33ff33;
+        background: #0a1a0a;
+        box-shadow: 0 0 6px rgba(51, 255, 51, 0.2);
+
+        &::before {
+          background: #33ff33;
+        }
+      }
+    }
+
     svg {
       @apply w-full max-w-22;
-      filter: drop-shadow(1px 1px 1px hsla(0, 0%, 0%, 0.15));
+      filter: saturate(0.2) brightness(0.7) sepia(0.3) hue-rotate(80deg)
+        drop-shadow(0 0 3px rgba(51, 255, 51, 0.3));
+
+      &:hover {
+        filter: saturate(0.5) brightness(1) sepia(0.2) hue-rotate(80deg)
+          drop-shadow(0 0 6px rgba(51, 255, 51, 0.6));
+      }
     }
   }
 

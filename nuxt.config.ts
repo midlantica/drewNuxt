@@ -44,7 +44,11 @@ export default defineNuxtConfig({
       Poppins: {
         wght: [300, 400, 500],
         ital: [300, 400, 500]
-      }
+      },
+      Doto: {
+        wght: [100, 400, 700, 900]
+      },
+      'Share Tech Mono': [400]
     },
     display: 'swap',
     preconnect: true,

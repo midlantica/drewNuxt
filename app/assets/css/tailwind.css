@@ -124,11 +124,29 @@
   --font-family-punk-copy:
     Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
 
+  /* Colors - anthro retro */
+  --color-anthro-crt-bg: #0a0e0a;
+  --color-anthro-phosphor: #33ff33;
+  --color-anthro-phosphor-dim: #1a8c1a;
+  --color-anthro-amber: #ffb000;
+  --color-anthro-amber-dim: #a07000;
+  --color-anthro-rainbow-1: #ff2222;
+  --color-anthro-rainbow-2: #ff8800;
+  --color-anthro-rainbow-3: #ffee00;
+  --color-anthro-rainbow-4: #22cc22;
+  --color-anthro-rainbow-5: #2288ff;
+  --color-anthro-rainbow-6: #aa22ff;
+  --color-anthro-win-bg: #0a1a2e;
+  --color-anthro-win-border: #4488cc;
+  --color-anthro-win-title: #1155aa;
+  --color-anthro-win-text: #88ccff;
+  --color-anthro-dust: #1a1a0a;
+  --color-anthro-scanline: rgba(0, 0, 0, 0.18);
+
   /* Font Families - anthro */
-  --font-family-anthro-head: 'Bodoni Moda', Times, serif;
-  --font-family-anthro-subhead: 'Bodoni Moda', Times, serif;
-  --font-family-anthro-copy:
-    Poppins, 'Helvetica Neue', Helvetica, Arial, sans-serif;
+  --font-family-anthro-head: 'Doto', 'Share Tech Mono', monospace;
+  --font-family-anthro-subhead: 'Share Tech Mono', monospace;
+  --font-family-anthro-copy: 'Share Tech Mono', monospace;
 
   /* List Style Types */
   --list-style-type-square: square;
