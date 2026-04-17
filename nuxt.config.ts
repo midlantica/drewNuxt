@@ -99,14 +99,6 @@ export default defineNuxtConfig({
     layoutTransition: false
   },
 
-  nitro: {
-    output: {
-      dir: '.output',
-      serverDir: '.output/server',
-      publicDir: '.output/public'
-    }
-  },
-
   postcss: {
     plugins: {
       '@tailwindcss/postcss': {}

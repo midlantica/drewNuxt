@@ -5,7 +5,8 @@
   "scripts": {
     "build": "nuxt build",
     "dev": "nuxt dev",
-    "generate": "nuxt generate",
+    "generate": "nuxt generate && npm run clean:output",
+    "clean:output": "find .output/public -type f \\( -name '*.afdesign' -o -name '*.af' -o -name '*.psd' -o -name '*.ai' -o -name '*.fig' -o -name '*.sketch' \\) -delete",
     "preview": "nuxt preview",
     "postinstall": "nuxt prepare",
     "format": "prettier --write ."
