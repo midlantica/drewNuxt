@@ -3,11 +3,10 @@
 export default defineNuxtConfig({
   buildDir: '.nuxt',
 
-  ssr: true,
+  ssr: false,
   devtools: { enabled: true },
 
   modules: [
-    '@nuxt/devtools',
     '@pinia/nuxt',
     '@vueuse/nuxt',
     '@nuxtjs/google-fonts',
@@ -15,11 +14,7 @@ export default defineNuxtConfig({
     'nuxt-gtag'
   ],
 
-  plugins: [
-    '~/plugins/soundManager.client.js',
-    '~/plugins/ndok.client.js',
-    '~/plugins/ayah.client.js'
-  ],
+  plugins: ['~/plugins/sounds.client.js'],
 
   pinia: {
     storesDirs: ['./stores/**']
