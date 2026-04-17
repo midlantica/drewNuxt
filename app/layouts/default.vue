@@ -516,7 +516,183 @@
 
   body.anthro .box:hover .brickBack,
   body.anthro .box:hover .brickCircles {
-    @apply fill-[#c4603a] ease-out duration-500;
+    @apply fill-[#33ff33] ease-out duration-500;
+  }
+
+  /* ── Anthro: Carousel / Project Box ── */
+  body.anthro .projectBox {
+    background: #050d05;
+    border: 2px solid #33ff33;
+    box-shadow:
+      0 0 0 1px #0a1a0a,
+      0 0 16px rgba(51, 255, 51, 0.2),
+      4px 4px 0 #000;
+    border-radius: 0;
+
+    .projectBox__top {
+      border-bottom: 1px solid #1a3a1a;
+      padding-bottom: 4px;
+      margin-bottom: 4px;
+    }
+
+    .projectHead {
+      color: #33ff33 !important;
+      font-family: 'Share Tech Mono', monospace !important;
+      font-size: 0.65rem !important;
+      letter-spacing: 0.14em !important;
+      text-shadow: 0 0 5px rgba(51, 255, 51, 0.6);
+      text-transform: uppercase !important;
+    }
+
+    .carouselArrow {
+      background: #0a1a0a !important;
+      color: #ffb000 !important;
+      border: 1px solid #ffb000 !important;
+      border-radius: 0 !important;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.6rem;
+      box-shadow: 2px 2px 0 #000;
+
+      &:hover {
+        background: #1a2a0a !important;
+        color: #33ff33 !important;
+        border-color: #33ff33 !important;
+      }
+    }
+
+    p {
+      color: #88cc88;
+      font-family: 'Share Tech Mono', monospace;
+    }
+  }
+
+  body.anthro .miniGallery div .box {
+    background: #080f08 !important;
+    border: 1px solid #1a3a1a !important;
+    border-radius: 0 !important;
+
+    svg.iconSVG {
+      filter: saturate(0.3) brightness(0.8) sepia(0.3) hue-rotate(80deg);
+    }
+
+    p {
+      color: #88cc88 !important;
+      font-family: 'Share Tech Mono', monospace !important;
+      font-size: 0.65rem !important;
+      letter-spacing: 0.08em;
+    }
+
+    &:hover {
+      border-color: #33ff33 !important;
+      background: #0a1a0a !important;
+      box-shadow:
+        0 0 8px rgba(51, 255, 51, 0.2),
+        2px 2px 0 #000;
+
+      svg.iconSVG {
+        filter: saturate(0.6) brightness(1.1) sepia(0.2) hue-rotate(80deg);
+      }
+
+      p {
+        color: #33ff33 !important;
+      }
+    }
+  }
+
+  /* ── Anthro: Modal ── */
+  body.anthro #modal .modal {
+    background: #050d05 !important;
+    border: 2px solid #33ff33 !important;
+    border-radius: 0 !important;
+    box-shadow:
+      0 0 0 1px #0a1a0a,
+      6px 6px 0 #000,
+      0 0 20px rgba(51, 255, 51, 0.15) !important;
+
+    /* Hard title bar */
+    &::before {
+      content: '▶ SKILL_INFO.EXE';
+      display: block;
+      background: linear-gradient(180deg, #1a4a1a 0%, #0d2a0d 100%);
+      border-bottom: 1px solid #33ff33;
+      padding: 4px 10px;
+      font-family: 'Share Tech Mono', monospace;
+      font-size: 0.58rem;
+      letter-spacing: 0.14em;
+      color: #33ff33;
+      text-shadow: 0 0 5px rgba(51, 255, 51, 0.7);
+    }
+
+    h4 {
+      color: #ffb000 !important;
+      font-family: 'Share Tech Mono', monospace !important;
+      font-size: 0.9rem !important;
+      letter-spacing: 0.08em;
+      text-shadow: 0 0 6px rgba(255, 176, 0, 0.6);
+    }
+
+    p {
+      color: #88cc88 !important;
+      font-family: 'Share Tech Mono', monospace !important;
+      font-size: 0.75rem !important;
+      line-height: 1.8 !important;
+      text-shadow: 0 0 2px rgba(51, 255, 51, 0.15);
+    }
+
+    a {
+      color: #ffb000 !important;
+      text-shadow: 0 0 4px rgba(255, 176, 0, 0.5);
+
+      &:hover {
+        color: #33ff33 !important;
+      }
+    }
+
+    .closeBtn {
+      background: #0a1a0a !important;
+      border: 1px solid #33ff33 !important;
+      border-radius: 0 !important;
+      color: #33ff33 !important;
+      box-shadow: 2px 2px 0 #000;
+    }
+  }
+
+  /* ── Anthro: About box ── */
+  body.anthro .aboutWrapper .about {
+    background: #050d05 !important;
+    border: 1px solid #33ff33 !important;
+    border-radius: 0 !important;
+    box-shadow:
+      0 0 12px rgba(51, 255, 51, 0.1),
+      3px 3px 0 #000 !important;
+    position: relative;
+    overflow: hidden;
+
+    /* Scanline overlay */
+    &::after {
+      content: '';
+      position: absolute;
+      inset: 0;
+      pointer-events: none;
+      background: repeating-linear-gradient(
+        to bottom,
+        transparent 0px,
+        transparent 3px,
+        rgba(0, 0, 0, 0.1) 3px,
+        rgba(0, 0, 0, 0.1) 4px
+      );
+      z-index: 1;
+    }
+  }
+
+  /* ── Anthro: Skills dock ── */
+  body.anthro .skillsGrid svg {
+    filter: none !important;
+
+    &:hover {
+      filter: drop-shadow(0 0 8px rgba(51, 255, 51, 0.9))
+        drop-shadow(0 0 16px rgba(51, 255, 51, 0.4)) !important;
+    }
   }
 
   body.punk .box:hover .brickBack,

@@ -4,6 +4,18 @@
 
 <template>
   <div>
+    <!-- Full-width skills marquee strip at very top -->
+    <div class="skillsMarquee">
+      <span class="marqueeInner">
+        UX · VISUAL DESIGN · HTML · CSS · VUE · NUXT · FIGMA · ILLUSTRATION ·
+        ADOBE CC · AFFINITY · TAILWIND · SASS · JAVASCRIPT · SKETCH · FIGMA · UI
+        DESIGN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UX · VISUAL DESIGN · HTML · CSS ·
+        VUE · NUXT · FIGMA · ILLUSTRATION · ADOBE CC · AFFINITY · TAILWIND ·
+        SASS · JAVASCRIPT · SKETCH · FIGMA · UI DESIGN
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+      </span>
+    </div>
+
     <transition name="topDown" appear>
       <AnthroNavvy
         :is-show-content="store.isShowContent"
@@ -50,8 +62,35 @@
 <style scoped>
   @reference "../../assets/css/tailwind.css";
 
+  /* Top skills marquee strip */
+  .skillsMarquee {
+    @apply w-full overflow-hidden;
+    background: #0a0e0a;
+    border-bottom: 1px solid #1a3a1a;
+    padding: 4px 0;
+  }
+
+  .marqueeInner {
+    @apply inline-block whitespace-nowrap;
+    font-family: 'Share Tech Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.14em;
+    color: #33ff33;
+    text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
+    animation: marquee 28s linear infinite;
+  }
+
+  @keyframes marquee {
+    0% {
+      transform: translateX(0);
+    }
+    100% {
+      transform: translateX(-50%);
+    }
+  }
+
   .mainGrid {
-    @apply grid mt-0 mx-4 mb-2 gap-y-6 gap-x-0 grid-cols-1;
+    @apply grid mt-0 mx-4 mb-2 gap-y-4 gap-x-0 grid-cols-1;
   }
 
   .copyArea {
@@ -59,7 +98,7 @@
   }
 
   .slides {
-    @apply row-start-2 z-10 mt-0;
+    @apply row-start-2 z-30 mt-0;
   }
 
   .skillsGrid {
@@ -89,7 +128,7 @@
     }
 
     .slides {
-      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-10 -mt-20;
+      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-30 -mt-20;
     }
 
     .skillsGrid {
@@ -111,7 +150,7 @@
     }
 
     .slides {
-      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-10 -mt-20;
+      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-30 -mt-20;
     }
 
     .skillsGrid {

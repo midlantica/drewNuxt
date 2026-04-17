@@ -212,7 +212,7 @@
   .termHeadline {
     @apply m-0 p-0 leading-[1.3] font-normal;
     font-family: 'Share Tech Mono', monospace;
-    font-size: clamp(0.95rem, 2vw, 1.35rem);
+    font-size: clamp(1.1rem, 2.2vw, 1.6rem);
     color: #33ff33;
     text-shadow:
       0 0 6px rgba(51, 255, 51, 0.7),
@@ -220,11 +220,11 @@
     letter-spacing: 0.02em;
 
     @media (max-width: 1024px) {
-      font-size: clamp(0.88rem, 2.2vw, 1.15rem);
+      font-size: clamp(1rem, 2.4vw, 1.35rem);
     }
 
     @media (max-width: 630px) {
-      font-size: clamp(0.82rem, 3.5vw, 1rem);
+      font-size: clamp(0.95rem, 4vw, 1.2rem);
     }
   }
 
