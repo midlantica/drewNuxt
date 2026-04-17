@@ -1,43 +1,53 @@
 <template>
   <header class="anthroHeader">
-    <!-- Big typographic name block — full bleed, dramatic -->
-    <div class="nameStage" @click="$emit('toggleExtras')">
-      <div class="nameInner">
-        <!-- Oversized italic serif first name -->
-        <div class="firstNameWrap">
-          <span class="eyebrow">
-            {{ copy.uiuxDesigner }} &amp; {{ copy.vizDesigner }}
-          </span>
-          <h1 class="firstName">Drew</h1>
+    <div class="splitStage">
+      <!-- LEFT: deep green panel — stacked name + role -->
+      <div class="leftPanel" @click="$emit('toggleExtras')">
+        <div class="leftInner">
+          <div class="nameStack">
+            <span class="nameFirst">Drew</span>
+            <span class="nameLast">Harper</span>
+          </div>
+          <div class="roleBlock">
+            <span class="roleLine">UI/UX</span>
+            <span class="roleLine">Visual</span>
+            <span class="roleLine accent">Designer</span>
+          </div>
         </div>
-
-        <!-- Last name in bold caps with accent underline -->
-        <div class="lastNameWrap">
-          <h1 class="lastName">Harper</h1>
-          <div class="accentUnderline" />
-        </div>
+        <!-- Vertical rule -->
+        <div class="vertRule" />
       </div>
 
-      <!-- Portrait — large, offset, overlapping -->
-      <div class="portraitZone">
-        <div class="portrait" />
-        <div class="portraitAccent" />
+      <!-- RIGHT: cream panel — portrait + contact -->
+      <div class="rightPanel">
+        <div class="portraitFrame" @click="$emit('toggleExtras')">
+          <div class="portraitImg" />
+          <!-- Floating year badge -->
+          <div class="yearBadge">
+            Since
+            <br />
+            '99
+          </div>
+        </div>
+
+        <div class="contactStack">
+          <a :href="`mailto:${copy.druEmail}`" class="cLink">
+            <span class="cLabel">✉ Email</span>
+            <span class="cVal">{{ copy.druEmail }}</span>
+          </a>
+          <a :href="copy.portfolio" target="_blank" class="cLink">
+            <span class="cLabel">↓ Résumé</span>
+            <span class="cVal">PDF Download</span>
+          </a>
+        </div>
       </div>
     </div>
 
-    <!-- Contact bar — dark strip at bottom of header -->
-    <div class="contactBar">
-      <a :href="`mailto:${copy.druEmail}`" class="contactItem">
-        <span class="contactLabel">Email</span>
-        <span class="contactValue">{{ copy.druEmail }}</span>
-      </a>
-      <div class="contactDivider" />
-      <a :href="copy.portfolio" target="_blank" class="contactItem">
-        <span class="contactLabel">Résumé</span>
-        <span class="contactValue">PDF Download ↗</span>
-      </a>
-      <div class="contactSpacer" />
-      <div class="availBadge">Available for work</div>
+    <!-- Full-width rust stripe — cuts across both panels -->
+    <div class="rustStripe">
+      <span class="stripeText">
+        UX · Visual Design · HTML · CSS · Vue · Nuxt · Figma · Illustration
+      </span>
     </div>
   </header>
 </template>
@@ -50,169 +60,181 @@
 <style scoped>
   @reference "../../../assets/css/tailwind.css";
 
-  /* ── Header shell ── */
+  /* ── Outer shell ── */
   .anthroHeader {
-    @apply w-full flex flex-col bg-[#0d0f14] overflow-hidden;
+    @apply w-full flex flex-col overflow-hidden;
   }
 
-  /* ── Name stage: the big dramatic block ── */
-  .nameStage {
-    @apply relative flex flex-row items-end justify-between cursor-pointer overflow-hidden;
-    min-height: 200px;
-    padding: 2.5rem 2.5rem 0 2.5rem;
+  /* ── Split stage ── */
+  .splitStage {
+    @apply flex flex-row w-full;
+    min-height: 220px;
+
+    @media (max-width: 630px) {
+      @apply flex-col;
+      min-height: auto;
+    }
+  }
+
+  /* ── LEFT panel ── */
+  .leftPanel {
+    @apply relative flex flex-row items-stretch bg-[#1a2e1a] cursor-pointer;
+    flex: 0 0 52%;
 
     @media (max-width: 840px) {
-      min-height: 160px;
-      padding: 2rem 1.5rem 0 1.5rem;
+      flex: 0 0 55%;
     }
 
     @media (max-width: 630px) {
-      min-height: 140px;
-      padding: 1.5rem 1rem 0 1rem;
-      flex-direction: column;
-      align-items: flex-start;
+      @apply w-full;
+      flex: none;
     }
   }
 
-  .nameInner {
-    @apply flex flex-col gap-0 z-10 relative;
-  }
+  .leftInner {
+    @apply flex flex-row items-end gap-6 px-8 py-6 flex-1;
 
-  /* Eyebrow label */
-  .eyebrow {
-    @apply block text-[#e8623a] text-[0.7rem] font-semibold tracking-[0.22em] uppercase mb-1;
-    font-family: Poppins, sans-serif;
+    @media (max-width: 840px) {
+      @apply px-5 py-5 gap-4;
+    }
 
     @media (max-width: 630px) {
-      @apply text-[0.65rem];
+      @apply px-4 py-4 gap-3;
     }
   }
 
-  /* "Drew" — huge italic Bodoni */
-  .firstName {
-    @apply m-0 p-0 leading-[0.88] text-[#f0ebe0] font-normal;
+  /* Stacked name — huge, cream */
+  .nameStack {
+    @apply flex flex-col leading-none gap-0;
+  }
+
+  .nameFirst {
+    @apply text-[#f0ebe0] font-normal leading-[0.9];
     font-family: 'Bodoni Moda', Times, serif;
     font-style: italic;
-    font-size: clamp(4.5rem, 11vw, 9rem);
-    letter-spacing: -0.03em;
+    font-size: clamp(3.8rem, 8.5vw, 7.5rem);
+    letter-spacing: -0.02em;
 
     @media (max-width: 630px) {
-      font-size: clamp(3.5rem, 16vw, 5.5rem);
+      font-size: clamp(3rem, 13vw, 5rem);
     }
   }
 
-  /* "Harper" — bold upright caps */
-  .lastName {
-    @apply m-0 p-0 leading-[0.88] text-[#f0ebe0] font-bold uppercase;
+  .nameLast {
+    @apply text-[#e8623a] font-bold leading-[0.9] uppercase;
     font-family: 'Bodoni Moda', Times, serif;
     font-style: normal;
-    font-size: clamp(4.5rem, 11vw, 9rem);
-    letter-spacing: 0.06em;
+    font-size: clamp(3.8rem, 8.5vw, 7.5rem);
+    letter-spacing: 0.04em;
 
     @media (max-width: 630px) {
-      font-size: clamp(3.5rem, 16vw, 5.5rem);
+      font-size: clamp(3rem, 13vw, 5rem);
     }
   }
 
-  .lastNameWrap {
-    @apply flex flex-col;
+  /* Role lines — vertical stacked, small caps */
+  .roleBlock {
+    @apply flex flex-col justify-end gap-0 pb-1;
   }
 
-  /* Thick rust accent line under HARPER */
-  .accentUnderline {
-    @apply h-[5px] bg-[#e8623a] mt-2 mb-4;
-    width: clamp(3rem, 8vw, 6rem);
+  .roleLine {
+    @apply text-[#f0ebe0]/50 font-medium leading-tight;
+    font-family: Poppins, sans-serif;
+    font-size: clamp(0.65rem, 1.2vw, 0.85rem);
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    writing-mode: vertical-rl;
+    text-orientation: mixed;
+    transform: rotate(180deg);
 
     @media (max-width: 630px) {
-      @apply mb-3;
+      writing-mode: horizontal-tb;
+      transform: none;
+      @apply text-[0.65rem];
+    }
+
+    &.accent {
+      @apply text-[#e8623a]/80;
     }
   }
 
-  /* ── Portrait zone ── */
-  .portraitZone {
-    @apply relative flex-shrink-0 self-end z-10;
-    width: clamp(120px, 18vw, 220px);
-    height: clamp(140px, 21vw, 260px);
-    margin-bottom: 0;
+  /* Vertical rule between left and right */
+  .vertRule {
+    @apply w-[3px] bg-[#e8623a] self-stretch flex-shrink-0;
 
     @media (max-width: 630px) {
-      @apply absolute;
-      right: 1rem;
-      bottom: 0;
-      width: clamp(80px, 22vw, 130px);
-      height: clamp(95px, 26vw, 155px);
+      @apply hidden;
     }
   }
 
-  /* Accent block behind portrait */
-  .portraitAccent {
-    @apply absolute bg-[#e8623a];
-    inset: 0;
-    transform: translate(8px, -8px);
-    z-index: 0;
+  /* ── RIGHT panel ── */
+  .rightPanel {
+    @apply flex flex-row items-end gap-4 bg-[#f0ebe0] flex-1 px-6 py-4 relative;
+
+    @media (max-width: 840px) {
+      @apply px-4 py-4;
+    }
+
+    @media (max-width: 630px) {
+      @apply px-4 py-3;
+    }
   }
 
-  /* Portrait photo */
-  .portrait {
-    @apply absolute inset-0 bg-no-repeat bg-cover bg-top z-10;
+  /* Portrait */
+  .portraitFrame {
+    @apply relative flex-shrink-0 cursor-pointer self-end;
+    width: clamp(90px, 14vw, 170px);
+    height: clamp(110px, 17vw, 210px);
+  }
+
+  .portraitImg {
+    @apply absolute inset-0 bg-no-repeat bg-cover bg-top;
     background-image: url('/img/drew_mug_sepia.webp');
-    /* desaturate slightly for drama */
-    filter: contrast(1.1) brightness(0.95);
+    filter: sepia(0.3) contrast(1.05);
+    /* Clip to a slightly angled parallelogram */
+    clip-path: polygon(8% 0%, 100% 0%, 92% 100%, 0% 100%);
   }
 
-  /* ── Contact bar ── */
-  .contactBar {
-    @apply flex flex-row items-center gap-0 bg-[#e8623a] px-6 py-2.5 mt-0;
-
-    @media (max-width: 630px) {
-      @apply px-4 py-2 flex-wrap gap-y-1;
-    }
+  /* Year badge — overlapping corner */
+  .yearBadge {
+    @apply absolute bottom-2 right-[-0.6rem] bg-[#e8623a] text-[#0d0f14] font-bold text-center leading-tight px-2 py-1;
+    font-family: Poppins, sans-serif;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    z-index: 10;
   }
 
-  .contactItem {
-    @apply flex flex-col no-underline gap-0 pr-6;
-
-    @media (max-width: 430px) {
-      @apply pr-3;
-    }
+  /* Contact stack */
+  .contactStack {
+    @apply flex flex-col gap-3 justify-end pb-1 flex-1;
   }
 
-  .contactLabel {
-    @apply text-[#0d0f14] text-[0.58rem] font-bold tracking-[0.18em] uppercase leading-none;
+  .cLink {
+    @apply flex flex-col no-underline gap-0;
+  }
+
+  .cLabel {
+    @apply text-[#1a2e1a] text-[0.6rem] font-bold tracking-[0.16em] uppercase leading-none;
     font-family: Poppins, sans-serif;
   }
 
-  .contactValue {
-    @apply text-[#0d0f14] text-[0.82rem] font-medium leading-tight tracking-wide;
+  .cVal {
+    @apply text-[#1a2e1a]/70 text-[0.78rem] font-normal leading-snug;
     font-family: Poppins, sans-serif;
 
-    @media (max-width: 430px) {
-      @apply text-[0.72rem];
+    &:hover {
+      @apply text-[#e8623a];
     }
   }
 
-  .contactDivider {
-    @apply w-[1px] h-7 bg-[#0d0f1440] mx-4 flex-shrink-0;
-
-    @media (max-width: 630px) {
-      @apply hidden;
-    }
+  /* ── Rust stripe ── */
+  .rustStripe {
+    @apply w-full bg-[#e8623a] py-2 px-6 overflow-hidden;
   }
 
-  .contactSpacer {
-    @apply flex-1;
-
-    @media (max-width: 630px) {
-      @apply hidden;
-    }
-  }
-
-  .availBadge {
-    @apply text-[0.65rem] font-bold tracking-[0.15em] uppercase text-[#0d0f14] border border-[#0d0f1450] px-3 py-1 rounded-full flex-shrink-0;
+  .stripeText {
+    @apply text-[#1a2e1a] text-[0.65rem] font-semibold tracking-[0.18em] uppercase whitespace-nowrap;
     font-family: Poppins, sans-serif;
-
-    @media (max-width: 630px) {
-      @apply hidden;
-    }
   }
 </style>

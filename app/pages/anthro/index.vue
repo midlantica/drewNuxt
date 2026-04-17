@@ -71,7 +71,7 @@
   }
 
   .anthroFooter {
-    @apply bg-[#0d0f14] text-[#f0ebe0]/70 shadow-none mt-0 border-t-4 border-[#e8623a];
+    @apply bg-[#1a2e1a] text-[#f0ebe0]/70 shadow-none mt-0 border-t-4 border-[#e8623a];
   }
 
   @media (min-width: 1025px) {

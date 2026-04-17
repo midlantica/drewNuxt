@@ -321,10 +321,10 @@
   }
 
   body.anthro {
-    @apply bg-[#0d0f14];
+    @apply bg-[#1a2e1a];
 
     .wrapper {
-      @apply w-[99.8%] bg-[#f5f0e8];
+      @apply w-[99.8%] bg-[#f0ebe0];
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
