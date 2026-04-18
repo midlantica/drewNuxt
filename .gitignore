@@ -18,6 +18,9 @@ logs
 .fleet
 .idea
 
+# SFTP credentials - never commit these
+.vscode/sftp.json
+
 # Local env files
 .env
 .env.*
