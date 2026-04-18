@@ -9,9 +9,9 @@
       <span class="marqueeInner">
         UX · VISUAL DESIGN · HTML · CSS · VUE · NUXT · FIGMA · ILLUSTRATION ·
         ADOBE CC · AFFINITY · TAILWIND · SASS · JAVASCRIPT · SKETCH · FIGMA · UI
-        DESIGN &nbsp;·&nbsp; UX · VISUAL DESIGN · HTML · CSS · VUE · NUXT ·
-        FIGMA · ILLUSTRATION · ADOBE CC · AFFINITY · TAILWIND · SASS ·
-        JAVASCRIPT · SKETCH · FIGMA · UI DESIGN &nbsp;·&nbsp;
+        DESIGN · UX · VISUAL DESIGN · HTML · CSS · VUE · NUXT · FIGMA ·
+        ILLUSTRATION · ADOBE CC · AFFINITY · TAILWIND · SASS · JAVASCRIPT ·
+        SKETCH · FIGMA · UI DESIGN ·&#8201;
       </span>
     </div>
 
@@ -131,7 +131,7 @@
   .anthroFooter {
     @apply shadow-none mt-0 mx-0 px-0 w-full;
     background: transparent;
-    border: 2px solid #00ff0063;
+    border: none;
     color: #88cc88;
     font-family: 'Share Tech Mono', monospace;
   }

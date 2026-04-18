@@ -19,11 +19,13 @@
 
       <!-- CENTER: name + contact + sys info -->
       <div class="centerCol" @click="$emit('toggleExtras')">
-        <div class="roleAboveName">// UI · UX · VISUAL DESIGN</div>
-        <div class="nameStack">
-          <div class="nameLine">
-            <span class="nameFirst">Drew</span>
-            <span class="nameLast">HARPER</span>
+        <div class="nameRow">
+          <div class="roleAboveName">// UI · UX · VISUAL DESIGN</div>
+          <div class="nameStack">
+            <div class="nameLine">
+              <span class="nameFirst">Drew</span>
+              <span class="nameLast">HARPER</span>
+            </div>
           </div>
         </div>
         <div class="infoGrid">
@@ -145,13 +147,18 @@
     min-height: 180px;
 
     @media (max-width: 630px) {
-      @apply flex-col;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      grid-template-rows: auto auto;
       min-height: auto;
+    }
+
+    @media (max-width: 380px) {
+      grid-template-columns: 1fr;
     }
   }
 
   /* Shared column divider */
-  .mugCol,
   .centerCol,
   .rightCol {
     border-right: 1px solid #1a3a1a;
@@ -163,34 +170,65 @@
 
   /* ── LEFT: mugshot column ── */
   .mugCol {
-    @apply flex flex-col items-start justify-start px-0 py-0 gap-0 cursor-pointer flex-shrink-0;
-    flex: 0 0 80px;
+    @apply flex flex-col items-center justify-start gap-0 cursor-pointer flex-shrink-0;
+    flex: 0 0 auto;
+    border-right: none;
+    padding: 2.3rem 0.75rem 0;
 
     @media (max-width: 840px) {
-      flex: 0 0 70px;
+      padding: 2rem 0.5rem;
     }
 
     @media (max-width: 630px) {
-      @apply flex-row w-full border-r-0 border-b border-[#1a3a1a];
+      grid-column: 1;
+      grid-row: 1;
       flex: none;
+      width: auto;
+      border-right: none;
+      border-bottom: none;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      padding: 0.5rem;
+    }
+
+    @media (max-width: 380px) {
+      grid-column: 1;
+      grid-row: 1;
+      border-right: none;
+      border-bottom: 1px solid #1a3a1a;
+      align-items: center;
+      justify-content: center;
+      width: 100%;
     }
   }
 
-  /* Mugshot — square box */
+  /* Mugshot — square, sized to match header content height */
   .mugWrap {
     @apply relative flex-shrink-0;
-    width: clamp(80px, 8vw, 120px);
-    height: clamp(80px, 8vw, 120px);
+    width: clamp(120px, 10vw, 150px);
+    height: clamp(120px, 10vw, 150px);
     border: 1px solid #33ff33;
     box-shadow: 0 0 8px rgba(51, 255, 51, 0.2);
-    margin: auto;
+    margin: 0;
     position: relative;
     z-index: 50;
 
+    @media (max-width: 840px) {
+      width: clamp(100px, 9vw, 130px);
+      height: clamp(100px, 9vw, 130px);
+    }
+
     @media (max-width: 630px) {
-      width: 70px;
-      height: 70px;
+      width: 90px;
+      height: 90px;
       margin: 4px;
+    }
+
+    @media (max-width: 380px) {
+      width: 80px;
+      height: 80px;
+      margin: 8px auto;
     }
   }
 
@@ -249,6 +287,11 @@
     grid-template-columns: auto auto;
     gap: 0.6rem 2rem;
     width: 330px;
+
+    @media (max-width: 630px) {
+      width: auto;
+      max-width: 100%;
+    }
   }
 
   .cLine {
@@ -257,7 +300,7 @@
   }
 
   .cKey {
-    @apply text-[#4488cc] leading-none;
+    @apply text-[#8ccafb] leading-none;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.7rem;
     letter-spacing: 0.12em;
@@ -285,14 +328,37 @@
 
   /* ── CENTER: name + info grid ── */
   .centerCol {
-    @apply flex flex-col justify-center px-6 py-4 gap-3 cursor-pointer flex-1;
+    @apply flex flex-col justify-start px-6 py-4 gap-3 cursor-pointer flex-1;
 
     @media (max-width: 840px) {
       @apply px-4;
     }
 
     @media (max-width: 630px) {
-      @apply px-4 py-3 border-r-0 border-b border-[#1a3a1a];
+      grid-column: 2;
+      grid-row: 1;
+      @apply px-4 py-3;
+      border-right: none;
+      border-bottom: 1px solid #1a3a1a;
+    }
+
+    @media (max-width: 380px) {
+      grid-column: 1;
+      grid-row: 2;
+      border-bottom: none;
+      border-right: none;
+      @apply items-center text-center;
+    }
+  }
+
+  /* Name + role wrapper */
+  .nameRow {
+    display: flex;
+    flex-direction: column;
+    gap: 0.25rem;
+
+    @media (max-width: 380px) {
+      align-items: center;
     }
   }
 
@@ -316,14 +382,14 @@
   }
 
   .nameFirst {
-    @apply leading-[0.88] font-black;
+    @apply leading-[0.88] font-bold;
     font-family: 'Doto', 'Share Tech Mono', monospace;
     font-size: clamp(2.2rem, 4.5vw, 4.2rem);
     color: #33ff33;
     text-shadow:
       0 0 10px rgba(51, 255, 51, 0.9),
       0 0 30px rgba(51, 255, 51, 0.35);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.08em;
 
     @media (max-width: 630px) {
       font-size: clamp(1.8rem, 8vw, 3rem);
@@ -331,14 +397,14 @@
   }
 
   .nameLast {
-    @apply leading-[0.88] font-black;
+    @apply leading-[0.88] font-bold;
     font-family: 'Doto', 'Share Tech Mono', monospace;
     font-size: clamp(2.2rem, 4.5vw, 4.2rem);
     color: #ffd000;
     text-shadow:
       0 0 10px rgba(255, 208, 0, 0.9),
       0 0 30px rgba(255, 208, 0, 0.35);
-    letter-spacing: 0.03em;
+    letter-spacing: 0.08em;
 
     @media (max-width: 630px) {
       font-size: clamp(1.8rem, 8vw, 3rem);
@@ -348,7 +414,7 @@
   /* ── RIGHT: readouts — flush to top ── */
   .rightCol {
     @apply flex flex-col justify-start px-5 py-4 gap-1.5 flex-shrink-0;
-    flex: 0 0 320px;
+    flex: 0 0 380px;
 
     @media (max-width: 840px) {
       flex: 0 0 260px;
@@ -356,8 +422,15 @@
     }
 
     @media (max-width: 630px) {
-      @apply w-full border-r-0 px-4 py-3;
+      grid-column: 1 / -1;
+      grid-row: 2;
+      @apply w-full border-r-0 border-t border-[#1a3a1a] px-4 py-3;
       flex: none;
+    }
+
+    @media (max-width: 380px) {
+      grid-column: 1;
+      grid-row: 3;
     }
   }
 
@@ -380,7 +453,7 @@
   }
 
   .readKey {
-    @apply text-[#4488cc] flex-shrink-0;
+    @apply text-[#8ccafb] flex-shrink-0;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.48rem;
     letter-spacing: 0.08em;
@@ -420,7 +493,7 @@
   }
 
   .clockLabel {
-    @apply text-[#4488cc];
+    @apply text-[#8ccafb];
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.48rem;
     letter-spacing: 0.1em;
@@ -438,7 +511,7 @@
   }
 
   .memChip {
-    @apply text-[#4488cc] border border-[#1a3a5a] px-1 py-0;
+    @apply text-[#8ccafb] border border-[#1a3a5a] px-1 py-0;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.45rem;
     letter-spacing: 0.08em;

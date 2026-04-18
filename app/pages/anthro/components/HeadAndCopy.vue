@@ -108,7 +108,7 @@
     @apply flex flex-row items-center justify-between px-3 py-1;
     background: linear-gradient(180deg, #1a4a1a 0%, #0d2a0d 100%);
     border-bottom: 1px solid #33ff33;
-    min-height: 20px;
+    min-height: 29px;
   }
 
   .termDots {
@@ -138,7 +138,7 @@
   .termBody {
     @apply relative flex flex-col px-6 py-4;
     gap: 0.6rem;
-    background: transparent;
+    background: #000;
   }
 
   /* Scanlines */
@@ -238,7 +238,9 @@
   }
 
   .stampMeta {
-    @apply flex flex-col gap-0;
+    display: inline-flex;
+    flex-direction: column;
+    gap: 0;
   }
 
   .stampLine {
@@ -247,6 +249,7 @@
     text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
 
     &.big {
+      display: block;
       font-size: 0.78rem;
       letter-spacing: 0.12em;
       line-height: 1.3;
@@ -255,8 +258,11 @@
     }
 
     &.dim {
-      color: rgba(51, 255, 51, 0.35);
-      text-shadow: none;
+      color: #8ccafb;
+      text-shadow: 0 0 4px rgba(140, 202, 251, 0.5);
+      display: block;
+      text-align: justify;
+      text-align-last: justify;
     }
   }
 
@@ -265,8 +271,8 @@
     @apply relative z-20;
     font-family: 'Share Tech Mono', monospace;
     font-size: 1rem !important;
-    line-height: 1.6 !important;
-    letter-spacing: 0.04em;
+    line-height: 1.85 !important;
+    /* letter-spacing: 0.01em; */
     color: #33ff33;
     text-shadow:
       0 0 4px rgba(51, 255, 51, 0.5),

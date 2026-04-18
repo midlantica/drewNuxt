@@ -170,6 +170,16 @@
       0 2px 0 #33ff33;
   }
 
+  body.anthro .tabs > a.anthro:hover,
+  body.anthro .tabs > a.anthro:focus,
+  body.anthro .tabs > a.anthro:focus-visible {
+    background: #050d05;
+    color: #33ff33 !important;
+    text-shadow: 0 0 8px rgba(51, 255, 51, 0.9);
+    box-shadow: inset 0 0 8px rgba(51, 255, 51, 0.15);
+    outline: none;
+  }
+
   body.punk .tabs > a.router-link-active.router-link-exact-active.tab,
   body.punk.extras .tabs > a.tab.punk {
     @apply text-base-ivory/75 bg-linear-to-b from-[#B200AA] to-[#660061];

@@ -391,7 +391,7 @@
     }
 
     .extrasWrapper {
-      background: #050d05;
+      background: transparent;
       border-top: 1px solid #1a3a1a;
 
       h1 {
@@ -405,29 +405,30 @@
 
       p {
         @apply text-[0.75em];
-        color: #88cc88;
+        color: #8ccafb;
         font-family: 'Share Tech Mono', monospace;
       }
 
       a {
         border: 1px solid #1a3a1a;
+        background: transparent !important;
 
         &:hover p {
           color: #33ff33;
         }
 
         img.portThumbs {
-          filter: saturate(0.2) brightness(0.7) sepia(0.3) hue-rotate(80deg);
+          filter: none;
           border: 1px solid #1a3a1a;
 
           &:hover {
-            filter: saturate(0.4) brightness(0.9) sepia(0.2) hue-rotate(80deg);
+            filter: none;
             border-color: #33ff33;
           }
         }
 
         p {
-          color: #88cc88;
+          color: #8ccafb;
         }
       }
     }
@@ -551,11 +552,10 @@
       0 0 16px rgba(51, 255, 51, 0.2),
       4px 4px 0 #000;
     border-radius: 0;
+    padding-top: 0.3rem;
+    padding-bottom: 0;
 
     .projectBox__top {
-      border-bottom: 1px solid #1a3a1a;
-      padding-bottom: 4px;
-      margin-bottom: 4px;
     }
 
     .projectHead {
@@ -568,28 +568,30 @@
     }
 
     .carouselArrow {
-      background: #0a1a0a !important;
-      color: #ffd000 !important;
-      border: 1px solid #ffd000 !important;
+      background: #33ff33 !important;
+      color: #000 !important;
+      border: none !important;
       border-radius: 0 !important;
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.6rem;
-      box-shadow: 2px 2px 0 #000;
+      font-weight: bold;
+      text-transform: uppercase;
+      letter-spacing: 0.1em;
+      box-shadow: none !important;
+      filter: none !important;
       padding: 2px 8px !important;
       display: flex !important;
       align-items: center !important;
 
       &:hover {
-        background: #1a2a0a !important;
-        color: #33ff33 !important;
-        border-color: #33ff33 !important;
+        background: #ffd000 !important;
+        color: #000 !important;
       }
     }
 
     .projectBox__top {
       display: flex !important;
       align-items: center !important;
-      min-height: 28px !important;
     }
 
     .projectHead {
@@ -601,8 +603,9 @@
     }
 
     p {
-      color: #88cc88;
+      color: #8ccafb;
       font-family: 'Share Tech Mono', monospace;
+      font-size: 0.748rem;
     }
   }
 
@@ -610,8 +613,8 @@
     background: transparent !important;
     border: 1px solid #33ff33 !important;
     border-radius: 0 !important;
-    padding-top: 1.2rem !important;
-    padding-bottom: 1.2rem !important;
+    padding-top: 1rem !important;
+    padding-bottom: 1rem !important;
 
     svg.iconSVG {
       /* Gold stroke lines */
@@ -628,10 +631,11 @@
     }
 
     p {
-      color: #88cc88 !important;
+      color: #ffd000 !important;
       font-family: 'Share Tech Mono', monospace !important;
-      font-size: 0.65rem !important;
+      font-size: 0.75rem !important;
       letter-spacing: 0.08em;
+      text-transform: uppercase !important;
     }
 
     &:hover {
@@ -657,6 +661,7 @@
 
       p {
         color: #33ff33 !important;
+        text-transform: uppercase !important;
       }
     }
   }
@@ -697,7 +702,7 @@
     }
 
     p {
-      color: #88cc88 !important;
+      color: #8ccafb !important;
       font-family: 'Share Tech Mono', monospace !important;
       font-size: 0.9rem !important;
       line-height: 1.8 !important;
@@ -787,8 +792,8 @@
 
   /* ── Anthro: About box ── */
   body.anthro .aboutWrapper .about {
-    background: rgba(51, 255, 51, 0.5) !important;
-    border: 1px solid #33ff33 !important;
+    background: rgba(255, 208, 0, 0.75) !important;
+    border: 1px solid #ffd000 !important;
     border-radius: 0 !important;
     box-shadow:
       0 0 12px rgba(51, 255, 51, 0.3),
@@ -796,9 +801,16 @@
     position: relative;
     overflow: hidden;
 
+    @media (max-width: 480px) {
+      flex-direction: column !important;
+      align-items: center !important;
+      text-align: center !important;
+    }
+
     p {
       color: #000 !important;
       text-shadow: none !important;
+      letter-spacing: normal;
     }
 
     /* Scanline overlay */
