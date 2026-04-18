@@ -321,19 +321,31 @@
   }
 
   body.anthro {
-    @apply bg-[#0a0e0a];
+    /* CRT scanlines on the full viewport */
+    background-color: #0a1a0a;
+    background-image:
+      /* Phosphor glow: faint green bloom from top */
+      radial-gradient(
+        ellipse 120% 40% at 50% -5%,
+        rgba(0, 80, 0, 0.4) 0%,
+        transparent 100%
+      ),
+      /* Scanlines: 3px dark band every 6px */
+      repeating-linear-gradient(
+          to bottom,
+          rgba(0, 0, 0, 0) 0px,
+          rgba(0, 0, 0, 0) 1px,
+          rgba(0, 0, 0, 0.75) 6px,
+          rgba(0, 0, 0, 0.75) 0px
+        );
+    background-size:
+      100% 100%,
+      100% 6px;
+    background-attachment: fixed;
 
     .wrapper {
       @apply w-[99.8%];
-      background-color: #0a0e0a;
-      /* Subtle CRT horizontal scanlines over entire page */
-      background-image: repeating-linear-gradient(
-        to bottom,
-        transparent 0px,
-        transparent 2px,
-        rgba(0, 0, 0, 0.18) 2px,
-        rgba(0, 0, 0, 0.18) 3px
-      );
+      background: transparent;
 
       @media (max-width: 1024px) {
         @apply w-[99.8%];
@@ -364,15 +376,17 @@
 
       p {
         @apply my-0 mx-auto;
-        color: #88cc88;
+        color: #33ff33;
         font-family: 'Share Tech Mono', monospace;
         font-size: 0.82rem;
-        line-height: 1.7;
-        text-shadow: 0 0 3px rgba(51, 255, 51, 0.15);
+        line-height: 1.53;
+        text-shadow:
+          0 0 4px rgba(51, 255, 51, 0.5),
+          0 0 10px rgba(51, 255, 51, 0.15);
       }
 
       .flag {
-        filter: saturate(0.1) brightness(0.6) sepia(0.5) hue-rotate(80deg);
+        filter: opacity(0.7);
       }
     }
 
@@ -555,18 +569,35 @@
 
     .carouselArrow {
       background: #0a1a0a !important;
-      color: #ffb000 !important;
-      border: 1px solid #ffb000 !important;
+      color: #ffd000 !important;
+      border: 1px solid #ffd000 !important;
       border-radius: 0 !important;
       font-family: 'Share Tech Mono', monospace;
       font-size: 0.6rem;
       box-shadow: 2px 2px 0 #000;
+      padding: 2px 8px !important;
+      display: flex !important;
+      align-items: center !important;
 
       &:hover {
         background: #1a2a0a !important;
         color: #33ff33 !important;
         border-color: #33ff33 !important;
       }
+    }
+
+    .projectBox__top {
+      display: flex !important;
+      align-items: center !important;
+      min-height: 28px !important;
+    }
+
+    .projectHead {
+      font-size: 0.748rem !important;
+      margin: auto !important;
+      display: flex !important;
+      align-items: center !important;
+      justify-content: center !important;
     }
 
     p {
@@ -576,22 +607,22 @@
   }
 
   body.anthro .miniGallery div .box {
-    background: #080f08 !important;
-    border: 1px solid #1a3a1a !important;
+    background: transparent !important;
+    border: 1px solid #33ff33 !important;
     border-radius: 0 !important;
     padding-top: 1.2rem !important;
     padding-bottom: 1.2rem !important;
 
     svg.iconSVG {
-      /* Neon green stroke lines */
-      stroke: #33ff33 !important;
+      /* Gold stroke lines */
+      stroke: #ffd000 !important;
       fill: transparent !important;
-      filter: drop-shadow(0 0 3px rgba(51, 255, 51, 0.6))
-        drop-shadow(0 0 6px rgba(51, 255, 51, 0.3)) !important;
+      filter: drop-shadow(0 0 3px rgba(255, 208, 0, 0.6))
+        drop-shadow(0 0 6px rgba(255, 208, 0, 0.3)) !important;
       transition: filter 0.2s ease !important;
 
       * {
-        stroke: #33ff33 !important;
+        stroke: #ffd000 !important;
         fill: transparent !important;
       }
     }
@@ -658,24 +689,24 @@
     }
 
     h4 {
-      color: #ffb000 !important;
+      color: #ffd000 !important;
       font-family: 'Share Tech Mono', monospace !important;
-      font-size: 0.9rem !important;
+      font-size: 1.08rem !important;
       letter-spacing: 0.08em;
-      text-shadow: 0 0 6px rgba(255, 176, 0, 0.6);
+      text-shadow: 0 0 6px rgba(255, 208, 0, 0.6);
     }
 
     p {
       color: #88cc88 !important;
       font-family: 'Share Tech Mono', monospace !important;
-      font-size: 0.75rem !important;
+      font-size: 0.9rem !important;
       line-height: 1.8 !important;
       text-shadow: 0 0 2px rgba(51, 255, 51, 0.15);
     }
 
     a {
-      color: #ffb000 !important;
-      text-shadow: 0 0 4px rgba(255, 176, 0, 0.5);
+      color: #ffd000 !important;
+      text-shadow: 0 0 4px rgba(255, 208, 0, 0.5);
 
       &:hover {
         color: #33ff33 !important;
@@ -714,51 +745,61 @@
       }
 
       &:hover::after {
-        color: #ffb000;
-        text-shadow: 0 0 8px rgba(255, 176, 0, 0.9);
+        color: #ffd000;
+        text-shadow: 0 0 8px rgba(255, 208, 0, 0.9);
       }
     }
   }
 
-  /* ── Anthro: Quote — 30% less vertical padding ── */
+  /* ── Anthro: Quote — 50% transparent neon green bar ── */
   body.anthro .quoteBlock {
-    padding-top: 0.35rem !important;
-    padding-bottom: 0.35rem !important;
+    padding-top: 0.4rem !important;
+    padding-bottom: 0.4rem !important;
     min-height: auto !important;
-    color: #88cc88;
+    width: 100% !important;
+    background: rgba(51, 255, 51, 0.5) !important;
+    box-shadow: 0 0 16px rgba(51, 255, 51, 0.3) !important;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.72rem;
+    font-size: 0.9rem;
+    letter-spacing: -0.05rem;
 
     p {
-      color: #88cc88 !important;
+      color: #000 !important;
       font-family: 'Share Tech Mono', monospace !important;
-      font-size: 0.72rem !important;
+      font-size: 0.9rem !important;
+      text-shadow: none !important;
     }
 
     cite {
-      color: #ffb000 !important;
+      color: #003300 !important;
       font-style: italic;
     }
 
     .arrowBtn {
-      color: #33ff33 !important;
+      color: #000 !important;
+      font-weight: bold;
 
       &:hover {
-        color: #ffb000 !important;
+        color: #003300 !important;
       }
     }
   }
 
   /* ── Anthro: About box ── */
   body.anthro .aboutWrapper .about {
-    background: #050d05 !important;
+    background: rgba(51, 255, 51, 0.5) !important;
     border: 1px solid #33ff33 !important;
     border-radius: 0 !important;
     box-shadow:
-      0 0 12px rgba(51, 255, 51, 0.1),
+      0 0 12px rgba(51, 255, 51, 0.3),
       3px 3px 0 #000 !important;
     position: relative;
     overflow: hidden;
+
+    p {
+      color: #000 !important;
+      text-shadow: none !important;
+    }
 
     /* Scanline overlay */
     &::after {
@@ -770,8 +811,8 @@
         to bottom,
         transparent 0px,
         transparent 3px,
-        rgba(0, 0, 0, 0.1) 3px,
-        rgba(0, 0, 0, 0.1) 4px
+        rgba(0, 0, 0, 0.06) 3px,
+        rgba(0, 0, 0, 0.06) 4px
       );
       z-index: 1;
     }
@@ -782,8 +823,7 @@
     filter: none !important;
 
     &:hover {
-      filter: drop-shadow(0 0 8px rgba(51, 255, 51, 0.9))
-        drop-shadow(0 0 16px rgba(51, 255, 51, 0.4)) !important;
+      filter: drop-shadow(0 0 16px rgba(0, 0, 0, 0.9)) !important;
     }
   }
 

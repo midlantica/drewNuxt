@@ -9,10 +9,9 @@
       <span class="marqueeInner">
         UX · VISUAL DESIGN · HTML · CSS · VUE · NUXT · FIGMA · ILLUSTRATION ·
         ADOBE CC · AFFINITY · TAILWIND · SASS · JAVASCRIPT · SKETCH · FIGMA · UI
-        DESIGN &nbsp;&nbsp;&nbsp;&nbsp;&nbsp; UX · VISUAL DESIGN · HTML · CSS ·
-        VUE · NUXT · FIGMA · ILLUSTRATION · ADOBE CC · AFFINITY · TAILWIND ·
-        SASS · JAVASCRIPT · SKETCH · FIGMA · UI DESIGN
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+        DESIGN &nbsp;·&nbsp; UX · VISUAL DESIGN · HTML · CSS · VUE · NUXT ·
+        FIGMA · ILLUSTRATION · ADOBE CC · AFFINITY · TAILWIND · SASS ·
+        JAVASCRIPT · SKETCH · FIGMA · UI DESIGN &nbsp;·&nbsp;
       </span>
     </div>
 
@@ -59,21 +58,48 @@
 <style scoped>
   @reference "../../assets/css/tailwind.css";
 
+  /* CRT scanline background */
+  .crtBg {
+    min-height: 100vh;
+    background-color: #0a1a0a;
+    background-image:
+      /* Subtle phosphor glow gradient */
+      radial-gradient(
+        ellipse at 50% 0%,
+        rgba(0, 60, 0, 0.45) 0%,
+        transparent 70%
+      ),
+      /* Scanlines: alternating dark bands every 6px */
+      repeating-linear-gradient(
+          to bottom,
+          transparent 0px,
+          transparent 3px,
+          rgba(0, 0, 0, 0.75) 3px,
+          rgba(0, 0, 0, 0.75) 6px
+        );
+    background-size:
+      100% 100%,
+      100% 6px;
+    /* Very faint overall vignette */
+    box-shadow: inset 0 0 120px rgba(0, 0, 0, 0.7);
+  }
+
   /* Top skills marquee strip */
   .skillsMarquee {
     @apply w-full overflow-hidden;
-    background: #0a0e0a;
-    border-bottom: 1px solid #1a3a1a;
+    background: rgba(51, 255, 51, 0.5);
+    border-bottom: 1px solid #33ff33;
+    box-shadow: 0 0 8px rgba(51, 255, 51, 0.2);
     padding: 4px 0;
   }
 
   .marqueeInner {
     @apply inline-block whitespace-nowrap;
     font-family: 'Share Tech Mono', monospace;
-    font-size: 0.6rem;
+    font-size: 0.66rem;
     letter-spacing: 0.14em;
-    color: #33ff33;
-    text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
+    color: #000;
+    text-shadow: none;
     animation: marquee 28s linear infinite;
   }
 
@@ -104,16 +130,15 @@
 
   .anthroFooter {
     @apply shadow-none mt-0 mx-0 px-0 w-full;
-    background: #050d05;
-    border-top: 2px solid #33ff33;
-    box-shadow: 0 0 12px rgba(51, 255, 51, 0.15);
+    background: transparent;
+    border: 2px solid #00ff0063;
     color: #88cc88;
     font-family: 'Share Tech Mono', monospace;
   }
 
   .skillsDock {
     @apply w-full mx-0 px-0;
-    border-bottom: 2px solid #33ff33;
+    border-bottom: 1px solid #33ff33;
   }
 
   @media (min-width: 1025px) {

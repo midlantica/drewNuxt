@@ -28,11 +28,13 @@
         </div>
         <div class="infoGrid">
           <div class="cLine">
+            <span class="cKey">EMAIL</span>
             <a :href="`mailto:${copy.druEmail}`" class="cVal">
               {{ copy.druEmail }}
             </a>
           </div>
           <div class="cLine">
+            <span class="cKey">RESUME</span>
             <a :href="copy.portfolio" target="_blank" class="cVal">
               PDF_DOWNLOAD.PDF
             </a>
@@ -118,9 +120,11 @@
   /* ── Dashboard shell ── */
   .crtDash {
     @apply w-full relative overflow-hidden;
-    background: #050d05;
+    background: transparent;
     border-bottom: 2px solid #33ff33;
-    box-shadow: 0 4px 24px rgba(51, 255, 51, 0.15);
+    /* box-shadow:
+      0 0 12px rgba(51, 255, 51, 0.1),
+      0 4px 20px rgba(51, 255, 51, 0.12); */
   }
 
   /* CRT scanlines */
@@ -159,7 +163,7 @@
 
   /* ── LEFT: mugshot column ── */
   .mugCol {
-    @apply flex flex-col items-start justify-start px-0 py-0 gap-0 cursor-pointer flex-shrink-0 overflow-hidden;
+    @apply flex flex-col items-start justify-start px-0 py-0 gap-0 cursor-pointer flex-shrink-0;
     flex: 0 0 80px;
 
     @media (max-width: 840px) {
@@ -172,14 +176,21 @@
     }
   }
 
-  /* Mugshot — flush to top, fills column width, show full image */
+  /* Mugshot — square box */
   .mugWrap {
-    @apply relative flex-shrink-0 w-full;
-    height: clamp(160px, 16vw, 220px);
+    @apply relative flex-shrink-0;
+    width: clamp(80px, 8vw, 120px);
+    height: clamp(80px, 8vw, 120px);
+    border: 1px solid #33ff33;
+    box-shadow: 0 0 8px rgba(51, 255, 51, 0.2);
+    margin: auto;
+    position: relative;
+    z-index: 50;
 
     @media (max-width: 630px) {
       width: 70px;
-      height: 85px;
+      height: 70px;
+      margin: 4px;
     }
   }
 
@@ -234,12 +245,15 @@
 
   /* 2×2 info grid: email, resume, location, status */
   .infoGrid {
-    @apply grid gap-x-6 gap-y-2;
-    grid-template-columns: 1fr 1fr;
+    @apply grid;
+    grid-template-columns: auto auto;
+    gap: 0.6rem 2rem;
+    width: 330px;
   }
 
   .cLine {
-    @apply flex flex-col gap-0;
+    @apply flex flex-col;
+    gap: 0.18rem;
   }
 
   .cKey {
@@ -254,8 +268,8 @@
     @apply no-underline leading-tight;
     font-family: 'Share Tech Mono', monospace;
     font-size: clamp(0.75rem, 1.2vw, 1rem);
-    color: #ffb000;
-    text-shadow: 0 0 4px rgba(255, 176, 0, 0.5);
+    color: #ffd000;
+    text-shadow: 0 0 4px rgba(255, 208, 0, 0.5);
 
     &:hover {
       color: #33ff33;
@@ -263,8 +277,8 @@
     }
 
     &.blinkSlow {
-      color: #ffb000;
-      text-shadow: 0 0 5px rgba(255, 176, 0, 0.7);
+      color: #ffd000;
+      text-shadow: 0 0 5px rgba(255, 208, 0, 0.7);
       animation: blinkSlow 3s step-end infinite;
     }
   }
@@ -320,10 +334,10 @@
     @apply leading-[0.88] font-black;
     font-family: 'Doto', 'Share Tech Mono', monospace;
     font-size: clamp(2.2rem, 4.5vw, 4.2rem);
-    color: #ffb000;
+    color: #ffd000;
     text-shadow:
-      0 0 10px rgba(255, 176, 0, 0.9),
-      0 0 30px rgba(255, 176, 0, 0.35);
+      0 0 10px rgba(255, 208, 0, 0.9),
+      0 0 30px rgba(255, 208, 0, 0.35);
     letter-spacing: 0.03em;
 
     @media (max-width: 630px) {
@@ -348,11 +362,11 @@
   }
 
   .readoutLabel {
-    @apply text-[#ffb000]/60 mb-1;
+    @apply text-[#ffd000]/60 mb-1;
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.5rem;
     letter-spacing: 0.14em;
-    text-shadow: 0 0 4px rgba(255, 176, 0, 0.3);
+    text-shadow: 0 0 4px rgba(255, 208, 0, 0.3);
   }
 
   /* 2-column grid for skill bars */
@@ -384,8 +398,8 @@
     box-shadow: 0 0 4px rgba(51, 255, 51, 0.6);
 
     &.amber {
-      background: #ffb000;
-      box-shadow: 0 0 4px rgba(255, 176, 0, 0.6);
+      background: #ffd000;
+      box-shadow: 0 0 4px rgba(255, 208, 0, 0.6);
     }
   }
 
@@ -413,10 +427,10 @@
   }
 
   .clockVal {
-    @apply text-[#ffb000];
+    @apply text-[#ffd000];
     font-family: 'Share Tech Mono', monospace;
     font-size: 0.6rem;
-    text-shadow: 0 0 5px rgba(255, 176, 0, 0.7);
+    text-shadow: 0 0 5px rgba(255, 208, 0, 0.7);
   }
 
   .memRow {

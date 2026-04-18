@@ -108,9 +108,9 @@
     }
 
     > a.anthro {
-      @apply bg-[#0a0e0a] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
-      color: #33ff33;
-      text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
+      @apply bg-[hsl(0,0%,20%)] drop-shadow-[0px_0px_1px_rgba(0,0,0,1)];
+      color: #fffdf4bf;
+      text-shadow: none;
 
       &:hover {
         background: #050d05;

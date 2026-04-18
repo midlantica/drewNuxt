@@ -131,6 +131,16 @@
     }
   }
 
+  .anthro .about {
+    background: #33ff33;
+    box-shadow: none;
+
+    p {
+      color: #000;
+      text-shadow: none;
+    }
+  }
+
   .modern .aboutWrapper {
     @apply flex items-center justify-center;
   }

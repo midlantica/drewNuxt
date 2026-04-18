@@ -82,7 +82,7 @@
   @reference "../../../assets/css/tailwind.css";
 
   .termSection {
-    @apply mt-4 mr-4 mb-0 ml-4 flex flex-col;
+    @apply mt-4 mr-4 mb-0 ml-0 flex flex-col;
 
     @media (max-width: 1024px) {
       @apply mt-3 mx-3;
@@ -96,12 +96,11 @@
   /* ── Terminal window ── */
   .termWindow {
     @apply flex flex-col w-full overflow-hidden;
-    border: 2px solid #33ff33;
+    border: 1px solid #33ff33;
     box-shadow:
-      0 0 0 1px #0a1a0a,
-      0 0 16px rgba(51, 255, 51, 0.25),
-      inset 0 0 0 1px #0a2a0a;
-    background: #050d05;
+      0 0 12px rgba(51, 255, 51, 0.1),
+      3px 3px 0 #000;
+    background: transparent;
   }
 
   /* Title bar */
@@ -130,15 +129,16 @@
   }
 
   .termClock {
-    @apply text-[#ffb000] text-[0.58rem] tracking-[0.1em];
+    @apply text-[#ffd000] text-[0.58rem] tracking-[0.1em];
     font-family: 'Share Tech Mono', monospace;
-    text-shadow: 0 0 4px rgba(255, 176, 0, 0.6);
+    text-shadow: 0 0 4px rgba(255, 208, 0, 0.6);
   }
 
   /* Terminal body */
   .termBody {
-    @apply relative flex flex-col gap-2 px-4 py-3;
-    background: #050d05;
+    @apply relative flex flex-col px-6 py-4;
+    gap: 0.6rem;
+    background: transparent;
   }
 
   /* Scanlines */
@@ -197,9 +197,9 @@
   }
 
   .outputLabel {
-    @apply text-[#ffb000] text-[0.58rem] tracking-[0.14em] uppercase;
+    @apply text-[#ffd000] text-[0.58rem] tracking-[0.14em] uppercase;
     font-family: 'Share Tech Mono', monospace;
-    text-shadow: 0 0 4px rgba(255, 176, 0, 0.5);
+    text-shadow: 0 0 4px rgba(255, 208, 0, 0.5);
   }
 
   .termHeadline {
@@ -227,10 +227,14 @@
   }
 
   .termStamp {
-    @apply w-12 min-w-[2.8rem] max-w-[3rem] flex-shrink-0;
-    fill: #33ff33;
-    filter: drop-shadow(0 0 4px rgba(51, 255, 51, 0.5));
-    opacity: 0.7;
+    @apply flex-shrink-0;
+    width: 3.45rem;
+    min-width: 3.22rem;
+    max-width: 3.45rem;
+    fill: #ffd000;
+    filter: drop-shadow(0 0 5px rgba(255, 208, 0, 0.6));
+    opacity: 0.85;
+    transform: rotate(-15deg);
   }
 
   .stampMeta {
@@ -238,18 +242,20 @@
   }
 
   .stampLine {
-    @apply text-[#33ff33] text-[0.55rem] tracking-[0.16em] uppercase leading-tight;
+    @apply text-[#33ff33] text-[0.69rem] tracking-[0.16em] uppercase leading-tight;
     font-family: 'Share Tech Mono', monospace;
     text-shadow: 0 0 4px rgba(51, 255, 51, 0.5);
 
     &.big {
-      font-size: 0.62rem;
+      font-size: 0.78rem;
       letter-spacing: 0.12em;
       line-height: 1.3;
+      color: #ffd000;
+      text-shadow: 0 0 5px rgba(255, 208, 0, 0.6);
     }
 
     &.dim {
-      @apply text-[#33ff33]/40;
+      color: rgba(51, 255, 51, 0.35);
       text-shadow: none;
     }
   }
@@ -261,8 +267,10 @@
     font-size: 1rem !important;
     line-height: 1.6 !important;
     letter-spacing: 0.04em;
-    color: #88cc88;
-    text-shadow: 0 0 3px rgba(51, 255, 51, 0.2);
+    color: #33ff33;
+    text-shadow:
+      0 0 4px rgba(51, 255, 51, 0.5),
+      0 0 10px rgba(51, 255, 51, 0.15);
   }
 
   @keyframes blink {
