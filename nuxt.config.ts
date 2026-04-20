@@ -66,12 +66,19 @@ export default defineNuxtConfig({
       prerender: true
     },
     '/modern/': { prerender: true },
+    '/modern/portfolio': { prerender: true },
     '/bourbon/': { prerender: true },
+    '/bourbon/portfolio': { prerender: true },
     '/groovy/': { prerender: true },
+    '/groovy/portfolio': { prerender: true },
     '/techy/': { prerender: true },
+    '/techy/portfolio': { prerender: true },
     '/corp/': { prerender: true },
+    '/corp/portfolio': { prerender: true },
     '/punk/': { prerender: true },
-    '/anthro/': { prerender: true }
+    '/punk/portfolio': { prerender: true },
+    '/anthro/': { prerender: true },
+    '/anthro/portfolio': { prerender: true }
   },
 
   components: [

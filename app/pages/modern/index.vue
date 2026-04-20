@@ -2,13 +2,13 @@
   import { shallowRef } from 'vue';
   import { ModernProjects, ModernSkills, ModernAbout } from '#components';
 
-  const { store } = usePageSetup('Modern');
+  const { store, toggleExtras } = usePageSetup('Modern');
 
   const views = { ModernProjects, ModernSkills, ModernAbout };
   const currentView = shallowRef(ModernProjects);
 
   function switchView(viewName) {
-    if (!store.isShowContent) store.toggleExtras();
+    if (!store.isShowContent) toggleExtras();
     if (views[viewName]) currentView.value = views[viewName];
   }
 
@@ -22,7 +22,7 @@
     <transition name="topDown" appear>
       <ModernNavvy
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
 
@@ -31,7 +31,7 @@
         :is-show-content="store.isShowContent"
         :selected-btn="store.selectedBtn"
         @switch-view="switchView"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
 
@@ -42,7 +42,7 @@
       <component
         :is="currentView"
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
 
@@ -50,7 +50,7 @@
       <ExtrasC
         :is-show-content="store.isShowContent"
         class="col-span-2"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
   </div>

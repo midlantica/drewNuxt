@@ -3,7 +3,7 @@
     <Transition name="topDown" appear>
       <GroovyNavvyHead
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </Transition>
 
@@ -12,7 +12,7 @@
         <GroovyHeadAndCopy
           class="copyArea"
           :is-show-content="store.isShowContent"
-          @toggle-extras="store.toggleExtras"
+          @toggle-extras="toggleExtras"
         />
       </Transition>
 
@@ -33,7 +33,7 @@
       <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
 
@@ -44,7 +44,7 @@
 </template>
 
 <script setup>
-  const { store } = usePageSetup('Groovy');
+  const { store, toggleExtras } = usePageSetup('Groovy');
 </script>
 
 <style scoped>

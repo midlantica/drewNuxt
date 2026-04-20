@@ -3,7 +3,7 @@
     <transition name="bounce3" appear>
       <ModernHeadAndCopy
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
     <transition name="bounce4" appear>
@@ -16,6 +16,18 @@
   import { ModernHeadAndCopy } from '#components';
 
   const store = useToggleExtrasStore();
+  const router = useRouter();
+  const route = useRoute();
+
+  function toggleExtras() {
+    const isOnPortfolio =
+      route.path.endsWith('/portfolio') || route.path.endsWith('/portfolio/');
+    if (isOnPortfolio) {
+      router.push('/modern/');
+    } else {
+      router.push('/modern/portfolio');
+    }
+  }
 
   onMounted(() => {
     store.selectedBtn = 'ModernAbout';

@@ -1,5 +1,5 @@
 <script setup>
-  const { store } = usePageSetup('Techy');
+  const { store, toggleExtras } = usePageSetup('Techy');
 </script>
 
 <template>
@@ -7,7 +7,7 @@
     <transition name="topDown" appear>
       <TechyNavvy
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
 
@@ -16,7 +16,7 @@
         <TechyHeadAndCopy
           class="copyArea"
           :is-show-content="store.isShowContent"
-          @toggle-extras="store.toggleExtras"
+          @toggle-extras="toggleExtras"
         />
       </transition>
 
@@ -37,7 +37,7 @@
       <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
 

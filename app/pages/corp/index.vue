@@ -1,5 +1,5 @@
 <script setup>
-  const { store } = usePageSetup('Corp');
+  const { store, toggleExtras } = usePageSetup('Corp');
 </script>
 
 <template>
@@ -7,7 +7,7 @@
     <transition name="topDown" appear>
       <CorpNavvy
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
 
@@ -33,7 +33,7 @@
       <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
 

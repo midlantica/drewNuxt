@@ -231,4 +231,13 @@
       @apply stroke-black;
     }
   }
+
+  .anthro svg.arrowLeft {
+    > path {
+      stroke: #33ff33;
+    }
+    &:hover > path {
+      stroke: #00cc00;
+    }
+  }
 </style>

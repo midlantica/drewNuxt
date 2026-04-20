@@ -1,5 +1,5 @@
 <script setup>
-  const { store } = usePageSetup('Punk');
+  const { store, toggleExtras } = usePageSetup('Punk');
 </script>
 
 <template>
@@ -7,7 +7,7 @@
     <transition name="topDown" appear>
       <PunkNavvy
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
 
@@ -16,7 +16,7 @@
         <PunkHeadAndCopy
           class="copyArea"
           :is-show-content="store.isShowContent"
-          @toggle-extras="store.toggleExtras"
+          @toggle-extras="toggleExtras"
         />
       </transition>
 
@@ -37,7 +37,7 @@
       <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
   </div>

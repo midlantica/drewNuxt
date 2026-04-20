@@ -1,5 +1,5 @@
 <script setup>
-  const { store } = usePageSetup('Bourbon');
+  const { store, toggleExtras } = usePageSetup('Bourbon');
 </script>
 
 <template>
@@ -7,7 +7,7 @@
     <transition name="topDown" appear>
       <BourbonNavvy
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </transition>
 
@@ -19,7 +19,7 @@
         <BourbonHeadAndCopy
           class="copyArea"
           :is-show-content="store.isShowContent"
-          @toggle-extras="store.toggleExtras"
+          @toggle-extras="toggleExtras"
         />
       </transition>
       <transition name="bounce4" appear>
@@ -40,7 +40,7 @@
       <ExtrasC
         class="col-span-2"
         :is-show-content="store.isShowContent"
-        @toggle-extras="store.toggleExtras"
+        @toggle-extras="toggleExtras"
       />
     </main>
 
