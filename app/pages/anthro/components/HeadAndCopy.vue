@@ -82,14 +82,20 @@
   @reference "../../../assets/css/tailwind.css";
 
   .termSection {
-    @apply mt-4 mr-4 mb-0 ml-0 flex flex-col;
+    @apply mr-4 mb-0 ml-0 flex flex-col relative;
+    z-index: 40;
+    margin-top: calc(var(--spacing, 0.25rem) * -3.1);
 
-    @media (max-width: 1024px) {
-      @apply mt-3 mx-3;
+    @media (max-width: 1041px) {
+      @apply mx-3;
     }
 
     @media (max-width: 630px) {
       @apply mx-2;
+    }
+
+    @media (min-width: 1042px) {
+      margin-top: 1.15rem;
     }
   }
 

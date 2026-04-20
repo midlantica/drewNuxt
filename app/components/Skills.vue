@@ -157,7 +157,7 @@
   }
 
   .skillsGrid {
-    @apply w-full grid justify-center items-stretch content-between relative gap-y-0.5 justify-items-center min-w-0;
+    @apply w-full grid justify-center items-stretch content-between relative gap-y-0.5 justify-items-center min-w-0 z-20;
 
     svg {
       @apply w-22;

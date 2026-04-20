@@ -118,10 +118,14 @@
 
   .copyArea {
     @apply row-start-1;
+    position: relative;
+    z-index: 30;
   }
 
   .slides {
-    @apply row-start-2 z-30 mt-0;
+    @apply row-start-2 mt-0;
+    position: relative;
+    z-index: 1;
   }
 
   .about {
@@ -141,17 +145,19 @@
     border-bottom: 1px solid #33ff33;
   }
 
-  @media (min-width: 1025px) {
+  @media (min-width: 1042px) {
     .mainGrid {
       @apply mx-8 mb-2 grid-cols-[7fr_6fr];
     }
 
     .copyArea {
       @apply col-start-1 col-end-2 row-start-1 row-end-3;
+      z-index: 40;
     }
 
     .slides {
-      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-30 -mt-20;
+      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-30;
+      margin-top: -3.4rem;
     }
 
     .skillsGrid {
@@ -160,34 +166,6 @@
 
     .about {
       @apply col-start-2 col-end-3 row-start-2 row-end-3;
-    }
-  }
-
-  @media (min-width: 1024px) and (max-height: 1366px) and (orientation: landscape) and (-webkit-min-device-pixel-ratio: 1.5) {
-    .mainGrid {
-      @apply mx-8 mb-2 grid-cols-[7fr_6fr];
-    }
-
-    .copyArea {
-      @apply col-start-1 col-end-2 row-start-1 row-end-3;
-    }
-
-    .slides {
-      @apply col-start-2 col-end-3 row-start-1 row-end-2 z-30 -mt-20;
-    }
-
-    .skillsGrid {
-      @apply col-span-full row-start-3 row-end-4;
-    }
-
-    .about {
-      @apply col-start-2 col-end-3 row-start-2 row-end-3;
-    }
-  }
-
-  @media (min-device-width: 768px) and (max-device-width: 1024px) and (orientation: landscape) {
-    .slides {
-      @apply mt-[-5.5em];
     }
   }
 </style>

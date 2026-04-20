@@ -443,6 +443,38 @@
     }
   }
 
+  body.anthro {
+    .projectBox {
+      position: relative;
+      z-index: 20;
+      background: #050d05;
+      border: 2px solid #33ff33;
+      box-shadow:
+        0 0 0 1px #0a1a0a,
+        0 0 16px rgba(51, 255, 51, 0.2),
+        4px 4px 0 #000;
+      border-radius: 0;
+      padding-top: 0.3rem;
+      padding-bottom: 0.5rem;
+    }
+
+    .miniGallery {
+      @apply grid-cols-2;
+
+      @container (max-width: 300px) {
+        @apply grid-cols-1;
+      }
+
+      @container (min-width: 420px) {
+        @apply grid-cols-3;
+      }
+
+      @container (min-width: 700px) {
+        @apply grid-cols-6;
+      }
+    }
+  }
+
   body.punk {
     .projectBox {
       @apply rounded-none bg-white/70 shadow-[0px_1px_1px_0px_hsl(0,0%,0%,50%)];

@@ -67,8 +67,12 @@
 
     .modal {
       width: clamp(calc(300px - 2rem), 500px, calc(100% - 2rem));
-      @apply relative mb-auto mt-65 bg-white rounded-[20px]
+      @apply relative bg-white rounded-[20px]
       bg-linear-to-b from-white to-[#E2F2F3] shadow-[0px_6px_10px_0px_#0000004D];
+
+      @media (min-width: 640px) {
+        @apply -mt-20;
+      }
 
       .closeBtn {
         @apply absolute flex items-center justify-center cursor-pointer bg-white rounded-[20px] w-10 h-10 border-none text-black/50 -top-2.5 -right-2.5 will-change-transform pointer-events-auto;
