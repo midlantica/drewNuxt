@@ -2,7 +2,7 @@
   <transition name="fade" appear>
     <div class="extrasWrapper m-auto w-full flex flex-row flex-wrap gap-4">
       <h1
-        class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center text-black"
+        class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center"
       >
         <ArrowLeft
           class="animate-pulse cursor-pointer"
@@ -159,85 +159,56 @@
 
 <style scoped>
   @reference "../assets/css/tailwind.css";
-  .modern svg.arrowLeft {
-    > path {
-      stroke: white !important;
-      @apply stroke-white!;
-      /* stroke-width: 3; */
-      /* stroke-linecap: round; */
-    }
 
-    &:hover > path {
-      @apply stroke-modern-ruby;
+  /* Arrow color is driven by CSS `color` on the svg — the path uses stroke: currentColor */
+
+  .modern svg.arrowLeft {
+    color: white;
+    &:hover {
+      @apply text-modern-ruby;
     }
   }
 
   .bourbon svg.arrowLeft {
-    > path {
-      @apply stroke-bourbon-bourbon;
-      /* stroke-width: 3; */
-      /* stroke-linecap: round; */
-      color: stroke-black;
-    }
-    &:hover > path {
-      @apply stroke-bourbon-accent-red;
+    @apply text-bourbon-bourbon;
+    &:hover {
+      @apply text-bourbon-accent-red;
     }
   }
 
   .groovy svg.arrowLeft {
-    > path {
-      @apply stroke-black;
-      /* stroke-width: 3; */
-      /* stroke-linecap: round; */
-      color: stroke-black;
-    }
-    &:hover > path {
-      @apply stroke-groovy-red-dk;
+    @apply text-black;
+    &:hover {
+      @apply text-groovy-red-dk;
     }
   }
 
   .techy svg.arrowLeft {
-    > path {
-      @apply stroke-techy-blue-tech;
-      /* stroke-width: 3; */
-      /* stroke-linecap: round; */
-      color: stroke-black;
-    }
-    &:hover > path {
-      @apply stroke-red-700;
+    @apply text-techy-blue-tech;
+    &:hover {
+      @apply text-red-700;
     }
   }
 
   .corp svg.arrowLeft {
-    > path {
-      @apply stroke-corp-blue-dark;
-      /* stroke-width: 3; */
-      /* stroke-linecap: round; */
-      color: stroke-black;
-    }
-    &:hover > path {
-      @apply stroke-corp-accent-red;
+    @apply text-corp-blue-dark;
+    &:hover {
+      @apply text-corp-accent-red;
     }
   }
 
   .punk svg.arrowLeft {
-    > path {
-      @apply stroke-punk-magenta;
-      /* stroke-width: 3; */
-      /* stroke-linecap: round; */
-      color: stroke-black;
-    }
-    &:hover > path {
-      @apply stroke-black;
+    @apply text-punk-magenta;
+    &:hover {
+      @apply text-black;
     }
   }
 
   .anthro svg.arrowLeft {
-    > path {
-      stroke: #33ff33;
-    }
-    &:hover > path {
-      stroke: #00cc00;
+    color: #33ff33;
+    filter: drop-shadow(0 0 4px rgba(51, 255, 51, 0.7));
+    &:hover {
+      color: #00cc00;
     }
   }
 </style>

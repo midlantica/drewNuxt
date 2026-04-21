@@ -10,8 +10,26 @@
       </div>
 
       <div class="resumeLinks">
-        <a :href="`${copy.portfolio}`" target="_BLANK" class="resume rOne">
-          PDF Resume
+        <span class="resumeLabel">Resume:</span>
+        <a
+          :href="copy.resumeWord"
+          target="_BLANK"
+          class="resume rOne inline-flex items-center gap-1 mr-2"
+          title="Word Resume"
+          aria-label="Word Resume"
+        >
+          Word
+          <IconWordMini class="resumeIcon" />
+        </a>
+        <a
+          :href="copy.resumePDF"
+          target="_BLANK"
+          class="resume rTwo inline-flex items-center gap-1"
+          title="PDF Resume"
+          aria-label="PDF Resume"
+        >
+          PDF
+          <IconPDF class="resumeIcon" />
         </a>
       </div>
     </div>
@@ -26,6 +44,8 @@
 </template>
 
 <script setup>
+  import IconWordMini from '~/components/Icons/iconWordMini.vue';
+  import IconPDF from '~/components/Icons/iconPDF.vue';
   const copy = useCopy();
   const store = useToggleExtrasStore();
 </script>
@@ -99,15 +119,15 @@
           @apply text-white -rotate-2 bg-punk-magenta/50;
 
           &:hover {
-            @apply bg-punk-magenta text-black;
+            @apply bg-punk-magenta text-white;
           }
         }
 
         &.rTwo {
-          @apply no-underline rotate-6;
+          @apply text-white no-underline rotate-6 bg-punk-magenta/50;
 
           &:hover {
-            @apply underline text-punk-magenta;
+            @apply bg-punk-magenta text-white no-underline;
           }
         }
 
@@ -132,6 +152,10 @@
     @media (max-width: 840px) {
       @apply mb-0;
     }
+  }
+
+  .resumeIcon :deep(.letterColor) {
+    fill: black;
   }
 
   .mainBody {

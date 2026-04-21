@@ -26,12 +26,26 @@
           </a>
         </p>
         <p class="resume">
+          Resume:
           <a
-            class="no-underline text-base-ivory hover:text-[orange]"
-            :href="`${copy.portfolio}`"
+            :href="copy.resumeWord"
             target="_blank"
+            title="Word Resume"
+            aria-label="Word Resume"
+            class="resumeIconLink"
           >
-            PDF Resume
+            Word
+            <IconWordMini class="resumeIcon" />
+          </a>
+          <a
+            :href="copy.resumePDF"
+            target="_blank"
+            title="PDF Resume"
+            aria-label="PDF Resume"
+            class="resumeIconLink"
+          >
+            PDF
+            <IconPDF class="resumeIcon" />
           </a>
         </p>
       </section>
@@ -40,6 +54,8 @@
 </template>
 
 <script setup>
+  import IconWordMini from '~/components/Icons/iconWordMini.vue';
+  import IconPDF from '~/components/Icons/iconPDF.vue';
   defineEmits(['toggleExtras']);
   const copy = useCopy();
 </script>
@@ -131,6 +147,30 @@
 
       @media (max-width: 430px) {
         @apply justify-center text-[1rem] tracking-[.09em] leading-5 text-center;
+      }
+
+      &.resume {
+        @apply flex items-center gap-2;
+
+        &:hover a.resumeIconLink .resumeIcon {
+          @apply fill-base-ivory text-black;
+        }
+
+        a.resumeIconLink {
+          @apply inline-flex items-center gap-1 no-underline text-base-ivory mr-1;
+
+          &:hover {
+            @apply text-[orange] underline underline-offset-3;
+          }
+
+          .resumeIcon {
+            @apply w-3.5 fill-black text-base-ivory;
+
+            &:hover {
+              @apply fill-base-ivory text-black;
+            }
+          }
+        }
       }
     }
   }

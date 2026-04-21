@@ -37,9 +37,28 @@
           </div>
           <div class="cLine">
             <span class="cKey">RESUME</span>
-            <a :href="copy.portfolio" target="_blank" class="cVal">
-              PDF_DOWNLOAD.PDF
-            </a>
+            <span class="cVal resumeIcons">
+              <a
+                :href="copy.resumeWord"
+                target="_blank"
+                title="Word Resume"
+                aria-label="Word Resume"
+                class="resumeIconLink"
+              >
+                Word
+                <IconWordMini class="resumeIcon" />
+              </a>
+              <a
+                :href="copy.resumePDF"
+                target="_blank"
+                title="PDF Resume"
+                aria-label="PDF Resume"
+                class="resumeIconLink"
+              >
+                PDF
+                <IconPDF class="resumeIcon" />
+              </a>
+            </span>
           </div>
           <div class="cLine">
             <span class="cKey">LOCATION</span>
@@ -99,6 +118,8 @@
 </template>
 
 <script setup>
+  import IconWordMini from '~/components/Icons/iconWordMini.vue';
+  import IconPDF from '~/components/Icons/iconPDF.vue';
   import { ref, onMounted, onUnmounted } from 'vue';
   defineEmits(['toggleExtras']);
   const copy = useCopy();
@@ -323,6 +344,34 @@
       color: #ffd000;
       text-shadow: 0 0 5px rgba(255, 208, 0, 0.7);
       animation: blinkSlow 3s step-end infinite;
+    }
+
+    &.resumeIcons {
+      @apply flex items-center gap-2;
+
+      &:hover a.resumeIconLink .resumeIcon {
+        @apply fill-[#ffd000] text-black;
+      }
+
+      a.resumeIconLink {
+        @apply inline-flex items-center gap-1 no-underline;
+        color: #ffd000;
+        text-shadow: 0 0 4px rgba(255, 208, 0, 0.5);
+
+        &:hover {
+          color: #33ff33;
+          text-shadow: 0 0 6px rgba(51, 255, 51, 0.8);
+          @apply underline underline-offset-3;
+        }
+
+        .resumeIcon {
+          @apply w-3.5 fill-[#050d05] text-[#ffd000];
+
+          &:hover {
+            @apply fill-[#ffd000] text-black;
+          }
+        }
+      }
     }
   }
 

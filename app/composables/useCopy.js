@@ -6,6 +6,8 @@ export function useCopy() {
     uiuxDesigner: 'UI/UX Designer',
     druEmail: 'druharper@gmail.com',
     portfolio: '/resume/drew_harper_resume_portfolio.pdf',
+    resumeWord: '/resume/Drew_Harper_Resume_2026.docx',
+    resumePDF: '/resume/Drew_Harper_Resume_2026.pdf',
     vizDesigner: 'Visual Designer',
     druHead: 'When UX design is done right the design seems inevitable',
     druCopy: `Anything from a <span class='smallCaps'>UX</span> prototype, figuring out a User Story flow, a wireframe, a design system, responsive site, mobile app <span class='smallCaps'>UI</span>, a quick skin job, or getting in the trenches with <span class='smallCaps'>HTML</span> and <span class='smallCaps'>CSS</span>, I can deliver. I practice humility before the User. Love learning more about coding;&nbsp;I'm a&nbsp;coder&nbsp;groupie&nbsp;😃`,

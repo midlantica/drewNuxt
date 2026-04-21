@@ -32,9 +32,29 @@
           <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="btn">
             {{ copy.druEmail }}
           </nuxt-link>
-          <a :href="`${copy.portfolio}`" target="_blank" class="btn">
-            PDF&nbsp;Resume
-          </a>
+          <span class="btn resumeBtn">
+            Resume:
+            <a
+              :href="copy.resumeWord"
+              target="_blank"
+              title="Word Resume"
+              aria-label="Word Resume"
+              class="resumeIconLink"
+            >
+              Word
+              <IconWordMini class="resumeIcon" />
+            </a>
+            <a
+              :href="copy.resumePDF"
+              target="_blank"
+              title="PDF Resume"
+              aria-label="PDF Resume"
+              class="resumeIconLink"
+            >
+              PDF
+              <IconPDF class="resumeIcon" />
+            </a>
+          </span>
         </p>
       </section>
     </nav>
@@ -42,6 +62,8 @@
 </template>
 
 <script setup>
+  import IconWordMini from '~/components/Icons/iconWordMini.vue';
+  import IconPDF from '~/components/Icons/iconPDF.vue';
   defineEmits(['toggle-extras']);
   const copy = useCopy();
 </script>
@@ -69,6 +91,32 @@
     }
   }
   .btn {
-    @apply border border-[#ff000054] border-solid py-[0.3rem] rounded-4xl my-0 px-5 text-base-ivory hover:text-black hover:no-underline hover:bg-modern-ruby no-underline;
+    @apply border border-[#ff000054] border-solid py-[0.3rem] rounded-4xl my-0 px-5 text-base-ivory hover:no-underline  no-underline;
+    &:hover {
+      @apply bg-modern-ruby cursor-pointer;
+    }
+  }
+  .resumeBtn {
+    @apply text-base-ivory flex items-center gap-2;
+    &:hover a.resumeIconLink .resumeIcon {
+      @apply fill-white text-black;
+    }
+
+    a.resumeIconLink {
+      @apply text-white fill-modern-ruby items-center gap-1 mr-1;
+      &:hover {
+        @apply underline underline-offset-3 text-white;
+      }
+      .resumeIcon {
+        @apply fill-white w-4 text-modern-ruby ml-0.5;
+
+        &:hover {
+          @apply fill-amber-400 text-black;
+        }
+        path.letterColor {
+          /* @apply fill-amber-400; */
+        }
+      }
+    }
   }
 </style>

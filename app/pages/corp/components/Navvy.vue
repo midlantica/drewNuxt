@@ -37,14 +37,28 @@
         </div>
         <section class="contact">
           <p
-            class="leading-normal font-corp-copy text-[1.3em] tracking-[.01em] items-center text-center grow font-semibold lowercase"
+            class="leading-normal font-corp-copy text-[1.3em] tracking-[.01em] items-center text-center grow font-semibold lowercase resumePara"
           >
+            Resume:
             <a
-              :href="`${copy.portfolio}`"
+              :href="copy.resumeWord"
               target="_blank"
-              class="text-corp-blue-dark hover:border-b-2 hover:border-dotted hover:border-corp-blue-mid"
+              title="Word Resume"
+              aria-label="Word Resume"
+              class="resumeIconLink"
             >
-              PDF Resume
+              Word
+              <IconWordMini class="resumeIcon" />
+            </a>
+            <a
+              :href="copy.resumePDF"
+              target="_blank"
+              title="PDF Resume"
+              aria-label="PDF Resume"
+              class="resumeIconLink"
+            >
+              PDF
+              <IconPDF class="resumeIcon" />
             </a>
           </p>
           <p
@@ -64,6 +78,8 @@
 </template>
 
 <script setup>
+  import IconWordMini from '~/components/Icons/iconWordMini.vue';
+  import IconPDF from '~/components/Icons/iconPDF.vue';
   import drewHarper from '../components/navvyArt/drewHarper.vue';
   defineEmits(['toggleExtras']);
   const copy = useCopy();
@@ -111,6 +127,30 @@
 
       @media (max-width: 430px) {
         @apply justify-center leading-5 -mb-px text-center;
+      }
+
+      &.resumePara {
+        @apply flex items-center gap-2;
+
+        &:hover a.resumeIconLink .resumeIcon {
+          @apply fill-corp-blue-dark text-black;
+        }
+
+        a.resumeIconLink {
+          @apply inline-flex items-center gap-1 no-underline text-corp-blue-dark mr-1;
+
+          &:hover {
+            @apply text-corp-blue-mid underline underline-offset-3;
+          }
+
+          .resumeIcon {
+            @apply w-3.5 fill-black text-corp-blue-dark;
+
+            &:hover {
+              @apply fill-corp-blue-dark text-black;
+            }
+          }
+        }
       }
     }
   }

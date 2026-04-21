@@ -15,25 +15,16 @@
 <style scoped>
   @reference "../../assets/css/tailwind.css";
   svg.arrowLeft {
-    /* width: 20px !important; */
-    /* height: auto !important; */
-    /* margin: auto !important; */
-    /* @apply cursor-pointer; */
     @apply cursor-pointer inline mr-1;
 
     > path {
-      stroke: hsla(0, 0%, 0%, 0.85);
+      stroke: currentColor;
       stroke-width: 3;
       stroke-linecap: round;
     }
 
     &:hover > path {
-      stroke: hsl(0, 67%, 44%);
-      /* stroke-width: 2px; */
+      stroke: currentColor;
     }
-  }
-
-  .modern svg.arrowLeft > path {
-    stroke: white !important;
   }
 </style>

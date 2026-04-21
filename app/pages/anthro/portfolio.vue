@@ -31,7 +31,6 @@
     </main>
 
     <footer class="anthroFooter">
-      <Skills class="skillsDock" />
       <Quote />
     </footer>
   </div>

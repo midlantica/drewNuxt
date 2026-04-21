@@ -44,9 +44,27 @@
                 {{ copy.druEmail }}
               </a>
             </div>
-            <div class="duration-300 ease-out groovyOvalBtn">
-              <a :href="`${copy.portfolio}`" target="_blank" class="resume">
-                PDF Resume
+            <div class="duration-300 ease-out groovyOvalBtn resumeBtn">
+              <span class="resumeLabel">Resume:</span>
+              <a
+                :href="copy.resumeWord"
+                target="_blank"
+                title="Word Resume"
+                aria-label="Word Resume"
+                class="resumeIconLink mr-3"
+              >
+                Word
+                <IconWordMini class="resumeIcon" />
+              </a>
+              <a
+                :href="copy.resumePDF"
+                target="_blank"
+                title="PDF Resume"
+                aria-label="PDF Resume"
+                class="resumeIconLink"
+              >
+                PDF
+                <IconPDF class="resumeIcon" />
               </a>
             </div>
           </div>
@@ -57,6 +75,8 @@
 </template>
 
 <script setup>
+  import IconWordMini from '~/components/Icons/iconWordMini.vue';
+  import IconPDF from '~/components/Icons/iconPDF.vue';
   import mastDrew from './masthead/mastDrew.vue';
   import mastHarper from './masthead/mastHarper.vue';
   defineEmits(['toggleExtras']);
@@ -102,6 +122,30 @@
 
     a {
       @apply text-base-ivory no-underline min-[375px]:text-[1rem] sm:text-[1rem] md:text-[1rem];
+    }
+
+    &.resumeBtn {
+      @apply text-[0.75rem] flex items-center gap-1;
+
+      &:hover a.resumeIconLink .resumeIcon {
+        @apply fill-base-ivory text-black;
+      }
+
+      a.resumeIconLink {
+        @apply inline-flex items-center gap-1 no-underline text-base-ivory text-[0.75rem] mr-1;
+
+        &:hover {
+          @apply underline underline-offset-3;
+        }
+
+        .resumeIcon {
+          @apply w-3.5 fill-black text-base-ivory;
+
+          &:hover {
+            @apply fill-base-ivory text-black;
+          }
+        }
+      }
     }
   }
 </style>

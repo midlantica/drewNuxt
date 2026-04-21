@@ -49,6 +49,23 @@ p {
   @apply text-wrap;
 }
 
-.nah {
-  color: black;
+/* Resume icon links — used across all themes */
+.resumeLabel {
+  @apply inline-block mr-1;
+}
+
+.resumeIconLink {
+  @apply inline-flex items-center;
+}
+
+.resumeIcon {
+  display: inline-flex;
+  align-items: center;
+}
+
+.resumeIconSvg {
+  display: inline-block;
+  height: 1.15em;
+  width: auto;
+  vertical-align: middle;
 }
