@@ -26,36 +26,40 @@
       </h2>
 
       <section class="duration-[.25s] z-10 mt-0 transition ease-in">
-        <p
-          class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-copy leading-[1.4rem] text-[0.8rem] tracking-[0.05rem] flex flex-row flex-wrap grow justify-center gap-x-3 gap-y-3 antialiased font-medium text-center"
+        <span
+          class="drop-shadow-[1px_1px_4px_rgba(0,0,0,0.1)] font-modern-copy leading-[1.4rem] text-[0.8rem] tracking-[0.05rem] flex flex-row flex-wrap grow justify-center gap-x-5 gap-y-3 antialiased font-medium text-center"
         >
           <nuxt-link :to="`mailto:` + `${copy.druEmail}`" class="btn">
             {{ copy.druEmail }}
           </nuxt-link>
-          <span class="btn resumeBtn">
-            Resume:
-            <a
-              :href="copy.resumeWord"
-              target="_blank"
-              title="Word Resume"
-              aria-label="Word Resume"
-              class="resumeIconLink"
-            >
-              Word
-              <IconWordMini class="resumeIcon" />
-            </a>
-            <a
-              :href="copy.resumePDF"
-              target="_blank"
-              title="PDF Resume"
-              aria-label="PDF Resume"
-              class="resumeIconLink"
-            >
-              PDF
-              <IconPDF class="resumeIcon" />
-            </a>
+          <span class="flex items-center gap-2">
+            <span class="text-base-ivory">Resume</span>
+            <span class="btn resumeBtn">
+              <a
+                :href="copy.resumeWord"
+                target="_blank"
+                title="Word Resume"
+                aria-label="Word Resume"
+                class="resumeIconLink"
+              >
+                Word
+                <IconWordMini class="resumeIcon" />
+              </a>
+            </span>
+            <span class="btn resumeBtn">
+              <a
+                :href="copy.resumePDF"
+                target="_blank"
+                title="PDF Resume"
+                aria-label="PDF Resume"
+                class="resumeIconLink"
+              >
+                PDF
+                <IconPDF class="resumeIcon" />
+              </a>
+            </span>
           </span>
-        </p>
+        </span>
       </section>
     </nav>
   </header>
@@ -103,7 +107,7 @@
     }
 
     a.resumeIconLink {
-      @apply text-white fill-modern-ruby items-center gap-1 mr-1;
+      @apply text-white fill-modern-ruby items-center gap-0.5 mr-1;
       &:hover {
         @apply underline underline-offset-3 text-white;
       }

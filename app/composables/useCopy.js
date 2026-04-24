@@ -11,7 +11,7 @@ export function useCopy() {
     vizDesigner: 'Visual Designer',
     druHead: 'When UX design is done right the design seems inevitable',
     druCopy: `Anything from a <span class='smallCaps'>UX</span> prototype, figuring out a User Story flow, a wireframe, a design system, responsive site, mobile app <span class='smallCaps'>UI</span>, a quick skin job, or getting in the trenches with <span class='smallCaps'>HTML</span> and <span class='smallCaps'>CSS</span>, I can deliver. I practice humility before the User. Love learning more about coding;&nbsp;I'm a&nbsp;coder&nbsp;groupie&nbsp;😃`,
-    aboutCopy: `I'm half-English/half-American, worked in Advertising most my life, switched to web in late '90s. Travelled the world, enjoy reading history, love NFL, Rugby, Footy.`,
+    aboutCopy: `I'm half-English/half-American, came up through Advertising, switched to web in late '90s. Travelled the world, enjoy reading history, love NFL, Rugby, Footy.`,
     modern: 'Modern',
     bourbon: 'Bourbon',
     groovy: 'Groovy',

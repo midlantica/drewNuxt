@@ -44,28 +44,36 @@
                 {{ copy.druEmail }}
               </a>
             </div>
-            <div class="duration-300 ease-out groovyOvalBtn resumeBtn">
+            <div class="flex gap-1 items-center">
               <span class="resumeLabel">Resume:</span>
-              <a
-                :href="copy.resumeWord"
-                target="_blank"
-                title="Word Resume"
-                aria-label="Word Resume"
-                class="resumeIconLink mr-3"
+              <div
+                class="duration-300 ease-out groovyOvalBtn resumeBtn flex flex-col items-center"
               >
-                Word
-                <IconWordMini class="resumeIcon" />
-              </a>
-              <a
-                :href="copy.resumePDF"
-                target="_blank"
-                title="PDF Resume"
-                aria-label="PDF Resume"
-                class="resumeIconLink"
+                <a
+                  :href="copy.resumeWord"
+                  target="_blank"
+                  title="Word Resume"
+                  aria-label="Word Resume"
+                  class="resumeIconLink mr-3 pt-[.2rem] px-1 pb-[.1rem] text-0.5! uppercase"
+                >
+                  Word
+                  <IconWordMini class="resumeIcon" />
+                </a>
+              </div>
+              <div
+                class="duration-300 ease-out groovyOvalBtn resumeBtn flex flex-col items-center"
               >
-                PDF
-                <IconPDF class="resumeIcon" />
-              </a>
+                <a
+                  :href="copy.resumePDF"
+                  target="_blank"
+                  title="PDF Resume"
+                  aria-label="PDF Resume"
+                  class="resumeIconLink pt-[.2rem] px-1 pb-[.1rem] text-0.5! uppercase"
+                >
+                  PDF
+                  <IconPDF class="resumeIcon" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -118,7 +126,7 @@
   }
 
   .groovyOvalBtn {
-    @apply w-fit py-[.1rem] px-4 pb-[.2rem] border border-groovy-orange border-solid rounded-[320px] leading-normal gap-0 tracking-wide hover:bg-groovy-red-dk hover:text-white hover:cursor-pointer;
+    @apply w-fit py-[.1rem] px-3 pb-[.2rem] border border-groovy-orange border-solid rounded-full leading-normal gap-0 tracking-wide hover:bg-groovy-red-dk hover:text-white hover:cursor-pointer;
 
     a {
       @apply text-base-ivory no-underline min-[375px]:text-[1rem] sm:text-[1rem] md:text-[1rem];

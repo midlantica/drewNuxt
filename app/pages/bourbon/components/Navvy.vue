@@ -120,10 +120,10 @@
   }
 
   section.contact {
-    @apply uppercase mt-2 z-10 transition duration-[.25s] ease-in drop-shadow-[3px_0px_1px_rgba(0,0,0,0.1)];
+    @apply uppercase mt-2 z-10 transition duration-[.25s] ease-in drop-shadow-[3px_0px_1px_rgba(0,0,0,0.1)] leading-1.5;
 
     @media (max-width: 840px) {
-      @apply w-full flex flex-row flex-wrap items-center justify-center gap-4;
+      @apply w-full flex flex-row flex-wrap items-center justify-center gap-2;
     }
 
     @media (max-width: 630px) {
@@ -135,10 +135,10 @@
     }
 
     p {
-      @apply tracking-[0.05rem] text-[1.15rem] leading-[1.35rem] lowercase antialiased font-(family-name:--font-family-bourbon-copy);
+      @apply text-white tracking-[0.05rem] text-[1.15rem] leading-6 lowercase antialiased font-(family-name:--font-family-bourbon-copy);
 
       @media (max-width: 840px) {
-        @apply justify-center text-[1.5rem] tracking-[0.1785rem] mt-[-.3em] leading-[1.95rem];
+        @apply justify-center text-[1.225rem] tracking-[0.1rem] mt-[-.3em] leading-tight;
       }
 
       @media (max-width: 630px) {
@@ -157,17 +157,21 @@
         }
 
         a.resumeIconLink {
-          @apply inline-flex items-center gap-1 no-underline text-base-ivory mr-1;
+          @apply inline-flex items-start gap-1 no-underline text-base-ivory mr-1;
 
           &:hover {
-            @apply text-[orange] underline underline-offset-3;
+            @apply text-amber-300 underline underline-offset-3 fill-amber-800;
+          }
+
+          &:hover .resumeIcon {
+            @apply text-amber-300 underline underline-offset-3 fill-amber-800;
           }
 
           .resumeIcon {
-            @apply w-3.5 fill-black text-base-ivory;
+            @apply w-3.5 fill-base-ivory text-black;
 
             &:hover {
-              @apply fill-base-ivory text-black;
+              @apply text-amber-300 fill-amber-800;
             }
           }
         }

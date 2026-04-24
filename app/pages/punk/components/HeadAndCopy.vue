@@ -10,11 +10,11 @@
       </div>
 
       <div class="resumeLinks">
-        <span class="resumeLabel">Resume:</span>
+        <span class="text-white uppercase shadow tracking-widest">Resume:</span>
         <a
           :href="copy.resumeWord"
           target="_BLANK"
-          class="resume rOne inline-flex items-center gap-1 mr-2"
+          class="resume rOne inline-flex items-center gap-1 mr-2 uppercase shadow"
           title="Word Resume"
           aria-label="Word Resume"
         >
@@ -24,7 +24,7 @@
         <a
           :href="copy.resumePDF"
           target="_BLANK"
-          class="resume rTwo inline-flex items-center gap-1"
+          class="resume rTwo inline-flex items-center gap-1 uppercase shadow"
           title="PDF Resume"
           aria-label="PDF Resume"
         >
