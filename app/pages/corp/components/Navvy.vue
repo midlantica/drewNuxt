@@ -130,24 +130,28 @@
       }
 
       &.resumePara {
-        @apply flex items-center gap-2;
-
-        &:hover a.resumeIconLink .resumeIcon {
-          @apply fill-corp-blue-dark text-black;
-        }
+        @apply flex items-center gap-2 text-corp-blue-dark;
 
         a.resumeIconLink {
-          @apply inline-flex items-center gap-1 no-underline text-corp-blue-dark mr-1;
+          @apply inline-flex items-center gap-1 no-underline text-corp-blue-dark mr-1 fill-white;
 
           &:hover {
-            @apply text-corp-blue-mid underline underline-offset-3;
+            @apply text-corp-blue-dark underline underline-offset-3 fill-white;
+
+            .resumeIcon {
+              @apply w-3.5 fill-yellow-300;
+
+              &:hover {
+                @apply fill-white;
+              }
+            }
           }
 
           .resumeIcon {
-            @apply w-3.5 fill-black text-corp-blue-dark;
+            @apply w-3.5 fill-white text-corp-blue-dark;
 
             &:hover {
-              @apply fill-corp-blue-dark text-black;
+              @apply fill-yellow-300;
             }
           }
         }

@@ -113,10 +113,10 @@
       @apply self-end flex-row;
 
       .resume {
-        @apply text-[0.9em] text-base-black bg-white font-medium not-italic tracking-[.02em] lowercase inline-block ml-1 mb-4 py-[0.3em] px-2 font-(family-name:--font-family-punk-copy);
+        @apply text-[0.9em] text-base-black bg-white font-medium not-italic tracking-[.02em] lowercase inline-block ml-1 mb-4 py-[0.3em] px-2 font-(family-name:--font-family-punk-copy) cursor-pointer;
 
         &.rOne {
-          @apply text-white -rotate-2 bg-punk-magenta/50;
+          @apply text-white -rotate-2 bg-punk-magenta/80;
 
           &:hover {
             @apply bg-punk-magenta text-white;
@@ -124,7 +124,7 @@
         }
 
         &.rTwo {
-          @apply text-white no-underline rotate-6 bg-punk-magenta/50;
+          @apply text-white no-underline rotate-6 bg-punk-magenta/80;
 
           &:hover {
             @apply bg-punk-magenta text-white no-underline;
