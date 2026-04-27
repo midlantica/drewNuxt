@@ -60,6 +60,14 @@
 
   header {
     @apply text-base-ivory bg-groovy-red after:clear-both h-47;
+
+    @media (width < 750px) {
+      @apply h-40;
+    }
+
+    @media (width < 530px) {
+      @apply h-36;
+    }
   }
 
   .about {

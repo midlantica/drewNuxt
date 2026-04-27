@@ -2,12 +2,10 @@
   <transition name="fade" appear>
     <div class="extrasWrapper m-auto w-full flex flex-row flex-wrap gap-4">
       <h1
-        class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center"
+        class="px-auto text-[2em] mx-auto pt-2 mt-2 leading-normal text-center cursor-pointer"
+        @click="$emit('toggleExtras')"
       >
-        <ArrowLeft
-          class="animate-pulse cursor-pointer"
-          @click="$emit('toggleExtras')"
-        />
+        <ArrowLeft class="animate-pulse" />
         Portfolio Extras
       </h1>
 

@@ -31,38 +31,38 @@
             <span class="subtitle-line line1">{{ copy.uiuxDesigner }} +</span>
             <span class="subtitle-line line2">{{ copy.vizDesigner }}</span>
           </div>
-        </div>
 
-        <!-- Buttons -->
-        <div class="buttons-row" @click.stop>
-          <div class="groovyOvalBtn email-btn">
-            <a :href="`mailto:` + `${copy.druEmail}`" class="btn-link">
-              {{ copy.druEmail }}
-            </a>
-          </div>
-          <div class="resume-group">
-            <span class="resume-label">Resume:</span>
-            <div class="groovyOvalBtn resumeBtn">
-              <a
-                :href="copy.resumeWord"
-                target="_blank"
-                title="Word Resume"
-                aria-label="Word Resume"
-                class="resumeIconLink"
-              >
-                <IconWordMini class="resumeIcon" />
+          <!-- Buttons -->
+          <div class="buttons-row" @click.stop>
+            <div class="groovyOvalBtn email-btn">
+              <a :href="`mailto:` + `${copy.druEmail}`" class="btn-link">
+                {{ copy.druEmail }}
               </a>
             </div>
-            <div class="groovyOvalBtn resumeBtn">
-              <a
-                :href="copy.resumePDF"
-                target="_blank"
-                title="PDF Resume"
-                aria-label="PDF Resume"
-                class="resumeIconLink"
-              >
-                <IconPDF class="resumeIcon" />
-              </a>
+            <div class="resume-group">
+              <span class="resume-label">Resume:</span>
+              <div class="groovyOvalBtn resumeBtn">
+                <a
+                  :href="copy.resumeWord"
+                  target="_blank"
+                  title="Word Resume"
+                  aria-label="Word Resume"
+                  class="resumeIconLink"
+                >
+                  <IconWordMini class="resumeIcon" />
+                </a>
+              </div>
+              <div class="groovyOvalBtn resumeBtn">
+                <a
+                  :href="copy.resumePDF"
+                  target="_blank"
+                  title="PDF Resume"
+                  aria-label="PDF Resume"
+                  class="resumeIconLink"
+                >
+                  <IconPDF class="resumeIcon" />
+                </a>
+              </div>
             </div>
           </div>
         </div>
@@ -112,6 +112,10 @@
     /* Pull up AND down so circle overflows header top & bottom */
     margin-top: -1.5625rem; /* -25px */
     margin-bottom: -1.5625rem; /* -25px */
+
+    @media (width < 750px) {
+      padding-top: 0.5rem;
+    }
   }
 
   /* ═══════════════════════════════════════════════════════════
@@ -130,7 +134,7 @@
     top: -0.3125rem;
 
     /* Tablet / large phone */
-    @media (max-width: 768px) {
+    @media (width < 750px) {
       width: 11rem;
       height: 11rem;
       left: -2.25rem;
@@ -139,7 +143,7 @@
     }
 
     /* Small phone */
-    @media (max-width: 500px) {
+    @media (width < 530px) {
       width: 9.5rem;
       height: 9.5rem;
       left: -1.75rem;
@@ -147,14 +151,14 @@
       top: -0.2rem;
     }
 
-    @media (max-width: 375px) {
+    @media (width < 375px) {
       width: 8.5rem;
       height: 8.5rem;
       left: -1.5rem;
       margin-right: -1.5rem;
     }
 
-    @media (max-width: 340px) {
+    @media (width < 340px) {
       width: 7.5rem;
       height: 7.5rem;
       left: -1.25rem;
@@ -193,21 +197,21 @@
     left: 3.5rem;
     top: 2.8rem;
 
-    @media (max-width: 768px) {
+    @media (width < 750px) {
       width: 5.25rem;
       height: 6.375rem;
       left: 3rem;
       top: 2.4rem;
     }
 
-    @media (max-width: 500px) {
+    @media (width < 530px) {
       width: 4.5rem;
       height: 5.5rem;
       left: 2.5rem;
       top: 2rem;
     }
 
-    @media (max-width: 375px) {
+    @media (width < 375px) {
       width: 3.8rem;
       height: 4.6rem;
       left: 2rem;
@@ -231,7 +235,12 @@
     padding-right: 1.5rem; /* more horizontal breathing room */
     padding-left: 1rem;
     min-width: 0;
-    gap: 0.1rem; /* tighter vertical gap between the 3 rows */
+    gap: 1rem; /* tighter vertical gap between the 3 rows */
+
+    @media (width < 380px) {
+      padding-right: 0.75rem; /* more horizontal breathing room */
+      padding-left: 0.75rem;
+    }
   }
 
   /* ── name-wrap: inline column so subtitle matches name width ── */
@@ -240,7 +249,7 @@
     flex-direction: column;
     align-items: stretch;
     flex-shrink: 0;
-    gap: 0.05rem; /* tight gap between name and subtitle */
+    /* gap: 0.3rem !important; */
   }
 
   /* ── ROW 1: DREW HARPER name SVGs ── */
@@ -250,7 +259,8 @@
     align-items: center;
     flex-shrink: 0;
     /* Gap between DREW and HARPER — always two distinct words */
-    gap: 0.45rem;
+    gap: 1rem;
+    margin: auto;
   }
 
   /* SVG height — base, overridden by CQ below */
@@ -267,7 +277,7 @@
     display: flex;
     flex-direction: row;
     align-items: baseline;
-    justify-content: space-between;
+    justify-content: center;
     width: 100%;
     flex-shrink: 0;
     gap: 0.3em; /* minimum gap even when space-between is tight */
@@ -287,41 +297,40 @@
     flex-direction: row;
     flex-wrap: wrap;
     align-items: center;
-    justify-content: flex-start;
-    gap: 0.4rem 0.75rem;
-    margin-top: 0.15rem;
+    justify-content: center;
+    gap: 0 0.75rem;
+    font-size: 1rem;
   }
 
+  /* ── Oval buttons ── */
   .resume-group {
     display: flex;
     flex-direction: row;
     align-items: center;
-    gap: 0.25rem;
+    gap: 0.5rem;
   }
 
   .resume-label {
-    @apply text-sm text-base-ivory;
+    @apply text-base-ivory hover:underline hover:underline-offset-3;
   }
 
-  /* ── Oval buttons ── */
   .groovyOvalBtn {
-    @apply w-fit py-[.1rem] px-3 pb-[.2rem] border border-groovy-orange border-solid rounded-full leading-normal tracking-wide hover:bg-groovy-red-dk hover:text-white hover:cursor-pointer;
+    @apply text-orange-400! leading-normal tracking-wide hover:text-white hover:cursor-pointer;
 
     &.email-btn a.btn-link {
-      @apply text-base-ivory no-underline;
+      @apply text-base-ivory no-underline hover:underline hover:underline-offset-3;
       white-space: nowrap;
-      font-size: 0.85rem;
     }
 
     &.resumeBtn {
-      @apply text-[0.75rem] flex items-center gap-1;
+      @apply flex items-center gap-1;
 
       &:hover a.resumeIconLink .resumeIcon {
         @apply fill-base-ivory text-black;
       }
 
       a.resumeIconLink {
-        @apply inline-flex items-center gap-1 no-underline text-base-ivory text-[0.75rem] mr-1;
+        @apply inline-flex items-center gap-1 no-underline text-base-ivory mr-1;
 
         &:hover {
           @apply underline underline-offset-3;
@@ -345,104 +354,107 @@
      ═══════════════════════════════════════════════════════════ */
 
   /* ── LARGE ≥600cqi: Desktop / wide tablet landscape ── */
-  @container masthead (width >= 600px) {
+  @container masthead (width >= 750px) {
     .name-block {
-      gap: 0.6rem;
+      /* gap: 1rem; */
     }
 
     .name-svg {
-      height: 3.4rem;
+      height: 3.2rem;
     }
 
     .subtitle-line {
-      font-size: 1.45rem;
+      font-size: 1.5rem;
     }
 
     .buttons-row {
-      justify-content: flex-start;
-      margin-top: 0.3rem;
+      justify-content: center;
+      /* margin-top: 0.3rem; */
+      font-size: 1rem !important;
     }
 
     .email-btn a.btn-link {
-      font-size: 0.85rem;
+      /* font-size: 0.85rem; */
+      /* @apply underline underline-offset-1; */
     }
   }
 
   /* ── MEDIUM 380–599cqi: Tablet portrait / large phone landscape ── */
-  @container masthead (width >= 380px) and (width < 600px) {
+  @container masthead (width >= 380px) and (width < 750px) {
     .name-block {
-      gap: 0.5rem;
+      /* gap: 0.5rem; */
     }
 
     .name-svg {
-      height: 2.5rem;
+      height: 3rem;
     }
 
     .subtitle-line {
-      font-size: 1.05rem;
+      font-size: 1.425rem;
     }
 
     .buttons-row {
-      justify-content: flex-start;
-      margin-top: 0.2rem;
+      justify-content: center;
+      font-size: 1.175rem;
     }
 
     .email-btn a.btn-link {
-      font-size: 0.8rem;
+      /* font-size: 0.8rem; */
     }
   }
 
   /* ── SMALL 220–379cqi: Large phone portrait ── */
-  @container masthead (width >= 220px) and (width < 380px) {
+  @container masthead (width < 380px) {
     .name-block {
-      gap: 0.35rem;
+      /* gap: 0.35rem; */
     }
 
     .name-svg {
-      height: 1.7rem;
+      height: 2rem;
     }
 
     .subtitle-line {
-      font-size: 0.75rem;
+      font-size: 0.91rem;
     }
 
     .buttons-row {
-      justify-content: flex-start;
-      margin-top: 0.15rem;
+      justify-content: center;
+      /* margin-top: 0.15rem; */
       gap: 0.3rem 0.5rem;
+      font-size: 0.65rem;
     }
 
     .email-btn a.btn-link {
-      font-size: 0.72rem;
+      /* font-size: 0.72rem; */
     }
   }
 
   /* ── TINY <220cqi: Small phone — stack email + resume on separate lines ── */
   @container masthead (width < 220px) {
     .name-block {
-      gap: 0.25rem;
+      /* gap: 0.25rem; */
     }
 
     .name-svg {
-      height: 1.3rem;
+      /* height: 1.3rem;
       flex-shrink: 1;
-      min-width: 0;
+      min-width: 0; */
     }
 
     .subtitle-line {
-      font-size: 0.6rem;
+      /* font-size: 0.6rem; */
     }
 
     .buttons-row {
-      flex-direction: column;
-      align-items: flex-start;
-      justify-content: flex-start;
-      margin-top: 0.15rem;
-      gap: 0.2rem;
+      /* flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      /* margin-top: 0.15rem; */
+      /* gap: 0.2rem; */
     }
 
     .email-btn a.btn-link {
-      font-size: 0.65rem;
+      /* font-size: 0.65rem; */
     }
   }
 </style>

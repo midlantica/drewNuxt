@@ -7,12 +7,15 @@
         <a
           href="#"
           class="no-underline text-base-ivory hover:text-[orange] hover:cursor-pointer"
-          @click="$emit('toggleExtras')"
+          @click.prevent="$emit('toggleExtras')"
         >
           DREW HARPER
         </a>
       </h1>
-      <section class="jobDesc">
+      <section
+        class="jobDesc hover:cursor-pointer"
+        @click="$emit('toggleExtras')"
+      >
         <h2>{{ copy.uiuxDesigner }}</h2>
         <h2>{{ copy.vizDesigner }}</h2>
       </section>

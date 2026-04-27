@@ -233,7 +233,7 @@
   }
 
   .termStamp {
-    @apply flex-shrink-0;
+    @apply shrink-0;
     width: 3.45rem;
     min-width: 3.22rem;
     max-width: 3.45rem;
