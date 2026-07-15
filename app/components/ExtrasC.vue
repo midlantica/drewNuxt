@@ -73,6 +73,31 @@
       imageSrc: 'zander_pg_sm.png'
     },
     {
+      text: 'WorldCupFire.com',
+      imageUrl: 'worldcupfire-01-lg.png',
+      imageSrc: 'worldcupfire-01-sm.png'
+    },
+    {
+      text: 'WorldCupFire.com',
+      imageUrl: 'worldcupfire-02-lg.png',
+      imageSrc: 'worldcupfire-02-sm.png'
+    },
+    {
+      text: 'WorldCupFire.com',
+      imageUrl: 'worldcupfire-03-lg.png',
+      imageSrc: 'worldcupfire-03-sm.png'
+    },
+    {
+      text: 'WorldCupFire.com',
+      imageUrl: 'worldcupfire-04-lg.png',
+      imageSrc: 'worldcupfire-04-sm.png'
+    },
+    {
+      text: 'WorldCupFire.com',
+      imageUrl: 'worldcupfire-05-lg.png',
+      imageSrc: 'worldcupfire-05-sm.png'
+    },
+    {
       text: 'Dollar General mockup',
       imageUrl: 'dollar-general-01-lg.png',
       imageSrc: 'dollar-general-01-sm.png'

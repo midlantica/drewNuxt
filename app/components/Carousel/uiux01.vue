@@ -8,6 +8,11 @@
 
   const slides = shallowRef([
     { image: '/img/portfolio/01_uiux/Zander_screenshot_v1.png' },
+    { image: '/img/portfolio/01_uiux/worldcupfire/worldcupfire-01-ux.png' },
+    { image: '/img/portfolio/01_uiux/worldcupfire/worldcupfire-02-ux.png' },
+    { image: '/img/portfolio/01_uiux/worldcupfire/worldcupfire-03-ux.png' },
+    { image: '/img/portfolio/01_uiux/worldcupfire/worldcupfire-04-ux.png' },
+    { image: '/img/portfolio/01_uiux/worldcupfire/worldcupfire-05-ux.png' },
     { image: '/img/portfolio/01_uiux/design-system-uiux.png' },
     { image: '/img/portfolio/01_uiux/tdoe/tn_doc_01.jpg' },
     { image: '/img/portfolio/01_uiux/tdoe/tn_doc_02.jpg' },
